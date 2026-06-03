@@ -70,6 +70,7 @@ nextflow run main.nf \
     --input ${SRR_LIST} \
     --input_mode sra \
     --outdir ${OUTDIR} \
+    -work-dir work_3phages \
     -profile slurm \
     -resume \
     -with-report ${OUTDIR}/phinder_report.html \
