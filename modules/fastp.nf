@@ -8,7 +8,7 @@ process FASTP {
     tuple val(sample_id), path(read1), path(read2)
 
     output:
-    tuple val(sample_id), path("${sample_id}_trimmed_R1.fastq.gz"), path("${sample_id}_trimmed_R2.fastq.gz"), emit: reads
+    tuple val(sample_id), path("${sample_id}_trimmed_R{1,2}.fastq.gz"), emit: reads
     path "${sample_id}_fastp.json", emit: json
     path "${sample_id}_fastp.html", emit: html
     path "versions.yml", emit: versions

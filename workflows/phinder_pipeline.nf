@@ -63,7 +63,11 @@ workflow PHINDER_PIPELINE {
     // STEP 3: Assembly (if starting from reads or SRA)
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_assembly) {
         if (params.assembler == 'unicycler') {
-            UNICYCLER(ch_trimmed)
+            // Transform input for unicycler (expects sample_id, read1, read2)
+            ch_unicycler_input = ch_trimmed.map { sample_id, reads ->
+                [sample_id, reads[0], reads[1]]
+            }
+            UNICYCLER(ch_unicycler_input)
             ch_assemblies = UNICYCLER.out.assembly
             ch_versions = ch_versions.mix(UNICYCLER.out.versions.first())
         }
@@ -154,7 +158,7 @@ def parse_samplesheet(input_file, input_mode) {
                 def sample_id = row.sample
                 def read1 = file(row.read1, checkIfExists: true)
                 def read2 = file(row.read2, checkIfExists: true)
-                [sample_id, read1, read2]
+                [sample_id, [read1, read2]]
             }
     } else if (input_mode == 'assembly') {
         return Channel

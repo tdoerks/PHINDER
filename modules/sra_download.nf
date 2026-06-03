@@ -9,7 +9,7 @@ process DOWNLOAD_SRA {
     val srr_id
 
     output:
-    tuple val(srr_id), path("${srr_id}_1.fastq.gz"), path("${srr_id}_2.fastq.gz"), emit: reads
+    tuple val(srr_id), path("${srr_id}_{1,2}.fastq.gz"), emit: reads
     path "versions.yml", emit: versions
 
     script:
