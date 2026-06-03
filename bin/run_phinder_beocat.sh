@@ -58,7 +58,17 @@ echo ""
 
 # Load required modules
 echo "Loading modules..."
-module load Nextflow/24.04.4
+# Try to find available Nextflow version
+if module avail Nextflow 2>&1 | grep -q "24.04"; then
+    module load Nextflow/24.04.2
+elif module avail Nextflow 2>&1 | grep -q "Nextflow"; then
+    module load Nextflow
+else
+    echo "ERROR: No Nextflow module found"
+    echo "Available modules:"
+    module avail Nextflow
+    exit 1
+fi
 
 # Verify samplesheet exists
 if [ ! -f "${SAMPLESHEET}" ]; then
