@@ -4,6 +4,7 @@
 ========================================================================================
 */
 
+include { DOWNLOAD_SRA } from '../modules/sra_download'
 include { FASTQC } from '../modules/fastqc'
 include { FASTP } from '../modules/fastp'
 include { UNICYCLER } from '../modules/unicycler'
@@ -17,22 +18,35 @@ include { MULTIQC } from '../modules/multiqc'
 
 workflow PHINDER_PIPELINE {
 
-    // Parse input samplesheet
-    ch_input = parse_samplesheet(params.input, params.input_mode)
+    // Parse input based on mode
+    if (params.input_mode == 'sra') {
+        // SRA accession list mode
+        ch_srr_list = Channel
+            .fromPath(params.input, checkIfExists: true)
+            .splitText()
+            .map { it.trim() }
+
+        DOWNLOAD_SRA(ch_srr_list)
+        ch_input = DOWNLOAD_SRA.out.reads
+        ch_versions = DOWNLOAD_SRA.out.versions.first()
+    } else {
+        // Regular samplesheet mode
+        ch_input = parse_samplesheet(params.input, params.input_mode)
+        ch_versions = Channel.empty()
+    }
 
     // Initialize channels
-    ch_versions = Channel.empty()
     ch_multiqc_files = Channel.empty()
 
-    // STEP 1: Quality Control (if starting from reads)
-    if (params.input_mode == 'reads' && !params.skip_fastqc) {
+    // STEP 1: Quality Control (if starting from reads or SRA)
+    if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_fastqc) {
         FASTQC(ch_input)
         ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip)
         ch_versions = ch_versions.mix(FASTQC.out.versions.first())
     }
 
-    // STEP 2: Read Trimming (if starting from reads)
-    if (params.input_mode == 'reads' && !params.skip_fastp) {
+    // STEP 2: Read Trimming (if starting from reads or SRA)
+    if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_fastp) {
         // Transform input for fastp (expects sample_id, read1, read2)
         ch_fastp_input = ch_input.map { sample_id, reads ->
             [sample_id, reads[0], reads[1]]
@@ -45,8 +59,8 @@ workflow PHINDER_PIPELINE {
         ch_trimmed = ch_input
     }
 
-    // STEP 3: Assembly (if starting from reads)
-    if (params.input_mode == 'reads' && !params.skip_assembly) {
+    // STEP 3: Assembly (if starting from reads or SRA)
+    if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_assembly) {
         if (params.assembler == 'unicycler') {
             UNICYCLER(ch_trimmed)
             ch_assemblies = UNICYCLER.out.assembly
@@ -118,7 +132,7 @@ def parse_samplesheet(input_file, input_mode) {
                 def sample_id = row.sample
                 def read1 = file(row.read1, checkIfExists: true)
                 def read2 = file(row.read2, checkIfExists: true)
-                [sample_id, [read1, read2]]
+                [sample_id, read1, read2]
             }
     } else if (input_mode == 'assembly') {
         return Channel
@@ -130,6 +144,6 @@ def parse_samplesheet(input_file, input_mode) {
                 [sample_id, assembly]
             }
     } else {
-        error "Invalid input_mode: ${input_mode}. Must be 'reads' or 'assembly'"
+        error "Invalid input_mode: ${input_mode}. Must be 'reads', 'assembly', or 'sra'"
     }
 }

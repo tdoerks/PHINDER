@@ -52,7 +52,23 @@ cd PHINDER
 
 ### Basic Usage
 
-#### Option 1: From Raw Reads (Recommended)
+#### Option 1: From NCBI SRA Accessions (Easiest!)
+```bash
+nextflow run main.nf \
+    --input test_lambda_sra.txt \
+    --input_mode sra \
+    --outdir results \
+    -profile slurm
+```
+
+**SRA list format (one SRR per line):**
+```
+SRR5131134
+SRR5131135
+SRR5131136
+```
+
+#### Option 2: From Raw Reads
 ```bash
 nextflow run main.nf \
     --input samplesheet.csv \
@@ -67,7 +83,7 @@ Phage1,/path/to/phage1_R1.fastq.gz,/path/to/phage1_R2.fastq.gz
 Phage2,/path/to/phage2_R1.fastq.gz,/path/to/phage2_R2.fastq.gz
 ```
 
-#### Option 2: From Assemblies
+#### Option 3: From Assemblies
 ```bash
 nextflow run main.nf \
     --input samplesheet.csv \
@@ -87,8 +103,8 @@ Phage2,/path/to/phage2.fasta
 ### Core Parameters
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `--input` | Input samplesheet (CSV) | Required |
-| `--input_mode` | Input type: `reads` or `assembly` | `reads` |
+| `--input` | Input file (CSV samplesheet or TXT SRR list) | Required |
+| `--input_mode` | Input type: `sra`, `reads`, or `assembly` | `reads` |
 | `--outdir` | Output directory | `results` |
 
 ### Assembly Parameters
