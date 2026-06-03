@@ -121,16 +121,16 @@ workflow PHINDER_PIPELINE {
     // Wait for all analyses to complete, then generate summary
     ch_all_complete = Channel.empty()
     if (!params.skip_checkv) {
-        ch_all_complete = ch_all_complete.mix(CHECKV.out.quality_summary)
+        ch_all_complete = ch_all_complete.mix(CHECKV.out.quality)
     }
     if (!params.skip_pharokka) {
-        ch_all_complete = ch_all_complete.mix(PHAROKKA.out.tsv)
+        ch_all_complete = ch_all_complete.mix(PHAROKKA.out.functions)
     }
     if (!params.skip_vibrant) {
-        ch_all_complete = ch_all_complete.mix(VIBRANT.out.results)
+        ch_all_complete = ch_all_complete.mix(VIBRANT.out.quality)
     }
     if (!params.skip_assembly) {
-        ch_all_complete = ch_all_complete.mix(QUAST.out.results)
+        ch_all_complete = ch_all_complete.mix(QUAST.out.tsv)
     }
 
     // Generate summary when all samples are done
