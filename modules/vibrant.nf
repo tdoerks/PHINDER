@@ -1,7 +1,7 @@
 process VIBRANT {
     tag "$sample_id"
     publishDir "${params.outdir}/vibrant", mode: 'copy'
-    container = 'docker://staphb/vibrant:4.0.0'
+    container = 'docker://quay.io/biocontainers/vibrant:1.2.1--0'
 
     input:
     tuple val(sample_id), path(assembly)
@@ -25,7 +25,7 @@ process VIBRANT {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        vibrant: "4.0.0"
+        vibrant: "1.2.1"
     END_VERSIONS
     """
 }
