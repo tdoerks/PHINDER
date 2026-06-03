@@ -1,0 +1,4 @@
+sample,assembly
+phage1,/path/to/phage1_assembly.fasta
+phage2,/path/to/phage2_assembly.fasta
+phage3,/path/to/phage3_assembly.fasta

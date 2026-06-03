@@ -1,0 +1,4 @@
+sample,read1,read2
+phage1,/path/to/phage1_R1.fastq.gz,/path/to/phage1_R2.fastq.gz
+phage2,/path/to/phage2_R1.fastq.gz,/path/to/phage2_R2.fastq.gz
+phage3,/path/to/phage3_R1.fastq.gz,/path/to/phage3_R2.fastq.gz

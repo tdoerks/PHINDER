@@ -1,0 +1,43 @@
+# Nextflow files
+work/
+.nextflow/
+.nextflow.log*
+*.log
+
+# Output directories
+results/
+test_results/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Databases (too large for git)
+databases/
+*.dmnd
+*.faa.gz
+*.fna.gz
+
+# Container cache
+singularity-images/
+.apptainer/
+.singularity/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
