@@ -1,0 +1,133 @@
+================================================================================
+  PHINDER QUICK START - BEOCAT
+================================================================================
+
+Tyler - here's how to run PHINDER on Beocat with SRA mode!
+
+--------------------------------------------------------------------------------
+STEP 1: Pull Latest PHINDER
+--------------------------------------------------------------------------------
+
+cd /fastscratch/tylerdoe/PHINDER
+git pull
+
+You should see:
+  - bin/run_phinder_sra_beocat.sh (quick Lambda test)
+  - bin/run_phinder_full_test_beocat.sh (all 3 phages)
+  - test_lambda_sra.txt (just Lambda)
+  - test_phages_sra.txt (Lambda + T4 + T7)
+
+--------------------------------------------------------------------------------
+STEP 2: Run Quick Test (Lambda Phage Only)
+--------------------------------------------------------------------------------
+
+sbatch bin/run_phinder_sra_beocat.sh
+
+This will:
+  ✓ Download SRR5131134 (Lambda phage, ~100 MB)
+  ✓ Assemble with Unicycler
+  ✓ Annotate with Pharokka
+  ✓ Quality check with CheckV
+  ✓ Lifestyle prediction with VIBRANT
+
+Expected runtime: ~10-15 minutes
+
+--------------------------------------------------------------------------------
+STEP 3: Monitor Your Job
+--------------------------------------------------------------------------------
+
+# Check job status
+squeue -u tylerdoe
+
+# Watch the log (replace JOBID with your actual job number)
+tail -f phinder_sra_JOBID.log
+
+# Press Ctrl+C to stop watching
+
+--------------------------------------------------------------------------------
+STEP 4: Check Results
+--------------------------------------------------------------------------------
+
+When done, you'll see a directory like:
+  results_lambda_20260603_120000/
+
+Key files:
+  - assemblies/SRR5131134_assembly.fasta (your phage genome!)
+  - checkv/SRR5131134_checkv/ (quality metrics)
+  - pharokka/SRR5131134_pharokka/ (annotations)
+  - multiqc/multiqc_report.html (QC summary)
+
+Download MultiQC report to view:
+  scp tylerdoe@beocat.cis.ksu.edu:/fastscratch/tylerdoe/PHINDER/results_lambda_*/multiqc/multiqc_report.html ~/Desktop/
+
+--------------------------------------------------------------------------------
+FULL TEST (3 Phages)
+--------------------------------------------------------------------------------
+
+Want to test all three phages (Lambda, T4, T7)?
+
+sbatch bin/run_phinder_full_test_beocat.sh
+
+This takes ~30-45 minutes but validates the full pipeline!
+
+--------------------------------------------------------------------------------
+EXPECTED RESULTS
+--------------------------------------------------------------------------------
+
+Lambda Phage (SRR5131134):
+  - Size: ~48.5 kb
+  - Contigs: 1 (circular)
+  - Quality: Complete
+  - Lifestyle: Temperate/lysogenic
+  - Genes: ~70 CDSs
+
+T4 Phage (SRR5131135):
+  - Size: ~169 kb
+  - Contigs: 1 (circular)
+  - Quality: Complete
+  - Lifestyle: Lytic
+  - Genes: ~280 CDSs
+
+T7 Phage (SRR5131136):
+  - Size: ~40 kb
+  - Contigs: 1 (circular)
+  - Quality: Complete
+  - Lifestyle: Lytic
+  - Genes: ~55 CDSs
+
+--------------------------------------------------------------------------------
+TROUBLESHOOTING
+--------------------------------------------------------------------------------
+
+Job fails immediately?
+  - Check: cat phinder_sra_*.err
+  - Verify databases exist:
+    ls /homes/tylerdoe/databases/checkv-db-v1.5/
+    ls /fastscratch/tylerdoe/databases/prophage_db.dmnd
+
+Out of memory?
+  - Job asks for 8G, should be enough for Lambda
+  - Full test asks for 16G for all 3 phages
+
+SRA download fails?
+  - Pipeline retries 3 times automatically
+  - Check network: ping www.ncbi.nlm.nih.gov
+
+Need help?
+  - Check .nextflow.log for details
+  - Email me the error logs
+
+--------------------------------------------------------------------------------
+READY TO GO!
+--------------------------------------------------------------------------------
+
+Quick command recap:
+
+  cd /fastscratch/tylerdoe/PHINDER
+  git pull
+  sbatch bin/run_phinder_sra_beocat.sh
+  squeue -u tylerdoe
+
+That's it! 🚀
+
+Tyler - let me know how it goes!
