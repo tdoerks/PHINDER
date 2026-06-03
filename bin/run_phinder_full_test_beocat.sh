@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=phinder_full
-#SBATCH --partition=ksu-gen-bio
+#SBATCH --partition=batch.q
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
