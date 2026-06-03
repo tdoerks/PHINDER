@@ -15,6 +15,7 @@ include { VIBRANT } from '../modules/vibrant'
 include { DIAMOND_PROPHAGE } from '../modules/diamond_prophage'
 include { PHANOTATE } from '../modules/phanotate'
 include { MULTIQC } from '../modules/multiqc'
+include { PHINDER_SUMMARY } from '../modules/phinder_summary'
 
 workflow PHINDER_PIPELINE {
 
@@ -112,9 +113,30 @@ workflow PHINDER_PIPELINE {
     MULTIQC(ch_multiqc_files.collect().ifEmpty([]))
     ch_versions = ch_versions.mix(MULTIQC.out.versions)
 
+    // STEP 11: PHINDER Summary Report
+    // Wait for all analyses to complete, then generate summary
+    ch_all_complete = Channel.empty()
+    if (!params.skip_checkv) {
+        ch_all_complete = ch_all_complete.mix(CHECKV.out.quality_summary)
+    }
+    if (!params.skip_pharokka) {
+        ch_all_complete = ch_all_complete.mix(PHAROKKA.out.tsv)
+    }
+    if (!params.skip_vibrant) {
+        ch_all_complete = ch_all_complete.mix(VIBRANT.out.results)
+    }
+    if (!params.skip_assembly) {
+        ch_all_complete = ch_all_complete.mix(QUAST.out.results)
+    }
+
+    // Generate summary when all samples are done
+    PHINDER_SUMMARY(ch_all_complete.collect())
+    ch_versions = ch_versions.mix(PHINDER_SUMMARY.out.versions)
+
     emit:
     versions = ch_versions
     multiqc_report = MULTIQC.out.report
+    phinder_summary = PHINDER_SUMMARY.out.html
 }
 
 /*
