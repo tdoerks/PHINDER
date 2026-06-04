@@ -3,17 +3,18 @@
 #SBATCH --partition=batch.q
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
-#SBATCH --time=12:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G
+#SBATCH --time=24:00:00
 #SBATCH --output=phinder_3phages_%j.log
 #SBATCH --error=phinder_3phages_%j.err
 
 #==============================================================================
-# PHINDER Beocat - 3 Phage Test (Conservative Resources)
+# PHINDER Beocat - 3 Phage Test (Local Executor)
 #==============================================================================
 # Runs PHINDER with Lambda, T4, and T7 phages
-# Uses conservative resource settings to avoid SLURM termination
+# Uses LOCAL executor within a single large SLURM job allocation
+# Allocates 128GB/16 CPUs for Nextflow to manage internally
 #==============================================================================
 
 set -euo pipefail
@@ -33,7 +34,7 @@ OUTDIR="results_3phages_$(date +%Y%m%d_%H%M%S)"
 #------------------------------------------------------------------------------
 
 echo "========================================"
-echo "  PHINDER 3-Phage Test (Conservative)"
+echo "  PHINDER 3-Phage Test (Local Mode)"
 echo "========================================"
 echo ""
 echo "Job ID: ${SLURM_JOB_ID}"
@@ -71,7 +72,7 @@ nextflow run main.nf \
     --input_mode sra \
     --outdir ${OUTDIR} \
     -work-dir work_3phages \
-    -profile slurm \
+    -profile local \
     -resume \
     -with-report ${OUTDIR}/phinder_report.html \
     -with-timeline ${OUTDIR}/phinder_timeline.html
