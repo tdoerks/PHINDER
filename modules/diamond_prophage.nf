@@ -1,7 +1,7 @@
 process DIAMOND_PROPHAGE {
     tag "$sample_id"
     publishDir "${params.outdir}/diamond_prophage", mode: 'copy'
-    container = 'docker://staphb/diamond:2.0.15'
+    container = 'docker://quay.io/biocontainers/diamond:2.1.8--h43eeafb_0'
 
     input:
     tuple val(sample_id), path(assembly)
