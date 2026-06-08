@@ -29,23 +29,24 @@ params {
 }
 ```
 
-### 2. Pharokka Database (Auto-downloaded)
+### 2. Pharokka Database (REQUIRED — manual, one-time)
 
-Pharokka will automatically download its database on first run (~800 MB). Alternatively, pre-download:
+> **Important:** Pharokka does **not** download its database at runtime. The
+> `pharokka.py` annotation run needs the PHROGs database to already exist, and
+> the BioContainers image does **not** bundle it. You must install it once with
+> `install_databases.py` and point `pharokka_db` at it, or every run fails at
+> the PHAROKKA step.
 
-**Pre-download (optional):**
+**Install once (via the pipeline's own container, no conda needed):**
 ```bash
-# Install pharokka
-conda install -c bioconda pharokka
-
-# Download database
-pharokka.py --install-databases --database_dir ~/databases/pharokka_db
+apptainer exec docker://quay.io/biocontainers/pharokka:1.7.0--pyhdfd78af_0 \
+    install_databases.py -o /fastscratch/tylerdoe/databases/pharokka_db
 ```
 
-**Update `nextflow.config` (optional):**
+**Set in `nextflow.config`** (already defaulted to this path):
 ```groovy
 params {
-    pharokka_db = '/path/to/pharokka_db'
+    pharokka_db = '/fastscratch/tylerdoe/databases/pharokka_db'
 }
 ```
 
@@ -105,7 +106,7 @@ ls -lh ~/databases/pharokka_db/
 | Database | Size | Auto-download |
 |----------|------|---------------|
 | CheckV | ~1.3 GB | No - manual |
-| Pharokka | ~800 MB | Yes (or manual) |
+| Pharokka | ~800 MB | No - manual (install_databases.py) |
 | Prophage DIAMOND | ~500 MB | No - manual |
 | VIBRANT | ~800 MB | Yes (first run) |
 

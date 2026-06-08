@@ -1,6 +1,6 @@
 process MULTIQC {
     publishDir "${params.outdir}/multiqc", mode: 'copy'
-    container = 'docker://ewels/multiqc:1.25.1'
+    container = 'docker://quay.io/biocontainers/multiqc:1.25.1--pyhdfd78af_0'
 
     input:
     path('*')

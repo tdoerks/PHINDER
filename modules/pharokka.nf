@@ -1,7 +1,7 @@
 process PHAROKKA {
     tag "$sample_id"
     publishDir "${params.outdir}/pharokka", mode: 'copy'
-    container = 'docker://gbouras13/pharokka:1.7.0'
+    container = 'docker://quay.io/biocontainers/pharokka:1.7.0--pyhdfd78af_0'
 
     input:
     tuple val(sample_id), path(assembly)
