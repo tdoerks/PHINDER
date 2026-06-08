@@ -39,9 +39,13 @@ params {
 
 **Install once (via the pipeline's own container, no conda needed):**
 ```bash
-apptainer exec docker://quay.io/biocontainers/pharokka:1.7.0--pyhdfd78af_0 \
+apptainer exec docker://quay.io/biocontainers/pharokka:1.7.5--pyhdfd78af_2 \
     install_databases.py -o /fastscratch/tylerdoe/databases/pharokka_db
 ```
+
+> Note: use build `1.7.5--pyhdfd78af_2`. The earlier `1.7.0--pyhdfd78af_0`
+> build ships an incompatible numpy/pandas pairing (`numpy.dtype size changed`
+> ABI error) that breaks both `install_databases.py` and `pharokka.py`.
 
 **Set in `nextflow.config`** (already defaulted to this path):
 ```groovy
