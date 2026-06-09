@@ -1,0 +1,4 @@
+sample,long_reads,platform
+Lambda,lambda_nanopore.fastq.gz,nanopore
+T4,t4_nanopore.fastq.gz,nanopore
+T7,t7_nanopore.fastq.gz,nanopore
