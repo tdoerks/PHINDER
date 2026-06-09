@@ -8,6 +8,8 @@
 #SBATCH --time=24:00:00
 #SBATCH --output=phinder_3phages_%j.log
 #SBATCH --error=phinder_3phages_%j.err
+#SBATCH --mail-user=tyler.tyler.d@gmail.com
+#SBATCH --mail-type=END,FAIL
 
 #==============================================================================
 # PHINDER Beocat - 3 Phage Test (Local Executor)
@@ -89,7 +91,7 @@ echo "End time: $(date)"
 echo ""
 
 if [ ${EXIT_CODE} -eq 0 ]; then
-    echo "✓ SUCCESS! All 3 phages analyzed"
+    echo "SUCCESS! All 3 phages analyzed"
     echo ""
     echo "Results in: ${OUTDIR}/"
     echo ""
@@ -102,7 +104,7 @@ if [ ${EXIT_CODE} -eq 0 ]; then
     echo "  - PHINDER Summary: ${OUTDIR}/summary/phinder_summary.html"
     echo "  - MultiQC: ${OUTDIR}/multiqc/multiqc_report.html"
 else
-    echo "✗ FAILED with exit code ${EXIT_CODE}"
+    echo "FAILED with exit code ${EXIT_CODE}"
     echo ""
     echo "Check logs:"
     echo "  - SLURM: phinder_3phages_${SLURM_JOB_ID}.{log,err}"
