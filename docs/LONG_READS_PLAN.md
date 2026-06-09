@@ -1,7 +1,7 @@
 # PHINDER Long-Read & Hybrid Assembly — Implementation Plan
 
 **Branch:** `feature/long-reads` (refreshed onto `main` @ ba109da — 2026-06-09)
-**Status:** Planning → Phase 1
+**Status:** Phase 1 IMPLEMENTED (untested) → verify tags + test → Phase 2
 **Scope:** Add Nanopore/PacBio (pure long-read) and Illumina+long-read (hybrid)
 assembly **alongside** the existing short-read SPAdes path. Short-read isolate
 mode on `main` is unchanged.
@@ -102,7 +102,7 @@ saga — never use `:latest`, audit the registry tag exists before wiring).
 
 ## 📋 Phases
 
-### Phase 1 — Pure long-read mode  ← START HERE
+### Phase 1 — Pure long-read mode  ✅ IMPLEMENTED (untested)
 1. `nanoplot.nf` (long-read QC) + `flye.nf` + `medaka.nf`
 2. Samplesheet parser: accept `long_reads` + `platform`; add `input_mode=long_reads`
 3. Skip fastp/FASTQC (short-read QC) on this path; run NanoPlot instead
@@ -133,6 +133,26 @@ saga — never use `:latest`, audit the registry tag exists before wiring).
 
 ---
 
+## ✅ Phase 1 implemented (commits on `feature/long-reads`, 2026-06-09)
+- `modules/nanoplot.nf`, `modules/flye.nf`, `modules/medaka.nf`
+- `workflows/phinder_pipeline.nf`: `input_mode='long_reads'` path
+  (NanoPlot QC → Flye → Medaka [nanopore only; pacbio HiFi passes through] →
+  existing downstream CheckV/Pharokka/VIBRANT/DIAMOND/Phanotate/Summary)
+- `nextflow.config`: params (`flye_read_type`, `medaka_model`, `skip_nanoplot`)
+  + NANOPLOT/FLYE/MEDAKA resource blocks
+- `samplesheet_longreads.csv` (example), `bin/simulate_longreads.sh` (Badread dev data)
+
+**Before first run (REQUIRED):**
+1. **Verify every container tag resolves** (nanoplot/flye/medaka/badread) — the
+   build-hash suffixes are best-guess; confirm in the registry (hard lesson from
+   Pharokka 404 / CheckV DIAMOND skew). `apptainer pull` each before running.
+2. Generate dev test data: `bash bin/simulate_longreads.sh <ref.fasta> <id>`.
+3. Run `--input_mode long_reads --input samplesheet_longreads.csv` on a single
+   simulated phage; confirm Flye→Medaka→downstream completes.
+
+**Next: Phase 2 — hybrid** (`modules/polypolish.nf`, `input_mode='hybrid'`,
+Flye→Medaka→Polypolish). Note: Polypolish needs a short-read aligner (bwa/bwa-mem2)
+in the same step — container choice TBD.
+
 **Last Updated:** 2026-06-09
 **Maintainer:** Tyler Doerksen
-**Next:** implement Phase 1 — `flye.nf` + `nanoplot.nf` + `medaka.nf`, simulated test data
