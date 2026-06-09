@@ -22,6 +22,32 @@ tar -xzf checkv-db-v1.5.tar.gz
 ls -lh checkv-db-v1.5/
 ```
 
+**REQUIRED: rebuild the DIAMOND database with the container's own DIAMOND.**
+
+The `checkv_reps.dmnd` shipped in the CheckV download is built with a *newer*
+DIAMOND than the one bundled in the `checkv:1.0.2` container (db build 167 vs
+container build 162). `diamond dbinfo` reads it fine (header only), but the
+completeness step's `diamond blastp` fails with the misleading message
+`DIAMOND task failed. Program should be rerun.` — while contamination (HMMER)
+succeeds. Rebuild the `.dmnd` from the bundled `checkv_reps.faa` using the
+container's DIAMOND so the database build matches the binary:
+
+```bash
+cd checkv-db-v1.5/genome_db
+mv checkv_reps.dmnd checkv_reps.dmnd.orig   # keep the original
+apptainer exec docker://quay.io/biocontainers/checkv:1.0.2--pyhdfd78af_0 \
+    diamond makedb --in checkv_reps.faa --db checkv_reps
+```
+
+This is a one-time step per database install. Confirm it worked:
+```bash
+apptainer exec docker://quay.io/biocontainers/checkv:1.0.2--pyhdfd78af_0 \
+    diamond blastp --query <any_proteins.faa> \
+    --db checkv-db-v1.5/genome_db/checkv_reps.dmnd \
+    --out /tmp/test.tsv --outfmt 6 --threads 4 --tmpdir /tmp
+# Exit 0 + alignments reported = good. See bin/diagnose_checkv_diamond.sh.
+```
+
 **Update `nextflow.config`:**
 ```groovy
 params {
