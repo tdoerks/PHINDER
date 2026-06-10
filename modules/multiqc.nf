@@ -6,8 +6,12 @@ process MULTIQC {
     path('*')
 
     output:
-    path "multiqc_report.html", emit: report
-    path "multiqc_data", emit: data
+    // MultiQC prefixes outputs with the sanitized --title (e.g.
+    // "PHINDER-Report_multiqc_report.html" / "..._multiqc_report_data"), so
+    // match with globs rather than fixed names — otherwise Nextflow reports a
+    // missing output and fails the process even though multiqc exits 0.
+    path "*multiqc_report.html", emit: report
+    path "*_data", emit: data
     path "versions.yml", emit: versions
 
     script:
