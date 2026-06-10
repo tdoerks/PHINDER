@@ -8,6 +8,8 @@
 #SBATCH --time=4:00:00
 #SBATCH --output=phinder_lr_smoke_%j.log
 #SBATCH --error=phinder_lr_smoke_%j.err
+#SBATCH --mail-user=tylerdoe@ksu.edu
+#SBATCH --mail-type=END,FAIL
 #==============================================================================
 # PHINDER long-read (Phase 1) test on Beocat
 #==============================================================================
