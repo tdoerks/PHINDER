@@ -53,4 +53,5 @@ fi
 nextflow run main.nf -profile local \
     --input_mode long_reads --input "${SHEET}" \
     ${SKIP_ARGS} \
-    --outdir "${OUTDIR}"
+    --outdir "${OUTDIR}" \
+    -resume   # reuse cached steps (e.g. a prior successful Flye) across reruns
