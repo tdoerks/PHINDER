@@ -1,8 +1,8 @@
 process MEDAKA {
     tag "$sample_id"
     publishDir "${params.outdir}/assemblies", mode: 'copy', pattern: "${sample_id}_assembly.fasta"
-    // VERIFY container tag resolves in registry before first run
-    container = 'quay.io/biocontainers/medaka:1.11.3--py39h05d5c5e_2'
+    // Verified on quay.io/biocontainers (2026-06-10); build _0 (the _2 hash never existed)
+    container = 'quay.io/biocontainers/medaka:1.11.3--py39h05d5c5e_0'
 
     input:
     tuple val(sample_id), path(draft), path(long_reads), val(platform)

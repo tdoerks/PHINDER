@@ -2,8 +2,8 @@ process FLYE {
     tag "$sample_id"
     publishDir "${params.outdir}/assemblies", mode: 'copy', pattern: "${sample_id}_assembly.fasta"
     publishDir "${params.outdir}/flye", mode: 'copy', pattern: "${sample_id}_flye.log"
-    // VERIFY container tag resolves in registry before first run
-    container = 'quay.io/biocontainers/flye:2.9.5--py39hdd1f253_0'
+    // Verified on quay.io/biocontainers (2026-06-10)
+    container = 'quay.io/biocontainers/flye:2.9.5--py39hdf45acc_0'
 
     input:
     tuple val(sample_id), path(long_reads), val(platform)
