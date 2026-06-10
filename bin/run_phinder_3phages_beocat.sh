@@ -8,7 +8,7 @@
 #SBATCH --time=24:00:00
 #SBATCH --output=phinder_3phages_%j.log
 #SBATCH --error=phinder_3phages_%j.err
-#SBATCH --mail-user=tdoerks@vet.k-state.edu
+#SBATCH --mail-user=tylerdoe@ksu.edu
 #SBATCH --mail-type=END,FAIL
 
 #==============================================================================
