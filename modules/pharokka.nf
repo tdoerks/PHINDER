@@ -29,7 +29,8 @@ process PHAROKKA {
         -t ${task.cpus} \\
         -p ${sample_id} \\
         ${db_arg} \\
-        --force
+        --force \\
+        --meta
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
