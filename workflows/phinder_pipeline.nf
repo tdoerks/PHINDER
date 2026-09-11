@@ -129,7 +129,7 @@ workflow PHINDER_PIPELINE {
         ch_all_complete = ch_all_complete.mix(VIBRANT.out.quality)
     }
     if (!params.skip_assembly) {
-        ch_all_complete = ch_all_complete.mix(QUAST.out.tsv)
+        ch_all_complete = ch_all_complete.mix(QUAST.out.quast_dir)
     }
 
     // Generate summary when all samples are done
