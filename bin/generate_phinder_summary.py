@@ -55,31 +55,25 @@ def parse_quast_report(quast_dir):
     }
 
 def parse_pharokka_results(pharokka_dir):
-    """Parse Pharokka annotation results"""
-    functions_file = Path(pharokka_dir) / f"{pharokka_dir.name.replace('_pharokka', '')}_cds_functions.tsv"
-
-    if not functions_file.exists():
-        # Try alternative naming
-        functions_files = list(Path(pharokka_dir).glob("*_cds_functions.tsv"))
-        if functions_files:
-            functions_file = functions_files[0]
-        else:
-            return {'total_cds': 0, 'annotated': 0, 'hypothetical': 0}
+    """Parse Pharokka annotation results from _cds_functions.tsv category summary"""
+    functions_files = list(Path(pharokka_dir).glob("*_cds_functions.tsv"))
+    if not functions_files:
+        return {'total_cds': 0, 'annotated': 0, 'hypothetical': 0, 'annotation_rate': '0%'}
 
     total = 0
-    annotated = 0
     hypothetical = 0
 
-    with open(functions_file) as f:
+    with open(functions_files[0]) as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
-            total += 1
-            annotation = row.get('annot', '').lower()
-            if 'hypothetical' in annotation or not annotation:
-                hypothetical += 1
-            else:
-                annotated += 1
+            desc = row.get('Description', '').strip()
+            count = int(row.get('Count', 0))
+            if desc == 'CDS':
+                total = count
+            elif 'hypothetical' in desc.lower():
+                hypothetical += count
 
+    annotated = total - hypothetical
     return {
         'total_cds': total,
         'annotated': annotated,
@@ -395,8 +389,8 @@ def generate_html_report(samples, output_file):
                 <div class="label">Phages Analyzed</div>
             </div>
             <div class="stat-card">
-                <div class="value">{sum(1 for s in samples.values() if s['checkv'].get('checkv_quality') == 'Complete')}</div>
-                <div class="label">Complete Genomes</div>
+                <div class="value">{sum(1 for s in samples.values() if s['checkv'].get('checkv_quality') in ['Complete', 'High-quality'])}</div>
+                <div class="label">High-quality Genomes</div>
             </div>
             <div class="stat-card">
                 <div class="value">{sum(s['pharokka'].get('total_cds', 0) for s in samples.values())}</div>
