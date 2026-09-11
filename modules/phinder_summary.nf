@@ -24,8 +24,9 @@ process PHINDER_SUMMARY {
     print("=" * 60)
     print()
 
-    print("Collecting sample data from: ${params.outdir}")
-    samples = collect_sample_data('${params.outdir}')
+    outdir = '${launchDir}/${params.outdir}'
+    print(f"Collecting sample data from: {outdir}")
+    samples = collect_sample_data(outdir)
     print(f"  Found {len(samples)} samples")
     print()
 
