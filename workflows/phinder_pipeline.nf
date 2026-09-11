@@ -78,7 +78,7 @@ workflow PHINDER_PIPELINE {
     // STEP 4: Assembly Quality Assessment
     if (!params.skip_assembly) {
         QUAST(ch_assemblies)
-        ch_multiqc_files = ch_multiqc_files.mix(QUAST.out.tsv)
+        ch_multiqc_files = ch_multiqc_files.mix(QUAST.out.quast_dir)
         ch_versions = ch_versions.mix(QUAST.out.versions.first())
     }
 

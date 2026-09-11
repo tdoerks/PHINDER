@@ -23,6 +23,9 @@ process PHAROKKA {
     script:
     def db_arg = params.pharokka_db ? "-d ${params.pharokka_db}" : ""
     """
+    contig_count=\$(grep -c '^>' ${assembly})
+    meta_flag=\$([ "\$contig_count" -gt 1 ] && echo "--meta" || echo "")
+
     pharokka.py \\
         -i ${assembly} \\
         -o ${sample_id}_pharokka \\
@@ -30,7 +33,7 @@ process PHAROKKA {
         -p ${sample_id} \\
         ${db_arg} \\
         --force \\
-        --meta
+        \$meta_flag
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

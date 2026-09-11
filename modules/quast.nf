@@ -8,7 +8,7 @@ process QUAST {
 
     output:
     tuple val(sample_id), path("${sample_id}_quast"), emit: results
-    path "${sample_id}_quast/report.tsv", emit: tsv
+    path "${sample_id}_quast", emit: quast_dir
     path "versions.yml", emit: versions
 
     script:
