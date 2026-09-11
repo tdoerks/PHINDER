@@ -87,6 +87,28 @@ def parse_pharokka_results(pharokka_dir):
         'annotation_rate': f"{(annotated/total*100):.1f}%" if total > 0 else "0%"
     }
 
+def parse_bacphlip_results(bacphlip_dir, sample_id):
+    """Parse BacPhlip lifestyle prediction"""
+    pred_file = Path(bacphlip_dir) / f"{sample_id}.bacphlip"
+    if not pred_file.exists():
+        pred_files = list(Path(bacphlip_dir).glob("*.bacphlip"))
+        if not pred_files:
+            return {'lifestyle': 'Not determined', 'virulent_prob': 'N/A', 'temperate_prob': 'N/A'}
+        pred_file = pred_files[0]
+
+    with open(pred_file) as f:
+        reader = csv.DictReader(f, delimiter='\t')
+        for row in reader:
+            virulent = float(row.get('Virulent', 0))
+            temperate = float(row.get('Temperate', 0))
+            lifestyle = 'Virulent (lytic)' if virulent >= 0.5 else 'Temperate (lysogenic)'
+            return {
+                'lifestyle': lifestyle,
+                'virulent_prob': f"{virulent:.3f}",
+                'temperate_prob': f"{temperate:.3f}"
+            }
+    return {'lifestyle': 'Not determined', 'virulent_prob': 'N/A', 'temperate_prob': 'N/A'}
+
 def parse_vibrant_results(vibrant_dir):
     """Parse VIBRANT lifestyle prediction"""
     quality_file = list(Path(vibrant_dir).glob("**/VIBRANT_genome_quality*.tsv"))
@@ -128,7 +150,8 @@ def collect_sample_data(outdir):
             'checkv': {},
             'quast': {},
             'pharokka': {},
-            'vibrant': {}
+            'vibrant': {},
+            'bacphlip': {}
         }
 
         # CheckV
@@ -150,6 +173,11 @@ def collect_sample_data(outdir):
         vibrant_dir = Path(outdir) / "vibrant" / f"{sample_id}_vibrant"
         if vibrant_dir.exists():
             samples[sample_id]['vibrant'] = parse_vibrant_results(vibrant_dir)
+
+        # BacPhlip
+        bacphlip_dir = Path(outdir) / "bacphlip"
+        if bacphlip_dir.exists():
+            samples[sample_id]['bacphlip'] = parse_bacphlip_results(bacphlip_dir, sample_id)
 
     return samples
 
@@ -456,11 +484,23 @@ def generate_html_report(samples, output_file):
                 </div>
             </div>
 
-            <div class="section-title">Lifestyle Prediction (VIBRANT)</div>
+            <div class="section-title">Lifestyle Prediction</div>
             <div class="metrics-grid">
                 <div class="metric-box">
-                    <div class="metric-label">Predicted Lifestyle</div>
+                    <div class="metric-label">VIBRANT</div>
                     <div class="metric-value {lifestyle_class}">{lifestyle}</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">BacPhlip</div>
+                    <div class="metric-value">{data['bacphlip'].get('lifestyle', 'Not determined')}</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">BacPhlip Virulent Prob</div>
+                    <div class="metric-value">{data['bacphlip'].get('virulent_prob', 'N/A')}</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">BacPhlip Temperate Prob</div>
+                    <div class="metric-value">{data['bacphlip'].get('temperate_prob', 'N/A')}</div>
                 </div>
             </div>
         </div>

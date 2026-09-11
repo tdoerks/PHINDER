@@ -14,6 +14,7 @@ include { PHAROKKA } from '../modules/pharokka'
 include { VIBRANT } from '../modules/vibrant'
 include { DIAMOND_PROPHAGE } from '../modules/diamond_prophage'
 include { PHANOTATE } from '../modules/phanotate'
+include { BACPHLIP } from '../modules/bacphlip'
 include { MULTIQC } from '../modules/multiqc'
 include { PHINDER_SUMMARY } from '../modules/phinder_summary'
 
@@ -112,7 +113,13 @@ workflow PHINDER_PIPELINE {
         ch_versions = ch_versions.mix(PHANOTATE.out.versions.first())
     }
 
-    // STEP 10: MultiQC Report
+    // STEP 10: BacPhlip Lifestyle Prediction
+    if (!params.skip_bacphlip) {
+        BACPHLIP(ch_assemblies)
+        ch_versions = ch_versions.mix(BACPHLIP.out.versions.first())
+    }
+
+    // STEP 11: MultiQC Report
     MULTIQC(ch_multiqc_files.collect().ifEmpty([]))
     ch_versions = ch_versions.mix(MULTIQC.out.versions)
 
@@ -127,6 +134,9 @@ workflow PHINDER_PIPELINE {
     }
     if (!params.skip_vibrant) {
         ch_all_complete = ch_all_complete.mix(VIBRANT.out.quality)
+    }
+    if (!params.skip_bacphlip) {
+        ch_all_complete = ch_all_complete.mix(BACPHLIP.out.predictions)
     }
     if (!params.skip_assembly) {
         ch_all_complete = ch_all_complete.mix(QUAST.out.quast_dir)
