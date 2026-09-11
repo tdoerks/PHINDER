@@ -105,16 +105,23 @@ def parse_bacphlip_results(bacphlip_dir, sample_id):
 
 def parse_vibrant_results(vibrant_dir):
     """Parse VIBRANT lifestyle prediction"""
-    quality_file = list(Path(vibrant_dir).glob("**/VIBRANT_genome_quality*.tsv"))
+    # VIBRANT names output after contig ID not sample name — use glob
+    quality_files = list(Path(vibrant_dir).glob("**/VIBRANT_genome_quality_*.tsv"))
 
-    if not quality_file:
+    if not quality_files:
         return {'lifestyle': 'Not determined', 'confidence': 'N/A'}
 
-    with open(quality_file[0]) as f:
+    with open(quality_files[0]) as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
+            lifestyle = row.get('type', 'Not determined')
+            # Normalize VIBRANT output to readable labels
+            if lifestyle == 'lytic':
+                lifestyle = 'Lytic'
+            elif lifestyle in ('lysogenic', 'temperate'):
+                lifestyle = 'Temperate (lysogenic)'
             return {
-                'lifestyle': row.get('type', 'Not determined'),
+                'lifestyle': lifestyle,
                 'confidence': row.get('score', 'N/A')
             }
 
@@ -397,7 +404,7 @@ def generate_html_report(samples, output_file):
                 <div class="label">Total Genes</div>
             </div>
             <div class="stat-card">
-                <div class="value">{sum(1 for s in samples.values() if 'lytic' in s['vibrant'].get('lifestyle', '').lower())}</div>
+                <div class="value">{sum(1 for s in samples.values() if 'lytic' in s['vibrant'].get('lifestyle', '').lower() or 'virulent' in s['bacphlip'].get('lifestyle', '').lower())}</div>
                 <div class="label">Lytic Phages</div>
             </div>
         </div>
