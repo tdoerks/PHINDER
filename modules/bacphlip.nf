@@ -13,7 +13,10 @@ process BACPHLIP {
 
     script:
     """
-    bacphlip -i ${assembly} --multi_fasta
+    contig_count=\$(grep -c '^>' ${assembly})
+    multi_flag=\$([ "\$contig_count" -gt 1 ] && echo "--multi_fasta" || echo "")
+
+    bacphlip -i ${assembly} \$multi_flag
 
     # bacphlip names output after the input file — rename to sample_id
     mv ${assembly}.bacphlip ${sample_id}.bacphlip
