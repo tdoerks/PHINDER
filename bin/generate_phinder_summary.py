@@ -108,40 +108,48 @@ def collect_sample_data(outdir):
     """Collect data for all samples"""
     samples = {}
 
-    # Find all assemblies
-    assembly_dir = Path(outdir) / "assemblies"
-    if assembly_dir.exists():
-        for assembly_file in assembly_dir.glob("*_assembly.fasta"):
-            sample_id = assembly_file.stem.replace('_assembly', '')
+    # Discover samples from QUAST dirs (works for all input modes including assembly)
+    quast_base = Path(outdir) / "quast"
+    sample_ids = set()
+    if quast_base.exists():
+        for quast_dir in quast_base.glob("*_quast"):
+            sample_ids.add(quast_dir.name.replace('_quast', ''))
 
-            samples[sample_id] = {
-                'sample_id': sample_id,
-                'assembly_file': str(assembly_file),
-                'checkv': {},
-                'quast': {},
-                'pharokka': {},
-                'vibrant': {}
-            }
+    # Fall back: discover from assemblies dir (reads/SRA mode)
+    if not sample_ids:
+        assembly_dir = Path(outdir) / "assemblies"
+        if assembly_dir.exists():
+            for f in assembly_dir.glob("*_assembly.fasta"):
+                sample_ids.add(f.stem.replace('_assembly', ''))
 
-            # CheckV
-            checkv_dir = Path(outdir) / "checkv" / f"{sample_id}_checkv"
-            if checkv_dir.exists():
-                samples[sample_id]['checkv'] = parse_checkv_quality(checkv_dir)
+    for sample_id in sorted(sample_ids):
+        samples[sample_id] = {
+            'sample_id': sample_id,
+            'checkv': {},
+            'quast': {},
+            'pharokka': {},
+            'vibrant': {}
+        }
 
-            # QUAST
-            quast_dir = Path(outdir) / "quast" / f"{sample_id}_quast"
-            if quast_dir.exists():
-                samples[sample_id]['quast'] = parse_quast_report(quast_dir)
+        # CheckV
+        checkv_dir = Path(outdir) / "checkv" / f"{sample_id}_checkv"
+        if checkv_dir.exists():
+            samples[sample_id]['checkv'] = parse_checkv_quality(checkv_dir)
 
-            # Pharokka
-            pharokka_dir = Path(outdir) / "pharokka" / f"{sample_id}_pharokka"
-            if pharokka_dir.exists():
-                samples[sample_id]['pharokka'] = parse_pharokka_results(pharokka_dir)
+        # QUAST
+        quast_dir = Path(outdir) / "quast" / f"{sample_id}_quast"
+        if quast_dir.exists():
+            samples[sample_id]['quast'] = parse_quast_report(quast_dir)
 
-            # VIBRANT
-            vibrant_dir = Path(outdir) / "vibrant" / f"{sample_id}_vibrant"
-            if vibrant_dir.exists():
-                samples[sample_id]['vibrant'] = parse_vibrant_results(vibrant_dir)
+        # Pharokka
+        pharokka_dir = Path(outdir) / "pharokka" / f"{sample_id}_pharokka"
+        if pharokka_dir.exists():
+            samples[sample_id]['pharokka'] = parse_pharokka_results(pharokka_dir)
+
+        # VIBRANT
+        vibrant_dir = Path(outdir) / "vibrant" / f"{sample_id}_vibrant"
+        if vibrant_dir.exists():
+            samples[sample_id]['vibrant'] = parse_vibrant_results(vibrant_dir)
 
     return samples
 
