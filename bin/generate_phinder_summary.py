@@ -137,6 +137,20 @@ def parse_amrfinderplus_results(amrfinder_dir, sample_id):
             'stress': stress, 'genes': genes}
 
 
+def parse_phageterm_results(phageterm_dir, sample_id):
+    """Parse PhageTerm packaging strategy output (reads mode only)"""
+    strategy_file = Path(phageterm_dir) / sample_id / f"{sample_id}_phageterm_strategy.txt"
+    if not strategy_file.exists():
+        alt = list(Path(phageterm_dir).glob(f"{sample_id}/*_phageterm_strategy.txt"))
+        if not alt:
+            return {'strategy': None}  # None = module not run (assembly mode)
+        strategy_file = alt[0]
+    with open(strategy_file) as f:
+        content = f.read().strip()
+    strategy = content.split('\n')[0].strip() if content else 'Unknown'
+    return {'strategy': strategy if strategy else 'Unknown'}
+
+
 def parse_bacphlip_results(bacphlip_dir, sample_id):
     pred_file = Path(bacphlip_dir) / f"{sample_id}.bacphlip"
     if not pred_file.exists():
@@ -194,7 +208,7 @@ def collect_sample_data(outdir):
         samples[sample_id] = {
             'sample_id': sample_id,
             'checkv': {}, 'quast': {}, 'pharokka': {}, 'vibrant': {}, 'bacphlip': {},
-            'amrfinderplus': {}
+            'amrfinderplus': {}, 'phageterm': {}
         }
         checkv_dir = Path(outdir) / "checkv" / f"{sample_id}_checkv"
         if checkv_dir.exists():
@@ -214,6 +228,9 @@ def collect_sample_data(outdir):
         amrfinder_dir = Path(outdir) / "amrfinderplus"
         if amrfinder_dir.exists():
             samples[sample_id]['amrfinderplus'] = parse_amrfinderplus_results(amrfinder_dir, sample_id)
+        phageterm_dir = Path(outdir) / "phageterm"
+        if phageterm_dir.exists():
+            samples[sample_id]['phageterm'] = parse_phageterm_results(phageterm_dir, sample_id)
 
     return samples
 
@@ -284,6 +301,9 @@ def build_overview_rows(samples):
         amr = d['pharokka'].get('amr_genes', 0)
         amr_badge = (f'<span style="color:var(--bad);font-weight:700">{amr}</span>'
                      if amr > 0 else f'<span style="color:var(--good)">{amr}</span>')
+        pkg = d['phageterm'].get('strategy', None)
+        pkg_cell = (f'<span style="color:var(--muted)">—</span>' if pkg is None
+                    else f'<span class="badge badge-nd">{pkg}</span>')
         rows.append(f"""<tr>
           <td><strong>{sid}</strong></td>
           <td>{size}</td>
@@ -294,6 +314,7 @@ def build_overview_rows(samples):
           <td>{ann_rate}</td>
           <td>{_lbadge(vib)}</td>
           <td>{_lbadge(bp)}</td>
+          <td>{pkg_cell}</td>
           <td>{amr_badge}</td>
         </tr>""")
     return '\n'.join(rows)
@@ -480,7 +501,8 @@ def generate_tsv_report(samples, output_file):
             'checkv_quality', 'completeness', 'contamination', 'miuvig_quality',
             'total_genes', 'annotated_genes', 'unknown_genes', 'annotation_rate',
             'trnas', 'crisprs', 'amr_genes', 'virulence_factors',
-            'vibrant_lifestyle', 'bacphlip_lifestyle', 'bacphlip_virulent_prob'
+            'vibrant_lifestyle', 'bacphlip_lifestyle', 'bacphlip_virulent_prob',
+            'phageterm_packaging_strategy'
         ])
         for sample_id, data in samples.items():
             writer.writerow([
@@ -503,7 +525,8 @@ def generate_tsv_report(samples, output_file):
                 data['pharokka'].get('virulence_factors', 0),
                 data['vibrant'].get('lifestyle', 'N/A'),
                 data['bacphlip'].get('lifestyle', 'N/A'),
-                data['bacphlip'].get('virulent_prob', 'N/A')
+                data['bacphlip'].get('virulent_prob', 'N/A'),
+                data['phageterm'].get('strategy', 'N/A')
             ])
 
 
