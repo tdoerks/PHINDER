@@ -119,6 +119,7 @@ a { color:var(--accent); text-decoration:none; }
   <button onclick="showTab('lifestyle',this)">Lifestyle</button>
   <button onclick="showTab('annotation',this)">Annotation</button>
   <button onclick="showTab('quality',this)">Quality</button>
+  <button onclick="showTab('taxonomy',this)">Taxonomy</button>
   <button onclick="showTab('safety',this)">AMR &amp; VF</button>
 </div>
 
@@ -138,6 +139,7 @@ a { color:var(--accent); text-decoration:none; }
         <th>VIBRANT</th>
         <th>BacPhlip</th>
         <th>Packaging</th>
+        <th>Family (geNomad)</th>
         <th>AMR Genes</th>
       </tr></thead>
       <tbody>__OVERVIEW_ROWS__</tbody>
@@ -203,6 +205,29 @@ a { color:var(--accent); text-decoration:none; }
       </tr></thead>
       <tbody>__QUALITY_ROWS__</tbody>
     </table>
+  </div>
+</div>
+
+<!-- TAXONOMY TAB -->
+<div id="taxonomy" class="tab">
+  <div class="sec-head">geNomad — ICTV Virus Classification &amp; Taxonomy</div>
+  <div class="panel">
+    <table>
+      <thead><tr>
+        <th>Phage</th>
+        <th>Virus Score</th>
+        <th>Topology</th>
+        <th>Hallmarks</th>
+        <th>Class</th>
+        <th>Order</th>
+        <th>Family</th>
+        <th>Genus</th>
+      </tr></thead>
+      <tbody>__TAXONOMY_ROWS__</tbody>
+    </table>
+  </div>
+  <div style="color:var(--muted);font-size:0.8em;margin-top:8px;">
+    Virus score ≥ 0.9 = high confidence viral. Taxonomy follows ICTV 2023 classification via geNomad 1.12.0.
   </div>
 </div>
 
