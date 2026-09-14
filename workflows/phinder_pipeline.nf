@@ -15,6 +15,7 @@ include { VIBRANT } from '../modules/vibrant'
 include { DIAMOND_PROPHAGE } from '../modules/diamond_prophage'
 include { PHANOTATE } from '../modules/phanotate'
 include { BACPHLIP } from '../modules/bacphlip'
+include { AMRFINDERPLUS } from '../modules/amrfinderplus'
 include { MULTIQC } from '../modules/multiqc'
 include { PHINDER_SUMMARY } from '../modules/phinder_summary'
 
@@ -119,11 +120,17 @@ workflow PHINDER_PIPELINE {
         ch_versions = ch_versions.mix(BACPHLIP.out.versions.first())
     }
 
-    // STEP 11: MultiQC Report
+    // STEP 11: AMRFinder Plus (AMR + virulence + stress gene screening)
+    if (!params.skip_amrfinderplus) {
+        AMRFINDERPLUS(ch_assemblies)
+        ch_versions = ch_versions.mix(AMRFINDERPLUS.out.versions.first())
+    }
+
+    // STEP 12: MultiQC Report
     MULTIQC(ch_multiqc_files.collect().ifEmpty([]))
     ch_versions = ch_versions.mix(MULTIQC.out.versions)
 
-    // STEP 11: PHINDER Summary Report
+    // STEP 13: PHINDER Summary Report
     // Wait for all analyses to complete, then generate summary
     ch_all_complete = Channel.empty()
     if (!params.skip_checkv) {
@@ -137,6 +144,9 @@ workflow PHINDER_PIPELINE {
     }
     if (!params.skip_bacphlip) {
         ch_all_complete = ch_all_complete.mix(BACPHLIP.out.predictions)
+    }
+    if (!params.skip_amrfinderplus) {
+        ch_all_complete = ch_all_complete.mix(AMRFINDERPLUS.out.report)
     }
     if (!params.skip_assembly) {
         ch_all_complete = ch_all_complete.mix(QUAST.out.quast_dir)

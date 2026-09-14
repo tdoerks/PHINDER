@@ -109,6 +109,34 @@ def parse_pharokka_results(pharokka_dir):
     }
 
 
+def parse_amrfinderplus_results(amrfinder_dir, sample_id):
+    """Parse AMRFinder Plus output TSV (--plus mode includes AMR, VIRULENCE, STRESS)"""
+    report_file = Path(amrfinder_dir) / f"{sample_id}_amrfinder.tsv"
+    if not report_file.exists():
+        files = list(Path(amrfinder_dir).glob(f"*_amrfinder.tsv"))
+        if not files:
+            return {'total': 0, 'amr': 0, 'virulence': 0, 'stress': 0, 'genes': []}
+        report_file = files[0]
+
+    total = 0; amr = 0; virulence = 0; stress = 0; genes = []
+    with open(report_file) as f:
+        reader = csv.DictReader(f, delimiter='\t')
+        for row in reader:
+            total += 1
+            etype = row.get('Element type', '').upper()
+            symbol = row.get('Gene symbol', '')
+            if etype == 'AMR':
+                amr += 1
+            elif etype == 'VIRULENCE':
+                virulence += 1
+            elif etype == 'STRESS':
+                stress += 1
+            if symbol:
+                genes.append(f"{symbol} ({etype})")
+    return {'total': total, 'amr': amr, 'virulence': virulence,
+            'stress': stress, 'genes': genes}
+
+
 def parse_bacphlip_results(bacphlip_dir, sample_id):
     pred_file = Path(bacphlip_dir) / f"{sample_id}.bacphlip"
     if not pred_file.exists():
@@ -165,7 +193,8 @@ def collect_sample_data(outdir):
     for sample_id in sorted(sample_ids):
         samples[sample_id] = {
             'sample_id': sample_id,
-            'checkv': {}, 'quast': {}, 'pharokka': {}, 'vibrant': {}, 'bacphlip': {}
+            'checkv': {}, 'quast': {}, 'pharokka': {}, 'vibrant': {}, 'bacphlip': {},
+            'amrfinderplus': {}
         }
         checkv_dir = Path(outdir) / "checkv" / f"{sample_id}_checkv"
         if checkv_dir.exists():
@@ -182,6 +211,9 @@ def collect_sample_data(outdir):
         bacphlip_dir = Path(outdir) / "bacphlip"
         if bacphlip_dir.exists():
             samples[sample_id]['bacphlip'] = parse_bacphlip_results(bacphlip_dir, sample_id)
+        amrfinder_dir = Path(outdir) / "amrfinderplus"
+        if amrfinder_dir.exists():
+            samples[sample_id]['amrfinderplus'] = parse_amrfinderplus_results(amrfinder_dir, sample_id)
 
     return samples
 
@@ -347,22 +379,39 @@ def build_safety_rows(samples):
     rows = []
     for sid, d in samples.items():
         p = d['pharokka']
+        af = d.get('amrfinderplus', {})
         amr = p.get('amr_genes', 0)
         vf = p.get('virulence_factors', 0)
         integ = p.get('categories', {}).get('integration/excision', 0)
-        safe = amr == 0 and vf == 0
+        af_total = af.get('total', None)  # None = not run
+        af_amr = af.get('amr', 0)
+        af_vir = af.get('virulence', 0)
+        af_stress = af.get('stress', 0)
+        af_genes = af.get('genes', [])
+
+        safe = amr == 0 and vf == 0 and (af_total is None or af_amr == 0)
         amr_cell = (f'<span style="color:var(--bad);font-weight:700">{amr}</span>'
                     if amr > 0 else f'<span style="color:var(--good)">{amr}</span>')
         vf_cell = (f'<span style="color:var(--bad);font-weight:700">{vf}</span>'
                    if vf > 0 else f'<span style="color:var(--good)">{vf}</span>')
         integ_cell = (f'<span style="color:var(--warn)">{integ}</span>'
                       if integ > 0 else f'<span style="color:var(--muted)">{integ}</span>')
+        if af_total is None:
+            af_cell = '<span style="color:var(--muted)">—</span>'
+        elif af_total == 0:
+            af_cell = '<span style="color:var(--good)">0</span>'
+        else:
+            gene_list = ', '.join(af_genes[:5]) + ('…' if len(af_genes) > 5 else '')
+            af_cell = (f'<span style="color:var(--bad);font-weight:700">'
+                       f'AMR:{af_amr} VIR:{af_vir} STRESS:{af_stress}</span>'
+                       f'<br><small style="color:var(--muted)">{gene_list}</small>')
         safety_badge = ('<span class="badge badge-safe">✓ Safe</span>' if safe
                         else '<span class="badge badge-warn">⚠ Review Required</span>')
         rows.append(f"""<tr>
           <td><strong>{sid}</strong></td>
           <td>{amr_cell}</td>
           <td>{vf_cell}</td>
+          <td>{af_cell}</td>
           <td>{integ_cell}</td>
           <td>{safety_badge}</td>
         </tr>""")
