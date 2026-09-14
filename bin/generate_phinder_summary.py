@@ -137,6 +137,44 @@ def parse_amrfinderplus_results(amrfinder_dir, sample_id):
             'stress': stress, 'genes': genes}
 
 
+def parse_genomad_results(genomad_dir, sample_id):
+    """Parse geNomad virus_summary.tsv for taxonomy, virus score, topology"""
+    summary_file = Path(genomad_dir) / sample_id / f"{sample_id}_summary" / f"{sample_id}_virus_summary.tsv"
+    if not summary_file.exists():
+        return {'virus_score': None, 'taxonomy': '', 'topology': 'N/A',
+                'hallmarks': 0, 'family': None, 'genus': None}
+
+    best = None
+    with open(summary_file) as f:
+        reader = csv.DictReader(f, delimiter='\t')
+        for row in reader:
+            try:
+                score = float(row.get('virus_score', 0) or 0)
+            except ValueError:
+                score = 0
+            if best is None or score > float(best.get('virus_score', 0) or 0):
+                best = row
+
+    if not best:
+        return {'virus_score': None, 'taxonomy': '', 'topology': 'N/A',
+                'hallmarks': 0, 'family': None, 'genus': None}
+
+    taxonomy = best.get('taxonomy', '') or ''
+    parts = [p.strip() for p in taxonomy.split(';')]
+    # geNomad taxonomy: Viruses;kingdom;phylum;class;order;family;genus;species
+    family = parts[6] if len(parts) > 6 and parts[6] else None
+    genus  = parts[7] if len(parts) > 7 and parts[7] else None
+
+    return {
+        'virus_score': best.get('virus_score', 'N/A'),
+        'taxonomy': taxonomy,
+        'topology': best.get('topology', 'N/A'),
+        'hallmarks': int(best.get('n_hallmarks', 0) or 0),
+        'family': family,
+        'genus': genus
+    }
+
+
 def parse_phageterm_results(phageterm_dir, sample_id):
     """Parse PhageTerm packaging strategy output (reads mode only)"""
     strategy_file = Path(phageterm_dir) / sample_id / f"{sample_id}_phageterm_strategy.txt"
@@ -208,7 +246,7 @@ def collect_sample_data(outdir):
         samples[sample_id] = {
             'sample_id': sample_id,
             'checkv': {}, 'quast': {}, 'pharokka': {}, 'vibrant': {}, 'bacphlip': {},
-            'amrfinderplus': {}, 'phageterm': {}
+            'amrfinderplus': {}, 'genomad': {}, 'phageterm': {}
         }
         checkv_dir = Path(outdir) / "checkv" / f"{sample_id}_checkv"
         if checkv_dir.exists():
@@ -228,6 +266,9 @@ def collect_sample_data(outdir):
         amrfinder_dir = Path(outdir) / "amrfinderplus"
         if amrfinder_dir.exists():
             samples[sample_id]['amrfinderplus'] = parse_amrfinderplus_results(amrfinder_dir, sample_id)
+        genomad_dir = Path(outdir) / "genomad"
+        if genomad_dir.exists():
+            samples[sample_id]['genomad'] = parse_genomad_results(genomad_dir, sample_id)
         phageterm_dir = Path(outdir) / "phageterm"
         if phageterm_dir.exists():
             samples[sample_id]['phageterm'] = parse_phageterm_results(phageterm_dir, sample_id)
@@ -304,6 +345,16 @@ def build_overview_rows(samples):
         pkg = d['phageterm'].get('strategy', None)
         pkg_cell = (f'<span style="color:var(--muted)">—</span>' if pkg is None
                     else f'<span class="badge badge-nd">{pkg}</span>')
+        gd = d.get('genomad', {})
+        family = gd.get('family')
+        genus  = gd.get('genus')
+        if family or genus:
+            tax_cell = (f'<span style="color:var(--ink)">{family or "?"}</span>'
+                        + (f'<br><small style="color:var(--muted)">{genus}</small>' if genus else ''))
+        elif gd.get('virus_score') is not None:
+            tax_cell = '<span style="color:var(--muted)">Unclassified</span>'
+        else:
+            tax_cell = '<span style="color:var(--muted)">—</span>'
         rows.append(f"""<tr>
           <td><strong>{sid}</strong></td>
           <td>{size}</td>
@@ -315,6 +366,7 @@ def build_overview_rows(samples):
           <td>{_lbadge(vib)}</td>
           <td>{_lbadge(bp)}</td>
           <td>{pkg_cell}</td>
+          <td>{tax_cell}</td>
           <td>{amr_badge}</td>
         </tr>""")
     return '\n'.join(rows)
@@ -396,6 +448,43 @@ def build_quality_rows(samples):
     return '\n'.join(rows)
 
 
+def build_taxonomy_rows(samples):
+    rows = []
+    for sid, d in samples.items():
+        gd = d.get('genomad', {})
+        vs = gd.get('virus_score')
+        if vs is None:
+            rows.append(f"""<tr>
+              <td><strong>{sid}</strong></td>
+              <td colspan="6" style="color:var(--muted);text-align:center">geNomad not run</td>
+            </tr>""")
+            continue
+        try:
+            vs_f = float(vs)
+            score_color = 'var(--good)' if vs_f >= 0.9 else ('var(--warn)' if vs_f >= 0.7 else 'var(--bad)')
+            score_cell = f'<span style="color:{score_color};font-weight:700">{vs_f:.3f}</span>'
+        except (ValueError, TypeError):
+            score_cell = str(vs)
+
+        taxonomy = gd.get('taxonomy', '')
+        parts = [p.strip() for p in taxonomy.split(';')] if taxonomy else []
+
+        def _tpart(idx, fallback='—'):
+            return parts[idx] if len(parts) > idx and parts[idx] else f'<span style="color:var(--muted)">{fallback}</span>'
+
+        rows.append(f"""<tr>
+          <td><strong>{sid}</strong></td>
+          <td>{score_cell}</td>
+          <td>{gd.get('topology', 'N/A')}</td>
+          <td>{gd.get('hallmarks', 0)}</td>
+          <td>{_tpart(4)}</td>
+          <td>{_tpart(5)}</td>
+          <td>{_tpart(6)}</td>
+          <td>{_tpart(7)}</td>
+        </tr>""")
+    return '\n'.join(rows)
+
+
 def build_safety_rows(samples):
     rows = []
     for sid, d in samples.items():
@@ -472,6 +561,7 @@ def generate_html_report(samples, output_file):
         .replace('__LIFESTYLE_ROWS__', build_lifestyle_rows(samples))
         .replace('__ANNOTATION_ROWS__', build_annotation_rows(samples))
         .replace('__QUALITY_ROWS__', build_quality_rows(samples))
+        .replace('__TAXONOMY_ROWS__', build_taxonomy_rows(samples))
         .replace('__SAFETY_ROWS__', build_safety_rows(samples))
     )
 

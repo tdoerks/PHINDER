@@ -16,6 +16,7 @@ include { DIAMOND_PROPHAGE } from '../modules/diamond_prophage'
 include { PHANOTATE } from '../modules/phanotate'
 include { BACPHLIP } from '../modules/bacphlip'
 include { AMRFINDERPLUS } from '../modules/amrfinderplus'
+include { GENOMAD } from '../modules/genomad'
 include { PHAGETERM } from '../modules/phageterm'
 include { MULTIQC } from '../modules/multiqc'
 include { PHINDER_SUMMARY } from '../modules/phinder_summary'
@@ -127,18 +128,24 @@ workflow PHINDER_PIPELINE {
         ch_versions = ch_versions.mix(AMRFINDERPLUS.out.versions.first())
     }
 
-    // STEP 12: PhageTerm packaging strategy (reads/SRA mode only — requires raw reads)
+    // STEP 12: geNomad — virus classification, ICTV taxonomy, topology
+    if (!params.skip_genomad) {
+        GENOMAD(ch_assemblies)
+        ch_versions = ch_versions.mix(GENOMAD.out.versions.first())
+    }
+
+    // STEP 13: PhageTerm packaging strategy (reads/SRA mode only — requires raw reads)
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_phageterm) {
         ch_phageterm_input = ch_trimmed.join(ch_assemblies)
         PHAGETERM(ch_phageterm_input)
         ch_versions = ch_versions.mix(PHAGETERM.out.versions.first())
     }
 
-    // STEP 13: MultiQC Report
+    // STEP 14: MultiQC Report
     MULTIQC(ch_multiqc_files.collect().ifEmpty([]))
     ch_versions = ch_versions.mix(MULTIQC.out.versions)
 
-    // STEP 14: PHINDER Summary Report
+    // STEP 15: PHINDER Summary Report
     // Wait for all analyses to complete, then generate summary
     ch_all_complete = Channel.empty()
     if (!params.skip_checkv) {
@@ -155,6 +162,9 @@ workflow PHINDER_PIPELINE {
     }
     if (!params.skip_amrfinderplus) {
         ch_all_complete = ch_all_complete.mix(AMRFINDERPLUS.out.report)
+    }
+    if (!params.skip_genomad) {
+        ch_all_complete = ch_all_complete.mix(GENOMAD.out.report)
     }
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_phageterm) {
         ch_all_complete = ch_all_complete.mix(PHAGETERM.out.report)
