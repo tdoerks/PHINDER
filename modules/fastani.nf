@@ -11,26 +11,13 @@ process FASTANI {
     path "versions.yml", emit: versions
 
     script:
-    // Build a sample_id → filename map so output uses readable names
-    def ids  = sample_ids instanceof List ? sample_ids : [sample_ids]
-    def fns  = assemblies  instanceof List ? assemblies.collect { it.name } : [assemblies.name]
-    def pairs = [ids, fns].transpose().collect { id, fn -> "${id}\t${fn}" }.join('\n')
+    def ids = sample_ids instanceof List ? sample_ids : [sample_ids]
+    def fns = (assemblies instanceof List ? assemblies : [assemblies]).collect { it.name }
+    // Single-line cp commands joined with && to avoid multi-line interpolation
+    // (multi-line interpolation breaks Nextflow's stripIndent and heredoc terminators)
+    def renames = [ids, fns].transpose().collect { id, fn -> "cp '${fn}' '${id}.fasta'" }.join(' && ')
     """
-    cat > sample_map.tsv << 'MAPEOF'
-    ${pairs}
-    MAPEOF
-
-    python3 - << 'PYEOF'
-    import shutil, pathlib
-    with open('sample_map.tsv') as f:
-        for line in f:
-            line = line.strip()
-            if not line: continue
-            sid, fn = line.split('\\t', 1)
-            src = pathlib.Path(fn.strip())
-            if src.exists():
-                shutil.copy(src, f'{sid.strip()}.fasta')
-    PYEOF
+    ${renames}
 
     ls *.fasta > genome_list.txt
 
