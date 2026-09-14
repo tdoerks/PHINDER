@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHINDER Dashboard</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --panel: #1a1d27;
+  --panel2: #22263a;
+  --accent: #7c6af7;
+  --accent2: #4ade80;
+  --lytic: #f87171;
+  --temperate: #fb923c;
+  --ink: #e8eaf6;
+  --muted: #8b90b8;
+  --line: #2e3250;
+  --good: #4ade80;
+  --warn: #fb923c;
+  --bad: #f87171;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:var(--bg); color:var(--ink); min-height:100vh; }
+
+/* Header */
+.header { background:var(--panel); border-bottom:1px solid var(--line); padding:18px 32px; display:flex; align-items:center; gap:16px; }
+.header h1 { font-size:1.4em; font-weight:700; color:var(--accent); }
+.header .sub { color:var(--muted); font-size:0.85em; }
+.header .stamp { margin-left:auto; color:var(--muted); font-size:0.8em; }
+
+/* Stat bar */
+.statbar { display:flex; gap:1px; background:var(--line); border-bottom:1px solid var(--line); }
+.stat { flex:1; background:var(--panel); padding:14px 24px; text-align:center; }
+.stat .val { font-size:2em; font-weight:700; color:var(--accent); }
+.stat .lbl { font-size:0.75em; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+
+/* Tabs */
+.tabnav { display:flex; gap:0; background:var(--panel); border-bottom:1px solid var(--line); padding:0 24px; }
+.tabnav button { background:none; border:none; color:var(--muted); padding:14px 20px; font-size:0.9em; font-weight:500; cursor:pointer; border-bottom:2px solid transparent; transition:all 0.15s; }
+.tabnav button:hover { color:var(--ink); }
+.tabnav button.active { color:var(--accent); border-bottom-color:var(--accent); }
+.tab { display:none; padding:28px 32px; }
+.tab.active { display:block; }
+
+/* Tables */
+table { border-collapse:collapse; width:100%; font-size:13px; }
+th { background:var(--panel2); color:var(--muted); text-align:left; padding:10px 14px; font-weight:600; font-size:0.75em; text-transform:uppercase; letter-spacing:0.5px; border-bottom:1px solid var(--line); }
+td { padding:10px 14px; border-bottom:1px solid var(--line); color:var(--ink); }
+tr:hover td { background:var(--panel2); }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:24px; }
+.panel-title { padding:14px 18px; font-size:0.85em; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid var(--line); }
+
+/* Badges */
+.badge { display:inline-block; padding:3px 10px; border-radius:12px; font-size:0.75em; font-weight:600; }
+.badge-complete, .badge-high { background:#064e3b; color:#4ade80; }
+.badge-medium { background:#451a03; color:#fb923c; }
+.badge-low, .badge-fragment { background:#450a0a; color:#f87171; }
+.badge-lytic { background:#450a0a; color:#f87171; }
+.badge-temperate { background:#431407; color:#fb923c; }
+.badge-nd { background:#1e1b4b; color:#818cf8; }
+.badge-safe { background:#064e3b; color:#4ade80; }
+.badge-warn { background:#451a03; color:#fb923c; }
+
+/* Probability bars */
+.probbar { display:flex; height:8px; border-radius:4px; overflow:hidden; width:120px; background:var(--panel2); }
+.probbar .lytic-fill { background:var(--lytic); }
+.probbar .temp-fill { background:var(--temperate); }
+
+/* Lifestyle agree/disagree */
+.agree { color:var(--good); }
+.disagree { color:var(--warn); }
+
+/* Category pills */
+.catpill { display:inline-block; background:var(--panel2); border:1px solid var(--line); border-radius:8px; padding:3px 10px; font-size:0.75em; color:var(--muted); margin:2px; }
+.catpill span { color:var(--ink); font-weight:600; }
+
+/* Section header */
+.sec-head { font-size:1em; font-weight:600; color:var(--ink); margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+
+/* Grid */
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+@media(max-width:900px) { .grid2,.grid3 { grid-template-columns:1fr; } }
+
+/* Metric box */
+.mbox { background:var(--panel2); border-radius:8px; padding:14px 18px; border-left:3px solid var(--accent); }
+.mbox .ml { font-size:0.75em; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px; }
+.mbox .mv { font-size:1.3em; font-weight:700; }
+
+/* Completeness bar */
+.compbar { height:6px; border-radius:3px; background:var(--panel2); margin-top:6px; }
+.compbar .fill { height:100%; border-radius:3px; background:var(--good); }
+
+footer { text-align:center; padding:24px; color:var(--muted); font-size:0.8em; border-top:1px solid var(--line); margin-top:20px; }
+a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>🧬 PHINDER Dashboard</h1>
+    <div class="sub">PHage Isolate characterizatioN, Discovery &amp; Evaluation Resource</div>
+  </div>
+  <div class="stamp">Generated: __TIMESTAMP__</div>
+</div>
+
+<div class="statbar">
+  <div class="stat"><div class="val">__N_PHAGES__</div><div class="lbl">Phages Analyzed</div></div>
+  <div class="stat"><div class="val">__N_HQ__</div><div class="lbl">High-quality Genomes</div></div>
+  <div class="stat"><div class="val">__N_GENES__</div><div class="lbl">Total Genes</div></div>
+  <div class="stat"><div class="val">__N_LYTIC__</div><div class="lbl">Lytic Phages</div></div>
+  <div class="stat"><div class="val">__N_AMR__</div><div class="lbl">AMR Genes Detected</div></div>
+</div>
+
+<div class="tabnav">
+  <button class="active" onclick="showTab('overview',this)">Overview</button>
+  <button onclick="showTab('lifestyle',this)">Lifestyle</button>
+  <button onclick="showTab('annotation',this)">Annotation</button>
+  <button onclick="showTab('quality',this)">Quality</button>
+  <button onclick="showTab('safety',this)">AMR &amp; VF</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="overview" class="tab active">
+  <div class="panel">
+    <div class="panel-title">All Phages</div>
+    <table>
+      <thead><tr>
+        <th>Phage</th>
+        <th>Genome Size</th>
+        <th>GC %</th>
+        <th>CheckV Quality</th>
+        <th>Completeness</th>
+        <th>Total Genes</th>
+        <th>Annotation Rate</th>
+        <th>VIBRANT</th>
+        <th>BacPhlip</th>
+        <th>AMR Genes</th>
+      </tr></thead>
+      <tbody>__OVERVIEW_ROWS__</tbody>
+    </table>
+  </div>
+</div>
+
+<!-- LIFESTYLE TAB -->
+<div id="lifestyle" class="tab">
+  <div class="sec-head">Lifestyle Prediction — VIBRANT vs BacPhlip</div>
+  <div class="panel">
+    <table>
+      <thead><tr>
+        <th>Phage</th>
+        <th>VIBRANT</th>
+        <th>BacPhlip</th>
+        <th>Virulent Prob</th>
+        <th>Temperate Prob</th>
+        <th>Agreement</th>
+        <th>Paper (experimental)</th>
+      </tr></thead>
+      <tbody>__LIFESTYLE_ROWS__</tbody>
+    </table>
+  </div>
+  <div style="color:var(--muted);font-size:0.8em;margin-top:8px;">
+    VIBRANT predicts lifestyle from HMM profiles; BacPhlip uses ML on protein features. Disagreement between tools or with experimental data indicates complex biology (e.g. temperate phages that don't form stable lysogens).
+  </div>
+</div>
+
+<!-- ANNOTATION TAB -->
+<div id="annotation" class="tab">
+  <div class="sec-head">Pharokka Annotation Summary</div>
+  <div class="panel">
+    <table>
+      <thead><tr>
+        <th>Phage</th>
+        <th>Total CDS</th>
+        <th>Annotated</th>
+        <th>Unknown Function</th>
+        <th>Annotation Rate</th>
+        <th>tRNAs</th>
+        <th>CRISPRs</th>
+        <th>Function Categories</th>
+      </tr></thead>
+      <tbody>__ANNOTATION_ROWS__</tbody>
+    </table>
+  </div>
+</div>
+
+<!-- QUALITY TAB -->
+<div id="quality" class="tab">
+  <div class="sec-head">CheckV Genome Quality Assessment</div>
+  <div class="panel">
+    <table>
+      <thead><tr>
+        <th>Phage</th>
+        <th>CheckV Quality</th>
+        <th>Completeness</th>
+        <th>Completeness Method</th>
+        <th>Contamination</th>
+        <th>MIUViG Quality</th>
+        <th>Warnings</th>
+      </tr></thead>
+      <tbody>__QUALITY_ROWS__</tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SAFETY TAB -->
+<div id="safety" class="tab">
+  <div class="sec-head">AMR &amp; Virulence Factor Screening (Pharokka — CARD + VFDB)</div>
+  <div class="panel">
+    <table>
+      <thead><tr>
+        <th>Phage</th>
+        <th>Pharokka CARD AMR</th>
+        <th>Pharokka VFDB VF</th>
+        <th>AMRFinder Plus</th>
+        <th>Integration &amp; Excision</th>
+        <th>Therapeutic Safety</th>
+      </tr></thead>
+      <tbody>__SAFETY_ROWS__</tbody>
+    </table>
+  </div>
+  <div style="color:var(--muted);font-size:0.8em;margin-top:8px;">
+    AMR and virulence screening via Pharokka using CARD and VFDB databases. A phage should have 0 AMR genes and 0 virulence factors before therapeutic consideration.
+  </div>
+</div>
+
+<footer>
+  <strong>PHINDER</strong> — PHage Isolate characterizatioN, Discovery &amp; Evaluation Resource<br>
+  <a href="https://github.com/tdoerks/PHINDER">github.com/tdoerks/PHINDER</a>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tabnav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
