@@ -137,6 +137,183 @@ def parse_amrfinderplus_results(amrfinder_dir, sample_id):
             'stress': stress, 'genes': genes}
 
 
+def parse_fastani_results(fastani_dir):
+    """Parse fastANI all-vs-all TSV into a matrix dict and sorted sample list"""
+    matrix_file = Path(fastani_dir) / "fastani_all_vs_all.tsv"
+    if not matrix_file.exists():
+        return None
+    ani_data = {}
+    samples = set()
+    with open(matrix_file) as f:
+        for line in f:
+            parts = line.strip().split('\t')
+            if len(parts) < 3:
+                continue
+            query = Path(parts[0]).stem
+            ref   = Path(parts[1]).stem
+            try:
+                ani = float(parts[2])
+            except ValueError:
+                continue
+            ani_data[(query, ref)] = ani
+            samples.add(query)
+            samples.add(ref)
+    return {'samples': sorted(samples), 'matrix': ani_data}
+
+
+def build_ani_content(fastani_data):
+    """Build full ANI tab content — heatmap + top-pairs table injected as JSON + JS"""
+    import json
+    if fastani_data is None:
+        return '<p style="color:var(--muted);padding:32px">fastANI not run</p>'
+
+    samples = fastani_data['samples']
+    matrix  = fastani_data['matrix']
+
+    # Build symmetric matrix (fastANI only writes one direction)
+    mat = {}
+    for s in samples:
+        mat[s] = {}
+        for r in samples:
+            if s == r:
+                mat[s][r] = 100.0
+            else:
+                v = matrix.get((s, r)) or matrix.get((r, s))
+                mat[s][r] = round(v, 2) if v is not None else None
+
+    # Top similar pairs (ANI ≥ 80%, excluding self)
+    pairs = []
+    seen = set()
+    for s in samples:
+        for r in samples:
+            if s >= r:
+                continue
+            v = mat[s].get(r)
+            if v and v >= 80:
+                pairs.append((v, s, r))
+    pairs.sort(reverse=True)
+
+    pair_rows = ''
+    for ani, s, r in pairs[:20]:
+        cls = ('var(--good)' if ani >= 95 else 'var(--warn)' if ani >= 90 else 'var(--bad)')
+        label = ('Same species (≥95%)' if ani >= 95 else
+                 'Same genus (~90-95%)' if ani >= 90 else 'Related (80-90%)')
+        pair_rows += f'<tr><td><strong>{s}</strong></td><td><strong>{r}</strong></td><td style="color:{cls};font-weight:700">{ani:.1f}%</td><td style="color:var(--muted)">{label}</td></tr>'
+    if not pair_rows:
+        pair_rows = '<tr><td colspan="4" style="color:var(--muted);text-align:center">No pairs with ANI ≥ 80%</td></tr>'
+
+    mat_json   = json.dumps(mat)
+    samp_json  = json.dumps(samples)
+
+    return f"""
+<div class="sec-head">fastANI — All-vs-All Genome Identity</div>
+<div class="grid2" style="margin-bottom:24px">
+  <div class="mbox"><div class="ml">Total Genomes</div><div class="mv">{len(samples)}</div></div>
+  <div class="mbox"><div class="ml">Pairs ≥ 95% ANI (same species)</div><div class="mv">{sum(1 for v,s,r in pairs if v >= 95)}</div></div>
+</div>
+
+<div class="panel" style="margin-bottom:24px">
+  <div class="panel-title">Top Similar Pairs (ANI ≥ 80%)</div>
+  <table>
+    <thead><tr><th>Phage A</th><th>Phage B</th><th>ANI</th><th>Interpretation</th></tr></thead>
+    <tbody>{pair_rows}</tbody>
+  </table>
+</div>
+
+<div class="panel">
+  <div class="panel-title">ANI Heatmap — hover for values</div>
+  <div style="overflow:auto;max-height:600px">
+    <canvas id="aniCanvas"></canvas>
+  </div>
+</div>
+<div style="color:var(--muted);font-size:0.8em;margin-top:8px">
+  Green ≥95% (same species) · Yellow 80–95% · Orange 70–80% · Gray &lt;70% or no hit
+</div>
+
+<script>
+(function() {{
+  const samples = {samp_json};
+  const mat = {mat_json};
+  const n = samples.length;
+  const cell = Math.max(6, Math.min(32, Math.floor(500 / n)));
+  const labelW = Math.min(120, cell * 4);
+  const W = labelW + n * cell;
+  const H = labelW + n * cell;
+  const cv = document.getElementById('aniCanvas');
+  cv.width = W; cv.height = H;
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#1a1d27';
+  ctx.fillRect(0, 0, W, H);
+
+  function aniColor(v) {{
+    if (v === null) return '#22263a';
+    if (v >= 100) return '#7c6af7';
+    if (v >= 95)  return '#4ade80';
+    if (v >= 90)  return '#a3e635';
+    if (v >= 80)  return '#fb923c';
+    if (v >= 70)  return '#f87171';
+    return '#2e3250';
+  }}
+
+  // Draw cells
+  for (let i = 0; i < n; i++) {{
+    for (let j = 0; j < n; j++) {{
+      const v = mat[samples[i]][samples[j]];
+      ctx.fillStyle = aniColor(v);
+      ctx.fillRect(labelW + j * cell, labelW + i * cell, cell - 1, cell - 1);
+      if (cell >= 16 && v !== null) {{
+        ctx.fillStyle = v >= 80 ? '#0f1117' : '#8b90b8';
+        ctx.font = `${{Math.max(8, cell * 0.45)}}px monospace`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(v >= 100 ? '—' : v.toFixed(0), labelW + j * cell + cell/2, labelW + i * cell + cell/2);
+      }}
+    }}
+  }}
+
+  // Row labels
+  ctx.fillStyle = '#e8eaf6';
+  ctx.font = `${{Math.min(11, cell - 1)}}px sans-serif`;
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'middle';
+  for (let i = 0; i < n; i++) {{
+    ctx.fillText(samples[i], labelW - 4, labelW + i * cell + cell/2);
+  }}
+
+  // Col labels (rotated)
+  ctx.save();
+  ctx.font = `${{Math.min(11, cell - 1)}}px sans-serif`;
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  for (let j = 0; j < n; j++) {{
+    ctx.save();
+    ctx.translate(labelW + j * cell + cell/2, labelW - 4);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = '#e8eaf6';
+    ctx.fillText(samples[j], 0, 0);
+    ctx.restore();
+  }}
+  ctx.restore();
+
+  // Tooltip
+  cv.addEventListener('mousemove', function(e) {{
+    const rect = cv.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    const j = Math.floor((mx - labelW) / cell);
+    const i = Math.floor((my - labelW) / cell);
+    if (i >= 0 && i < n && j >= 0 && j < n) {{
+      const v = mat[samples[i]][samples[j]];
+      cv.title = `${{samples[i]}} vs ${{samples[j]}}: ${{v !== null ? v.toFixed(2) + '%' : 'no hit'}}`;
+    }} else {{
+      cv.title = '';
+    }}
+  }});
+}})();
+</script>
+"""
+
+
 def parse_genomad_results(genomad_dir, sample_id):
     """Parse geNomad virus_summary.tsv for taxonomy, virus score, topology"""
     # publishDir = genomad/{sample_id}/, geNomad output dir = {sample_id}_genomad/
@@ -279,6 +456,13 @@ def collect_sample_data(outdir):
             samples[sample_id]['phageterm'] = parse_phageterm_results(phageterm_dir, sample_id)
 
     return samples
+
+
+def collect_fastani_data(outdir):
+    fastani_dir = Path(outdir) / "fastani"
+    if fastani_dir.exists():
+        return parse_fastani_results(fastani_dir)
+    return None
 
 
 # ─── HTML row builders ────────────────────────────────────────────────────────
@@ -535,10 +719,9 @@ def build_safety_rows(samples):
 
 # ─── Report generators ────────────────────────────────────────────────────────
 
-def generate_html_report(samples, output_file):
+def generate_html_report(samples, fastani_data, output_file):
     template_path = Path(__file__).parent / 'phinder_dashboard_template.html'
     if not template_path.exists():
-        # Fallback: generate simple report without template
         _generate_simple_html(samples, output_file)
         return
 
@@ -567,6 +750,7 @@ def generate_html_report(samples, output_file):
         .replace('__ANNOTATION_ROWS__', build_annotation_rows(samples))
         .replace('__QUALITY_ROWS__', build_quality_rows(samples))
         .replace('__TAXONOMY_ROWS__', build_taxonomy_rows(samples))
+        .replace('__ANI_CONTENT__', build_ani_content(fastani_data))
         .replace('__SAFETY_ROWS__', build_safety_rows(samples))
     )
 
@@ -641,10 +825,12 @@ def main():
     samples = collect_sample_data(args.outdir)
     print(f"Found {len(samples)} samples")
 
-    generate_html_report(samples, args.output_html)
+    fastani_data = collect_fastani_data(args.outdir)
+    generate_html_report(samples, fastani_data, args.output_html)
     print(f"✓ {args.output_html}")
 
     generate_tsv_report(samples, args.output_tsv)
+
     print(f"✓ {args.output_tsv}")
 
     print("=" * 60)
