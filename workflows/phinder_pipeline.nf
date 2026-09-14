@@ -17,6 +17,7 @@ include { PHANOTATE } from '../modules/phanotate'
 include { BACPHLIP } from '../modules/bacphlip'
 include { AMRFINDERPLUS } from '../modules/amrfinderplus'
 include { GENOMAD } from '../modules/genomad'
+include { FASTANI } from '../modules/fastani'
 include { PHAGETERM } from '../modules/phageterm'
 include { MULTIQC } from '../modules/multiqc'
 include { PHINDER_SUMMARY } from '../modules/phinder_summary'
@@ -134,18 +135,26 @@ workflow PHINDER_PIPELINE {
         ch_versions = ch_versions.mix(GENOMAD.out.versions.first())
     }
 
-    // STEP 13: PhageTerm packaging strategy (reads/SRA mode only — requires raw reads)
+    // STEP 13: fastANI — all-vs-all genome identity matrix
+    if (!params.skip_fastani) {
+        FASTANI(
+            ch_assemblies.map { sid, asm -> sid }.collect(),
+            ch_assemblies.map { sid, asm -> asm }.collect()
+        )
+    }
+
+    // STEP 14: PhageTerm packaging strategy (reads/SRA mode only — requires raw reads)
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_phageterm) {
         ch_phageterm_input = ch_trimmed.join(ch_assemblies)
         PHAGETERM(ch_phageterm_input)
         ch_versions = ch_versions.mix(PHAGETERM.out.versions.first())
     }
 
-    // STEP 14: MultiQC Report
+    // STEP 15: MultiQC Report
     MULTIQC(ch_multiqc_files.collect().ifEmpty([]))
     ch_versions = ch_versions.mix(MULTIQC.out.versions)
 
-    // STEP 15: PHINDER Summary Report
+    // STEP 16: PHINDER Summary Report
     // Wait for all analyses to complete, then generate summary
     ch_all_complete = Channel.empty()
     if (!params.skip_checkv) {
@@ -165,6 +174,9 @@ workflow PHINDER_PIPELINE {
     }
     if (!params.skip_genomad) {
         ch_all_complete = ch_all_complete.mix(GENOMAD.out.report)
+    }
+    if (!params.skip_fastani) {
+        ch_all_complete = ch_all_complete.mix(FASTANI.out.matrix)
     }
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_phageterm) {
         ch_all_complete = ch_all_complete.mix(PHAGETERM.out.report)
