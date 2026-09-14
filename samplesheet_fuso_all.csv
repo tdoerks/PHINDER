@@ -1,0 +1,16 @@
+sample,fastq_1,fastq_2,assembly,input_mode
+phiFN37,,,/fastscratch/tylerdoe/PHINDER/test_data/OR492271.fasta,assembly
+phiFN38,,,/fastscratch/tylerdoe/PHINDER/test_data/OR492272.fasta,assembly
+phiBB,,,/fastscratch/tylerdoe/PHINDER/test_data/OR492273.fasta,assembly
+phiPaco,,,/fastscratch/tylerdoe/PHINDER/test_data/OR492274.fasta,assembly
+phiHugo,,,/fastscratch/tylerdoe/PHINDER/test_data/OR492275.fasta,assembly
+phiKSUM,,,/fastscratch/tylerdoe/PHINDER/test_data/OR492276.fasta,assembly
+Fnu1,,,/fastscratch/tylerdoe/PHINDER/test_data/Fnu1.fasta,assembly
+FNU2,,,/fastscratch/tylerdoe/PHINDER/test_data/FNU2.fasta,assembly
+FNU3,,,/fastscratch/tylerdoe/PHINDER/test_data/FNU3.fasta,assembly
+TCUFN6,,,/fastscratch/tylerdoe/PHINDER/test_data/TCUFN6.fasta,assembly
+TCUFN3,,,/fastscratch/tylerdoe/PHINDER/test_data/TCUFN3.fasta,assembly
+JDFnp1,,,/fastscratch/tylerdoe/PHINDER/test_data/JDFnp1.fasta,assembly
+JDFnp6,,,/fastscratch/tylerdoe/PHINDER/test_data/JDFnp6.fasta,assembly
+JDFnp4,,,/fastscratch/tylerdoe/PHINDER/test_data/JDFnp4.fasta,assembly
+JDFnp7,,,/fastscratch/tylerdoe/PHINDER/test_data/JDFnp7.fasta,assembly
