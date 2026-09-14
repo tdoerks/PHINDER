@@ -139,10 +139,15 @@ def parse_amrfinderplus_results(amrfinder_dir, sample_id):
 
 def parse_genomad_results(genomad_dir, sample_id):
     """Parse geNomad virus_summary.tsv for taxonomy, virus score, topology"""
-    summary_file = Path(genomad_dir) / sample_id / f"{sample_id}_summary" / f"{sample_id}_virus_summary.tsv"
+    # publishDir = genomad/{sample_id}/, geNomad output dir = {sample_id}_genomad/
+    summary_file = Path(genomad_dir) / sample_id / f"{sample_id}_genomad" / f"{sample_id}_summary" / f"{sample_id}_virus_summary.tsv"
     if not summary_file.exists():
-        return {'virus_score': None, 'taxonomy': '', 'topology': 'N/A',
-                'hallmarks': 0, 'family': None, 'genus': None}
+        # Fallback: glob in case directory structure differs
+        hits = list(Path(genomad_dir).glob(f"**/{sample_id}_virus_summary.tsv"))
+        if not hits:
+            return {'virus_score': None, 'taxonomy': '', 'topology': 'N/A',
+                    'hallmarks': 0, 'family': None, 'genus': None}
+        summary_file = hits[0]
 
     best = None
     with open(summary_file) as f:
