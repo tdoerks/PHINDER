@@ -13,6 +13,20 @@ from datetime import datetime
 import csv
 
 
+# ─── Host group helper ────────────────────────────────────────────────────────
+
+_HOST_PREFIX = {
+    'Fn': 'Fusobacterium', 'Kp': 'Klebsiella', 'Pa': 'Pseudomonas',
+    'Cd': 'C. difficile', 'Pp': 'Porphyromonas', 'Sa': 'Staphylococcus',
+    'Sl': 'Salmonella', 'Ec': 'E. coli', 'Ab': 'Acinetobacter',
+}
+
+def _host_group(sample_id):
+    if '_' in sample_id:
+        return _HOST_PREFIX.get(sample_id.split('_')[0], 'Other')
+    return 'Other'
+
+
 # ─── Parsers ──────────────────────────────────────────────────────────────────
 
 def parse_checkv_quality(checkv_dir):
@@ -544,7 +558,7 @@ def build_overview_rows(samples):
             tax_cell = '<span style="color:var(--muted)">Unclassified</span>'
         else:
             tax_cell = '<span style="color:var(--muted)">—</span>'
-        rows.append(f"""<tr>
+        rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
           <td>{size}</td>
           <td>{gc_str}</td>
@@ -578,7 +592,7 @@ def build_lifestyle_rows(samples):
                       else '<span class="disagree">⚠ Disagree</span>')
 
         bar = _probbar(pct) if pct != 0 or vp != 'N/A' else '—'
-        rows.append(f"""<tr>
+        rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
           <td>{_lbadge(vib)}</td>
           <td>{_lbadge(bp)}</td>
@@ -595,7 +609,7 @@ def build_annotation_rows(samples):
     for sid, d in samples.items():
         p = d['pharokka']
         cats = _catpills(p.get('categories', {}))
-        rows.append(f"""<tr>
+        rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
           <td>{p.get('total_cds', 0)}</td>
           <td>{p.get('annotated', 0)}</td>
@@ -625,7 +639,7 @@ def build_quality_rows(samples):
         cont_str = f'<span style="color:var(--bad)">{cont}%</span>' if cont not in ('0', '0.0', 'N/A', '') and float(cont or 0) > 0 else (cont or '0') + '%'
         warn = c.get('warnings', 'None') or 'None'
         warn_str = f'<span style="color:var(--warn)">{warn}</span>' if warn and warn != 'None' else '<span style="color:var(--muted)">None</span>'
-        rows.append(f"""<tr>
+        rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
           <td>{_qbadge(quality)}</td>
           <td>{comp_cell}</td>
@@ -643,7 +657,7 @@ def build_taxonomy_rows(samples):
         gd = d.get('genomad', {})
         vs = gd.get('virus_score')
         if vs is None:
-            rows.append(f"""<tr>
+            rows.append(f"""<tr data-host="{_host_group(sid)}">
               <td><strong>{sid}</strong></td>
               <td colspan="6" style="color:var(--muted);text-align:center">geNomad not run</td>
             </tr>""")
@@ -661,7 +675,7 @@ def build_taxonomy_rows(samples):
         def _tpart(idx, fallback='—'):
             return parts[idx] if len(parts) > idx and parts[idx] else f'<span style="color:var(--muted)">{fallback}</span>'
 
-        rows.append(f"""<tr>
+        rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
           <td>{score_cell}</td>
           <td>{gd.get('topology', 'N/A')}</td>
@@ -706,7 +720,7 @@ def build_safety_rows(samples):
                        f'<br><small style="color:var(--muted)">{gene_list}</small>')
         safety_badge = ('<span class="badge badge-safe">✓ Safe</span>' if safe
                         else '<span class="badge badge-warn">⚠ Review Required</span>')
-        rows.append(f"""<tr>
+        rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
           <td>{amr_cell}</td>
           <td>{vf_cell}</td>

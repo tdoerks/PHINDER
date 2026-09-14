@@ -124,6 +124,15 @@ a { color:var(--accent); text-decoration:none; }
   <button onclick="showTab('safety',this)">AMR &amp; VF</button>
 </div>
 
+<!-- HOST FILTER BAR -->
+<div style="background:var(--panel);border-bottom:1px solid var(--line);padding:10px 32px;display:flex;align-items:center;gap:12px">
+  <span style="color:var(--muted);font-size:0.85em;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Host</span>
+  <select id="hostFilter" onchange="applyHostFilter()" style="background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:0.85em;cursor:pointer">
+    <option value="">All hosts</option>
+  </select>
+  <span id="filterCount" style="color:var(--muted);font-size:0.8em"></span>
+</div>
+
 <!-- OVERVIEW TAB -->
 <div id="overview" class="tab active">
   <div class="panel">
@@ -267,7 +276,38 @@ function showTab(id, btn) {
   document.querySelectorAll('.tabnav button').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  applyHostFilter();
 }
+
+function applyHostFilter() {
+  const host = document.getElementById('hostFilter').value;
+  const rows = document.querySelectorAll('.tab.active tr[data-host]');
+  let shown = 0;
+  rows.forEach(r => {
+    const show = !host || r.dataset.host === host;
+    r.style.display = show ? '' : 'none';
+    if (show) shown++;
+  });
+  const countEl = document.getElementById('filterCount');
+  countEl.textContent = host ? `${shown} phage${shown !== 1 ? 's' : ''}` : '';
+}
+
+// Populate host dropdown from data in page
+(function() {
+  const hosts = new Set();
+  document.querySelectorAll('tr[data-host]').forEach(r => {
+    if (r.dataset.host && r.dataset.host !== 'Other') hosts.add(r.dataset.host);
+  });
+  if (document.querySelectorAll('tr[data-host="Other"]').length) hosts.add('Other');
+  const sel = document.getElementById('hostFilter');
+  [...hosts].sort().forEach(h => {
+    const opt = document.createElement('option');
+    opt.value = h; opt.textContent = h;
+    sel.appendChild(opt);
+  });
+  // Hide filter bar if only one host group
+  if (hosts.size <= 1) document.getElementById('hostFilter').parentElement.style.display = 'none';
+})();
 </script>
 </body>
 </html>

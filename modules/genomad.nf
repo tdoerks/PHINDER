@@ -23,7 +23,7 @@ process GENOMAD {
         ${sample_id}_genomad \\
         ${db} \\
         --threads ${task.cpus} \\
-        --splits 8 \\
+        --splits 16 \\
         --enable-score-calibration
 
     cat <<-END_VERSIONS > versions.yml
