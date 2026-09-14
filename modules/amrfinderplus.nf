@@ -1,7 +1,7 @@
 process AMRFINDERPLUS {
     tag "$sample_id"
     publishDir "${params.outdir}/amrfinderplus", mode: 'copy'
-    container = 'staphb/ncbi-amrfinderplus:3.12.8'
+    container = 'staphb/ncbi-amrfinderplus:4.2.7-2026-08-07.1'
 
     input:
     tuple val(sample_id), path(assembly)

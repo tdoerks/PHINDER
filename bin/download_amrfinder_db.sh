@@ -14,7 +14,7 @@ echo ""
 
 apptainer exec \
     --bind "$DB_DIR:$DB_DIR" \
-    docker://staphb/ncbi-amrfinderplus:3.12.8 \
+    docker://staphb/ncbi-amrfinderplus:4.2.7-2026-08-07.1 \
     amrfinder --update --database "$DB_DIR"
 
 echo ""
