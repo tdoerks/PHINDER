@@ -33,7 +33,7 @@ for NAME in "${!PHAGES[@]}"; do
     fi
 
     echo -n "  Downloading $NAME ($ACC)... "
-    efetch -db nuccore -id "$ACC" -format fasta > "$OUTFILE"
+    curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=${ACC}&rettype=fasta&retmode=text" > "$OUTFILE"
     sleep 1  # be polite to NCBI
 
     CONTIGS=$(grep -c '^>' "$OUTFILE" 2>/dev/null || echo 0)
