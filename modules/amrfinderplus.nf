@@ -12,6 +12,8 @@ process AMRFINDERPLUS {
     path "versions.yml", emit: versions
 
     script:
+    // staphb/ncbi-amrfinderplus bundles the database (date in tag = DB version)
+    // No --database flag needed; use params.amrfinder_db only to override
     def db_arg = params.amrfinder_db ? "--database ${params.amrfinder_db}" : ""
     """
     amrfinder \\
