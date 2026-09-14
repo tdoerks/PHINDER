@@ -1,0 +1,87 @@
+sample_id	accession	phage_name	host_group	host_species	genome_size_bp	notes
+phiFN37	OR492271.1	phiFN37	Fusobacterium	Fusobacterium necrophorum	85015	PMC11304844
+phiFN38	OR492272.1	phiFN38	Fusobacterium	Fusobacterium necrophorum	37000	PMC11304844
+phiBB	OR492273.1	phiBB	Fusobacterium	Fusobacterium necrophorum	36000	PMC11304844; temperate by VIBRANT+BacPhlip
+phiPaco	OR492274.1	phiPaco	Fusobacterium	Fusobacterium necrophorum	43000	PMC11304844
+phiHugo	OR492275.1	phiHugo	Fusobacterium	Fusobacterium necrophorum	35000	PMC11304844
+phiKSUM	OR492276.1	phiKSUM	Fusobacterium	Fusobacterium necrophorum	111401	PMC11304844; lytic (0.995 BacPhlip)
+Fnu1	NC_055035.1	Fnu1	Fusobacterium	Fusobacterium nucleatum	130914	RefSeq
+FNU2	OQ808963.1	vB_FnuS_FNU2	Fusobacterium	Fusobacterium nucleatum	104039
+FNU3	OQ808965.1	vB_FnuS_FNU3	Fusobacterium	Fusobacterium nucleatum	97905
+TCUFN6	OP004060.1	TCUFN6	Fusobacterium	Fusobacterium nucleatum	131515
+TCUFN3	PQ464787.1	TCUFN3	Fusobacterium	Fusobacterium nucleatum	127354
+JDFnp1	ON464759.1	JD-Fnp1	Fusobacterium	Fusobacterium nucleatum	180066
+JDFnp6	ON464763.1	JD-Fnp6	Fusobacterium	Fusobacterium nucleatum	178458
+JDFnp4	ON464764.1	JD-Fnp4	Fusobacterium	Fusobacterium nucleatum	180231
+JDFnp7	PV175345.1	JD-Fnp7	Fusobacterium	Fusobacterium nucleatum	174521
+Pg_phage019b	PP754931.1	phage019b_ATCC49417	Porphyromonas	Porphyromonas gingivalis	48032	oral anaerobe
+Pg_phage010a	PP754930.1	phage010a_HG1691old	Porphyromonas	Porphyromonas gingivalis	33222	oral anaerobe
+Pg_phage007a	PP754929.1	phage007a_Bg4	Porphyromonas	Porphyromonas gingivalis	35050	oral anaerobe
+Pg_phage005b	PP754928.1	phage005b_ATCC49417	Porphyromonas	Porphyromonas gingivalis	48681	oral anaerobe
+Cd_phiCD27	NC_011398.1	phiCD27	C_difficile	Clostridioides difficile	50930	RefSeq; well-characterized
+Cd_phiCD508	OR295560.1	phiCD508	C_difficile	Clostridioides difficile	49272
+Cd_phiCDKH02	PP767789.1	phiCDKH02	C_difficile	Clostridioides difficile	55997
+Cd_AR1086	OR397124.1	AR1086-1	C_difficile	Clostridioides difficile	130030	large myovirus
+Cd_AR1074	OR397123.1	AR1074-1	C_difficile	Clostridioides difficile	38059
+Cd_AR1075	OQ703261.1	AR1075-1	C_difficile	Clostridioides difficile	41195
+Cd_phiSemix9P1	KX905163.1	phiSemix9P1	C_difficile	Clostridioides difficile	56606
+Cd_phiCD418	MW512573.1	phiCD418	C_difficile	Clostridioides difficile	53311
+Cd_phiCD08011	MW512572.1	phiCD08011	C_difficile	Clostridioides difficile	31394
+Cd_CD2301	MW512571.1	CD2301	C_difficile	Clostridioides difficile	38695
+Cd_CD1801	MW512570.1	CD1801	C_difficile	Clostridioides difficile	44363
+Cd_JD032	MK473382.1	JD032	C_difficile	Clostridium difficile	35109
+Cd_JD033	MT193276.1	JD033	C_difficile	Clostridioides difficile	35144
+Cd_phiCDKH01	MN718463.1	phiCDKH01	C_difficile	Clostridium difficile	45089
+Cd_LIBA2945	MF547663.1	LIBA2945	C_difficile	Clostridioides difficile	132508	large myovirus
+Cd_LIBA6276	MF547662.1	LIBA6276	C_difficile	Clostridioides difficile	134243	large myovirus
+Cd_HainSaunders	CP103806.1	Hain-Saunders-2022a	C_difficile	Clostridioides difficile	35072
+Kp_phiW14	NC_105446.1	phiW14	Klebsiella	Klebsiella pneumoniae	50247	RefSeq
+Kp_Solomon	NC_103145.1	Solomon	Klebsiella	Klebsiella aerogenes	51775	RefSeq; different Klebsiella species
+Kp_Penguinator	NC_100761.1	vB_KpnS_Penguinator	Klebsiella	Klebsiella pneumoniae	51678	RefSeq
+Kp_Opt817	NC_105496.1	vB_KpnD_Opt-817	Klebsiella	Klebsiella pneumoniae	48988	RefSeq; KpnD family
+Kp_P1	NC_129957.1	P1	Klebsiella	Klebsiella pneumoniae	50675	RefSeq
+Kp_NPat	NC_106517.1	NPat	Klebsiella	Klebsiella pneumoniae	48715	RefSeq
+Kp_PWKp20	NC_105644.1	PWKp20	Klebsiella	Klebsiella pneumoniae	51939	RefSeq
+Kp_B1	NC_104812.1	B1	Klebsiella	Klebsiella pneumoniae	50040	RefSeq
+Kp_IME268	NC_129956.1	IME268	Klebsiella	Klebsiella pneumoniae	49552	RefSeq
+Kp_FairDinkum	NC_105416.1	vB_KpnD_FairDinkum	Klebsiella	Klebsiella pneumoniae	49111	RefSeq; KpnD family
+Pa_VIPEUCMC01	NC_130827.1	vB_VIPPAEUMC01	Pseudomonas	Pseudomonas aeruginosa	92158	RefSeq; large myovirus
+Pa_POR1	NC_093432.1	POR1	Pseudomonas	Pseudomonas aeruginosa	55349	RefSeq
+Pa_UMP151	NC_074747.1	UMP151	Pseudomonas	Pseudomonas aeruginosa	41303	RefSeq
+Pa_BUCT566	NC_074664.1	BUCT566	Pseudomonas	Pseudomonas aeruginosa	49154	RefSeq
+Pa_LC3I3	NC_074663.1	vB_Pae_LC3I3	Pseudomonas	Pseudomonas aeruginosa	49926	RefSeq
+Pa_PP9W2	NC_074662.1	PP9W2	Pseudomonas	Pseudomonas aeruginosa	54250	RefSeq
+Pa_Epa33	NC_073676.1	Epa33	Pseudomonas	Pseudomonas aeruginosa	64021	RefSeq
+Pa_LKA5	NC_073675.1	LKA5	Pseudomonas	Pseudomonas aeruginosa	64746	RefSeq
+Pa_E220	NC_073673.1	vB_PaeP_E220	Pseudomonas	Pseudomonas aeruginosa	62874	RefSeq
+Pa_PA8	NC_073672.1	PA8	Pseudomonas	Pseudomonas aeruginosa	63654	RefSeq
+Pa_PsCh	NC_073623.1	vB_Paer_PsCh	Pseudomonas	Pseudomonas aeruginosa	92710	RefSeq
+Pa_PsIn	NC_073622.1	vB_Paer_PsIn	Pseudomonas	Pseudomonas aeruginosa	92515	RefSeq
+Pa_Ps12	NC_073621.1	vB_Paer_Ps12	Pseudomonas	Pseudomonas aeruginosa	88705	RefSeq
+Sa_PhageK	NC_005880.2	Phage K	Staphylococcus	Staphylococcus aureus	148317	Classic therapeutic MRSA phage
+Sa_IMESA119	NC_047732.1	IME-SA119	Staphylococcus	Staphylococcus aureus	141028	RefSeq
+Sa_IMESA118	NC_047731.1	IME-SA118	Staphylococcus	Staphylococcus aureus	139750	RefSeq
+Sa_IMESA2	NC_047730.1	IME-SA2	Staphylococcus	Staphylococcus aureus	140906	RefSeq
+Sa_IMESA1	NC_047729.1	IME-SA1	Staphylococcus	Staphylococcus aureus	140218	RefSeq
+Sa_A5W	NC_047728.1	A5W	Staphylococcus	Staphylococcus aureus	145542	RefSeq
+Sa_P4W	NC_047727.1	P4W	Staphylococcus	Staphylococcus aureus	147590	RefSeq
+Sa_MSA6	NC_047726.1	MSA6	Staphylococcus	Staphylococcus aureus	148243	RefSeq
+Sa_Fi200W	NC_047725.1	Fi200W	Staphylococcus	Staphylococcus aureus	148481	RefSeq
+Sa_676Z	NC_047724.1	676Z	Staphylococcus	Staphylococcus aureus	148564	RefSeq
+Sa_A3R	NC_047723.1	A3R	Staphylococcus	Staphylococcus aureus	141018	RefSeq
+Sa_Staph1N	NC_047722.1	Staph1N	Staphylococcus	Staphylococcus aureus	145647	RefSeq
+Sm_UTK0007	NC_130781.1	vB_SenS_UTK0007	Salmonella	Salmonella enterica	51921	RefSeq
+Sm_UTK0006	NC_111484.1	vB_SenS_UTK0006	Salmonella	Salmonella enterica	49758	RefSeq
+Sm_GSP032	NC_112025.1	GSP032	Salmonella	Salmonella enterica	52100	RefSeq
+Sm_F61	NC_108349.1	F61	Salmonella	Salmonella enterica	46635	RefSeq
+Sm_falkor	NC_102106.1	falkor	Salmonella	Salmonella enterica	114211	RefSeq; large myovirus
+Sm_GEC_N5	NC_103213.1	GEC_vB_N5	Salmonella	Salmonella enterica	110015	RefSeq; large myovirus
+Sm_LmqsSP1	NC_104259.1	vB_StyS-LmqsSP1	Salmonella	Salmonella enterica	109938	RefSeq; large myovirus
+Ec_T4	NC_000866.4	T4	Classic_Ecoli	Escherichia coli	168903	Classic lytic; validation standard
+Ec_T7	NC_001604.1	T7	Classic_Ecoli	Escherichia coli	39937	Classic lytic; validation standard
+Ec_Lambda	NC_001416.1	Lambda	Classic_Ecoli	Escherichia coli	48502	Classic temperate; validation standard
+Ec_P1	NC_005856.1	P1	Classic_Ecoli	Escherichia coli	94800	Classic temperate; broad host range
+Ec_Mu	NC_000929.1	Mu	Classic_Ecoli	Escherichia coli	36717	Classic transposable/temperate
+Ec_K1E	NC_007637.1	K1E	Classic_Ecoli	Escherichia coli	45251	Lytic; K1 capsule specificity
+Ec_VIPECOOM03	NC_111760.1	vB_VIPECOOM03	Classic_Ecoli	Escherichia coli	168519	RefSeq; large myovirus
+Ab_ME3	NC_041884.1	vB_AbaM_ME3	Acinetobacter	Acinetobacter baumannii	234900	RefSeq; largest in library; jumbo myovirus
