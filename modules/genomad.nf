@@ -16,7 +16,7 @@ process GENOMAD {
     // geNomad names all output files after the input filename stem
     def db = params.genomad_db ?: '/genomad_db'
     """
-    cp ${assembly} ${sample_id}.fasta
+    [ "${assembly}" != "${sample_id}.fasta" ] && cp ${assembly} ${sample_id}.fasta || true
 
     genomad end-to-end \\
         ${sample_id}.fasta \\
