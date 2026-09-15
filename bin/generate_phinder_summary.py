@@ -16,9 +16,12 @@ import csv
 # ─── Host group helper ────────────────────────────────────────────────────────
 
 _HOST_PREFIX = {
-    'Fn': 'Fusobacterium', 'Kp': 'Klebsiella', 'Pa': 'Pseudomonas',
-    'Cd': 'C. difficile', 'Pp': 'Porphyromonas', 'Sa': 'Staphylococcus',
-    'Sl': 'Salmonella', 'Ec': 'E. coli', 'Ab': 'Acinetobacter',
+    'Fn': 'Fusobacterium', 'FN': 'Fusobacterium', 'Fnu': 'Fusobacterium',
+    'JDF': 'Fusobacterium', 'TCU': 'Fusobacterium', 'phi': 'Fusobacterium',
+    'Kp': 'Klebsiella', 'Pa': 'Pseudomonas',
+    'Cd': 'C. difficile', 'Pp': 'Porphyromonas', 'Pg': 'Porphyromonas',
+    'Sa': 'Staphylococcus', 'Sl': 'Salmonella', 'Sm': 'Salmonella',
+    'Ec': 'E. coli', 'Ab': 'Acinetobacter',
 }
 
 def _host_group(sample_id):
