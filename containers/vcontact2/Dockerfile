@@ -9,8 +9,12 @@ RUN conda install -y -n base -c bioconda -c conda-forge -c defaults \
         diamond=2.1.9 \
         mcl=22.282 \
         blast=2.15.0 \
-        cluster-one \
+        openjdk \
     && conda clean -afy
+
+# Download ClusterONE JAR directly (cluster-one conda package has solve conflicts)
+RUN wget -q "https://paccanarolab.org/static_content/clusterone/cluster_one-1.0.jar" \
+         -O /opt/conda/bin/cluster_one-1.0.jar
 
 # Patch np.warnings (removed in numpy 1.24+) using find+sed to avoid Dockerfile parse issues
 RUN find /opt/conda/lib/python*/site-packages/vcontact2 -name "*.py" \

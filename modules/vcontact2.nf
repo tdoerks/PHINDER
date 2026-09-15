@@ -44,6 +44,7 @@ for fname in sorted(f for f in os.listdir('.') if f.endswith('.faa')):
         ${db_arg} \\
         --pcs-mode MCL \\
         --vcs-mode ClusterONE \\
+        --c1-bin /opt/conda/bin/cluster_one-1.0.jar \\
         --output-dir vcontact2_results \\
         --threads ${task.cpus}
 
