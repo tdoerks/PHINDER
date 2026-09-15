@@ -36,6 +36,9 @@ process PHAROKKA {
         --force \\
         \$meta_flag
 
+    # Pharokka writes phanotate.faa regardless of prefix; rename for downstream tools
+    cp ${sample_id}_pharokka/phanotate.faa ${sample_id}_pharokka/${sample_id}.faa
+
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         pharokka: \$(pharokka.py --version | sed 's/pharokka //g')
