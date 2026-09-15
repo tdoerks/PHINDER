@@ -1,6 +1,6 @@
 process VCONTACT2 {
     publishDir "${params.outdir}/vcontact2", mode: 'copy'
-    container = 'quay.io/biocontainers/vcontact2:0.11.3--pyhdfd78af_1'
+    container = 'ghcr.io/tdoerks/phinder-vcontact2:0.11.3'
 
     input:
     val(sample_ids)
