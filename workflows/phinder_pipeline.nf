@@ -19,6 +19,8 @@ include { AMRFINDERPLUS } from '../modules/amrfinderplus'
 include { GENOMAD } from '../modules/genomad'
 include { FASTANI } from '../modules/fastani'
 include { PHAGETERM } from '../modules/phageterm'
+include { VCONTACT2 } from '../modules/vcontact2'
+include { IPHOP } from '../modules/iphop'
 include { MULTIQC } from '../modules/multiqc'
 include { PHINDER_SUMMARY } from '../modules/phinder_summary'
 
@@ -143,7 +145,20 @@ workflow PHINDER_PIPELINE {
         )
     }
 
-    // STEP 14: PhageTerm packaging strategy (reads/SRA mode only — requires raw reads)
+    // STEP 14a: vConTACT2 protein-sharing network clustering (requires Pharokka)
+    if (!params.skip_vcontact2 && !params.skip_pharokka) {
+        VCONTACT2(
+            ch_assemblies.map { sid, asm -> sid }.collect(),
+            PHAROKKA.out.faa.collect()
+        )
+    }
+
+    // STEP 14b: iPHoP host prediction (requires database — skip by default)
+    if (!params.skip_iphop) {
+        IPHOP(ch_assemblies)
+    }
+
+    // STEP 14c: PhageTerm packaging strategy (reads/SRA mode only — requires raw reads)
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_phageterm) {
         ch_phageterm_input = ch_trimmed.join(ch_assemblies)
         PHAGETERM(ch_phageterm_input)
@@ -177,6 +192,12 @@ workflow PHINDER_PIPELINE {
     }
     if (!params.skip_fastani) {
         ch_all_complete = ch_all_complete.mix(FASTANI.out.matrix)
+    }
+    if (!params.skip_vcontact2 && !params.skip_pharokka) {
+        ch_all_complete = ch_all_complete.mix(VCONTACT2.out.versions)
+    }
+    if (!params.skip_iphop) {
+        ch_all_complete = ch_all_complete.mix(IPHOP.out.versions.first())
     }
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_phageterm) {
         ch_all_complete = ch_all_complete.mix(PHAGETERM.out.report)

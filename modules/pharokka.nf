@@ -18,6 +18,7 @@ process PHAROKKA {
     path "${sample_id}_pharokka/${sample_id}.gbk", emit: genbank
     path "${sample_id}_pharokka/${sample_id}.gff", emit: gff
     path "${sample_id}_pharokka/${sample_id}_cds_functions.tsv", emit: functions
+    path "${sample_id}_pharokka/${sample_id}.faa", emit: faa
     path "versions.yml", emit: versions
 
     script:

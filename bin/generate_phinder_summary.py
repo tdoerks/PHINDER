@@ -175,6 +175,52 @@ def parse_fastani_results(fastani_dir):
     return {'samples': sorted(samples), 'matrix': ani_data}
 
 
+def compute_ani_clusters(fastani_data, threshold=95.0):
+    """Single-linkage Union-Find clustering at ANI threshold. Returns {sample_id: cluster_label}."""
+    if not fastani_data:
+        return {}
+    samples = fastani_data['samples']
+    matrix  = fastani_data['matrix']
+
+    parent = {s: s for s in samples}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(x, y):
+        px, py = find(x), find(y)
+        if px != py:
+            parent[px] = py
+
+    for s1 in samples:
+        for s2 in samples:
+            if s1 >= s2:
+                continue
+            v = matrix.get((s1, s2)) or matrix.get((s2, s1))
+            if v and v >= threshold:
+                union(s1, s2)
+
+    groups = {}
+    for s in samples:
+        groups.setdefault(find(s), []).append(s)
+
+    sorted_groups = sorted(groups.values(), key=len, reverse=True)
+    result = {}
+    cid = 1
+    for members in sorted_groups:
+        if len(members) == 1:
+            result[members[0]] = 'Unique'
+        else:
+            label = f'C{cid}'
+            for m in members:
+                result[m] = label
+            cid += 1
+    return result
+
+
 def build_ani_content(fastani_data):
     """Build full ANI tab content — heatmap + top-pairs table injected as JSON + JS"""
     import json
@@ -385,6 +431,71 @@ def parse_phageterm_results(phageterm_dir, sample_id):
     return {'strategy': strategy if strategy else 'Unknown'}
 
 
+def parse_vcontact2_results(vcontact2_dir):
+    """Parse vConTACT2 genome_by_genome_overview.csv → {genome: {vc, vc_status}}"""
+    overview = None
+    for candidate in [
+        Path(vcontact2_dir) / "vcontact2_results" / "genome_by_genome_overview.csv",
+        Path(vcontact2_dir) / "genome_by_genome_overview.csv",
+    ]:
+        if candidate.exists():
+            overview = candidate
+            break
+    if overview is None:
+        hits = list(Path(vcontact2_dir).rglob("genome_by_genome_overview.csv"))
+        if hits:
+            overview = hits[0]
+    if overview is None:
+        return {}
+    result = {}
+    with open(overview) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            genome = row.get('Genome', '').strip()
+            if not genome:
+                continue
+            vc        = (row.get('VC', '') or '').strip()
+            vc_status = (row.get('VC Status', '') or '').strip()
+            result[genome] = {
+                'vc':        vc        if vc        else 'Unassigned',
+                'vc_status': vc_status if vc_status else 'Singleton',
+            }
+    return result
+
+
+def parse_iphop_results(iphop_dir, sample_id):
+    """Parse iPHoP Host_prediction_to_genome_m*.csv → top host prediction for sample"""
+    pred_files = sorted(Path(iphop_dir).glob(f"{sample_id}*/Host_prediction_to_genome_m*.csv"))
+    if not pred_files:
+        pred_files = sorted(Path(iphop_dir).rglob("Host_prediction_to_genome_m*.csv"))
+    if not pred_files:
+        return {}
+    best = None
+    with open(pred_files[0]) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row.get('Genome', '').strip() != sample_id:
+                continue
+            try:
+                score = float(row.get('Confidence score', 0) or 0)
+            except ValueError:
+                score = 0.0
+            if best is None or score > best['score']:
+                best = {
+                    'host_genus':   (row.get('Host genus', '')   or '').strip(),
+                    'host_species': (row.get('Host species', '') or '').strip(),
+                    'score':        score,
+                }
+    return best or {}
+
+
+def collect_vcontact2_data(outdir):
+    vcontact2_dir = Path(outdir) / "vcontact2"
+    if vcontact2_dir.exists():
+        return parse_vcontact2_results(vcontact2_dir)
+    return {}
+
+
 def parse_bacphlip_results(bacphlip_dir, sample_id):
     pred_file = Path(bacphlip_dir) / f"{sample_id}.bacphlip"
     if not pred_file.exists():
@@ -442,7 +553,7 @@ def collect_sample_data(outdir):
         samples[sample_id] = {
             'sample_id': sample_id,
             'checkv': {}, 'quast': {}, 'pharokka': {}, 'vibrant': {}, 'bacphlip': {},
-            'amrfinderplus': {}, 'genomad': {}, 'phageterm': {}
+            'amrfinderplus': {}, 'genomad': {}, 'phageterm': {}, 'iphop': {}
         }
         checkv_dir = Path(outdir) / "checkv" / f"{sample_id}_checkv"
         if checkv_dir.exists():
@@ -468,6 +579,11 @@ def collect_sample_data(outdir):
         phageterm_dir = Path(outdir) / "phageterm"
         if phageterm_dir.exists():
             samples[sample_id]['phageterm'] = parse_phageterm_results(phageterm_dir, sample_id)
+        iphop_dir = Path(outdir) / "iphop"
+        if iphop_dir.exists():
+            samples[sample_id]['iphop'] = parse_iphop_results(iphop_dir, sample_id)
+        else:
+            samples[sample_id]['iphop'] = {}
 
     return samples
 
@@ -529,7 +645,7 @@ def _fmt_size(val):
         return str(val) if val else 'N/A'
 
 
-def build_overview_rows(samples):
+def build_overview_rows(samples, ani_clusters=None):
     rows = []
     for sid, d in samples.items():
         size = _fmt_size(d['quast'].get('total_length', ''))
@@ -558,6 +674,17 @@ def build_overview_rows(samples):
             tax_cell = '<span style="color:var(--muted)">Unclassified</span>'
         else:
             tax_cell = '<span style="color:var(--muted)">—</span>'
+        # ANI cluster
+        if ani_clusters:
+            clust = ani_clusters.get(sid, '—')
+            if clust == 'Unique':
+                clust_cell = '<span style="color:var(--muted)">Unique</span>'
+            elif clust == '—':
+                clust_cell = '<span style="color:var(--muted)">—</span>'
+            else:
+                clust_cell = f'<span style="color:var(--good);font-weight:600">{clust}</span>'
+        else:
+            clust_cell = '<span style="color:var(--muted)">—</span>'
         rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
           <td>{size}</td>
@@ -568,6 +695,7 @@ def build_overview_rows(samples):
           <td>{ann_rate}</td>
           <td>{_lbadge(vib)}</td>
           <td>{_lbadge(bp)}</td>
+          <td>{clust_cell}</td>
           <td>{pkg_cell}</td>
           <td>{tax_cell}</td>
           <td>{amr_badge}</td>
@@ -651,15 +779,39 @@ def build_quality_rows(samples):
     return '\n'.join(rows)
 
 
-def build_taxonomy_rows(samples):
+def build_taxonomy_rows(samples, vcontact2_clusters=None):
     rows = []
     for sid, d in samples.items():
         gd = d.get('genomad', {})
         vs = gd.get('virus_score')
+        # VC cluster cell
+        vc_info = (vcontact2_clusters or {}).get(sid, {})
+        if vc_info:
+            vc_label = vc_info.get('vc', 'Unassigned')
+            vc_status = vc_info.get('vc_status', '')
+            vc_color = 'var(--good)' if vc_label != 'Unassigned' else 'var(--muted)'
+            vc_cell = (f'<span style="color:{vc_color};font-weight:600">{vc_label}</span>'
+                       + (f'<br><small style="color:var(--muted)">{vc_status}</small>' if vc_status else ''))
+        else:
+            vc_cell = '<span style="color:var(--muted)">—</span>'
+        # iPHoP host prediction cell
+        ih = d.get('iphop', {})
+        if ih and ih.get('host_species'):
+            host_str = ih.get('host_species', '')
+            score = ih.get('score', 0)
+            host_cell = (f'<span style="color:var(--ink)">{host_str}</span>'
+                         + f'<br><small style="color:var(--muted)">{score:.0f}% confidence</small>')
+        elif ih and ih.get('host_genus'):
+            host_cell = f'<span style="color:var(--muted)">{ih["host_genus"]} (genus)</span>'
+        else:
+            host_cell = '<span style="color:var(--muted)">—</span>'
+
         if vs is None:
             rows.append(f"""<tr data-host="{_host_group(sid)}">
               <td><strong>{sid}</strong></td>
               <td colspan="6" style="color:var(--muted);text-align:center">geNomad not run</td>
+              <td>{vc_cell}</td>
+              <td>{host_cell}</td>
             </tr>""")
             continue
         try:
@@ -684,6 +836,25 @@ def build_taxonomy_rows(samples):
           <td>{_tpart(5)}</td>
           <td>{_tpart(6)}</td>
           <td>{_tpart(7)}</td>
+          <td>{vc_cell}</td>
+          <td>{host_cell}</td>
+        </tr>""")
+    return '\n'.join(rows)
+
+
+def build_phylogenomics_rows(vcontact2_clusters):
+    """Build vConTACT2 cluster table rows"""
+    if not vcontact2_clusters:
+        return '<tr><td colspan="3" style="color:var(--muted);text-align:center;padding:32px">vConTACT2 not run</td></tr>'
+    rows = []
+    for genome, info in sorted(vcontact2_clusters.items()):
+        vc = info.get('vc', 'Unassigned')
+        vc_status = info.get('vc_status', '')
+        vc_color = 'var(--good)' if vc != 'Unassigned' else 'var(--muted)'
+        rows.append(f"""<tr data-host="{_host_group(genome)}">
+          <td><strong>{genome}</strong></td>
+          <td><span style="color:{vc_color};font-weight:600">{vc}</span></td>
+          <td style="color:var(--muted)">{vc_status}</td>
         </tr>""")
     return '\n'.join(rows)
 
@@ -733,7 +904,7 @@ def build_safety_rows(samples):
 
 # ─── Report generators ────────────────────────────────────────────────────────
 
-def generate_html_report(samples, fastani_data, output_file):
+def generate_html_report(samples, fastani_data, output_file, vcontact2_data=None):
     template_path = Path(__file__).parent / 'phinder_dashboard_template.html'
     if not template_path.exists():
         _generate_simple_html(samples, output_file)
@@ -741,6 +912,9 @@ def generate_html_report(samples, fastani_data, output_file):
 
     with open(template_path) as f:
         html = f.read()
+
+    ani_clusters     = compute_ani_clusters(fastani_data) if fastani_data else {}
+    vc_clusters      = vcontact2_data or {}
 
     # Summary stats
     n_phages = len(samples)
@@ -759,13 +933,14 @@ def generate_html_report(samples, fastani_data, output_file):
         .replace('__N_GENES__', str(n_genes))
         .replace('__N_LYTIC__', str(n_lytic))
         .replace('__N_AMR__', str(n_amr))
-        .replace('__OVERVIEW_ROWS__', build_overview_rows(samples))
+        .replace('__OVERVIEW_ROWS__', build_overview_rows(samples, ani_clusters))
         .replace('__LIFESTYLE_ROWS__', build_lifestyle_rows(samples))
         .replace('__ANNOTATION_ROWS__', build_annotation_rows(samples))
         .replace('__QUALITY_ROWS__', build_quality_rows(samples))
-        .replace('__TAXONOMY_ROWS__', build_taxonomy_rows(samples))
+        .replace('__TAXONOMY_ROWS__', build_taxonomy_rows(samples, vc_clusters))
         .replace('__ANI_CONTENT__', build_ani_content(fastani_data))
         .replace('__SAFETY_ROWS__', build_safety_rows(samples))
+        .replace('__PHYLOGENOMICS_ROWS__', build_phylogenomics_rows(vc_clusters))
     )
 
     with open(output_file, 'w') as f:

@@ -121,6 +121,7 @@ a { color:var(--accent); text-decoration:none; }
   <button onclick="showTab('quality',this)">Quality</button>
   <button onclick="showTab('taxonomy',this)">Taxonomy</button>
   <button onclick="showTab('ani',this)">ANI</button>
+  <button onclick="showTab('phylogenomics',this)">Phylogenomics</button>
   <button onclick="showTab('safety',this)">AMR &amp; VF</button>
 </div>
 
@@ -148,6 +149,7 @@ a { color:var(--accent); text-decoration:none; }
         <th>Annotation Rate</th>
         <th>VIBRANT</th>
         <th>BacPhlip</th>
+        <th>Species Cluster</th>
         <th>Packaging</th>
         <th>Family (geNomad)</th>
         <th>AMR Genes</th>
@@ -232,6 +234,8 @@ a { color:var(--accent); text-decoration:none; }
         <th>Order</th>
         <th>Family</th>
         <th>Genus</th>
+        <th>VC Cluster</th>
+        <th>Predicted Host</th>
       </tr></thead>
       <tbody>__TAXONOMY_ROWS__</tbody>
     </table>
@@ -243,6 +247,24 @@ a { color:var(--accent); text-decoration:none; }
 
 <!-- ANI TAB -->
 <div id="ani" class="tab">__ANI_CONTENT__</div>
+
+<!-- PHYLOGENOMICS TAB -->
+<div id="phylogenomics" class="tab">
+  <div class="sec-head">vConTACT2 — Protein-Sharing Network Clusters</div>
+  <div class="panel">
+    <table>
+      <thead><tr>
+        <th>Phage</th>
+        <th>VC Cluster</th>
+        <th>VC Status</th>
+      </tr></thead>
+      <tbody>__PHYLOGENOMICS_ROWS__</tbody>
+    </table>
+  </div>
+  <div style="color:var(--muted);font-size:0.8em;margin-top:8px;">
+    Viral Clusters (VCs) are based on shared protein content via MCL clustering. Phages in the same VC are related; VC status indicates whether the cluster contains reference phages from the database.
+  </div>
+</div>
 
 <!-- SAFETY TAB -->
 <div id="safety" class="tab">

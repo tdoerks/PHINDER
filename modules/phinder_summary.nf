@@ -17,7 +17,7 @@ process PHINDER_SUMMARY {
     import sys
     sys.path.insert(0, '${projectDir}/bin')
 
-    from generate_phinder_summary import collect_sample_data, collect_fastani_data, generate_html_report, generate_tsv_report
+    from generate_phinder_summary import collect_sample_data, collect_fastani_data, collect_vcontact2_data, generate_html_report, generate_tsv_report
 
     print("=" * 60)
     print("PHINDER Summary Report Generation")
@@ -29,10 +29,13 @@ process PHINDER_SUMMARY {
     samples = collect_sample_data(outdir)
     print(f"  Found {len(samples)} samples")
     fastani_data = collect_fastani_data(outdir)
+    vcontact2_data = collect_vcontact2_data(outdir)
+    if vcontact2_data:
+        print(f"  vConTACT2 clusters: {len(vcontact2_data)} genomes")
     print()
 
     print("Generating HTML report...")
-    generate_html_report(samples, fastani_data, 'phinder_summary.html')
+    generate_html_report(samples, fastani_data, 'phinder_summary.html', vcontact2_data=vcontact2_data)
     print("  ✓ phinder_summary.html")
     print()
 
