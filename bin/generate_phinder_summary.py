@@ -690,6 +690,7 @@ def build_overview_rows(samples, ani_clusters=None):
             clust_cell = '<span style="color:var(--muted)">—</span>'
         rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
+          <td>{_host_group(sid)}</td>
           <td>{size}</td>
           <td>{gc_str}</td>
           <td>{_qbadge(quality)}</td>
@@ -725,6 +726,7 @@ def build_lifestyle_rows(samples):
         bar = _probbar(pct) if pct != 0 or vp != 'N/A' else '—'
         rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
+          <td>{_host_group(sid)}</td>
           <td>{_lbadge(vib)}</td>
           <td>{_lbadge(bp)}</td>
           <td>{bar} {vp}</td>
@@ -742,6 +744,7 @@ def build_annotation_rows(samples):
         cats = _catpills(p.get('categories', {}))
         rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
+          <td>{_host_group(sid)}</td>
           <td>{p.get('total_cds', 0)}</td>
           <td>{p.get('annotated', 0)}</td>
           <td>{p.get('unknown', 0)}</td>
@@ -772,6 +775,7 @@ def build_quality_rows(samples):
         warn_str = f'<span style="color:var(--warn)">{warn}</span>' if warn and warn != 'None' else '<span style="color:var(--muted)">None</span>'
         rows.append(f"""<tr data-host="{_host_group(sid)}">
           <td><strong>{sid}</strong></td>
+          <td>{_host_group(sid)}</td>
           <td>{_qbadge(quality)}</td>
           <td>{comp_cell}</td>
           <td>{c.get('completeness_method', 'N/A')}</td>
