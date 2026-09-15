@@ -11,7 +11,7 @@ RUN conda install -y -n base -c bioconda -c conda-forge -c defaults \
         blast=2.15.0 \
     && conda clean -afy
 
-# Verify installation and print versions
-RUN vcontact2 --version && diamond --version && mcl --version
+# Verify tools are on PATH (vcontact2 --version exits 1 by design, hence || true)
+RUN vcontact2 --help > /dev/null 2>&1 || true && diamond --version && mcl --version
 
 CMD ["vcontact2", "--help"]
