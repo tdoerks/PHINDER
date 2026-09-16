@@ -22,6 +22,10 @@ RUN find /opt/conda/lib/python*/site-packages/vcontact2 -name "*.py" \
         -exec sed -i 's/np\.warnings\./warnings./g' {} \; \
         -exec sed -i '1s/^/import warnings\n/' {} \;
 
+# Patch pcprofiles.py: zip(*df.values) incompatible with newer scipy — use .T (transpose) instead
+RUN sed -i 's/(zip(\*profiles\.values))/(profiles.values.T)/' \
+    /opt/conda/lib/python*/site-packages/vcontact2/pcprofiles.py
+
 # Verify tools are on PATH (vcontact2 --version exits 1 by design, hence || true)
 RUN vcontact2 --help > /dev/null 2>&1 || true && diamond --version && mcl --version
 
