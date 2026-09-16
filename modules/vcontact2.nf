@@ -12,16 +12,11 @@ process VCONTACT2 {
     path "versions.yml", emit: versions
 
     script:
-    def ids = sample_ids instanceof List ? sample_ids : [sample_ids]
-    def fns = (faa_files instanceof List ? faa_files : [faa_files]).collect { it.name }
-    // Rename each .faa to sample_id.faa so protein-to-genome mapping is unambiguous
-    def renames = [ids, fns].transpose().collect { id, fn ->
-        fn != "${id}.faa" ? "cp '${fn}' '${id}.faa'" : "true"
-    }.join(' && ')
     def db_arg = params.vcontact2_db ? "--db '${params.vcontact2_db}'" : "--db 'None'"
+    // Staged .faa files are already named <sample_id>.faa by the Pharokka module.
+    // Do NOT rename/pair against sample_ids here: the two collected channels
+    // arrive in different orders, and pairwise cp swaps clobber file contents.
     """
-    ${renames}
-
     # Build gene-to-genome CSV: every protein header maps to its sample_id
     python3 -c "
 import os, sys
@@ -37,6 +32,7 @@ for fname in sorted(f for f in os.listdir('.') if f.endswith('.faa')):
 
     cat *.faa > all_proteins.faa
 
+    set +e
     vcontact2 \\
         --raw-proteins all_proteins.faa \\
         --rel-mode Diamond \\
@@ -46,7 +42,21 @@ for fname in sorted(f for f in os.listdir('.') if f.endswith('.faa')):
         --vcs-mode ClusterONE \\
         --c1-bin /opt/conda/bin/cluster_one-1.0.jar \\
         --output-dir vcontact2_results \\
-        --threads ${task.cpus}
+        --threads ${task.cpus} 2> vcontact2.stderr
+    status=\$?
+    set -e
+    cat vcontact2.stderr >&2
+
+    if [ \$status -ne 0 ]; then
+        if grep -q "No edge in the similarity network" vcontact2.stderr; then
+            # Legitimate outcome for small/dissimilar genome sets with --db None:
+            # no genome pair shares enough protein clusters to form an edge.
+            echo "WARNING: vConTACT2 found no edges — genomes too dissimilar to cluster" >&2
+            mkdir -p vcontact2_results
+        else
+            exit \$status
+        fi
+    fi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
