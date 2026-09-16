@@ -34,8 +34,43 @@ process PHINDER_SUMMARY {
         print(f"  vConTACT2 clusters: {len(vcontact2_data)} genomes")
     print()
 
+    run_meta = {
+        'pipeline_version': '${workflow.manifest.version}',
+        'nextflow_version': '${workflow.nextflow.version}',
+        'run_name': '${workflow.runName}',
+        'input': '${params.input}',
+        'input_mode': '${params.input_mode}',
+        'outdir': '${params.outdir}',
+        'parameters': {
+            'assembler': '${params.assembler}',
+            'skip_assembly': '${params.skip_assembly}',
+            'skip_fastqc': '${params.skip_fastqc}',
+            'skip_fastp': '${params.skip_fastp}',
+            'skip_pharokka': '${params.skip_pharokka}',
+            'skip_vibrant': '${params.skip_vibrant}',
+            'skip_phanotate': '${params.skip_phanotate}',
+            'skip_diamond': '${params.skip_diamond}',
+            'skip_bacphlip': '${params.skip_bacphlip}',
+            'skip_checkv': '${params.skip_checkv}',
+            'skip_amrfinderplus': '${params.skip_amrfinderplus}',
+            'skip_genomad': '${params.skip_genomad}',
+            'skip_fastani': '${params.skip_fastani}',
+            'skip_phageterm': '${params.skip_phageterm}',
+            'skip_vcontact2': '${params.skip_vcontact2}',
+            'skip_iphop': '${params.skip_iphop}',
+            'checkv_db': '${params.checkv_db}',
+            'pharokka_db': '${params.pharokka_db}',
+            'prophage_db': '${params.prophage_db}',
+            'amrfinder_db': '${params.amrfinder_db}',
+            'genomad_db': '${params.genomad_db}',
+            'vcontact2_db': '${params.vcontact2_db}',
+            'iphop_db': '${params.iphop_db}',
+        },
+    }
+
     print("Generating HTML report...")
-    generate_html_report(samples, fastani_data, 'phinder_summary.html', vcontact2_data=vcontact2_data)
+    generate_html_report(samples, fastani_data, 'phinder_summary.html',
+                         vcontact2_data=vcontact2_data, run_meta=run_meta, outdir=outdir)
     print("  ✓ phinder_summary.html")
     print()
 

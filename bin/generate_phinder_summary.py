@@ -909,9 +909,93 @@ def build_safety_rows(samples):
     return '\n'.join(rows)
 
 
+# ─── Run info / versions ──────────────────────────────────────────────────────
+
+def collect_versions(outdir):
+    """Harvest all versions.yml files published under outdir.
+
+    Returns {process_name: {tool: version}} deduped by process name.
+    """
+    versions = {}
+    for vf in sorted(Path(outdir).rglob("versions.yml")):
+        proc = None
+        try:
+            with open(vf) as f:
+                for line in f:
+                    line = line.rstrip()
+                    if not line:
+                        continue
+                    if not line.startswith(' ') and line.endswith(':'):
+                        proc = line.strip().strip(':').strip('"')
+                        # Show just the process leaf name (drop workflow prefix)
+                        proc = proc.split(':')[-1]
+                        versions.setdefault(proc, {})
+                    elif proc and ':' in line:
+                        tool, ver = line.strip().split(':', 1)
+                        versions[proc][tool.strip()] = ver.strip().strip('"')
+        except OSError:
+            continue
+    return versions
+
+
+def build_runinfo_rows(run_meta):
+    labels = [
+        ('generated', 'Report Generated'),
+        ('pipeline_version', 'PHINDER Version'),
+        ('nextflow_version', 'Nextflow Version'),
+        ('run_name', 'Run Name'),
+        ('input', 'Samplesheet'),
+        ('input_mode', 'Input Mode'),
+        ('outdir', 'Output Directory'),
+    ]
+    rows = []
+    for key, label in labels:
+        val = (run_meta or {}).get(key)
+        if val in (None, '', 'null'):
+            continue
+        rows.append(f'<tr><td style="color:var(--muted);width:220px">{label}</td>'
+                    f'<td><strong>{val}</strong></td></tr>')
+    if not rows:
+        rows.append('<tr><td style="color:var(--muted)">Run metadata not available</td></tr>')
+    return '\n'.join(rows)
+
+
+def build_params_rows(run_meta):
+    params = (run_meta or {}).get('parameters', {})
+    if not params:
+        return '<tr><td colspan="2" style="color:var(--muted)">Parameters not recorded</td></tr>'
+    rows = []
+    for key in sorted(params):
+        val = params[key]
+        if val in (None, 'null'):
+            val = '<span style="color:var(--muted)">default</span>'
+        elif val in (True, 'true'):
+            val = '<span style="color:var(--warn)">true</span>'
+        elif val in (False, 'false'):
+            val = '<span style="color:var(--good)">false</span>'
+        rows.append(f'<tr><td><code>{key}</code></td><td>{val}</td></tr>')
+    return '\n'.join(rows)
+
+
+def build_versions_rows(versions):
+    if not versions:
+        return '<tr><td colspan="3" style="color:var(--muted)">No versions.yml files found</td></tr>'
+    rows = []
+    for proc in sorted(versions):
+        tools = versions[proc]
+        first = True
+        for tool in sorted(tools):
+            proc_cell = f'<strong>{proc}</strong>' if first else ''
+            rows.append(f'<tr><td>{proc_cell}</td><td><code>{tool}</code></td>'
+                        f'<td>{tools[tool]}</td></tr>')
+            first = False
+    return '\n'.join(rows)
+
+
 # ─── Report generators ────────────────────────────────────────────────────────
 
-def generate_html_report(samples, fastani_data, output_file, vcontact2_data=None):
+def generate_html_report(samples, fastani_data, output_file, vcontact2_data=None,
+                         run_meta=None, outdir=None):
     template_path = Path(__file__).parent / 'phinder_dashboard_template.html'
     if not template_path.exists():
         _generate_simple_html(samples, output_file)
@@ -922,6 +1006,9 @@ def generate_html_report(samples, fastani_data, output_file, vcontact2_data=None
 
     ani_clusters     = compute_ani_clusters(fastani_data) if fastani_data else {}
     vc_clusters      = vcontact2_data or {}
+    versions         = collect_versions(outdir) if outdir else {}
+    run_meta         = dict(run_meta or {})
+    run_meta.setdefault('generated', datetime.now().strftime('%Y-%m-%d %H:%M'))
 
     # Summary stats
     n_phages = len(samples)
@@ -948,6 +1035,9 @@ def generate_html_report(samples, fastani_data, output_file, vcontact2_data=None
         .replace('__ANI_CONTENT__', build_ani_content(fastani_data))
         .replace('__SAFETY_ROWS__', build_safety_rows(samples))
         .replace('__PHYLOGENOMICS_ROWS__', build_phylogenomics_rows(vc_clusters))
+        .replace('__RUNINFO_ROWS__', build_runinfo_rows(run_meta))
+        .replace('__PARAMS_ROWS__', build_params_rows(run_meta))
+        .replace('__VERSIONS_ROWS__', build_versions_rows(versions))
     )
 
     with open(output_file, 'w') as f:
