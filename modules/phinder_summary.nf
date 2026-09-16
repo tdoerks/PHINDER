@@ -17,7 +17,7 @@ process PHINDER_SUMMARY {
     import sys
     sys.path.insert(0, '${projectDir}/bin')
 
-    from generate_phinder_summary import collect_sample_data, collect_fastani_data, generate_html_report, generate_tsv_report
+    from generate_phinder_summary import collect_sample_data, collect_fastani_data, collect_vcontact2_data, generate_html_report, generate_tsv_report
 
     print("=" * 60)
     print("PHINDER Summary Report Generation")
@@ -29,6 +29,9 @@ process PHINDER_SUMMARY {
     samples = collect_sample_data(outdir)
     print(f"  Found {len(samples)} samples")
     fastani_data = collect_fastani_data(outdir)
+    vcontact2_data = collect_vcontact2_data(outdir)
+    if vcontact2_data:
+        print(f"  vConTACT2 clusters: {len(vcontact2_data)} genomes")
     print()
 
     run_meta = {
@@ -53,17 +56,21 @@ process PHINDER_SUMMARY {
             'skip_genomad': '${params.skip_genomad}',
             'skip_fastani': '${params.skip_fastani}',
             'skip_phageterm': '${params.skip_phageterm}',
+            'skip_vcontact2': '${params.skip_vcontact2}',
+            'skip_iphop': '${params.skip_iphop}',
             'checkv_db': '${params.checkv_db}',
             'pharokka_db': '${params.pharokka_db}',
             'prophage_db': '${params.prophage_db}',
             'amrfinder_db': '${params.amrfinder_db}',
             'genomad_db': '${params.genomad_db}',
+            'vcontact2_db': '${params.vcontact2_db}',
+            'iphop_db': '${params.iphop_db}',
         },
     }
 
     print("Generating HTML report...")
     generate_html_report(samples, fastani_data, 'phinder_summary.html',
-                         run_meta=run_meta, outdir=outdir)
+                         vcontact2_data=vcontact2_data, run_meta=run_meta, outdir=outdir)
     print("  ✓ phinder_summary.html")
     print()
 
