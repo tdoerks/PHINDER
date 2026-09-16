@@ -31,8 +31,39 @@ process PHINDER_SUMMARY {
     fastani_data = collect_fastani_data(outdir)
     print()
 
+    run_meta = {
+        'pipeline_version': '${workflow.manifest.version}',
+        'nextflow_version': '${workflow.nextflow.version}',
+        'run_name': '${workflow.runName}',
+        'input': '${params.input}',
+        'input_mode': '${params.input_mode}',
+        'outdir': '${params.outdir}',
+        'parameters': {
+            'assembler': '${params.assembler}',
+            'skip_assembly': '${params.skip_assembly}',
+            'skip_fastqc': '${params.skip_fastqc}',
+            'skip_fastp': '${params.skip_fastp}',
+            'skip_pharokka': '${params.skip_pharokka}',
+            'skip_vibrant': '${params.skip_vibrant}',
+            'skip_phanotate': '${params.skip_phanotate}',
+            'skip_diamond': '${params.skip_diamond}',
+            'skip_bacphlip': '${params.skip_bacphlip}',
+            'skip_checkv': '${params.skip_checkv}',
+            'skip_amrfinderplus': '${params.skip_amrfinderplus}',
+            'skip_genomad': '${params.skip_genomad}',
+            'skip_fastani': '${params.skip_fastani}',
+            'skip_phageterm': '${params.skip_phageterm}',
+            'checkv_db': '${params.checkv_db}',
+            'pharokka_db': '${params.pharokka_db}',
+            'prophage_db': '${params.prophage_db}',
+            'amrfinder_db': '${params.amrfinder_db}',
+            'genomad_db': '${params.genomad_db}',
+        },
+    }
+
     print("Generating HTML report...")
-    generate_html_report(samples, fastani_data, 'phinder_summary.html')
+    generate_html_report(samples, fastani_data, 'phinder_summary.html',
+                         run_meta=run_meta, outdir=outdir)
     print("  ✓ phinder_summary.html")
     print()
 
