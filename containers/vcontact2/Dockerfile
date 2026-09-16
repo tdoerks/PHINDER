@@ -26,6 +26,11 @@ RUN find /opt/conda/lib/python*/site-packages/vcontact2 -name "*.py" \
 RUN sed -i 's/(zip(\*profiles\.values))/(profiles.values.T)/' \
     /opt/conda/lib/python*/site-packages/vcontact2/pcprofiles.py
 
+# Newer scipy rejects lazy zip objects as coo_matrix index arrays — materialize
+# every zip(*x) as list(zip(*x)) package-wide (matrices.py, contig_clusters.py, ...)
+RUN find /opt/conda/lib/python*/site-packages/vcontact2 -name "*.py" \
+        -exec sed -i 's/\([( ]\)zip(\*\([A-Za-z_][A-Za-z0-9_.]*\))/\1list(zip(*\2))/g' {} \;
+
 # Verify tools are on PATH (vcontact2 --version exits 1 by design, hence || true)
 RUN vcontact2 --help > /dev/null 2>&1 || true && diamond --version && mcl --version
 
