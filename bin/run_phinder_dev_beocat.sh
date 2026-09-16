@@ -48,7 +48,7 @@ nextflow run main.nf \
     --input "${SAMPLESHEET}" \
     --input_mode assembly \
     --outdir "${OUTDIR}" \
-    -profile slurm \
+    -profile slurm,beocat \
     -resume
 
 EXIT_CODE=$?

@@ -134,13 +134,13 @@ if [ "${MODE}" == "quick" ]; then
     echo "         --input ${SHEET} \\"
     echo "         --input_mode reads \\"
     echo "         --outdir test_results \\"
-    echo "         -profile slurm"
+    echo "         -profile slurm,beocat"
 else
     echo "     nextflow run main.nf \\"
     echo "         --input ${SHEET} \\"
     echo "         --input_mode reads \\"
     echo "         --outdir test_results_full \\"
-    echo "         -profile slurm"
+    echo "         -profile slurm,beocat"
 fi
 echo ""
 echo "  3. Check results in test_results/multiqc/multiqc_report.html"

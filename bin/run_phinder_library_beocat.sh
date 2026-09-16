@@ -77,7 +77,7 @@ nextflow run main.nf \
     --input "${SAMPLESHEET}" \
     --input_mode assembly \
     --outdir "${OUTDIR}" \
-    -profile slurm \
+    -profile slurm,beocat \
     -resume \
     -with-report "${OUTDIR}/phinder_report.html" \
     -with-timeline "${OUTDIR}/phinder_timeline.html"

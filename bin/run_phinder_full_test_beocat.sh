@@ -82,7 +82,7 @@ nextflow run main.nf \
     --input ${SRR_LIST} \
     --input_mode sra \
     --outdir ${OUTDIR} \
-    -profile slurm \
+    -profile slurm,beocat \
     -resume \
     -with-report ${OUTDIR}/phinder_report.html \
     -with-timeline ${OUTDIR}/phinder_timeline.html

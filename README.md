@@ -20,7 +20,7 @@ PHINDER is designed specifically for **purified phage isolates** from laboratory
 ### Quality Control & Assembly
 - **FastQC** - Raw read quality assessment
 - **fastp** - Adapter trimming and quality filtering
-- **Unicycler** - Phage genome assembly with circular genome detection
+- **SPAdes** - Phage genome assembly
 - **QUAST** - Assembly quality metrics
 
 ### Quality Assessment
@@ -30,11 +30,23 @@ PHINDER is designed specifically for **purified phage isolates** from laboratory
 - **Pharokka** - Comprehensive phage annotation (CDS, tRNA, tmRNA, CRISPR)
 - **PHANOTATE** - Phage-specific gene prediction
 - **VIBRANT** - Lifestyle prediction (lytic vs lysogenic)
+- **BacPhlip** - ML-based lifestyle prediction (virulent vs temperate)
 - **DIAMOND** - Prophage database comparison
+- **geNomad** - Virus scoring and ICTV taxonomy assignment
+- **PhageTerm** - Genome termini and packaging mechanism detection
+
+### Safety Screening
+- **AMRFinder Plus** - Antimicrobial resistance, virulence, and stress genes
+- **Pharokka CARD/VFDB** - AMR and virulence factor screening
+
+### Comparative Genomics
+- **fastANI** - All-vs-all average nucleotide identity + species-level clustering (95% ANI)
+- **vConTACT2** - Protein-sharing network clustering into viral clusters (custom container `ghcr.io/tdoerks/phinder-vcontact2`)
+- **iPHoP** - Host genus prediction (optional; requires ~400 GB database)
 
 ### Reporting
 - **MultiQC** - Aggregated quality control reports
-- **Custom Reports** - Interactive HTML summaries with key metrics
+- **Interactive dashboard** - Single-file HTML report: overview, lifestyle, annotation, quality, taxonomy, ANI heatmap, phylogenomics, AMR/VF screening, and full run provenance (parameters + software versions)
 
 ## Quick Start
 
@@ -110,21 +122,25 @@ Phage2,/path/to/phage2.fasta
 ### Assembly Parameters
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `--assembler` | Assembler to use: `unicycler` or `spades` | `unicycler` |
+| `--assembler` | Assembler to use | `spades` |
 | `--skip_assembly` | Skip assembly (use with assembly mode) | `false` |
 
-### Annotation Parameters
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `--skip_pharokka` | Skip Pharokka annotation | `false` |
-| `--skip_vibrant` | Skip VIBRANT lifestyle prediction | `false` |
+### Module Toggles
+Every analysis module has a `--skip_<module>` flag (default `false` unless noted):
+`skip_fastqc`, `skip_fastp`, `skip_pharokka`, `skip_vibrant`, `skip_phanotate`, `skip_diamond`, `skip_bacphlip`, `skip_checkv`, `skip_amrfinderplus`, `skip_genomad`, `skip_fastani`, `skip_phageterm`, `skip_vcontact2`, `skip_iphop` (default `true` — requires large database)
 
 ### Database Paths
 | Parameter | Description | Setup Required |
 |-----------|-------------|----------------|
 | `--checkv_db` | CheckV database path | Yes |
-| `--pharokka_db` | Pharokka database path | Auto-downloaded |
+| `--pharokka_db` | Pharokka database path | Yes — pre-install with `install_databases.py` (no runtime auto-download) |
 | `--prophage_db` | Prophage DIAMOND database (.dmnd) | Yes |
+| `--amrfinder_db` | AMRFinder database | No — bundled in container |
+| `--genomad_db` | geNomad database | No — bundled in container |
+| `--vcontact2_db` | vConTACT2 reference DB | No — defaults to clustering input phages only |
+| `--iphop_db` | iPHoP database (~400 GB) | Only if `--skip_iphop false` |
+
+Site-specific paths can be kept in a profile — see `conf/beocat.config` for an example, loaded with `-profile slurm,beocat`.
 
 ## Output Structure
 
@@ -137,11 +153,18 @@ results/
 ├── checkv/                      # Quality and completeness assessment
 ├── pharokka/                    # Comprehensive phage annotations
 ├── vibrant/                     # Lifestyle predictions
+├── bacphlip/                    # ML lifestyle predictions
+├── phanotate/                   # Phage gene predictions
 ├── diamond_prophage/            # Prophage database comparisons
+├── amrfinderplus/               # AMR / virulence / stress genes
+├── genomad/                     # Virus scores + ICTV taxonomy
+├── phageterm/                   # Packaging mechanism / termini
+├── fastani/                     # All-vs-all ANI matrix
+├── vcontact2/                   # Viral cluster network results
 ├── multiqc/                     # Aggregated QC report
 └── summary/                     # Final integrated reports
     ├── phinder_summary.tsv
-    └── phinder_report.html
+    └── phinder_summary.html     # Interactive dashboard
 ```
 
 ## Tools & Versions
@@ -150,14 +173,23 @@ results/
 |------|---------|---------|
 | FastQC | 0.12.1 | Read quality assessment |
 | fastp | 0.23.4 | Read trimming |
-| Unicycler | 0.5.0 | Phage assembly |
+| SPAdes | 3.15.5 | Phage assembly |
 | QUAST | 5.2.0 | Assembly metrics |
 | CheckV | 1.0.2 | Quality assessment |
-| Pharokka | 1.7.0 | Phage annotation |
+| Pharokka | 1.7.5 | Phage annotation |
 | PHANOTATE | 1.6.7 | Gene prediction |
 | VIBRANT | 4.0 | Lifestyle prediction |
-| DIAMOND | 2.0 | Database search |
+| BacPhlip | 0.9.6 | ML lifestyle prediction |
+| DIAMOND | 2.1.8 | Database search |
+| AMRFinder Plus | 4.2.7 | AMR / virulence screening |
+| geNomad | 1.12.0 | Virus scoring + taxonomy |
+| PhageTerm | 1.0.12 | Packaging mechanism |
+| fastANI | 1.34 | Average nucleotide identity |
+| vConTACT2 | 0.11.3 | Viral cluster networks |
+| iPHoP | 1.3.3 | Host prediction (optional) |
 | MultiQC | 1.25.1 | Report aggregation |
+
+Exact container URIs are pinned in each module under `modules/`; versions used in a given run are recorded in the dashboard's Run Info tab.
 
 ## Database Setup
 
@@ -169,9 +201,9 @@ tar -xzf checkv-db-v1.5.tar.gz
 ```
 
 ### Pharokka Database
-Pharokka automatically downloads its database on first run, or you can pre-download:
+Pharokka does **not** auto-download its database at runtime — pre-install once:
 ```bash
-pharokka.py --install-databases
+install_databases.py -o /path/to/pharokka_db
 ```
 
 ### Prophage Database
@@ -196,5 +228,5 @@ Issues and pull requests welcome at: https://github.com/tdoerks/PHINDER
 
 ---
 
-**Version**: 1.0.0-dev
-**Status**: Active Development
+**Version**: 1.0.0
+**Status**: Stable
