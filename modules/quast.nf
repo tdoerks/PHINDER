@@ -2,6 +2,7 @@ process QUAST {
     tag "$sample_id"
     publishDir "${params.outdir}/quast", mode: 'copy'
     container = 'docker://staphb/quast:5.2.0'
+    errorStrategy = 'ignore'
 
     input:
     tuple val(sample_id), path(assembly)
@@ -17,7 +18,7 @@ process QUAST {
         ${assembly} \\
         -o ${sample_id}_quast \\
         -t ${task.cpus} \\
-        --min-contig 500
+        --min-contig 100
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

@@ -2,6 +2,8 @@ process CHECKV {
     tag "$sample_id"
     publishDir "${params.outdir}/checkv", mode: 'copy'
     container = 'docker://quay.io/biocontainers/checkv:1.0.2--pyhdfd78af_0'
+    errorStrategy = 'retry'
+    maxRetries = 2
 
     input:
     tuple val(sample_id), path(assembly)
