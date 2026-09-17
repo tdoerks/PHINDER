@@ -1,0 +1,16 @@
+sample,fastq_1,fastq_2,sample_type
+# ── dsDNA phages (from 86-phage library — pick 2-3 representative) ──────────
+# Replace paths with actual reads on Beocat:
+#   /fastscratch/tylerdoe/PHINDER-dev/data/<sample>_R1.fastq.gz
+#
+phiKSUM,/path/to/phiKSUM_R1.fastq.gz,/path/to/phiKSUM_R2.fastq.gz,dsDNA
+FnPV1,/path/to/FnPV1_R1.fastq.gz,/path/to/FnPV1_R2.fastq.gz,dsDNA
+# ── ssDNA phage (e.g. phiX174 from SRA: SRR001665, or M13 phage reads) ──────
+phiX174,/path/to/phiX174_R1.fastq.gz,/path/to/phiX174_R2.fastq.gz,ssDNA
+# ── ssRNA phage (e.g. MS2: SRR1106384, or Qbeta reads) ──────────────────────
+MS2,/path/to/MS2_R1.fastq.gz,/path/to/MS2_R2.fastq.gz,ssRNA
+# ── dsRNA phage (e.g. Phi6: SRR3083924) ─────────────────────────────────────
+Phi6,/path/to/Phi6_R1.fastq.gz,/path/to/Phi6_R2.fastq.gz,dsRNA
+# ── Bacterial isolate controls (e.g. E. coli K12: SRR2584863) ───────────────
+Ecoli_K12,/path/to/Ecoli_K12_R1.fastq.gz,/path/to/Ecoli_K12_R2.fastq.gz,bacterial
+Salmonella,/path/to/Salmonella_R1.fastq.gz,/path/to/Salmonella_R2.fastq.gz,bacterial
