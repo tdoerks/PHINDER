@@ -1,0 +1,6 @@
+sample,fastq_1,fastq_2,sample_type
+SRR5131134,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR5131134_1.fastq.gz,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR5131134_2.fastq.gz,dsDNA
+SRR5131135,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR5131135_1.fastq.gz,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR5131135_2.fastq.gz,dsDNA
+SRR5131136,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR5131136_1.fastq.gz,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR5131136_2.fastq.gz,dsDNA
+phiX174,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR001665_1.fastq.gz,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR001665_2.fastq.gz,ssDNA
+Ecoli_K12,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR001666_1.fastq.gz,/fastscratch/tylerdoe/PHINDER-spades-test/reads/SRR001666_2.fastq.gz,bacterial
