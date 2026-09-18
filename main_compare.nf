@@ -21,6 +21,7 @@ nextflow.enable.dsl = 2
 include { SPADES_MODE_COMPARE } from './workflows/spades_mode_compare'
 
 params.compare_input = 'samplesheets/samplesheet_spades_compare.csv'
+params.skip_checkv   = true
 
 workflow {
     SPADES_MODE_COMPARE()

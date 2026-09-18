@@ -57,11 +57,18 @@ workflow SPADES_MODE_COMPARE {
             tuple("${sample_id}__${mode}", assembly)
         }
 
-    CHECKV(ch_assemblies)
     QUAST(ch_assemblies)
 
+    // CheckV is optional (skip with --skip_checkv true).
+    // CheckV's internal hmmsearch batching can fail on fragmented assemblies from
+    // poor-fit SPAdes modes — QUAST N50/contig-count is sufficient for mode comparison.
+    ch_checkv_collected = Channel.empty()
+    if (!params.skip_checkv) {
+        CHECKV(ch_assemblies)
+        ch_checkv_collected = CHECKV.out.results.map { _id, dir -> dir }.collect()
+    }
+
     // Collect all results and build comparison report
-    ch_checkv_collected = CHECKV.out.results.map { _id, dir -> dir }.collect()
     ch_quast_collected  = QUAST.out.results.map  { _id, dir -> dir }.collect()
     ch_samplesheet      = Channel.fromPath(params.compare_input)
 
