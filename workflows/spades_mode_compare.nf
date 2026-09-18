@@ -20,7 +20,6 @@
 
 include { FASTP             } from '../modules/fastp'
 include { SPADES_MODE       } from '../modules/spades_modes'
-include { CHECKV            } from '../modules/checkv'
 include { QUAST             } from '../modules/quast'
 include { COMPARE_ASSEMBLIES } from '../modules/compare_assemblies'
 
@@ -59,21 +58,14 @@ workflow SPADES_MODE_COMPARE {
 
     QUAST(ch_assemblies)
 
-    // CheckV is optional (skip with --skip_checkv true).
-    // CheckV's internal hmmsearch batching can fail on fragmented assemblies from
-    // poor-fit SPAdes modes — QUAST N50/contig-count is sufficient for mode comparison.
-    ch_checkv_collected = Channel.empty()
-    if (!params.skip_checkv) {
-        CHECKV(ch_assemblies)
-        ch_checkv_collected = CHECKV.out.results.map { _id, dir -> dir }.collect()
-    }
-
-    // Collect all results and build comparison report
-    ch_quast_collected  = QUAST.out.results.map  { _id, dir -> dir }.collect()
-    ch_samplesheet      = Channel.fromPath(params.compare_input)
+    // Collect QUAST results and build comparison report.
+    // CheckV removed from comparison workflow — hmmsearch batching fails on fragmented
+    // assemblies from poor-fit modes; QUAST N50/contig-count is sufficient here.
+    ch_quast_collected = QUAST.out.results.map { _id, dir -> dir }.collect()
+    ch_samplesheet     = Channel.fromPath(params.compare_input)
 
     COMPARE_ASSEMBLIES(
-        ch_checkv_collected,
+        Channel.empty(),
         ch_quast_collected,
         ch_samplesheet
     )
