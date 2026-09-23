@@ -36,8 +36,9 @@ process PHAROKKA {
         --force \\
         \$meta_flag
 
-    # Pharokka writes phanotate.faa regardless of prefix; rename for downstream tools
-    cp ${sample_id}_pharokka/phanotate.faa ${sample_id}_pharokka/${sample_id}.faa
+    # Non-meta mode: pharokka writes phanotate.faa and needs renaming
+    # Meta mode (prodigal-gv): pharokka writes {sample_id}.faa directly — skip cp
+    [ -f "${sample_id}_pharokka/${sample_id}.faa" ] || cp ${sample_id}_pharokka/phanotate.faa ${sample_id}_pharokka/${sample_id}.faa
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
