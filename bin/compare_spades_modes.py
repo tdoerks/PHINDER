@@ -129,18 +129,22 @@ def parse_quast(quast_dir: Path):
 def build_table(checkv_root, quast_root, sample_types):
     rows = []
 
-    # Discover all effective IDs from checkv dirs: <sample>__<mode>_checkv
-    for d in sorted(Path(checkv_root).iterdir()):
+    # Discover combinations from QUAST dirs: <sample>__<mode>_quast
+    # (CheckV is optional — keyed off QUAST so the report works without CheckV)
+    quast_path = Path(quast_root)
+    if not quast_path.exists():
+        print(f"WARNING: quast_root not found: {quast_root}", file=sys.stderr)
+        return rows
+
+    for d in sorted(quast_path.iterdir()):
         if not d.is_dir():
             continue
-        # Strip trailing _checkv
         name = d.name
-        if name.endswith('_checkv'):
-            effective_id = name[:-len('_checkv')]
+        if name.endswith('_quast'):
+            effective_id = name[:-len('_quast')]
         else:
             effective_id = name
 
-        # Parse sample and mode from double-underscore separator
         parts = effective_id.split('__')
         if len(parts) < 2:
             continue
@@ -152,14 +156,22 @@ def build_table(checkv_root, quast_root, sample_types):
 
         sample_type = sample_types.get(sample_id, 'unknown')
 
-        checkv_stats = parse_checkv(d, effective_id)
+        quast_stats = parse_quast(d)
 
-        # Find matching QUAST dir
-        quast_dir = Path(quast_root) / f'{effective_id}_quast'
-        quast_stats = parse_quast(quast_dir)
+        # CheckV is optional
+        checkv_stats = {
+            'n_contigs': 0, 'n_complete': 0, 'n_high_quality': 0,
+            'n_medium_quality': 0, 'n_low_quality': 0, 'n_not_determined': 0,
+            'checkv_genome_types': '', 'assembly_status': 'unknown', 'total_phage_bp': 0,
+        }
+        if checkv_root:
+            checkv_dir = Path(checkv_root) / f'{effective_id}_checkv'
+            if checkv_dir.exists():
+                checkv_stats = parse_checkv(checkv_dir, effective_id)
 
-        # Did assembly actually succeed? (stub FASTA has ">ASSEMBLY_FAILED" header)
-        assembly_ok = checkv_stats['assembly_status'] == 'success' and checkv_stats['n_contigs'] > 0
+        # Assembly success = QUAST ran and found contigs
+        n_contigs = quast_stats.get('quast_n_contigs', '')
+        assembly_ok = bool(n_contigs and str(n_contigs).strip() not in ('', '0'))
 
         rows.append({
             'sample': sample_id,
@@ -186,8 +198,8 @@ def write_tsv(rows, out_path):
     print(f"Wrote {len(rows)} rows → {out_path}")
 
 
-def _tier_color(n_complete, n_hq, n_mq, n_lq):
-    """Return CSS background colour representing best tier achieved."""
+def _tier_color(n_complete, n_hq, n_mq, n_lq, n50=None, assembly_status='unknown'):
+    """Return CSS background colour. Uses CheckV tiers if available, else N50."""
     if n_complete > 0:
         return '#15803d'   # green  — complete
     if n_hq > 0:
@@ -196,7 +208,22 @@ def _tier_color(n_complete, n_hq, n_mq, n_lq):
         return '#d97706'   # amber  — medium quality
     if n_lq > 0:
         return '#6b7280'   # grey   — low quality
-    return '#991b1b'       # red    — failed / no phage recovered
+    # No CheckV data — fall back to N50
+    if assembly_status == 'failed':
+        return '#991b1b'   # red — nothing assembled
+    try:
+        n = int(n50) if n50 else 0
+    except (ValueError, TypeError):
+        n = 0
+    if n >= 50000:
+        return '#15803d'   # green  — large N50
+    if n >= 10000:
+        return '#2563eb'   # blue   — good N50
+    if n >= 1000:
+        return '#d97706'   # amber  — fragmented
+    if n > 0:
+        return '#6b7280'   # grey   — very fragmented
+    return '#991b1b'       # red    — failed
 
 
 def write_html(rows, out_path, samplesheet_path):
@@ -223,7 +250,8 @@ def write_html(rows, out_path, samplesheet_path):
             r = by_sample[s].get(m)
             if r:
                 bg = _tier_color(r['n_complete'], r['n_high_quality'],
-                                 r['n_medium_quality'], r['n_low_quality'])
+                                 r['n_medium_quality'], r['n_low_quality'],
+                                 n50=r.get('quast_N50'), assembly_status=r['assembly_status'])
                 label_parts = []
                 if r['n_complete']:
                     label_parts.append(f"{r['n_complete']}✓")
@@ -335,7 +363,7 @@ def write_html(rows, out_path, samplesheet_path):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--checkv-dir',   required=True, help='Dir containing per-sample CheckV output dirs')
+    ap.add_argument('--checkv-dir',   required=False, default=None, help='Dir containing per-sample CheckV output dirs (optional)')
     ap.add_argument('--quast-dir',    required=True, help='Dir containing per-sample QUAST output dirs')
     ap.add_argument('--samplesheet',  required=True, help='CSV with sample,fastq_1,fastq_2,sample_type')
     ap.add_argument('--outdir',       default='.',   help='Output directory')
