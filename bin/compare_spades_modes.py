@@ -162,12 +162,15 @@ def build_table(checkv_root, quast_root, sample_types):
         checkv_stats = {
             'n_contigs': 0, 'n_complete': 0, 'n_high_quality': 0,
             'n_medium_quality': 0, 'n_low_quality': 0, 'n_not_determined': 0,
-            'checkv_genome_types': '', 'assembly_status': 'unknown', 'total_phage_bp': 0,
+            'checkv_genome_types': '', 'total_phage_bp': 0,
         }
         if checkv_root:
             checkv_dir = Path(checkv_root) / f'{effective_id}_checkv'
             if checkv_dir.exists():
-                checkv_stats = parse_checkv(checkv_dir, effective_id)
+                cv = parse_checkv(checkv_dir, effective_id)
+                for k, v in cv.items():
+                    if k != 'assembly_status':
+                        checkv_stats[k] = v
 
         # Assembly success = QUAST ran and found contigs
         n_contigs = quast_stats.get('quast_n_contigs', '')
@@ -259,7 +262,14 @@ def write_html(rows, out_path, samplesheet_path):
                     label_parts.append(f"{r['n_high_quality']}HQ")
                 if r['n_medium_quality']:
                     label_parts.append(f"{r['n_medium_quality']}MQ")
-                label = ' '.join(label_parts) or ('ok' if r['assembly_status'] == 'success' else 'fail')
+                if not label_parts:
+                    if r['assembly_status'] == 'success':
+                        n50v = r.get('quast_N50', '')
+                        label = f"N50={n50v}" if n50v else 'ok'
+                    else:
+                        label = 'fail'
+                else:
+                    label = ' '.join(label_parts)
                 n50 = r.get('quast_N50', '')
                 title = f"N50={n50} | contigs={r['quast_n_contigs']}"
                 cells.append(
