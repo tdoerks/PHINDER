@@ -36,9 +36,14 @@ process PHAROKKA {
         --force \\
         \$meta_flag
 
-    # Non-meta mode: pharokka writes phanotate.faa and needs renaming
-    # Meta mode (prodigal-gv): pharokka writes {sample_id}.faa directly — skip cp
-    [ -f "${sample_id}_pharokka/${sample_id}.faa" ] || cp ${sample_id}_pharokka/phanotate.faa ${sample_id}_pharokka/${sample_id}.faa
+    # Rename protein FAA to {sample_id}.faa for downstream tools
+    # Non-meta (PHANOTATE): writes phanotate.faa
+    # Meta (prodigal-gv): writes prodigal-gv.faa
+    if [ -f "${sample_id}_pharokka/phanotate.faa" ]; then
+        cp ${sample_id}_pharokka/phanotate.faa ${sample_id}_pharokka/${sample_id}.faa
+    elif [ -f "${sample_id}_pharokka/prodigal-gv.faa" ]; then
+        cp ${sample_id}_pharokka/prodigal-gv.faa ${sample_id}_pharokka/${sample_id}.faa
+    fi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
