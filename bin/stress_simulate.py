@@ -11,6 +11,9 @@ E. coli) are sampled proportionally to record length.
 Usage:
     python3 bin/stress_simulate.py --refs stress_data/refs --outdir stress_data \
         [--real-reads samplesheets/samplesheet_spades_compare.csv]
+    # breadth tier (1000-genome panel, clean 100x each):
+    python3 bin/stress_simulate.py --breadth-panel assets/stress_breadth_panel.tsv \
+        --refs stress_data/breadth_refs --outdir stress_data
 
 Outputs (in --outdir):
     reads/<sample>_R1.fastq.gz, reads/<sample>_R2.fastq.gz
@@ -18,6 +21,7 @@ Outputs (in --outdir):
     samplesheet_stress_assembly.csv    sample,assembly              (--input_mode assembly)
     stress_sra.txt                     one SRR per line             (--input_mode sra)
     stress_truth.tsv                   expected results per sample
+  breadth tier instead writes samplesheet_stress_breadth.csv + stress_truth_breadth.tsv
 """
 import argparse
 import csv
@@ -198,6 +202,49 @@ def write_sample(sample, sources, sim, reads_dir):
     return r1p, r2p, i
 
 
+TRUTH_COLS = ["sample", "mode", "category", "refs", "host_fraction", "expect_phage", "expect_lifestyle",
+              "genome_type", "notes", "class", "family", "host_genus", "host_domain", "size_bin", "length"]
+
+
+def simulate_breadth(args, refs, out, reads_dir):
+    """One clean sample per panel genome at --breadth-cov; truth carries NCBI taxonomy + host."""
+    with open(args.breadth_panel) as f:
+        panel = list(csv.DictReader(f, delimiter="\t"))
+    truth, rows, skipped = [], [], []
+    for i, p in enumerate(panel):
+        s = p["sample"]
+        if s not in refs:
+            skipped.append(s)
+            continue
+        r1p, r2p = reads_dir / f"{s}_R1.fastq.gz", reads_dir / f"{s}_R2.fastq.gz"
+        if not (r1p.exists() and r2p.exists()):   # resumable: 1000 samples take a while
+            ref = refs[s]
+            sim = Simulator(args.seed + 100_000 + i)
+            gen = sim.pairs_from(ref["records"], ref["topology"] == "circular",
+                                 n_pairs_for(int(ref["length"]), args.breadth_cov))
+            write_sample(s, [gen], sim, reads_dir)
+        rows.append((s, r1p, r2p))
+        truth.append(dict(sample=s, mode="breadth", category="breadth", refs=f"{s}:{args.breadth_cov}",
+                          host_fraction=0, expect_phage="yes", expect_lifestyle="NA",
+                          genome_type=f"{p['class']}/{p['family']}",
+                          notes=f"{p['virus_name']} ({p['accession']}); selected for {p['selected_for']}",
+                          **{k: p[k] for k in ("class", "family", "host_genus", "host_domain", "size_bin", "length")}))
+        if (i + 1) % 100 == 0:
+            print(f"  {i + 1}/{len(panel)}")
+    with open(out / "samplesheet_stress_breadth.csv", "w") as f:
+        f.write("sample,read1,read2\n")
+        for s, r1, r2 in rows:
+            f.write(f"{s},{r1},{r2}\n")
+    with open(out / "stress_truth_breadth.tsv", "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=TRUTH_COLS, delimiter="\t", restval="")
+        w.writeheader()
+        w.writerows(truth)
+    print(f"\n{len(rows)} breadth samples -> {out}/samplesheet_stress_breadth.csv")
+    if skipped:
+        print(f"SKIPPED {len(skipped)} (genome not downloaded — rerun stress_fetch_refs.py --panel): "
+              f"{', '.join(skipped[:10])}{' ...' if len(skipped) > 10 else ''}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--refs", default="stress_data/refs")
@@ -205,6 +252,8 @@ def main():
     ap.add_argument("--real-reads", help="CSV with sample,fastq_1,fastq_2 (e.g. the SPAdes-compare samplesheet)")
     ap.add_argument("--only", nargs="*", help="Simulate only these sample_ids")
     ap.add_argument("--seed", type=int, default=20260928)
+    ap.add_argument("--breadth-panel", help="Panel TSV from stress_breadth_panel.py — simulate the breadth tier instead")
+    ap.add_argument("--breadth-cov", type=int, default=100)
     args = ap.parse_args()
 
     out = Path(args.outdir).resolve()
@@ -212,6 +261,8 @@ def main():
     reads_dir.mkdir(parents=True, exist_ok=True)
     refs = load_manifest(args.refs)
     refs_dir = Path(args.refs).resolve()
+    if args.breadth_panel:
+        return simulate_breadth(args, refs, out, reads_dir)
 
     truth, reads_rows, skipped = [], [], []
 
@@ -291,10 +342,8 @@ def main():
             f.write(srr + "\n")
             truth_row(srr, "sra", "sra_mode", [(claimed, "real")], 0, f"DOWNLOAD_SRA path; docs claim {claimed} (unverified)")
 
-    cols = ["sample", "mode", "category", "refs", "host_fraction", "expect_phage",
-            "expect_lifestyle", "genome_type", "notes"]
     with open(out / "stress_truth.tsv", "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=cols, delimiter="\t")
+        w = csv.DictWriter(f, fieldnames=TRUTH_COLS, delimiter="\t", restval="")
         w.writeheader()
         w.writerows(truth)
 

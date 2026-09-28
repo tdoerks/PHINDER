@@ -9,6 +9,8 @@ Per sample it reports:
   * detection       — CheckV best quality/completeness, geNomad virus count + viral fraction
   * lifestyle       — BacPhlip and VIBRANT calls (first row, as the dashboard shows) vs truth
   * dashboard       — whether the sample made it into summary/phinder_summary.tsv
+  * taxonomy        — breadth tier: geNomad's class/family vs the NCBI lineage of the input genome
+  * breakdown       — pass/failure rates grouped by class, family, host genus/domain and size bin
 
 Module outputs are read by EXACT path: a missing file is reported as missing, never
 substituted with another sample's result.
@@ -17,6 +19,7 @@ Usage:
     python3 bin/score_stress_test.py --truth stress_data/stress_truth.tsv --refs stress_data/refs \
         --run reads=stress_runs/reads/results --run assembly=stress_runs/assembly/results \
         --run sra=stress_runs/sra/results --out stress_runs/stress_scorecard
+    (--truth and --refs are repeatable; runs whose directory does not exist are skipped)
 """
 import argparse
 import csv
@@ -154,6 +157,7 @@ def parse_genomad(run_dir, s, asm_bp):
         parts = [p for p in (best.get("taxonomy") or "").split(";") if p]
         tax = parts[-1] if parts else "unclassified"
     return {"n_virus": len(rows), "best_score": best.get("virus_score") if best else None, "taxon": tax,
+            "lineage": (best.get("taxonomy") or "") if best else "",
             "viral_frac": 100.0 * viral_bp / asm_bp if asm_bp else None}
 
 
@@ -198,7 +202,27 @@ def dashboard_samples(run_dir):
 
 # ─── Scoring ──────────────────────────────────────────────────────────────────
 
-def score_sample(t, run_dir, refs_dir, trace, dash):
+def find_ref(refs_dirs, ref_id):
+    for d in refs_dirs:
+        p = Path(d) / f"{ref_id}.fasta"
+        if p.exists():
+            return str(p)
+    return None
+
+
+def taxonomy_match(genomad, t):
+    """'family' / 'class' / 'none' — how deep geNomad's lineage agrees with NCBI's."""
+    if not genomad or not genomad.get("lineage"):
+        return "none"
+    lin = genomad["lineage"].lower()
+    if t.get("family") and t["family"] != "unclassified" and t["family"].lower() in lin:
+        return "family"
+    if t.get("class") and t["class"] != "unclassified" and t["class"].lower() in lin:
+        return "class"
+    return "none"
+
+
+def score_sample(t, run_dir, refs_dirs, trace, dash):
     s, mode = t["sample"], t["mode"]
     res = {"sample": s, "mode": mode, "category": t["category"], "notes": t["notes"],
            "expect_phage": t["expect_phage"], "expect_lifestyle": t["expect_lifestyle"]}
@@ -213,7 +237,7 @@ def score_sample(t, run_dir, refs_dir, trace, dash):
 
     # Assembly
     if mode == "assembly":
-        asm = Path(refs_dir) / f"{(s[4:] if s.startswith('asm_') else s)}.fasta"
+        asm = Path(find_ref(refs_dirs, s[4:] if s.startswith("asm_") else s) or "/nonexistent")
     else:
         asm = Path(run_dir) / "assemblies" / f"{s}_assembly.fasta"
     contigs = read_fasta(asm) if asm.exists() else None
@@ -225,7 +249,7 @@ def score_sample(t, run_dir, refs_dir, trace, dash):
     else:
         res.update(n_contigs=len(contigs), asm_bp=asm_bp,
                    largest=max((len(q) for _, q in contigs), default=0))
-        ref_fastas = {r: str(Path(refs_dir) / f"{r}.fasta") for r in comps if (Path(refs_dir) / f"{r}.fasta").exists()}
+        ref_fastas = {r: find_ref(refs_dirs, r) for r in comps if find_ref(refs_dirs, r)}
         rec, pur = assembly_vs_refs(contigs, ref_fastas) if ref_fastas else ({}, None)
         res.update(recovery=rec, purity=pur)
         checks["assembly"] = all(v >= RECOVERY_PASS for v in rec.values()) if rec else (None if comps else True)
@@ -248,6 +272,14 @@ def score_sample(t, run_dir, refs_dir, trace, dash):
     for tool in ("bacphlip", "vibrant"):
         r = res[tool]
         checks[tool] = None if exp not in ("lytic", "temperate") else (bool(r) and r["call"] == exp)
+
+    res["meta"] = {k: t.get(k, "") for k in ("class", "family", "host_genus", "host_domain", "size_bin", "length")}
+    if t.get("class"):
+        res["tax_match"] = taxonomy_match(res["genomad"], t)
+        # class is the fair bar: geNomad's database can lag newly created ICTV families
+        checks["taxonomy"] = res["tax_match"] in ("family", "class") if t["class"] != "unclassified" else None
+    else:
+        res["tax_match"] = ""
 
     res["phageterm"] = parse_phageterm(run_dir, s)
     res["on_dashboard"] = None if dash is None else s in dash
@@ -282,7 +314,10 @@ def tsv_row(r):
         "expect_lifestyle": r["expect_lifestyle"], "bacphlip": b.get("call", "missing"),
         "bacphlip_p_virulent": fmt(b.get("p_virulent"), 3), "vibrant": v.get("call", "missing"),
         "phageterm": r["phageterm"] or "–", "on_dashboard": fmt(r["on_dashboard"]),
-        "spades_realtime": spades[2], "spades_peak_rss": spades[3], "notes": r["notes"],
+        "spades_realtime": spades[2], "spades_peak_rss": spades[3],
+        "ncbi_class": r["meta"]["class"], "ncbi_family": r["meta"]["family"], "genomad_tax_match": r["tax_match"],
+        "host_genus": r["meta"]["host_genus"], "host_domain": r["meta"]["host_domain"],
+        "size_bin": r["meta"]["size_bin"], "genome_length": r["meta"]["length"], "notes": r["notes"],
     }
 
 
@@ -315,7 +350,40 @@ def cell(ok, text):
     return f'<td class="{cls}">{html.escape(text)}</td>'
 
 
-def build_html(results, run_levels, out_path):
+def breakdown(results):
+    """Rows of per-group rates for every grouping dimension present in the truth metadata."""
+    out = []
+    dims = [("class", "Virus class"), ("family", "Virus family"), ("host_domain", "Host domain"),
+            ("host_genus", "Host genus"), ("size_bin", "Genome size"), ("category", "Stress category")]
+    for key, label in dims:
+        groups = defaultdict(list)
+        for r in results:
+            g = r["category"] if key == "category" else r["meta"].get(key)
+            if g:
+                groups[g].append(r)
+        for g, rs in groups.items():
+            n = len(rs)
+            fails = defaultdict(int)
+            for r in rs:
+                for m in r["failed_modules"]:
+                    fails[m] += 1
+
+            def pct(pred):
+                return round(100.0 * sum(1 for r in rs if pred(r)) / n, 1)
+            out.append({
+                "dimension": label, "group": g, "n": n,
+                "pass_pct": pct(lambda r: r["verdict"] == "PASS"),
+                "any_module_failed_pct": pct(lambda r: bool(r["failed_modules"])),
+                "recovered_pct": pct(lambda r: r["checks"].get("assembly") is True),
+                "checkv_med_plus_pct": pct(lambda r: r["checks"].get("checkv") is True),
+                "genomad_detected_pct": pct(lambda r: bool(r["genomad"]) and r["genomad"]["n_virus"] > 0),
+                "tax_class_match_pct": pct(lambda r: r.get("tax_match") in ("family", "class")),
+                "top_failing_module": max(fails, key=fails.get) + f" ({fails[max(fails, key=fails.get)]})" if fails else "",
+            })
+    return out
+
+
+def build_html(results, run_levels, out_path, groups=None):
     counts = defaultdict(int)
     for r in results:
         counts[r["verdict"]] += 1
@@ -375,26 +443,59 @@ Purity = % of assembled bp from contigs matching an expected phage.</p>
 <th>Purity %</th><th>CheckV best</th><th>geNomad n · viral% · taxon</th><th>Expected</th><th>BacPhlip</th><th>VIBRANT</th>
 <th>PhageTerm</th><th>Dashboard</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
 <h2>Run-level tasks</h2><ul>{''.join(run_html)}</ul>
+{breakdown_html(groups or [])}
 """
     Path(out_path).write_text(doc)
 
 
+def breakdown_html(groups):
+    if not groups:
+        return ""
+    parts = ['<h2>Where it breaks — by group</h2><p class="sub">Sorted worst first within each dimension '
+             '(groups with n ≥ 3; full table in the _breakdown.tsv).</p>']
+    by_dim = defaultdict(list)
+    for g in groups:
+        by_dim[g["dimension"]].append(g)
+    for dim, gs in by_dim.items():
+        gs = sorted((g for g in gs if g["n"] >= 3), key=lambda g: (g["pass_pct"], -g["n"]))
+        if not gs:
+            continue
+        rows = []
+        for g in gs[:40]:
+            def c(v, good=90):
+                cls = "ok" if v >= good else "mid" if v >= 50 else "bad"
+                return f'<td class="{cls}">{v:.0f}%</td>'
+            rows.append(f'<tr><td>{html.escape(str(g["group"]))}</td><td>{g["n"]}</td>{c(g["pass_pct"])}'
+                        f'{c(100 - g["any_module_failed_pct"])}{c(g["recovered_pct"])}{c(g["checkv_med_plus_pct"])}'
+                        f'{c(g["genomad_detected_pct"])}{c(g["tax_class_match_pct"])}'
+                        f'<td>{html.escape(g["top_failing_module"])}</td></tr>')
+        parts.append(f'<h2>{html.escape(dim)}</h2><div class="wrap"><table><thead><tr><th>Group</th><th>n</th>'
+                     '<th>Pass</th><th>No module failed</th><th>Recovered ≥90%</th><th>CheckV ≥ medium</th>'
+                     '<th>geNomad detected</th><th>Taxonomy class ok</th><th>Top failing module</th></tr></thead>'
+                     f'<tbody>{"".join(rows)}</tbody></table></div>')
+    return "".join(parts)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--truth", required=True)
-    ap.add_argument("--refs", required=True)
+    ap.add_argument("--truth", action="append", required=True, help="truth TSV (repeatable)")
+    ap.add_argument("--refs", action="append", required=True, help="reference FASTA dir (repeatable)")
     ap.add_argument("--run", action="append", required=True, help="mode=results_dir (repeatable)")
     ap.add_argument("--out", default="stress_scorecard", help="Output prefix (.tsv and .html)")
     args = ap.parse_args()
 
-    runs = dict(r.split("=", 1) for r in args.run)
+    runs = {m: d for m, d in (r.split("=", 1) for r in args.run) if Path(d).is_dir()}
+    print(f"Scoring runs: {', '.join(runs) or 'none found'}")
     traces, run_levels, dashes = {}, {}, {}
     for mode, d in runs.items():
         traces[mode], run_levels[mode] = parse_trace(d)
         dashes[mode] = dashboard_samples(d)
 
-    with open(args.truth) as f:
-        truth = [t for t in csv.DictReader(f, delimiter="\t") if t["mode"] in runs]
+    truth = []
+    for tp in args.truth:
+        if Path(tp).exists():
+            with open(tp) as f:
+                truth += [t for t in csv.DictReader(f, delimiter="\t") if t["mode"] in runs]
 
     results = []
     for t in truth:
@@ -408,8 +509,14 @@ def main():
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()) if rows else ["sample"], delimiter="\t")
         w.writeheader()
         w.writerows(rows)
-    build_html(results, run_levels, f"{args.out}.html")
-    print(f"\n-> {args.out}.tsv\n-> {args.out}.html")
+    groups = breakdown(results)
+    if groups:
+        with open(f"{args.out}_breakdown.tsv", "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=list(groups[0].keys()), delimiter="\t")
+            w.writeheader()
+            w.writerows(groups)
+    build_html(results, run_levels, f"{args.out}.html", groups)
+    print(f"\n-> {args.out}.tsv\n-> {args.out}_breakdown.tsv\n-> {args.out}.html")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1001 @@
+sample	accession	virus_name	isolate	realm	class	family	genus	host_domain	host_phylum	host_genus	length	size_bin	selected_for
+bx_NC_047837_1	NC_047837.1	Flavobacterium phage FLiP		Varidnaviria	Ainoaviricetes	Finnlakeviridae	Finnlakevirus	Bacteria	Bacteroidota	Flavobacterium	9174	<10kb	class:Ainoaviricetes
+bx_NC_055066_1	NC_055066.1	Vibrio phage 1.080.O._10N.286.48.A4		Varidnaviria	Belvinaviricetes	Autolykiviridae	Paulavirus	Bacteria	Pseudomonadota	Vibrio	10046	10-30kb	class:Belvinaviricetes
+bx_NC_055063_1	NC_055063.1	Vibrio phage 1.044.O._10N.261.51.B8		Varidnaviria	Belvinaviricetes	Autolykiviridae	Paulavirus	Bacteria	Pseudomonadota	Vibrio	10272	10-30kb	class:Belvinaviricetes
+bx_NC_055064_1	NC_055064.1	Vibrio phage 1.008.O._10N.286.54.E5		Varidnaviria	Belvinaviricetes	Autolykiviridae	Ameliavirus	Bacteria	Pseudomonadota	Vibrio	10579	10-30kb	class:Belvinaviricetes
+bx_NC_055065_1	NC_055065.1	Vibrio phage 1.020.O._10N.222.48.A2		Varidnaviria	Belvinaviricetes	Autolykiviridae	Oliviavirus	Bacteria	Pseudomonadota	Vibrio	10636	10-30kb	class:Belvinaviricetes
+bx_NC_074649_1	NC_074649.1	Methanophagales virus PBV305	PBV305	Varidnaviria	Belvinaviricetes	Chaacviridae	Homochaacvirus	Archaea	Methanobacteriota	Methanophagales	10198	10-30kb	class:Belvinaviricetes
+bx_NC_074648_1	NC_074648.1	Methanophagales virus PBV266	PBV266	Varidnaviria	Belvinaviricetes	Chaacviridae	Antichaacvirus	Archaea	Methanobacteriota	Methanophagales	10775	10-30kb	fill
+bx_NC_074650_1	NC_074650.1	Methanophagales virus PBV304	PBV304	Varidnaviria	Belvinaviricetes	Chaacviridae	Homochaacvirus	Archaea	Methanobacteriota	Methanophagales	10798	10-30kb	class:Belvinaviricetes
+bx_NC_000867_1	NC_000867.1	Pseudoalteromonas phage PM2		Varidnaviria	Belvinaviricetes	Corticoviridae	Merivirus	Bacteria	Pseudomonadota	Pseudoalteromonas	10079	10-30kb	class:Belvinaviricetes
+bx_NC_042121_1	NC_042121.1	Pseudoalteromonas phage Cr39582		Varidnaviria	Belvinaviricetes	Corticoviridae	Merivirus	Bacteria	Pseudomonadota	Pseudoalteromonas	10584	10-30kb	class:Belvinaviricetes
+bx_NC_076993_1	NC_076993.1	Lokiarchaeia virus SkuldV3		Varidnaviria	Belvinaviricetes	Skuldviridae	Delusorvirus	Archaea	Promethearchaeota	Promethearchaeia	11465	10-30kb	class:Belvinaviricetes
+bx_NC_014099_1	NC_014099.1	Sulfolobus turreted icosahedral virus 2		Varidnaviria	Belvinaviricetes	Turriviridae	Alphaturrivirus	Archaea	Thermoproteota	Sulfolobus	16622	10-30kb	fill
+bx_NC_005892_1	NC_005892.1	Sulfolobus turreted icosahedral virus 1		Varidnaviria	Belvinaviricetes	Turriviridae	Alphaturrivirus	Archaea	Thermoproteota	Saccharolobus	17663	10-30kb	class:Belvinaviricetes
+bx_NC_048765_1	NC_048765.1	Vibrio phage VAP7	Vibrio alginolyticus VA1	Duplodnaviria	Caudoviricetes	Ackermannviridae	Vapseptimavirus	Bacteria	Pseudomonadota	Vibrio	144685	100-200kb	fill
+bx_NC_019925_1	NC_019925.1	Dickeya phage vB-DsoM-LIMEstone1		Duplodnaviria	Caudoviricetes	Ackermannviridae	Limestonevirus	Bacteria	Pseudomonadota	Dickeya	152427	100-200kb	fill
+bx_NC_025452_1	NC_025452.1	Dickeya phage RC-2014		Duplodnaviria	Caudoviricetes	Ackermannviridae	Limestonevirus	Bacteria	Pseudomonadota	Dickeya	155346	100-200kb	fill
+bx_NC_020083_1	NC_020083.1	Serratia phage phiMAM1		Duplodnaviria	Caudoviricetes	Ackermannviridae	Miltonvirus	Bacteria	Pseudomonadota	Serratia	157834	100-200kb	fill
+bx_NC_048736_1	NC_048736.1	Serratia phage vB_SmaA_3M		Duplodnaviria	Caudoviricetes	Ackermannviridae	Miltonvirus	Bacteria	Pseudomonadota	Serratia	159398	100-200kb	fill
+bx_NC_049497_1	NC_049497.1	Salmonella phage Se-J	62	Duplodnaviria	Caudoviricetes	Ackermannviridae	Kuttervirus	Bacteria	Pseudomonadota	Salmonella	160400	100-200kb	family
+bx_NC_062748_1	NC_062748.1	Olleya phage Harreka_1		Duplodnaviria	Caudoviricetes	Aggregaviridae	Harrekavirus	Bacteria	Bacteroidota	Olleya	43175	30-60kb	family
+bx_NC_074638_1	NC_074638.1	Methanophagales virus PBV299	PBV299	Duplodnaviria	Caudoviricetes	Ahpuchviridae	Kisinvirus	Archaea	Methanobacteriota	Methanophagales	71075	60-100kb	family
+bx_NC_070711_1	NC_070711.1	Streptococcus phage P9902		Duplodnaviria	Caudoviricetes	Aliceevansviridae	Moineauvirus	Bacteria	Bacillota	Streptococcus	35535	30-60kb	fill
+bx_NC_070708_1	NC_070708.1	Streptococcus phage P9851		Duplodnaviria	Caudoviricetes	Aliceevansviridae	Moineauvirus	Bacteria	Bacillota	Streptococcus	35835	30-60kb	fill
+bx_NC_071059_1	NC_071059.1	Streptococcus phage P0095		Duplodnaviria	Caudoviricetes	Aliceevansviridae	Vansinderenvirus	Bacteria	Bacillota	Streptococcus	35966	30-60kb	family
+bx_NC_070719_1	NC_070719.1	Streptococcus phage SW5		Duplodnaviria	Caudoviricetes	Aliceevansviridae	Moineauvirus	Bacteria	Bacillota	Streptococcus	36836	30-60kb	fill
+bx_NC_070687_1	NC_070687.1	Streptococcus phage L5A1		Duplodnaviria	Caudoviricetes	Aliceevansviridae	Moineauvirus	Bacteria	Bacillota	Streptococcus	36884	30-60kb	fill
+bx_NC_000872_1	NC_000872.1	Streptococcus phage Sfi21		Duplodnaviria	Caudoviricetes	Aliceevansviridae	Moineauvirus	Bacteria	Bacillota	Streptococcus	40739	30-60kb	fill
+bx_NC_062738_1	NC_062738.1	Methanobacterium virus Drs3		Duplodnaviria	Caudoviricetes	Anaerodiviridae	Metforvirus	Archaea	Methanobacteriota	Methanobacterium	37129	30-60kb	family
+bx_NC_005263_2	NC_005263.2	Burkholderia phage Bcep1		Duplodnaviria	Caudoviricetes	Anamaviridae	Naesvirus	Bacteria	Pseudomonadota	Burkholderia	48177	30-60kb	family
+bx_NC_028825_1	NC_028825.1	Escherichia phage vB_EcoM_AYO145A		Duplodnaviria	Caudoviricetes	Andersonviridae	Felixounavirus	Bacteria	Pseudomonadota	Escherichia	87372	60-100kb	family
+bx_NC_029023_1	NC_029023.1	Escherichia phage JH2		Duplodnaviria	Caudoviricetes	Andersonviridae	Felixounavirus	Bacteria	Pseudomonadota	Shimwellia	87712	60-100kb	host_genus
+bx_NC_028247_1	NC_028247.1	Citrobacter phage Michonne		Duplodnaviria	Caudoviricetes	Andersonviridae	Mooglevirus	Bacteria	Pseudomonadota	Citrobacter	90000	60-100kb	fill
+bx_NC_077214_1	NC_077214.1	Poseidoniales virus YSH_150918	YSH_150918	Duplodnaviria	Caudoviricetes	Aoguangviridae	Aobingvirus	Archaea	Thermoplasmatota	Poseidoniales	92274	60-100kb	family
+bx_NC_071039_1	NC_071039.1	Pseudomonas phage vB_PaeM_PA5oct		Duplodnaviria	Caudoviricetes	Arenbergviridae	Wroclawvirus	Bacteria	Pseudomonadota	Pseudomonas	286783	>200kb	family
+bx_NC_133254_1	NC_133254.1	Ariesvirus gravis		Duplodnaviria	Caudoviricetes	Armatusviridae	Ariesvirus	Archaea	Methanobacteriota	Methanobacteriales	51140	30-60kb	family
+bx_NC_021799_1	NC_021799.1	Cellulophaga phage phi19:1	phi19:1	Duplodnaviria	Caudoviricetes	Assiduviridae	Cellubavirus	Bacteria	Bacteroidota	Cellulophaga	57447	30-60kb	family
+bx_NC_041912_1	NC_041912.1	Aquamicrobium phage P14		Duplodnaviria	Caudoviricetes	Autonotataviridae	Aqualcavirus	Bacteria	Pseudomonadota	Aquamicrobium	40551	30-60kb	host_genus
+bx_NC_048055_1	NC_048055.1	Curvibacter phage P26059B		Duplodnaviria	Caudoviricetes	Autonotataviridae	Kalppathivirus	Bacteria	Pseudomonadota	Curvibacter	41344	30-60kb	host_genus
+bx_NC_019528_1	NC_019528.1	Aeromonas phage phiAS7		Duplodnaviria	Caudoviricetes	Autonotataviridae	Aerosvirus	Bacteria	Pseudomonadota	Aeromonas	41572	30-60kb	fill
+bx_NC_022916_1	NC_022916.1	Burkholderia phage JG068		Duplodnaviria	Caudoviricetes	Autonotataviridae	Mguuvirus	Bacteria	Pseudomonadota	Burkholderia	41604	30-60kb	fill
+bx_NC_048029_1	NC_048029.1	Sphingomonas phage Scott	SPS	Duplodnaviria	Caudoviricetes	Autonotataviridae	Scottvirus	Bacteria	Pseudomonadota	Sphingomonas	43077	30-60kb	fill
+bx_NC_022982_1	NC_022982.1	Xylella phage Paz		Duplodnaviria	Caudoviricetes	Autonotataviridae	Pazvirus	Bacteria	Pseudomonadota	Xylella	43869	30-60kb	fill
+bx_NC_022987_1	NC_022987.1	Xylella phage Prado		Duplodnaviria	Caudoviricetes	Autonotataviridae	Pradovirus	Bacteria	Pseudomonadota	Xylella	43940	30-60kb	fill
+bx_NC_028988_1	NC_028988.1	Ralstonia phage RSJ2		Duplodnaviria	Caudoviricetes	Autonotataviridae	Risjevirus	Bacteria	Pseudomonadota	Ralstonia	44360	30-60kb	family
+bx_NC_047860_1	NC_047860.1	Caulobacter phage Lullwater		Duplodnaviria	Caudoviricetes	Autonotataviridae	Lullwatervirus	Bacteria	Pseudomonadota	Caulobacter	44638	30-60kb	fill
+bx_NC_042124_1	NC_042124.1	Acinetobacter phage vB_AbaP_D2		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Friunavirus	Bacteria	Pseudomonadota	Acinetobacter	39964	30-60kb	fill
+bx_NC_048142_1	NC_048142.1	Acinetobacter phage AbKT21phiIII		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Friunavirus	Bacteria	Pseudomonadota	Acinetobacter	40898	30-60kb	fill
+bx_NC_048148_1	NC_048148.1	Providencia phage vB_PstP_PS3		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Kakivirus	Bacteria	Pseudomonadota	Providencia	41024	30-60kb	host_genus
+bx_NC_027342_1	NC_027342.1	Proteus phage PM16		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Novosibovirus	Bacteria	Pseudomonadota	Proteus	41268	30-60kb	fill
+bx_NC_005045_1	NC_005045.1	Pseudomonas phage phiKMV		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Phikmvvirus	Bacteria	Pseudomonadota	Pseudomonas	42519	30-60kb	fill
+bx_NC_011107_1	NC_011107.1	Pseudomonas phage PT2	PT2	Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Phikmvvirus	Bacteria	Pseudomonadota	Pseudomonas	42961	30-60kb	family
+bx_NC_015585_1	NC_015585.1	Pantoea phage LIMEzero		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Waewaevirus	Bacteria	Pseudomonadota	Pantoea	43032	30-60kb	fill
+bx_NC_048036_1	NC_048036.1	Vibrio phage vB_VpaP_KF2		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Maculvirus	Bacteria	Pseudomonadota	Vibrio	43571	30-60kb	fill
+bx_NC_048174_1	NC_048174.1	Shigella phage Buco		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Bucovirus	Bacteria	Pseudomonadota	Shigella	43630	30-60kb	fill
+bx_NC_048120_1	NC_048120.1	Pectobacterium phage Zenivior		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Phimunavirus	Bacteria	Pseudomonadota	Pectobacterium	43724	30-60kb	host_genus
+bx_NC_041854_1	NC_041854.1	Pectobacterium phage PhiM1		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Phimunavirus	Bacteria	Pseudomonadota	Pectobacterium	43827	30-60kb	fill
+bx_NC_048117_1	NC_048117.1	Pectobacterium phage Khlen		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Phimunavirus	Bacteria	Pseudomonadota	Pectobacterium	44013	30-60kb	fill
+bx_NC_047811_1	NC_047811.1	Klebsiella phage vB_KpnP_KpV74		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Drulisvirus	Bacteria	Pseudomonadota	Klebsiella	44094	30-60kb	fill
+bx_NC_042131_1	NC_042131.1	Pectobacterium phage vB_PatP_CB5		Duplodnaviria	Caudoviricetes	Autoscriptoviridae	Phimunavirus	Bacteria	Pseudomonadota	Pectobacterium	44549	30-60kb	fill
+bx_NC_047803_1	NC_047803.1	Vibrio phage Vp670		Duplodnaviria	Caudoviricetes	Autosignataviridae	Kaohsiungvirus	Bacteria	Pseudomonadota	Vibrio	43121	30-60kb	family
+bx_NC_027379_1	NC_027379.1	Proteus phage PM 85		Duplodnaviria	Caudoviricetes	Autosignataviridae	Acadevirus	Bacteria	Pseudomonadota	Proteus	43642	30-60kb	fill
+bx_NC_047821_1	NC_047821.1	Marinomonas phage CPP1m		Duplodnaviria	Caudoviricetes	Autosignataviridae	Murciavirus	Bacteria	Pseudomonadota	Marinomonas	44245	30-60kb	fill
+bx_NC_025450_1	NC_025450.1	Lelliottia phage phD2B		Duplodnaviria	Caudoviricetes	Autosignataviridae	Tuodvirus	Bacteria	Pseudomonadota	Lelliottia	44366	30-60kb	host_genus
+bx_NC_047836_1	NC_047836.1	Marinomonas phage CB5A		Duplodnaviria	Caudoviricetes	Autosignataviridae	Murciavirus	Bacteria	Pseudomonadota	Marinomonas	45385	30-60kb	host_genus
+bx_NC_009014_1	NC_009014.1	Erwinia phage Era103		Duplodnaviria	Caudoviricetes	Autosignataviridae	Eracentumvirus	Bacteria	Pseudomonadota	Erwinia	45445	30-60kb	fill
+bx_NC_028795_1	NC_028795.1	Enterobacter phage E-3		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Teetrevirus	Bacteria	Pseudomonadota	Enterobacter	31522	30-60kb	fill
+bx_NC_047832_1	NC_047832.1	Pasteurella phage PHB01		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Wuhanvirus	Bacteria	Pseudomonadota	Pasteurella	37287	30-60kb	fill
+bx_NC_028702_1	NC_028702.1	Delftia phage IME-DE1		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Piedvirus	Bacteria	Pseudomonadota	Delftia	38084	30-60kb	fill
+bx_NC_047864_1	NC_047864.1	Enterobacteria phage T3		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Teetrevirus	Bacteria	Pseudomonadota	Enterobacteriaceae	38209	30-60kb	fill
+bx_NC_011085_3	NC_011085.3	Morganella phage MmP1		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Minipunavirus	Bacteria	Pseudomonadota	Morganella	38457	30-60kb	host_genus
+bx_NC_023715_1	NC_023715.1	Yersinia phage Yep-phi		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Berlinvirus	Bacteria	Pseudomonadota	Yersinia	38616	30-60kb	fill
+bx_NC_047831_1	NC_047831.1	Pasteurella phage vB_PmuP_PHB02		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Wuhanvirus	Bacteria	Pseudomonadota	Pasteurella	38670	30-60kb	host_genus
+bx_NC_011038_1	NC_011038.1	Yersinia phage Yepe2		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Berlinvirus	Bacteria	Pseudomonadota	Yersinia	38677	30-60kb	fill
+bx_NC_047843_1	NC_047843.1	Leclercia phage 10164-302		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Teetrevirus	Bacteria	Pseudomonadota	Leclercia	39064	30-60kb	host_genus
+bx_NC_031092_1	NC_031092.1	Citrobacter phage SH2		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Teetrevirus	Bacteria	Pseudomonadota	Citrobacter	39158	30-60kb	fill
+bx_NC_011534_1	NC_011534.1	Kluyvera phage Kvp1		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Berlinvirus	Bacteria	Pseudomonadota	Kluyvera	39472	30-60kb	host_genus
+bx_NC_007149_1	NC_007149.1	Vibrio phage VP4		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Chatterjeevirus	Bacteria	Pseudomonadota	Vibrio	39503	30-60kb	family
+bx_NC_001271_1	NC_001271.1	Yersinia phage phiYeO3-12		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Teetrevirus	Bacteria	Pseudomonadota	Yersinia	39600	30-60kb	host_genus
+bx_NC_031115_1	NC_031115.1	Morganella phage vB_MmoP_MP2		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Minipunavirus	Bacteria	Pseudomonadota	Morganella	39616	30-60kb	fill
+bx_NC_047982_1	NC_047982.1	Ralstonia phage RPSC1		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Stompelvirus	Bacteria	Pseudomonadota	Ralstonia	39628	30-60kb	fill
+bx_NC_048161_1	NC_048161.1	Cronobacter phage GW1		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Kayfunavirus	Bacteria	Pseudomonadota	Cronobacter	39695	30-60kb	fill
+bx_NC_047964_1	NC_047964.1	Dickeya phage Ninurta		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Ningirsuvirus	Bacteria	Pseudomonadota	Dickeya	39699	30-60kb	fill
+bx_NC_048057_1	NC_048057.1	Dickeya phage Katbat		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Aarhusvirus	Bacteria	Pseudomonadota	Dickeya	40441	30-60kb	fill
+bx_NC_047961_1	NC_047961.1	Dickeya phage Dagda		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Aarhusvirus	Bacteria	Pseudomonadota	Dickeya	40484	30-60kb	fill
+bx_NC_048060_1	NC_048060.1	Dickeya phage Mysterion		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Aarhusvirus	Bacteria	Pseudomonadota	Dickeya	40651	30-60kb	host_genus
+bx_NC_048059_1	NC_048059.1	Dickeya phage Luksen		Duplodnaviria	Caudoviricetes	Autotranscriptaviridae	Aarhusvirus	Bacteria	Pseudomonadota	Dickeya	40729	30-60kb	fill
+bx_NC_049498_1	NC_049498.1	Arthrobacter phage Abba		Duplodnaviria	Caudoviricetes	Berryhillviridae	Ayohtrevirus	Bacteria	Actinomycetota	Arthrobacter	46623	30-60kb	family
+bx_NC_049468_1	NC_049468.1	Arthrobacter phage Zartrosa		Duplodnaviria	Caudoviricetes	Berryhillviridae	Marthavirus	Bacteria	Actinomycetota	Arthrobacter	50782	30-60kb	fill
+bx_NC_041866_1	NC_041866.1	Acinetobacter phage YMC11/11/R3177		Duplodnaviria	Caudoviricetes	Buchnerviridae	Jauervirus	Bacteria	Pseudomonadota	Acinetobacter	47575	30-60kb	family
+bx_NC_071022_1	NC_071022.1	Arthrobacter phage BaileyBlu		Duplodnaviria	Caudoviricetes	Casidaviridae	Baileybluvirus	Bacteria	Actinomycetota	Paeniglutamicibacter	40447	30-60kb	fill
+bx_NC_048093_1	NC_048093.1	Arthrobacter phage DrManhattan		Duplodnaviria	Caudoviricetes	Casidaviridae	Manhattanvirus	Bacteria	Actinomycetota	Sinomonas	42577	30-60kb	host_genus
+bx_NC_071028_1	NC_071028.1	Arthrobacter phage Adumb2043		Duplodnaviria	Caudoviricetes	Casidaviridae	Yangvirus	Bacteria	Actinomycetota	Arthrobacter	43100	30-60kb	family
+bx_NC_042345_1	NC_042345.1	Xylella phage Salvo		Duplodnaviria	Caudoviricetes	Casjensviridae	Salvovirus	Bacteria	Pseudomonadota	Xylella	55601	30-60kb	fill
+bx_NC_042344_1	NC_042344.1	Xylella phage Sano		Duplodnaviria	Caudoviricetes	Casjensviridae	Sanovirus	Bacteria	Pseudomonadota	Xylella	56147	30-60kb	fill
+bx_NC_020853_1	NC_020853.1	Loktanella phage pCB2051-A	pCB2051-A	Duplodnaviria	Caudoviricetes	Casjensviridae	Broinstvirus	Bacteria	Pseudomonadota	Loktanella	56958	30-60kb	host_genus
+bx_NC_028812_1	NC_028812.1	Proteus phage pPM_01		Duplodnaviria	Caudoviricetes	Casjensviridae	Lavrentievavirus	Bacteria	Pseudomonadota	Proteus	58546	30-60kb	fill
+bx_NC_052970_1	NC_052970.1	Ruegeria phage vB_RpoS-V18		Duplodnaviria	Caudoviricetes	Casjensviridae		Bacteria	Pseudomonadota	Ruegeria	59111	30-60kb	fill
+bx_NC_052974_1	NC_052974.1	Achromobacter phage vB_AchrS_AchV4		Duplodnaviria	Caudoviricetes	Casjensviridae	Gediminasvirus	Bacteria	Pseudomonadota	Achromobacter	59489	30-60kb	fill
+bx_NC_052971_1	NC_052971.1	Ruegeria phage vB_RpoS-V11		Duplodnaviria	Caudoviricetes	Casjensviridae		Bacteria	Pseudomonadota	Ruegeria	59549	30-60kb	fill
+bx_NC_052972_1	NC_052972.1	Ruegeria phage vB_RpoS-V7		Duplodnaviria	Caudoviricetes	Casjensviridae		Bacteria	Pseudomonadota	Ruegeria	59573	30-60kb	fill
+bx_NC_025428_1	NC_025428.1	Ruegeria phage DSS3-P1	DSS3-P1	Duplodnaviria	Caudoviricetes	Casjensviridae		Bacteria	Pseudomonadota	Ruegeria	59601	30-60kb	fill
+bx_NC_053009_1	NC_053009.1	Providencia phage vB_PreS-PibeRecoleta		Duplodnaviria	Caudoviricetes	Casjensviridae	Redjacvirus	Bacteria	Pseudomonadota	Providencia	60727	60-100kb	fill
+bx_NC_053010_1	NC_053010.1	Providencia phage vB_PreS-Stilesk		Duplodnaviria	Caudoviricetes	Casjensviridae	Redjacvirus	Bacteria	Pseudomonadota	Providencia	60924	60-100kb	fill
+bx_NC_052969_1	NC_052969.1	Ruegeria phage vB_RpoS-V16		Duplodnaviria	Caudoviricetes	Casjensviridae		Bacteria	Pseudomonadota	Ruegeria	61382	60-100kb	fill
+bx_NC_052989_1	NC_052989.1	Cronobacter phage JC01		Duplodnaviria	Caudoviricetes	Casjensviridae	Jacunavirus	Bacteria	Pseudomonadota	Cronobacter	61736	60-100kb	fill
+bx_NC_029106_1	NC_029106.1	Achromobacter phage phiAxp-2		Duplodnaviria	Caudoviricetes	Casjensviridae	Fengtaivirus	Bacteria	Pseudomonadota	Achromobacter	62220	60-100kb	host_genus
+bx_NC_053011_1	NC_053011.1	Erwinia phage pEp_SNUABM_08		Duplodnaviria	Caudoviricetes	Casjensviridae	Gwanakrovirus	Bacteria	Pseudomonadota	Erwinia	62716	60-100kb	family
+bx_NC_053012_1	NC_053012.1	Serratia phage JS26		Duplodnaviria	Caudoviricetes	Casjensviridae	Dunedinvirus	Bacteria	Pseudomonadota	Prodigiosinella	63971	60-100kb	host_genus
+bx_NC_047791_1	NC_047791.1	Pectobacterium phage PP101		Duplodnaviria	Caudoviricetes	Chaseviridae	Suwonvirus	Bacteria	Pseudomonadota	Pectobacterium	53333	30-60kb	fill
+bx_NC_079174_1	NC_079174.1	Erwinia phage Fifi44		Duplodnaviria	Caudoviricetes	Chaseviridae	Fifivirus	Bacteria	Pseudomonadota	Erwinia	53559	30-60kb	family
+bx_NC_047978_1	NC_047978.1	Erwinia phage Faunus		Duplodnaviria	Caudoviricetes	Chaseviridae	Faunusvirus	Bacteria	Pseudomonadota	Erwinia	54065	30-60kb	fill
+bx_NC_047824_1	NC_047824.1	Shewanella phage SppYZU05		Duplodnaviria	Caudoviricetes	Chaseviridae	Yushanvirus	Bacteria	Pseudomonadota	Shewanella	54319	30-60kb	fill
+bx_NC_023594_2	NC_023594.2	Shewanella phage Spp001		Duplodnaviria	Caudoviricetes	Chaseviridae	Yushanvirus	Bacteria	Pseudomonadota	Shewanella	54791	30-60kb	fill
+bx_NC_048875_1	NC_048875.1	Pantoea phage vB_PagM_SSEM1		Duplodnaviria	Caudoviricetes	Chaseviridae	Loessnervirus	Bacteria	Pseudomonadota	Pantoea	54982	30-60kb	fill
+bx_NC_019504_1	NC_019504.1	Erwinia phage vB_EamM-Y2		Duplodnaviria	Caudoviricetes	Chaseviridae	Loessnervirus	Bacteria	Pseudomonadota	Erwinia	56621	30-60kb	fill
+bx_NC_031007_1	NC_031007.1	Erwinia phage vB_EamM_EarlPhillipIV		Duplodnaviria	Caudoviricetes	Chimalliviridae	Derbicusvirus	Bacteria	Pseudomonadota	Erwinia	223935	>200kb	jumbo
+bx_NC_031043_1	NC_031043.1	Erwinia phage vB_EamM_Phobos		Duplodnaviria	Caudoviricetes	Chimalliviridae	Derbicusvirus	Bacteria	Pseudomonadota	Erwinia	229501	>200kb	jumbo
+bx_NC_071007_1	NC_071007.1	Aeromonas phage ZPAH34		Duplodnaviria	Caudoviricetes	Chimalliviridae	Chaoshanvirus	Bacteria	Pseudomonadota	Aeromonas	234546	>200kb	jumbo
+bx_NC_042136_1	NC_042136.1	Vibrio phage VP4B		Duplodnaviria	Caudoviricetes	Chimalliviridae	Tidunavirus	Bacteria	Pseudomonadota	Vibrio	236053	>200kb	jumbo
+bx_NC_070998_1	NC_070998.1	Aeromonas phage PS1		Duplodnaviria	Caudoviricetes	Chimalliviridae	Ferozepurvirus	Bacteria	Pseudomonadota	Aeromonas	237367	>200kb	jumbo
+bx_NC_048821_1	NC_048821.1	Photobacterium phage PDCC-1		Duplodnaviria	Caudoviricetes	Chimalliviridae	Aphroditevirus	Bacteria	Pseudomonadota	Photobacterium	237509	>200kb	host_genus
+bx_NC_042100_1	NC_042100.1	Vibrio phage Aphrodite1		Duplodnaviria	Caudoviricetes	Chimalliviridae	Aphroditevirus	Bacteria	Pseudomonadota	Vibrio	237722	>200kb	jumbo
+bx_NC_048779_1	NC_048779.1	Vibrio phage USC-1		Duplodnaviria	Caudoviricetes	Chimalliviridae	Aphroditevirus	Bacteria	Pseudomonadota	Vibrio	238099	>200kb	jumbo
+bx_NC_031127_1	NC_031127.1	Erwinia phage vB_EamM_Huxley		Duplodnaviria	Caudoviricetes	Chimalliviridae	Machinavirus	Bacteria	Pseudomonadota	Erwinia	240761	>200kb	jumbo
+bx_NC_042056_1	NC_042056.1	Erwinia phage Machina		Duplodnaviria	Caudoviricetes	Chimalliviridae	Machinavirus	Bacteria	Pseudomonadota	Erwinia	241654	>200kb	jumbo
+bx_NC_031126_1	NC_031126.1	Erwinia phage vB_EamM_ChrisDB		Duplodnaviria	Caudoviricetes	Chimalliviridae	Machinavirus	Bacteria	Pseudomonadota	Erwinia	244840	>200kb	jumbo
+bx_NC_031010_1	NC_031010.1	Erwinia phage vB_EamM_Kwan		Duplodnaviria	Caudoviricetes	Chimalliviridae	Wellingtonvirus	Bacteria	Pseudomonadota	Erwinia	246390	>200kb	jumbo
+bx_NC_071015_1	NC_071015.1	Kosakonia phage Kc263		Duplodnaviria	Caudoviricetes	Chimalliviridae	Branisovskavirus	Bacteria	Pseudomonadota	Kosakonia	253740	>200kb	host_genus
+bx_NC_070957_1	NC_070957.1	Aeromonas phage D3		Duplodnaviria	Caudoviricetes	Chimalliviridae	Ludhianavirus	Bacteria	Pseudomonadota	Aeromonas	262372	>200kb	jumbo
+bx_NC_070952_1	NC_070952.1	Erwinia phage AH04		Duplodnaviria	Caudoviricetes	Chimalliviridae	Meadowvirus	Bacteria	Pseudomonadota	Erwinia	262639	>200kb	jumbo
+bx_NC_042098_1	NC_042098.1	Erwinia phage vB_EamM_Desertfox		Duplodnaviria	Caudoviricetes	Chimalliviridae	Agricanvirus	Bacteria	Pseudomonadota	Erwinia	272458	>200kb	jumbo
+bx_NC_041975_1	NC_041975.1	Erwinia phage vB_EamM_Special G		Duplodnaviria	Caudoviricetes	Chimalliviridae	Agricanvirus	Bacteria	Pseudomonadota	Erwinia	273224	>200kb	jumbo
+bx_NC_048792_1	NC_048792.1	Serratia phage Moabite		Duplodnaviria	Caudoviricetes	Chimalliviridae	Moabitevirus	Bacteria	Pseudomonadota	Serratia	273933	>200kb	jumbo
+bx_NC_048668_1	NC_048668.1	Serratia phage vB_SmaM_ 2050HW		Duplodnaviria	Caudoviricetes	Chimalliviridae	Moabitevirus	Bacteria	Pseudomonadota	Serratia	276025	>200kb	jumbo
+bx_NC_048182_1	NC_048182.1	Edwardsiella phage pEt-SU		Duplodnaviria	Caudoviricetes	Chimalliviridae	Petsuvirus	Bacteria	Pseudomonadota	Edwardsiella	276734	>200kb	family
+bx_NC_041994_1	NC_041994.1	Pseudomonas phage Noxifer		Duplodnaviria	Caudoviricetes	Chimalliviridae	Noxifervirus	Bacteria	Pseudomonadota	Pseudomonas	278136	>200kb	jumbo
+bx_NC_041911_1	NC_041911.1	Ralstonia phage RP12	RP12	Duplodnaviria	Caudoviricetes	Chimalliviridae	Ripduovirus	Bacteria	Pseudomonadota	Ralstonia	279845	>200kb	jumbo
+bx_NC_004629_1	NC_004629.1	Pseudomonas phage phiKZ		Duplodnaviria	Caudoviricetes	Chimalliviridae	Phikzvirus	Bacteria	Pseudomonadota	Pseudomonas	280334	>200kb	jumbo
+bx_NC_061421_1	NC_061421.1	Klebsiella phage vB_KpM_FBKp24		Duplodnaviria	Caudoviricetes	Chimalliviridae	Maaswegvirus	Bacteria	Pseudomonadota	Klebsiella	307210	>200kb	jumbo
+bx_NC_028999_1	NC_028999.1	Pseudomonas phage PhiPA3		Duplodnaviria	Caudoviricetes	Chimalliviridae	Miltoncavirus	Bacteria	Pseudomonadota	Pseudomonas	309208	>200kb	jumbo
+bx_NC_010821_1	NC_010821.1	Pseudomonas phage 201phi2-1		Duplodnaviria	Caudoviricetes	Chimalliviridae	Serwervirus	Bacteria	Pseudomonadota	Pseudomonas	316674	>200kb	jumbo
+bx_NC_048155_1	NC_048155.1	Streptomyces phage Lilbooboo		Duplodnaviria	Caudoviricetes	Colingsworthviridae	Vashvirus	Bacteria	Actinomycetota	Streptomyces	41267	30-60kb	family
+bx_NC_041832_1	NC_041832.1	Campylobacter phage vB_CcoM-IBB_35		Duplodnaviria	Caudoviricetes	Connertonviridae	Firehammervirus	Bacteria	Campylobacterota	Campylobacter	14701	10-30kb	fill
+bx_NC_041834_1	NC_041834.1	Campylobacter phage vB_CcoM-IBB_35		Duplodnaviria	Caudoviricetes	Connertonviridae	Firehammervirus	Bacteria	Campylobacterota	Campylobacter	24608	10-30kb	fill
+bx_NC_041831_1	NC_041831.1	Campylobacter phage vB_CcoM-IBB_35		Duplodnaviria	Caudoviricetes	Connertonviridae	Firehammervirus	Bacteria	Campylobacterota	Campylobacter	27985	10-30kb	fill
+bx_NC_041833_1	NC_041833.1	Campylobacter phage vB_CcoM-IBB_35		Duplodnaviria	Caudoviricetes	Connertonviridae	Firehammervirus	Bacteria	Campylobacterota	Campylobacter	51534	30-60kb	fill
+bx_NC_027989_1	NC_027989.1	Campylobacter phage vB_CcoM-IBB_35		Duplodnaviria	Caudoviricetes	Connertonviridae	Firehammervirus	Bacteria	Campylobacterota	Campylobacter	53237	30-60kb	fill
+bx_NC_042112_1	NC_042112.1	Campylobacter phage CP81		Duplodnaviria	Caudoviricetes	Connertonviridae	Fletchervirus	Bacteria	Campylobacterota	Campylobacter	132454	100-200kb	family
+bx_NC_027996_1	NC_027996.1	Campylobacter phage CPt10		Duplodnaviria	Caudoviricetes	Connertonviridae	Firehammervirus	Bacteria	Campylobacterota	Campylobacter	175720	100-200kb	fill
+bx_NC_042564_1	NC_042564.1	Escherichia phage Bf23		Duplodnaviria	Caudoviricetes	Demerecviridae	Tequintavirus	Bacteria	Pseudomonadota	Escherichia	14504	10-30kb	fill
+bx_NC_047979_1	NC_047979.1	Escherichia phage Gostya9		Duplodnaviria	Caudoviricetes	Demerecviridae	Tequintavirus	Bacteria	Pseudomonadota	Escherichia	101665	100-200kb	family
+bx_NC_048086_1	NC_048086.1	Proteus phage Stubb		Duplodnaviria	Caudoviricetes	Demerecviridae	Novosibvirus	Bacteria	Pseudomonadota	Proteus	104410	100-200kb	host_genus
+bx_NC_055910_1	NC_055910.1	Providencia phage PSTCR5		Duplodnaviria	Caudoviricetes	Demerecviridae	Priunavirus	Bacteria	Pseudomonadota	Providencia	109434	100-200kb	fill
+bx_NC_048012_1	NC_048012.1	Salmonella phage S147		Duplodnaviria	Caudoviricetes	Demerecviridae	Epseptimavirus	Bacteria	Pseudomonadota	Salmonella	111447	100-200kb	fill
+bx_NC_041913_1	NC_041913.1	Providencia phage vB_PreS_PR1		Duplodnaviria	Caudoviricetes	Demerecviridae	Priunavirus	Bacteria	Pseudomonadota	Providencia	118537	100-200kb	fill
+bx_NC_055794_1	NC_055794.1	Vibrio phage Achelous		Duplodnaviria	Caudoviricetes	Demerecviridae	Thalassavirus	Bacteria	Pseudomonadota	Vibrio	121089	100-200kb	fill
+bx_NC_129902_1	NC_129902.1	Hafnia phage Pocis76		Duplodnaviria	Caudoviricetes	Drexlerviridae	Pocisvirus	Bacteria	Pseudomonadota	Hafnia	48795	30-60kb	fill
+bx_NC_138491_1	NC_138491.1	Klebsiella phage mtp13		Duplodnaviria	Caudoviricetes	Drexlerviridae	Webervirus	Bacteria	Pseudomonadota	Klebsiella	48961	30-60kb	fill
+bx_NC_105619_1	NC_105619.1	Escherichia phage vB_EcoS_SA32RD		Duplodnaviria	Caudoviricetes	Drexlerviridae	Tunavirus	Bacteria	Pseudomonadota	Escherichia	48980	30-60kb	fill
+bx_NC_105611_1	NC_105611.1	Klebsiella phage KpS4		Duplodnaviria	Caudoviricetes	Drexlerviridae	Webervirus	Bacteria	Pseudomonadota	Klebsiella	49674	30-60kb	fill
+bx_NC_047823_1	NC_047823.1	Citrobacter phage CF1 DK-2017		Duplodnaviria	Caudoviricetes	Drexlerviridae	Tlsvirus	Bacteria	Pseudomonadota	Citrobacter	50339	30-60kb	fill
+bx_NC_130273_1	NC_130273.1	Klebsiella phage vB_KpnS-VAC111		Duplodnaviria	Caudoviricetes	Drexlerviridae	Webervirus	Bacteria	Pseudomonadota	Klebsiella	50559	30-60kb	host_genus
+bx_NC_049821_1	NC_049821.1	Salmonella phage slyngel		Duplodnaviria	Caudoviricetes	Drexlerviridae	Hanrivervirus	Bacteria	Pseudomonadota	Salmonella	51048	30-60kb	family
+bx_NC_021327_1	NC_021327.1	Halovirus HCTV-5		Duplodnaviria	Caudoviricetes	Druskaviridae	Tredecimvirus	Archaea	Methanobacteriota	Haloarcula	102105	100-200kb	fill
+bx_NC_020158_1	NC_020158.1	Haloarcula vallismortis tailed virus 1		Duplodnaviria	Caudoviricetes	Druskaviridae	Tredecimvirus	Archaea	Methanobacteriota	Haloarcula	102319	100-200kb	family
+bx_NC_021330_1	NC_021330.1	Haloarcula californiae tailed virus 1		Duplodnaviria	Caudoviricetes	Druskaviridae	Hacavirus	Archaea	Methanobacteriota	Haloarcula	103257	100-200kb	fill
+bx_NC_048834_1	NC_048834.1	Flavobacterium phage vB_FspS_laban6-1		Duplodnaviria	Caudoviricetes	Duneviridae	Labanvirus	Bacteria	Bacteroidota	Flavobacterium	43236	30-60kb	fill
+bx_NC_031926_1	NC_031926.1	Flavobacterium phage 2A		Duplodnaviria	Caudoviricetes	Duneviridae	Unahavirus	Bacteria	Bacteroidota	Flavobacterium	46575	30-60kb	fill
+bx_NC_021867_1	NC_021867.1	Flavobacterium phage 6H		Duplodnaviria	Caudoviricetes	Duneviridae	Unahavirus	Bacteria	Bacteroidota	Flavobacterium	46978	30-60kb	family
+bx_NC_020477_1	NC_020477.1	Bacillus phage Eoghan		Duplodnaviria	Caudoviricetes	Ehrlichviridae	Andromedavirus	Bacteria	Bacillota	Bacillus	49458	30-60kb	family
+bx_NC_074639_1	NC_074639.1	Methanophagales virus GBV301		Duplodnaviria	Caudoviricetes	Ekchuahviridae	Kukulkanvirus	Archaea	Methanobacteriota	Methanophagales	71795	60-100kb	family
+bx_NC_074640_1	NC_074640.1	Methanophagales virus GBV302		Duplodnaviria	Caudoviricetes	Ekchuahviridae	Kukulkanvirus	Archaea	Methanobacteriota	Methanophagales	80551	60-100kb	fill
+bx_NC_071008_1	NC_071008.1	Pantoea phage PdC23		Duplodnaviria	Caudoviricetes	Felixviridae	Certevirus	Bacteria	Pseudomonadota	Pantoea	44715	30-60kb	family
+bx_NC_074641_1	NC_074641.1	Methanocaldococcus fervens tailed virus 1		Duplodnaviria	Caudoviricetes	Fervensviridae	Deepoceanvirus	Archaea	Methanobacteriota	Methanocaldococcus	31202	30-60kb	family
+bx_NC_062746_1	NC_062746.1	Polaribacter phage Freya_1		Duplodnaviria	Caudoviricetes	Forsetiviridae	Freyavirus	Bacteria	Bacteroidota	Polaribacter	43978	30-60kb	family
+bx_NC_062745_1	NC_062745.1	Polaribacter phage Danklef_1		Duplodnaviria	Caudoviricetes	Forsetiviridae	Freyavirus	Bacteria	Bacteroidota	Polaribacter	47186	30-60kb	fill
+bx_NC_005884_1	NC_005884.1	Pseudomonas phage PaP2		Duplodnaviria	Caudoviricetes	Fredfastierviridae	Jamesmcgillvirus	Bacteria	Pseudomonadota	Pseudomonas	43783	30-60kb	family
+bx_NC_021537_1	NC_021537.1	Halorubrum virus CGphi46	CGphi46	Duplodnaviria	Caudoviricetes	Graaviviridae	Seejivirus	Archaea	Methanobacteriota	Halorubrum	39784	30-60kb	family
+bx_NC_070973_1	NC_070973.1	Cronobacter phage A24		Duplodnaviria	Caudoviricetes	Grimontviridae	Crifsvirus	Bacteria	Pseudomonadota	Cronobacter	75106	60-100kb	fill
+bx_NC_019402_1	NC_019402.1	Cronobacter phage vB_CsaP_GAP52	vB_CsaP_GAP-52	Duplodnaviria	Caudoviricetes	Grimontviridae	Crifsvirus	Bacteria	Pseudomonadota	Cronobacter	76631	60-100kb	fill
+bx_NC_109808_1	NC_109808.1	Trabzonvirus APT65		Duplodnaviria	Caudoviricetes	Grimontviridae	Aquaneticvirus	Bacteria	Pseudomonadota	Aeromonas	85188	60-100kb	fill
+bx_NC_070977_1	NC_070977.1	Aeromonas phage BUCT695		Duplodnaviria	Caudoviricetes	Grimontviridae	Libingvirus	Bacteria	Pseudomonadota	Aeromonas	86289	60-100kb	fill
+bx_NC_070974_1	NC_070974.1	Salmonella phage SE131		Duplodnaviria	Caudoviricetes	Grimontviridae	Moazamivirus	Bacteria	Pseudomonadota	Salmonella	89910	60-100kb	fill
+bx_NC_015938_1	NC_015938.1	Salmonella phage 7-11		Duplodnaviria	Caudoviricetes	Grimontviridae	Moazamivirus	Bacteria	Pseudomonadota	Salmonella	89916	60-100kb	fill
+bx_NC_070975_1	NC_070975.1	Proteus phage Vb_PmiP-P59		Duplodnaviria	Caudoviricetes	Grimontviridae	Privateervirus	Bacteria	Pseudomonadota	Proteus	90187	60-100kb	fill
+bx_NC_070976_1	NC_070976.1	Proteus phage 3H10_20		Duplodnaviria	Caudoviricetes	Grimontviridae	Privateervirus	Bacteria	Pseudomonadota	Proteus	90382	60-100kb	fill
+bx_NC_048861_1	NC_048861.1	Proteus phage Privateer		Duplodnaviria	Caudoviricetes	Grimontviridae	Privateervirus	Bacteria	Pseudomonadota	Proteus	90710	60-100kb	fill
+bx_NC_048664_1	NC_048664.1	Cronobacter phage vB_CsaP_009		Duplodnaviria	Caudoviricetes	Grimontviridae	Privateervirus	Bacteria	Pseudomonadota	Cronobacter	92122	60-100kb	fill
+bx_NC_048775_1	NC_048775.1	Aeromonas phage LAh_8		Duplodnaviria	Caudoviricetes	Grimontviridae	Lahexavirus	Bacteria	Pseudomonadota	Aeromonas	97408	60-100kb	fill
+bx_NC_048776_1	NC_048776.1	Aeromonas phage LAh_9		Duplodnaviria	Caudoviricetes	Grimontviridae	Lahexavirus	Bacteria	Pseudomonadota	Aeromonas	97988	60-100kb	fill
+bx_NC_048773_1	NC_048773.1	Aeromonas phage 4_4572		Duplodnaviria	Caudoviricetes	Grimontviridae	Lahexavirus	Bacteria	Pseudomonadota	Aeromonas	102915	100-200kb	family
+bx_NC_017980_1	NC_017980.1	Clostridium phage phiCP7R	phiCP24R	Duplodnaviria	Caudoviricetes	Guelinviridae	Brucesealvirus	Bacteria	Bacillota	Clostridium	18397	10-30kb	family
+bx_NC_062760_1	NC_062760.1	Halorubrum tailed virus 27	HRTV-27/27	Duplodnaviria	Caudoviricetes	Hafunaviridae	Minorvirus	Archaea	Methanobacteriota	Halorubrum	56593	30-60kb	fill
+bx_NC_062759_1	NC_062759.1	Halorubrum tailed virus 25	HRTV-25/14	Duplodnaviria	Caudoviricetes	Hafunaviridae	Laminvirus	Archaea	Methanobacteriota	Halorubrum	61934	60-100kb	family
+bx_NC_021335_1	NC_021335.1	Halorubrum tailed phage 7		Duplodnaviria	Caudoviricetes	Hafunaviridae	Mincapvirus	Archaea	Methanobacteriota	Halorubrum	69048	60-100kb	fill
+bx_NC_062740_1	NC_062740.1	Halorubrum virus Serpecor1		Duplodnaviria	Caudoviricetes	Hafunaviridae	Haloferacalesvirus	Archaea	Methanobacteriota	Halorubrum	74196	60-100kb	fill
+bx_NC_021321_1	NC_021321.1	Halorubrum tailed phage 8		Duplodnaviria	Caudoviricetes	Hafunaviridae	Haloferacalesvirus	Archaea	Methanobacteriota	Halorubrum	74519	60-100kb	fill
+bx_NC_062755_1	NC_062755.1	Haloarcula virus HJTV-2	HJTV-2/27	Duplodnaviria	Caudoviricetes	Hafunaviridae	Haloferacalesvirus	Archaea	Methanobacteriota	Haloarcula	76821	60-100kb	fill
+bx_NC_003345_2	NC_003345.2	Halorubrum phage HF2		Duplodnaviria	Caudoviricetes	Hafunaviridae	Haloferacalesvirus	Archaea	Methanobacteriota	Halorubrum	77672	60-100kb	fill
+bx_NC_021329_1	NC_021329.1	Halorubrum tailed virus 4		Duplodnaviria	Caudoviricetes	Haloferuviridae	Saldibavirus	Archaea	Methanobacteriota	Halorubrum	35722	30-60kb	family
+bx_NC_062739_1	NC_062739.1	Haloferax tailed virus 1		Duplodnaviria	Caudoviricetes	Haloferuviridae	Retbasiphovirus	Archaea	Methanobacteriota	Haloferax	38059	30-60kb	host_genus
+bx_NC_021328_1	NC_021328.1	Halogranum tailed virus 1		Duplodnaviria	Caudoviricetes	Halomagnusviridae	Hagravirus	Archaea	Methanobacteriota	Halogranum	143855	100-200kb	family
+bx_NC_062750_1	NC_062750.1	Polaribacter phage Leef_1		Duplodnaviria	Caudoviricetes	Helgolandviridae	Leefvirus	Bacteria	Bacteroidota	Polaribacter	37547	30-60kb	family
+bx_NC_029058_1	NC_029058.1	Lactobacillus phage LfeInf		Duplodnaviria	Caudoviricetes	Herelleviridae	Hopescreekvirus	Bacteria	Bacillota	Limosilactobacillus	106071	100-200kb	host_genus
+bx_NC_015253_1	NC_015253.1	Brochothrix phage A9		Duplodnaviria	Caudoviricetes	Herelleviridae	Klumppvirus	Bacteria	Bacillota	Brochothrix	127065	100-200kb	host_genus
+bx_NC_007610_1	NC_007610.1	Listeria phage P100		Duplodnaviria	Caudoviricetes	Herelleviridae	Pecentumvirus	Bacteria	Bacillota	Listeria	131384	100-200kb	fill
+bx_NC_006565_1	NC_006565.1	Lactobacillus phage LP65		Duplodnaviria	Caudoviricetes	Herelleviridae	Salchichonvirus	Bacteria	Bacillota	Lactiplantibacillus	131522	100-200kb	fill
+bx_NC_048752_1	NC_048752.1	Lactobacillus phage 521B		Duplodnaviria	Caudoviricetes	Herelleviridae	Tybeckvirus	Bacteria	Bacillota	Levilactobacillus	136442	100-200kb	host_genus
+bx_NC_047872_1	NC_047872.1	Listeria phage LMTA-94		Duplodnaviria	Caudoviricetes	Herelleviridae	Pecentumvirus	Bacteria	Bacillota	Listeria	136468	100-200kb	fill
+bx_NC_048754_1	NC_048754.1	Lactobacillus phage SAC12B		Duplodnaviria	Caudoviricetes	Herelleviridae	Tybeckvirus	Bacteria	Bacillota	Levilactobacillus	136608	100-200kb	fill
+bx_NC_048084_1	NC_048084.1	Lactobacillus phage Iacchus		Duplodnaviria	Caudoviricetes	Herelleviridae	Harbinvirus	Bacteria	Bacillota	Lactiplantibacillus	137973	100-200kb	fill
+bx_NC_024360_1	NC_024360.1	Listeria phage LMSP-25	LMSP-25	Duplodnaviria	Caudoviricetes	Herelleviridae	Pecentumvirus	Bacteria	Bacillota	Listeria	138036	100-200kb	fill
+bx_NC_047926_1	NC_047926.1	Lactobacillus phage Semele		Duplodnaviria	Caudoviricetes	Herelleviridae	Harbinvirus	Bacteria	Bacillota	Lactiplantibacillus	139450	100-200kb	host_genus
+bx_NC_041928_1	NC_041928.1	Staphylococcus phage phiIBB-SEP1		Duplodnaviria	Caudoviricetes	Herelleviridae	Sepunavirus	Bacteria	Bacillota	Staphylococcus	139928	100-200kb	fill
+bx_NC_048085_1	NC_048085.1	Lactobacillus phage Bromius		Duplodnaviria	Caudoviricetes	Herelleviridae	Harbinvirus	Bacteria	Bacillota	Lactiplantibacillus	140527	100-200kb	fill
+bx_NC_048753_1	NC_048753.1	Lactobacillus phage 3-521		Duplodnaviria	Caudoviricetes	Herelleviridae	Watanabevirus	Bacteria	Bacillota	Levilactobacillus	140816	100-200kb	fill
+bx_NC_047924_1	NC_047924.1	Lactobacillus phage Bacchae		Duplodnaviria	Caudoviricetes	Herelleviridae	Harbinvirus	Bacteria	Bacillota	Lactiplantibacillus	141124	100-200kb	fill
+bx_NC_025416_1	NC_025416.1	Staphylococcus phage MCE-2014		Duplodnaviria	Caudoviricetes	Herelleviridae	Kayvirus	Bacteria	Bacillota	Staphylococcus	141907	100-200kb	fill
+bx_NC_012530_1	NC_012530.1	Lactobacillus phage Lb338-1	Lb338-1	Duplodnaviria	Caudoviricetes	Herelleviridae	Mooreparkvirus	Bacteria	Bacillota	Lactobacillus	142111	100-200kb	fill
+bx_NC_106554_1	NC_106554.1	Enterococcus phage vB_OCPT_Bob		Duplodnaviria	Caudoviricetes	Herelleviridae	Kochikohdavirus	Bacteria	Bacillota	Enterococcus	142921	100-200kb	fill
+bx_NC_022761_1	NC_022761.1	Bacillus phage CampHawk		Duplodnaviria	Caudoviricetes	Herelleviridae	Okubovirus	Bacteria	Bacillota	Bacillus	146193	100-200kb	family
+bx_NC_031070_1	NC_031070.1	Bacillus phage Nemo		Duplodnaviria	Caudoviricetes	Herelleviridae	Wphvirus	Bacteria	Bacillota	Bacillus	162375	100-200kb	fill
+bx_NC_031037_1	NC_031037.1	Bacillus phage Nigalana		Duplodnaviria	Caudoviricetes	Herelleviridae	Wphvirus	Bacteria	Bacillota	Bacillus	163041	100-200kb	fill
+bx_NC_027366_1	NC_027366.1	Bacillus phage Mater		Duplodnaviria	Caudoviricetes	Herelleviridae	Matervirus	Bacteria	Bacillota	Priestia	164302	100-200kb	fill
+bx_NC_042140_1	NC_042140.1	Bacillus phage BM15		Duplodnaviria	Caudoviricetes	Herelleviridae	Caeruleovirus	Bacteria	Bacillota	Priestia	165213	100-200kb	fill
+bx_NC_030920_1	NC_030920.1	Bacillus phage Eldridge		Duplodnaviria	Caudoviricetes	Herelleviridae	Eldridgevirus	Bacteria	Bacillota	Priestia	165868	100-200kb	fill
+bx_NC_042028_1	NC_042028.1	Acinetobacter phage AB1	AB1	Duplodnaviria	Caudoviricetes	Hirszfeldviridae	Wenzhouvirus	Bacteria	Pseudomonadota	Acinetobacter	45159	30-60kb	family
+bx_NC_073362_1	NC_073362.1	Microbacterium phage Kozie		Duplodnaviria	Caudoviricetes	Hodgkinviridae	Kozievirus	Bacteria	Actinomycetota	Microbacterium	53094	30-60kb	fill
+bx_NC_073369_1	NC_073369.1	Microbacterium phage Honeyfin		Duplodnaviria	Caudoviricetes	Hodgkinviridae	Quhwahvirus	Bacteria	Actinomycetota	Microbacterium	53154	30-60kb	family
+bx_NC_091965_1	NC_091965.1	Caudoviricetes sp. 'Rudgehvirus jaberico'	Bc11	Duplodnaviria	Caudoviricetes	Intestiviridae		Bacteria	Bacteroidota	Bacteroides	90575	60-100kb	fill
+bx_NC_055828_1	NC_055828.1	Bacteroides phage crAss002		Duplodnaviria	Caudoviricetes	Intestiviridae	Jahgtovirus	Bacteria	Bacteroidota	Bacteroides	93030	60-100kb	family
+bx_NC_067194_1	NC_067194.1	Carjivirus communis		Duplodnaviria	Caudoviricetes	Intestiviridae	Carjivirus	Bacteria		bacterium	97065	60-100kb	host_genus
+bx_NC_019405_1	NC_019405.1	Caulobacter phage phiCbK		Duplodnaviria	Caudoviricetes	Jeanschmidtviridae	Shapirovirus	Bacteria	Pseudomonadota	Caulobacter	215710	>200kb	jumbo
+bx_NC_019407_1	NC_019407.1	Caulobacter virus Magneto		Duplodnaviria	Caudoviricetes	Jeanschmidtviridae	Shapirovirus	Bacteria	Pseudomonadota	Caulobacter	218929	>200kb	jumbo
+bx_NC_019411_1	NC_019411.1	Caulobacter phage CcrSwift		Duplodnaviria	Caudoviricetes	Jeanschmidtviridae	Shapirovirus	Bacteria	Pseudomonadota	Caulobacter	219216	>200kb	jumbo
+bx_NC_019408_1	NC_019408.1	Caulobacter phage CcrRogue		Duplodnaviria	Caudoviricetes	Jeanschmidtviridae	Poindextervirus	Bacteria	Pseudomonadota	Caulobacter	223720	>200kb	family
+bx_NC_019406_1	NC_019406.1	Caulobacter phage CcrColossus		Duplodnaviria	Caudoviricetes	Jeanschmidtviridae	Colossusvirus	Bacteria	Pseudomonadota	Caulobacter	279967	>200kb	jumbo
+bx_NC_048046_1	NC_048046.1	Caulobacter phage CcrPW		Duplodnaviria	Caudoviricetes	Jeanschmidtviridae	Colossusvirus	Bacteria	Pseudomonadota	Caulobacter	308141	>200kb	fill
+bx_NC_048047_1	NC_048047.1	Caulobacter phage CcrBL9		Duplodnaviria	Caudoviricetes	Jeanschmidtviridae	Bertelyvirus	Bacteria	Pseudomonadota	Caulobacter	322272	>200kb	fill
+bx_NC_133304_1	NC_133304.1	Nadirvirus capraenecum		Duplodnaviria	Caudoviricetes	Kairosviridae	Nadirvirus	Archaea	Methanobacteriota	Methanobacteriales	34179	30-60kb	family
+bx_NC_070967_1	NC_070967.1	Rhizobium phage RHph_Y65		Duplodnaviria	Caudoviricetes	Kleczkowskaviridae	Cuauhnahuacvirus	Bacteria	Pseudomonadota	Rhizobium	206821	>200kb	family
+bx_NC_073474_1	NC_073474.1	Gordonia phage VanLee		Duplodnaviria	Caudoviricetes	Kruegerviridae	Vanleevirus	Bacteria	Actinomycetota	Gordonia	84560	60-100kb	family
+bx_NC_020484_1	NC_020484.1	Pelagibacter phage HTVC008M		Duplodnaviria	Caudoviricetes	Kyanoviridae		Bacteria	Pseudomonadota	Pelagibacter	147284	100-200kb	host_genus
+bx_NC_055744_1	NC_055744.1	Synechococcus phage S-B64		Duplodnaviria	Caudoviricetes	Kyanoviridae	Shandvirus	Bacteria	Cyanobacteriota	Parasynechococcus	151867	100-200kb	fill
+bx_NC_047719_1	NC_047719.1	Synechococcus phage ACG-2014b	Syn9311C4	Duplodnaviria	Caudoviricetes	Kyanoviridae	Nereusvirus	Bacteria	Cyanobacteriota	Synechococcus	172874	100-200kb	fill
+bx_NC_055719_1	NC_055719.1	Synechococcus phage S-H35		Duplodnaviria	Caudoviricetes	Kyanoviridae	Shandvirus	Bacteria	Cyanobacteriota	Parasynechococcus	174231	100-200kb	fill
+bx_NC_019444_1	NC_019444.1	Synechococcus phage S-MbCM6		Duplodnaviria	Caudoviricetes	Kyanoviridae	Namakavirus	Bacteria	Cyanobacteriota	Synechococcus	176043	100-200kb	fill
+bx_NC_015289_1	NC_015289.1	Synechococcus phage S-SSM5	8102-12	Duplodnaviria	Caudoviricetes	Kyanoviridae	Glaucusvirus	Bacteria	Cyanobacteriota	Parasynechococcus	176184	100-200kb	fill
+bx_NC_048015_1	NC_048015.1	Cyanophage S-TIM4		Duplodnaviria	Caudoviricetes	Kyanoviridae	Thaumasvirus	Bacteria	Cyanobacteriota	Parasynechococcus	176495	100-200kb	fill
+bx_NC_015569_1	NC_015569.1	Synechococcus phage S-CRM01		Duplodnaviria	Caudoviricetes	Kyanoviridae		Bacteria	Cyanobacteriota	Synechococcus	178563	100-200kb	fill
+bx_NC_015281_1	NC_015281.1	Synechococcus phage S-ShM2	8102-4	Duplodnaviria	Caudoviricetes	Kyanoviridae	Ahtivirus	Bacteria	Cyanobacteriota	Parasynechococcus	179563	100-200kb	fill
+bx_NC_015290_1	NC_015290.1	Prochlorococcus phage P-SSM7	NATL1A-15	Duplodnaviria	Caudoviricetes	Kyanoviridae	Palaemonvirus	Bacteria	Cyanobacteriota	Prochlorococcus	182180	100-200kb	fill
+bx_NC_070960_1	NC_070960.1	Synechococcus phage S-H9-2		Duplodnaviria	Caudoviricetes	Kyanoviridae	Yushanluvirus	Bacteria	Cyanobacteriota	Parasynechococcus	187320	100-200kb	host_genus
+bx_NC_027132_1	NC_027132.1	Synechococcus phage ACG-2014i	Syn7803US120	Duplodnaviria	Caudoviricetes	Kyanoviridae	Chalconvirus	Bacteria	Cyanobacteriota	Synechococcus	190768	100-200kb	family
+bx_NC_028955_1	NC_028955.1	Prochlorococcus phage P-TIM68		Duplodnaviria	Caudoviricetes	Kyanoviridae	Haifavirus	Bacteria	Cyanobacteriota	Prochlorococcus	197361	100-200kb	host_genus
+bx_NC_047712_1	NC_047712.1	Synechococcus phage ACG-2014f_Syn7803C7	Syn7803C7	Duplodnaviria	Caudoviricetes	Kyanoviridae	Atlauavirus	Bacteria	Cyanobacteriota	Synechococcus	216628	>200kb	jumbo
+bx_NC_070962_1	NC_070962.1	Synechococcus phage S-SCSM1		Duplodnaviria	Caudoviricetes	Kyanoviridae	Zhoulongquanvirus	Bacteria	Cyanobacteriota	Synechococcus	228827	>200kb	jumbo
+bx_NC_001902_1	NC_001902.1	Methanobacterium phage psiM2		Duplodnaviria	Caudoviricetes	Leisingerviridae	Psimunavirus	Archaea	Methanobacteriota	Methanothermobacter	26111	10-30kb	family
+bx_NC_002628_3	NC_002628.3	Methanothermobacter phage psiM100		Duplodnaviria	Caudoviricetes	Leisingerviridae	Psimunavirus	Archaea	Methanobacteriota	Methanothermobacter	31007	30-60kb	fill
+bx_NC_047962_1	NC_047962.1	Xanthomonas phage Carpasina		Duplodnaviria	Caudoviricetes	Lindbergviridae	Carpasinavirus	Bacteria	Pseudomonadota	Xanthomonas	61939	60-100kb	fill
+bx_NC_048676_1	NC_048676.1	Pseudomonas phage SL1		Duplodnaviria	Caudoviricetes	Lindbergviridae	Pbunavirus	Bacteria	Pseudomonadota	Pseudomonas	65847	60-100kb	family
+bx_NC_048796_1	NC_048796.1	Pantoea phage Kyle		Duplodnaviria	Caudoviricetes	Lindbergviridae	Kylevirus	Bacteria	Pseudomonadota	Pantoea	73168	60-100kb	fill
+bx_NC_025462_1	NC_025462.1	Acinetobacter phage vB_AbaM_Acibel004		Duplodnaviria	Caudoviricetes	Luriaviridae	Queenastridvirus	Bacteria	Pseudomonadota	Acinetobacter	99730	60-100kb	fill
+bx_NC_031280_1	NC_031280.1	Acinetobacter phage vB_AbaM_phiAbaA1		Duplodnaviria	Caudoviricetes	Luriaviridae	Saclayvirus	Bacteria	Pseudomonadota	Acinetobacter	104906	100-200kb	family
+bx_NC_021322_1	NC_021322.1	Haloarcula hispanica tailed virus 1		Duplodnaviria	Caudoviricetes	Madisaviridae	Clampvirus	Archaea	Methanobacteriota	Haloarcula	49107	30-60kb	family
+bx_NC_001825_1	NC_001825.1	Streptococcus phage Cp1		Duplodnaviria	Caudoviricetes	Madridviridae	Cepunavirus	Bacteria	Bacillota	Streptococcus	19343	10-30kb	family
+bx_NC_073038_1	NC_073038.1	Pseudomonas phage AAT-1		Duplodnaviria	Caudoviricetes	Mesyanzhinovviridae	Pamexvirus	Bacteria	Pseudomonadota	Pseudomonas	57599	30-60kb	family
+bx_NC_073031_1	NC_073031.1	Janthinobacterium phage vB_JliS-Donnerlittchen		Duplodnaviria	Caudoviricetes	Mesyanzhinovviridae	Donnerlittchenvirus	Bacteria	Pseudomonadota	Janthinobacterium	58220	30-60kb	host_genus
+bx_NC_006938_1	NC_006938.1	Alphaproteobacteria phage PhiJL001		Duplodnaviria	Caudoviricetes	Mesyanzhinovviridae	Keylargovirus	Bacteria	Pseudomonadota	Alphaproteobacteria	63649	60-100kb	host_genus
+bx_NC_073034_1	NC_073034.1	Stenotrophomonas phage vB_SmaS-AXL_1		Duplodnaviria	Caudoviricetes	Mesyanzhinovviridae	Bosavirus	Bacteria	Pseudomonadota	Stenotrophomonas	63962	60-100kb	fill
+bx_NC_062752_1	NC_062752.1	Maribacter phage Colly_1		Duplodnaviria	Caudoviricetes	Molycolviridae	Mollyvirus	Bacteria	Bacteroidota	Maribacter	124169	100-200kb	family
+bx_NC_062751_1	NC_062751.1	Maribacter phage Molly_1		Duplodnaviria	Caudoviricetes	Molycolviridae	Mollyvirus	Bacteria	Bacteroidota	Maribacter	124695	100-200kb	fill
+bx_NC_070983_1	NC_070983.1	Escherichia phage IME267		Duplodnaviria	Caudoviricetes	Mtkvariviridae	Suseptimavirus	Bacteria	Pseudomonadota	Escherichia	76631	60-100kb	family
+bx_NC_052939_1	NC_052939.1	Microbacterium phage Quaker		Duplodnaviria	Caudoviricetes	Orlajensenviridae	Paopuvirus	Bacteria	Actinomycetota	Microbacterium	17450	10-30kb	family
+bx_NC_021794_1	NC_021794.1	Cellulophaga phage phi18:3	phi18:3	Duplodnaviria	Caudoviricetes	Pachyviridae	Baltivirus	Bacteria	Bacteroidota	Cellulophaga	71443	60-100kb	fill
+bx_NC_021792_1	NC_021792.1	Cellulophaga phage phi46:3	phi46:3	Duplodnaviria	Caudoviricetes	Pachyviridae	Bacelvirus	Bacteria	Bacteroidota	Cellulophaga	72961	60-100kb	family
+bx_NC_062747_1	NC_062747.1	Tenacibaculum phage Gundel_1		Duplodnaviria	Caudoviricetes	Pachyviridae	Gundelvirus	Bacteria	Bacteroidota	Tenacibaculum	78833	60-100kb	fill
+bx_NC_047854_1	NC_047854.1	Cronobacter phage ESSI-2		Duplodnaviria	Caudoviricetes	Peduoviridae	Seongnamvirus	Bacteria	Pseudomonadota	Cronobacter	28765	10-30kb	host_genus
+bx_NC_073747_1	NC_073747.1	Salmonella phage STYP1		Duplodnaviria	Caudoviricetes	Peduoviridae	Peduovirus	Bacteria	Pseudomonadota	Salmonella	28946	10-30kb	family
+bx_NC_109869_1	NC_109869.1	Yersinia phage GMS190		Duplodnaviria	Caudoviricetes	Peduoviridae	Peduovirus	Bacteria	Pseudomonadota	Yersinia	29462	10-30kb	fill
+bx_NC_008193_1	NC_008193.1	Pasteurella phage F108		Duplodnaviria	Caudoviricetes	Peduoviridae	Irtavirus	Bacteria	Pseudomonadota	Pasteurella	30505	30-60kb	fill
+bx_NC_003315_1	NC_003315.1	Haemophilus phage HP2		Duplodnaviria	Caudoviricetes	Peduoviridae	Hpunavirus	Bacteria	Pseudomonadota	Haemophilus	31508	30-60kb	host_genus
+bx_NC_049429_1	NC_049429.1	Enterobacter phage phiT5282H		Duplodnaviria	Caudoviricetes	Peduoviridae	Novemvirus	Bacteria	Pseudomonadota	Enterobacter	31978	30-60kb	fill
+bx_NC_001697_1	NC_001697.1	Haemophilus phage HP1	HP1c1	Duplodnaviria	Caudoviricetes	Peduoviridae	Hpunavirus	Bacteria	Pseudomonadota	Haemophilus	32355	30-60kb	fill
+bx_NC_130755_1	NC_130755.1	Pasteurella phage vB_PmuM_CFP3		Duplodnaviria	Caudoviricetes	Peduoviridae	Irtavirus	Bacteria	Pseudomonadota	Pasteurella	32696	30-60kb	fill
+bx_NC_047775_1	NC_047775.1	Salinivibrio phage SMHB1		Duplodnaviria	Caudoviricetes	Peduoviridae	Playavirus	Bacteria	Pseudomonadota	Salinivibrio	32826	30-60kb	host_genus
+bx_NC_008201_1	NC_008201.1	Mannheimia phage PHL101		Duplodnaviria	Caudoviricetes	Peduoviridae	Baylorvirus	Bacteria	Pseudomonadota	Mannheimia	34525	30-60kb	fill
+bx_NC_021343_1	NC_021343.1	Burkholderia phage ST79		Duplodnaviria	Caudoviricetes	Peduoviridae	Nampongvirus	Bacteria	Pseudomonadota	Burkholderia	35430	30-60kb	fill
+bx_NC_028898_1	NC_028898.1	Mannheimia phage vB_MhM_587AP1		Duplodnaviria	Caudoviricetes	Peduoviridae	Baylorvirus	Bacteria	Pseudomonadota	Mannheimia	35764	30-60kb	fill
+bx_NC_070912_1	NC_070912.1	Burkholderia phage PhiBP82.2		Duplodnaviria	Caudoviricetes	Peduoviridae	Tigrvirus	Bacteria	Pseudomonadota	Burkholderia	36280	30-60kb	fill
+bx_NC_070913_1	NC_070913.1	Yersinia phage vB_YenM_42.18		Duplodnaviria	Caudoviricetes	Peduoviridae	Firavirus	Bacteria	Pseudomonadota	Yersinia	36481	30-60kb	fill
+bx_NC_009236_1	NC_009236.1	Burkholderia phage phiE12-2		Duplodnaviria	Caudoviricetes	Peduoviridae	Duodecimduovirus	Bacteria	Pseudomonadota	Burkholderia	36690	30-60kb	fill
+bx_NC_047750_1	NC_047750.1	Mannheimia phage vB_MhM_1127AP1		Duplodnaviria	Caudoviricetes	Peduoviridae	Baylorvirus	Bacteria	Pseudomonadota	Mannheimia	36745	30-60kb	fill
+bx_NC_070919_1	NC_070919.1	Aeromonas phage vB_AsaM_LPM4		Duplodnaviria	Caudoviricetes	Peduoviridae	Piscesmortuivirus	Bacteria	Pseudomonadota	Aeromonas	37312	30-60kb	fill
+bx_NC_007145_2	NC_007145.2	Burkholderia phage phiE52237		Duplodnaviria	Caudoviricetes	Peduoviridae	Tigrvirus	Bacteria	Pseudomonadota	Burkholderia	37639	30-60kb	fill
+bx_NC_049432_1	NC_049432.1	Ralstonia phage RsoM1USA		Duplodnaviria	Caudoviricetes	Peduoviridae	Aresaunavirus	Bacteria	Pseudomonadota	Ralstonia	39309	30-60kb	fill
+bx_NC_070920_1	NC_070920.1	Shewanella phage vB_SspM_M16-3		Duplodnaviria	Caudoviricetes	Peduoviridae	Arsenicumvirus	Bacteria	Pseudomonadota	Shewanella	40166	30-60kb	fill
+bx_NC_021796_1	NC_021796.1	Cellulophaga phage phi38:1	phi38:1	Duplodnaviria	Caudoviricetes	Pervagoviridae	Callevirus	Bacteria	Bacteroidota	Cellulophaga	72534	60-100kb	family
+bx_NC_062744_1	NC_062744.1	Cellulophaga phage Calle_1		Duplodnaviria	Caudoviricetes	Pervagoviridae	Callevirus	Bacteria	Bacteroidota	Cellulophaga	72979	60-100kb	fill
+bx_NC_070890_1	NC_070890.1	Agrobacterium phage Atu_ph04		Duplodnaviria	Caudoviricetes	Pootjesviridae	Rollinsvirus	Bacteria	Pseudomonadota	Agrobacterium	143349	100-200kb	fill
+bx_NC_028676_1	NC_028676.1	Sinorhizobium phage phiM9		Duplodnaviria	Caudoviricetes	Pootjesviridae	Emnonavirus	Bacteria	Pseudomonadota	Sinorhizobium	149218	100-200kb	fill
+bx_NC_055841_1	NC_055841.1	Agrobacterium phage OLIVR5	OLIVR5	Duplodnaviria	Caudoviricetes	Pootjesviridae	Heverleevirus	Bacteria	Pseudomonadota	Agrobacterium	151073	100-200kb	fill
+bx_NC_070885_1	NC_070885.1	Rhizobium phage RHph_I1_9		Duplodnaviria	Caudoviricetes	Pootjesviridae	Trinifflemingvirus	Bacteria	Pseudomonadota	Rhizobium	154206	100-200kb	family
+bx_NC_070886_1	NC_070886.1	Rhizobium phage P9VFCI		Duplodnaviria	Caudoviricetes	Pootjesviridae	Innesvirus	Bacteria	Pseudomonadota	Rhizobium	156502	100-200kb	fill
+bx_NC_070889_1	NC_070889.1	Rhizobium phage RL2RES		Duplodnaviria	Caudoviricetes	Pootjesviridae	Innesvirus	Bacteria	Pseudomonadota	Rhizobium	156878	100-200kb	fill
+bx_NC_070888_1	NC_070888.1	Rhizobium phage RL38J1		Duplodnaviria	Caudoviricetes	Pootjesviridae	Innesvirus	Bacteria	Pseudomonadota	Rhizobium	158577	100-200kb	fill
+bx_NC_062757_1	NC_062757.1	Haloarcula tailed virus 3	HATV-3/30	Duplodnaviria	Caudoviricetes	Pyrstoviridae	Hatrivirus	Archaea	Methanobacteriota	Halorubrum	42293	30-60kb	family
+bx_NC_070880_1	NC_070880.1	Staphylococcus phage SeAlphi		Duplodnaviria	Caudoviricetes	Rountreeviridae	Andhravirus	Bacteria	Bacillota	Staphylococcus	18292	10-30kb	family
+bx_NC_109586_1	NC_109586.1	Leptolyngbya phage Lbo240-yong1		Duplodnaviria	Caudoviricetes	Saffermanviridae	Wumpquatrovirus	Bacteria	Cyanobacteriota	Leptolyngbya	39740	30-60kb	fill
+bx_NC_107959_1	NC_107959.1	Plectonema phage Pbo-yong3		Duplodnaviria	Caudoviricetes	Saffermanviridae	Morrisvirus	Bacteria	Cyanobacteriota	Plectonema	40617	30-60kb	host_genus
+bx_NC_107196_1	NC_107196.1	Plectonema phage JingP1		Duplodnaviria	Caudoviricetes	Saffermanviridae	Morrisvirus	Bacteria	Cyanobacteriota	Plectonema	40797	30-60kb	fill
+bx_NC_008367_1	NC_008367.1	Phormidium phage Pf-WMP4		Duplodnaviria	Caudoviricetes	Saffermanviridae	Wumpquatrovirus	Bacteria	Cyanobacteriota	Phormidium	40938	30-60kb	fill
+bx_NC_111528_1	NC_111528.1	Leptolyngbya phage LPP-1		Duplodnaviria	Caudoviricetes	Saffermanviridae	Morrisvirus	Bacteria	Cyanobacteriota	Leptolyngbya	41561	30-60kb	host_genus
+bx_NC_024358_1	NC_024358.1	Anabaena phage A-4L		Duplodnaviria	Caudoviricetes	Saffermanviridae	Kozyakovvirus	Bacteria	Cyanobacteriota	Trichormus	41750	30-60kb	host_genus
+bx_NC_111529_1	NC_111529.1	Leptolyngbya phage LPP-2, strain SPI		Duplodnaviria	Caudoviricetes	Saffermanviridae	Wumptrevirus	Bacteria	Cyanobacteriota	Leptolyngbya	42319	30-60kb	fill
+bx_NC_022751_1	NC_022751.1	Cyanophage PP		Duplodnaviria	Caudoviricetes	Saffermanviridae	Wumptrevirus	Bacteria	Cyanobacteriota	Leptolyngbya	42480	30-60kb	fill
+bx_NC_009551_1	NC_009551.1	Phormidium phage Pf-WMP3		Duplodnaviria	Caudoviricetes	Saffermanviridae	Wumptrevirus	Bacteria	Cyanobacteriota	Nodosilinea	43249	30-60kb	host_genus
+bx_NC_103008_1	NC_103008.1	Arthronema virus TR020		Duplodnaviria	Caudoviricetes	Saffermanviridae	Arthrovirus	Bacteria	Cyanobacteriota	Arthronema	44805	30-60kb	family
+bx_NC_004165_1	NC_004165.1	Bacillus phage B103		Duplodnaviria	Caudoviricetes	Salasmaviridae	Beecentumtrevirus	Bacteria	Bacillota	Bacillus	18630	10-30kb	fill
+bx_NC_108593_1	NC_108593.1	Bacillus phage vB_BaeroP_SYYB1		Duplodnaviria	Caudoviricetes	Salasmaviridae	Gaunavirus	Bacteria	Bacillota	Lysinibacillus	20678	10-30kb	host_genus
+bx_NC_049967_1	NC_049967.1	Bacillus phage DK1		Duplodnaviria	Caudoviricetes	Salasmaviridae	Hemphillvirus	Bacteria	Bacillota	Bacillus	27180	10-30kb	family
+bx_NC_021340_1	NC_021340.1	Haloarcula hispanica tailed virus 2		Duplodnaviria	Caudoviricetes	Saparoviridae	Halohivirus	Archaea	Methanobacteriota	Haloarcula	52643	30-60kb	fill
+bx_NC_021319_1	NC_021319.1	Haloarcula californiae tailed virus 2		Duplodnaviria	Caudoviricetes	Saparoviridae	Samsavirus	Archaea	Methanobacteriota	Haloarcula	54291	30-60kb	family
+bx_NC_073185_1	NC_073185.1	Salmonella phage PBSE191		Duplodnaviria	Caudoviricetes	Sarkviridae	Jerseyvirus	Bacteria	Pseudomonadota	Salmonella	41332	30-60kb	fill
+bx_NC_073205_1	NC_073205.1	Salmonella phage LP31		Duplodnaviria	Caudoviricetes	Sarkviridae	Jerseyvirus	Bacteria	Pseudomonadota	Salmonella	42600	30-60kb	family
+bx_NC_041898_1	NC_041898.1	Escherichia phage K1ind2		Duplodnaviria	Caudoviricetes	Sarkviridae	Kagunavirus	Bacteria	Pseudomonadota	Escherichia	42765	30-60kb	fill
+bx_NC_019485_1	NC_019485.1	Enterobacter phage EcP1		Duplodnaviria	Caudoviricetes	Schitoviridae	Eceepunavirus	Bacteria	Pseudomonadota	Enterobacter	59080	30-60kb	host_genus
+bx_NC_070849_1	NC_070849.1	Alcaligenes phage vB_Af_QDWS595		Duplodnaviria	Caudoviricetes	Schitoviridae	Petruschkyvirus	Bacteria	Pseudomonadota	Alcaligenes	70466	60-100kb	host_genus
+bx_NC_049372_1	NC_049372.1	Roseobacter phage RD-1410W1-01		Duplodnaviria	Caudoviricetes	Schitoviridae	Aoqinvirus	Bacteria	Pseudomonadota	Roseobacter	72674	60-100kb	fill
+bx_NC_012696_1	NC_012696.1	Sulfitobacter phage EE36phi1	EE36P1	Duplodnaviria	Caudoviricetes	Schitoviridae	Aorunvirus	Bacteria	Pseudomonadota	Sulfitobacter	73325	60-100kb	fill
+bx_NC_054972_1	NC_054972.1	Achromobacter phage vB_AxyP_19-32_Axy11		Duplodnaviria	Caudoviricetes	Schitoviridae	Pourcelvirus	Bacteria	Pseudomonadota	Achromobacter	73413	60-100kb	fill
+bx_NC_070860_1	NC_070860.1	Pectobacterium phage Possum		Duplodnaviria	Caudoviricetes	Schitoviridae	Cbunavirus	Bacteria	Pseudomonadota	Pectobacterium	73752	60-100kb	fill
+bx_NC_027348_2	NC_027348.2	Delftia phage RG-2014		Duplodnaviria	Caudoviricetes	Schitoviridae	Dendoorenvirus	Bacteria	Pseudomonadota	Delftia	73882	60-100kb	fill
+bx_NC_054971_1	NC_054971.1	Achromobacter phage vB_AxyP_19-32_Axy10		Duplodnaviria	Caudoviricetes	Schitoviridae	Pourcelvirus	Bacteria	Pseudomonadota	Achromobacter	73898	60-100kb	fill
+bx_NC_054968_1	NC_054968.1	Achromobacter phage vB_AxyP_19-32_Axy12		Duplodnaviria	Caudoviricetes	Schitoviridae	Dongdastvirus	Bacteria	Pseudomonadota	Achromobacter	74096	60-100kb	fill
+bx_NC_020862_2	NC_020862.2	Sulfitobacter phage phiCB2047-B	phiCB2047-B	Duplodnaviria	Caudoviricetes	Schitoviridae	Raunefjordenvirus	Bacteria	Pseudomonadota	Sulfitobacter	74485	60-100kb	fill
+bx_NC_012697_1	NC_012697.1	Silicibacter phage DSS3phi2	DSS3P2	Duplodnaviria	Caudoviricetes	Schitoviridae	Aorunvirus	Bacteria	Pseudomonadota	Ruegeria	74611	60-100kb	fill
+bx_NC_049435_1	NC_049435.1	Ruegeria phage vB_RpoP-V12		Duplodnaviria	Caudoviricetes	Schitoviridae	Aorunvirus	Bacteria	Pseudomonadota	Ruegeria	74675	60-100kb	host_genus
+bx_NC_049345_1	NC_049345.1	Roseovarius Plymouth podovirus 1		Duplodnaviria	Caudoviricetes	Schitoviridae	Plymouthvirus	Bacteria	Pseudomonadota	Roseovarius	74704	60-100kb	host_genus
+bx_NC_054969_1	NC_054969.1	Achromobacter phage vB_AxyP_19-32_Axy24		Duplodnaviria	Caudoviricetes	Schitoviridae	Dongdastvirus	Bacteria	Pseudomonadota	Achromobacter	74744	60-100kb	fill
+bx_NC_070867_1	NC_070867.1	Stenotrophomonas phage Paxi		Duplodnaviria	Caudoviricetes	Schitoviridae	Pokkenvirus	Bacteria	Pseudomonadota	Stenotrophomonas	74962	60-100kb	family
+bx_NC_024367_1	NC_024367.1	Dinoroseobacter phage DFL12phi1		Duplodnaviria	Caudoviricetes	Schitoviridae	Baltimorevirus	Bacteria	Pseudomonadota	Dinoroseobacter	75028	60-100kb	fill
+bx_NC_049469_1	NC_049469.1	Sinorhizobium phage ort11		Duplodnaviria	Caudoviricetes	Schitoviridae	Huelvavirus	Bacteria	Pseudomonadota	Sinorhizobium	75239	60-100kb	fill
+bx_NC_070859_1	NC_070859.1	Dinoroseobacter phage vB_DshP-R7L		Duplodnaviria	Caudoviricetes	Schitoviridae	Gonggongvirus	Bacteria	Pseudomonadota	Dinoroseobacter	75871	60-100kb	fill
+bx_NC_049510_1	NC_049510.1	Erwinia phage phiEaP8		Duplodnaviria	Caudoviricetes	Schitoviridae	Yonginvirus	Bacteria	Pseudomonadota	Erwinia	75929	60-100kb	fill
+bx_NC_070861_1	NC_070861.1	Kosakonia phage Kc283		Duplodnaviria	Caudoviricetes	Schitoviridae	Cbunavirus	Bacteria	Pseudomonadota	Kosakonia	76232	60-100kb	fill
+bx_NC_070857_1	NC_070857.1	Rhizobium phage RHph_X2_28B		Duplodnaviria	Caudoviricetes	Schitoviridae	Xoxocotlavirus	Bacteria	Pseudomonadota	Sinorhizobium	76359	60-100kb	host_genus
+bx_NC_049371_1	NC_049371.1	Dinoroseobacter phage DS-1410Ws-06		Duplodnaviria	Caudoviricetes	Schitoviridae	Sanyabayvirus	Bacteria	Pseudomonadota	Dinoroseobacter	76466	60-100kb	host_genus
+bx_NC_070851_1	NC_070851.1	Rhizobium phage RHph_N38		Duplodnaviria	Caudoviricetes	Schitoviridae	Cyamitesvirus	Bacteria	Pseudomonadota	Rhizobium	78126	60-100kb	fill
+bx_NC_021471_1	NC_021471.1	Haloarcula sinaiiensis tailed virus 1		Duplodnaviria	Caudoviricetes	Shortaselviridae	Lonfivirus	Archaea	Methanobacteriota	Haloarcula	32189	30-60kb	family
+bx_NC_062756_1	NC_062756.1	Haloarcula tailed virus 2	HATV-2/44	Duplodnaviria	Caudoviricetes	Soleiviridae	Eilatmyovirus	Archaea	Methanobacteriota	Halorubrum	63301	60-100kb	family
+bx_NC_053241_1	NC_053241.1	Gordonia phage Ribeye		Duplodnaviria	Caudoviricetes	Stackebrandtviridae	Kroosvirus	Bacteria	Actinomycetota	Gordonia	57448	30-60kb	fill
+bx_NC_055774_1	NC_055774.1	Gordonia phage Bibwit		Duplodnaviria	Caudoviricetes	Stackebrandtviridae	Vividuovirus	Bacteria	Actinomycetota	Gordonia	57880	30-60kb	fill
+bx_NC_055843_1	NC_055843.1	Gordonia phage Evamon		Duplodnaviria	Caudoviricetes	Stackebrandtviridae	Wizardvirus	Bacteria	Actinomycetota	Gordonia	58460	30-60kb	fill
+bx_NC_055816_1	NC_055816.1	Gordonia phage Fireball		Duplodnaviria	Caudoviricetes	Stackebrandtviridae	Wizardvirus	Bacteria	Actinomycetota	Gordonia	58924	30-60kb	fill
+bx_NC_055808_1	NC_055808.1	Gordonia phage McKinley		Duplodnaviria	Caudoviricetes	Stackebrandtviridae	Vividuovirus	Bacteria	Actinomycetota	Gordonia	59022	30-60kb	fill
+bx_NC_053244_1	NC_053244.1	Gordonia phage MelBins		Duplodnaviria	Caudoviricetes	Stackebrandtviridae	Leonardvirus	Bacteria	Actinomycetota	Gordonia	59761	30-60kb	fill
+bx_NC_055859_1	NC_055859.1	Gordonia phage Paries		Duplodnaviria	Caudoviricetes	Stackebrandtviridae	Vividuovirus	Bacteria	Actinomycetota	Gordonia	60127	60-100kb	family
+bx_NC_042009_1	NC_042009.1	Streptomyces phage NootNoot		Duplodnaviria	Caudoviricetes	Stanwilliamsviridae	Samistivirus	Bacteria	Actinomycetota	Streptomyces	131086	100-200kb	fill
+bx_NC_055791_1	NC_055791.1	Streptomyces phage EGole		Duplodnaviria	Caudoviricetes	Stanwilliamsviridae	Samistivirus	Bacteria	Actinomycetota	Streptomyces	135653	100-200kb	family
+bx_NC_055832_1	NC_055832.1	Bacteroides phage DAC15		Duplodnaviria	Caudoviricetes	Steigviridae	Wulfhauvirus	Bacteria	Bacteroidota	Bacteroides	99494	60-100kb	fill
+bx_NC_049977_1	NC_049977.1	Bacteroides phage crAss001	crAss001	Duplodnaviria	Caudoviricetes	Steigviridae	Kehishuvirus	Bacteria	Bacteroidota	Bacteroides	102679	100-200kb	family
+bx_NC_027344_1	NC_027344.1	Salmonella phage STML-198	STML-198	Duplodnaviria	Caudoviricetes	Straboviridae	Gelderlandvirus	Bacteria	Pseudomonadota	Salmonella	158099	100-200kb	fill
+bx_NC_031020_1	NC_031020.1	Morganella phage vB_MmoM_MP1		Duplodnaviria	Caudoviricetes	Straboviridae	Gualtarvirus	Bacteria	Pseudomonadota	Morganella	163201	100-200kb	fill
+bx_NC_049438_1	NC_049438.1	Acinetobacter phage vB_ApiM_fHyAci03		Duplodnaviria	Caudoviricetes	Straboviridae	Lazarusvirus	Bacteria	Pseudomonadota	Acinetobacter	165975	100-200kb	fill
+bx_NC_055724_1	NC_055724.1	Yersinia phage fPS-65		Duplodnaviria	Caudoviricetes	Straboviridae	Tequatrovirus	Bacteria	Pseudomonadota	Yersinia	167058	100-200kb	fill
+bx_NC_054938_1	NC_054938.1	Serratia phage PhiZZ30		Duplodnaviria	Caudoviricetes	Straboviridae	Tequatrovirus	Bacteria	Pseudomonadota	Prodigiosinella	167484	100-200kb	fill
+bx_NC_042078_1	NC_042078.1	Shigella phage Sf24		Duplodnaviria	Caudoviricetes	Straboviridae	Tequatrovirus	Bacteria	Pseudomonadota	Shigella	168112	100-200kb	fill
+bx_NC_031087_1	NC_031087.1	Klebsiella phage vB_KpnM_KpV477		Duplodnaviria	Caudoviricetes	Straboviridae	Jiaodavirus	Bacteria	Pseudomonadota	Klebsiella	168272	100-200kb	fill
+bx_NC_054907_1	NC_054907.1	Enterobacteria phage T6	T6	Duplodnaviria	Caudoviricetes	Straboviridae	Tequatrovirus	Bacteria	Pseudomonadota	Enterobacteriaceae	168697	100-200kb	fill
+bx_NC_025437_1	NC_025437.1	Shigella phage Shf125875		Duplodnaviria	Caudoviricetes	Straboviridae	Mosigvirus	Bacteria	Pseudomonadota	Shigella	169062	100-200kb	fill
+bx_NC_054936_1	NC_054936.1	Salmonella phage SG1		Duplodnaviria	Caudoviricetes	Straboviridae	Tequatrovirus	Bacteria	Pseudomonadota	Salmonella	169805	100-200kb	family
+bx_NC_041996_1	NC_041996.1	Serratia phage CHI14		Duplodnaviria	Caudoviricetes	Straboviridae	Winklervirus	Bacteria	Pseudomonadota	Prodigiosinella	171175	100-200kb	fill
+bx_NC_055728_1	NC_055728.1	Serratia phage X20		Duplodnaviria	Caudoviricetes	Straboviridae	Winklervirus	Bacteria	Pseudomonadota	Prodigiosinella	172450	100-200kb	fill
+bx_NC_055739_1	NC_055739.1	Enterobacter phage myPSH1140		Duplodnaviria	Caudoviricetes	Straboviridae	Karamvirus	Bacteria	Pseudomonadota	Enterobacter	172614	100-200kb	fill
+bx_NC_070777_1	NC_070777.1	Enterobacter phage vB_EhoM-IME523		Duplodnaviria	Caudoviricetes	Straboviridae	Kanagawavirus	Bacteria	Pseudomonadota	Enterobacter	172763	100-200kb	fill
+bx_NC_023561_1	NC_023561.1	Enterobacter phage PG7		Duplodnaviria	Caudoviricetes	Straboviridae	Karamvirus	Bacteria	Pseudomonadota	Enterobacter	173276	100-200kb	fill
+bx_NC_070778_1	NC_070778.1	Enterobacter phage vB_EclM_Q7622		Duplodnaviria	Caudoviricetes	Straboviridae	Kanagawavirus	Bacteria	Pseudomonadota	Enterobacter	173871	100-200kb	fill
+bx_NC_070776_1	NC_070776.1	Kosakonia phage 305		Duplodnaviria	Caudoviricetes	Straboviridae	Kanagawavirus	Bacteria	Pseudomonadota	Kosakonia	174783	100-200kb	fill
+bx_NC_028683_1	NC_028683.1	Edwardsiella phage PEi20		Duplodnaviria	Caudoviricetes	Straboviridae	Kanagawavirus	Bacteria	Pseudomonadota	Edwardsiella	177643	100-200kb	fill
+bx_NC_029013_1	NC_029013.1	Citrobacter phage IME-CF2		Duplodnaviria	Caudoviricetes	Straboviridae	Pseudotevenvirus	Bacteria	Pseudomonadota	Citrobacter	177688	100-200kb	fill
+bx_NC_028755_1	NC_028755.1	Citrobacter phage Margaery		Duplodnaviria	Caudoviricetes	Straboviridae	Pseudotevenvirus	Bacteria	Pseudomonadota	Citrobacter	178182	100-200kb	fill
+bx_NC_031057_1	NC_031057.1	Citrobacter phage vB_CfrM_CfP1		Duplodnaviria	Caudoviricetes	Straboviridae	Pseudotevenvirus	Bacteria	Pseudomonadota	Citrobacter	180219	100-200kb	fill
+bx_NC_055733_1	NC_055733.1	Aeromonas phage Ah1		Duplodnaviria	Caudoviricetes	Straboviridae	Cinqassovirus	Bacteria	Pseudomonadota	Aeromonas	221116	>200kb	jumbo
+bx_NC_023688_1	NC_023688.1	Aeromonas phage PX29		Duplodnaviria	Caudoviricetes	Straboviridae	Angelvirus	Bacteria	Pseudomonadota	Aeromonas	222006	>200kb	jumbo
+bx_NC_014636_1	NC_014636.1	Aeromonas phage phiAS5		Duplodnaviria	Caudoviricetes	Straboviridae	Chrysonvirus	Bacteria	Pseudomonadota	Aeromonas	225268	>200kb	jumbo
+bx_NC_019538_1	NC_019538.1	Aeromonas phage CC2		Duplodnaviria	Caudoviricetes	Straboviridae	Ceceduovirus	Bacteria	Pseudomonadota	Aeromonas	231743	>200kb	jumbo
+bx_NC_005260_1	NC_005260.1	Aeromonas phage Aeh1		Duplodnaviria	Caudoviricetes	Straboviridae	Cinqassovirus	Bacteria	Pseudomonadota	Aeromonas	233234	>200kb	jumbo
+bx_NC_005083_2	NC_005083.2	Vibrio phage KVP40		Duplodnaviria	Caudoviricetes	Straboviridae	Schizotequatrovirus	Bacteria	Pseudomonadota	Vibrio	244834	>200kb	jumbo
+bx_NC_021529_2	NC_021529.2	Vibrio phage nt-1		Duplodnaviria	Caudoviricetes	Straboviridae	Mylasvirus	Bacteria	Pseudomonadota	Vibrio	247511	>200kb	jumbo
+bx_NC_062761_1	NC_062761.1	Halorubrum tailed virus 28	HRTV-28/28	Duplodnaviria	Caudoviricetes	Suolaviridae	Pormufvirus	Archaea	Methanobacteriota	Halorubrum	35270	30-60kb	family
+bx_NC_055706_1	NC_055706.1	Azobacteroides phage ProJPt-Bp1	ProJPt-Bp1	Duplodnaviria	Caudoviricetes	Suoliviridae	Dechshavirus	Bacteria	Bacteroidota	Azobacteroides	99517	60-100kb	family
+bx_NC_070623_1	NC_070623.1	Bacillus phage vB_BspS_SplendidRed		Duplodnaviria	Caudoviricetes	Trautnerviridae	Splendidredvirus	Bacteria	Bacillota	Bacillus	42859	30-60kb	family
+bx_NC_022970_1	NC_022970.1	Pseudomonas phage PAK_P3		Duplodnaviria	Caudoviricetes	Vandenendeviridae	Nankokuvirus	Bacteria	Pseudomonadota	Pseudomonas	88097	60-100kb	family
+bx_NC_073677_1	NC_073677.1	Pseudomonas phage PHB09		Duplodnaviria	Caudoviricetes	Vandenendeviridae	Dilongvirus	Bacteria	Pseudomonadota	Pseudomonas	94844	60-100kb	fill
+bx_NC_073687_1	NC_073687.1	Pseudomonas phage phiPsa300		Duplodnaviria	Caudoviricetes	Vandenendeviridae	Otagovirus	Bacteria	Pseudomonadota	Pseudomonas	99272	60-100kb	fill
+bx_NC_073686_1	NC_073686.1	Pseudomonas phage phiPsa267		Duplodnaviria	Caudoviricetes	Vandenendeviridae	Otagovirus	Bacteria	Pseudomonadota	Pseudomonas	100180	100-200kb	fill
+bx_NC_074645_1	NC_074645.1	Thorarchaeia virus VerdaV2	VerdaV2	Duplodnaviria	Caudoviricetes	Verdandiviridae	Tonitrusvirus	Archaea		Promethearchaeati	19541	10-30kb	fill
+bx_NC_074644_1	NC_074644.1	Lokiarchaeia virus VerdaV1	VerdaV1	Duplodnaviria	Caudoviricetes	Verdandiviridae	Dolusvirus	Archaea		Promethearchaeati	19940	10-30kb	fill
+bx_NC_074643_1	NC_074643.1	Lokiarchaeia virus VerdaV4	VerdaV4	Duplodnaviria	Caudoviricetes	Verdandiviridae	Dolusvirus	Archaea		Promethearchaeati	20488	10-30kb	family
+bx_NC_054953_1	NC_054953.1	Halobacterium phage ChaoS9		Duplodnaviria	Caudoviricetes	Vertoviridae	Chaovirus	Archaea	Methanobacteriota	Halobacterium	55145	30-60kb	host_genus
+bx_NC_052650_1	NC_052650.1	Halobacterium phage phiH	variant phiH1	Duplodnaviria	Caudoviricetes	Vertoviridae	Myohalovirus	Archaea	Methanobacteriota	Halobacterium	58072	30-60kb	fill
+bx_NC_054954_1	NC_054954.1	Natrialba phage PhiCh1		Duplodnaviria	Caudoviricetes	Vertoviridae	Myohalovirus	Archaea	Methanobacteriota	Natrialba	58487	30-60kb	family
+bx_NC_004084_1	NC_004084.1	Natrialba phage PhiCh1		Duplodnaviria	Caudoviricetes	Vertoviridae	Myohalovirus	Archaea	Methanobacteriota	Natrialba	58498	30-60kb	fill
+bx_NC_014461_1	NC_014461.1	Mycobacterium phage LeBron		Duplodnaviria	Caudoviricetes	Vilmaviridae	Bronvirus	Bacteria	Actinomycetota	Mycolicibacterium	73453	60-100kb	family
+bx_NC_048829_1	NC_048829.1	Flavobacterium phage vB_FspM_lotta8-1		Duplodnaviria	Caudoviricetes	Winoviridae	Pippivirus	Bacteria	Bacteroidota	Flavobacterium	34751	30-60kb	family
+bx_NC_062754_1	NC_062754.1	Winogradskyella phage Peternella_1		Duplodnaviria	Caudoviricetes	Winoviridae	Peternellavirus	Bacteria	Bacteroidota	Winogradskyella	39649	30-60kb	host_genus
+bx_NC_055772_1	NC_055772.1	Corynebacterium phage Kimchi1738		Duplodnaviria	Caudoviricetes	Zierdtviridae	Ceetrepovirus	Bacteria	Actinomycetota	Corynebacterium	66915	60-100kb	fill
+bx_NC_055806_1	NC_055806.1	Gordonia Phage Lollipop1437		Duplodnaviria	Caudoviricetes	Zierdtviridae	Skysandvirus	Bacteria	Actinomycetota	Gordonia	67311	60-100kb	family
+bx_NC_042085_1	NC_042085.1	Corynebacterium phage C3PO		Duplodnaviria	Caudoviricetes	Zierdtviridae	Ceetrepovirus	Bacteria	Actinomycetota	Corynebacterium	67383	60-100kb	fill
+bx_NC_042086_1	NC_042086.1	Corynebacterium phage Darwin		Duplodnaviria	Caudoviricetes	Zierdtviridae	Ceetrepovirus	Bacteria	Actinomycetota	Corynebacterium	67743	60-100kb	fill
+bx_NC_009514_1	NC_009514.1	Enterobacteria phage cdtI		Duplodnaviria	Caudoviricetes	Zimmerviridae	Dotonborivirus	Bacteria	Pseudomonadota	Escherichia	47021	30-60kb	family
+bx_NC_018280_1	NC_018280.1	Celeribacter phage P12053L		Duplodnaviria	Caudoviricetes	Zobellviridae	Siovirus	Bacteria	Pseudomonadota	Celeribacter	38889	30-60kb	host_genus
+bx_NC_002519_1	NC_002519.1	Roseobacter phage SIO1		Duplodnaviria	Caudoviricetes	Zobellviridae	Siovirus	Bacteria	Pseudomonadota	Roseobacter	39898	30-60kb	host_genus
+bx_NC_048672_1	NC_048672.1	Lentibacter phage vB_LenP_ICBM1		Duplodnaviria	Caudoviricetes	Zobellviridae	Siovirus	Bacteria	Pseudomonadota	Lentibacter	40163	30-60kb	fill
+bx_NC_048671_1	NC_048671.1	Lentibacter phage vB_LenP_ICBM2		Duplodnaviria	Caudoviricetes	Zobellviridae	Veravirus	Bacteria	Pseudomonadota	Lentibacter	40907	30-60kb	host_genus
+bx_NC_048630_1	NC_048630.1	Pseudoalteromonas phage HP1		Duplodnaviria	Caudoviricetes	Zobellviridae	Melvirus	Bacteria	Pseudomonadota	Pseudoalteromonas	45035	30-60kb	fill
+bx_NC_027988_2	NC_027988.2	Citrobacter phage CVT22		Duplodnaviria	Caudoviricetes	Zobellviridae	Citrovirus	Bacteria	Pseudomonadota	Citrobacter	47636	30-60kb	family
+bx_NC_019540_1	NC_019540.1	Salinivibrio phage CW02		Duplodnaviria	Caudoviricetes	Zobellviridae	Salinovirus	Bacteria	Pseudomonadota	Salinivibrio	49390	30-60kb	fill
+bx_NC_015158_1	NC_015158.1	Vibrio phage ICP2		Duplodnaviria	Caudoviricetes	Zobellviridae	Icepovirus	Bacteria	Pseudomonadota	Vibrio	49675	30-60kb	fill
+bx_NC_002515_1	NC_002515.1	Mycoplasma phage P1		Duplodnaviria	Caudoviricetes	unclassified	Delislevirus	Bacteria	Mycoplasmatota	Mycoplasmopsis	11660	10-30kb	host_genus
+bx_NC_016651_1	NC_016651.1	Rhodococcus phage RRH1		Duplodnaviria	Caudoviricetes	unclassified	Edwardsroadvirus	Bacteria	Actinomycetota	Rhodococcus	14270	10-30kb	fill
+bx_NC_070767_1	NC_070767.1	Arthrobacter phage Atraxa		Duplodnaviria	Caudoviricetes	unclassified	Atraxavirus	Bacteria	Actinomycetota	Paeniglutamicibacter	14927	10-30kb	fill
+bx_NC_070766_1	NC_070766.1	Arthrobacter phage Adaia		Duplodnaviria	Caudoviricetes	unclassified	Adaiavirus	Bacteria	Actinomycetota	Paeniglutamicibacter	15840	10-30kb	host_genus
+bx_NC_009643_1	NC_009643.1	Actinomyces phage Av-1		Duplodnaviria	Caudoviricetes	unclassified	Dybvigvirus	Bacteria	Actinomycetota	Actinomyces	17171	10-30kb	host_genus
+bx_NC_073477_1	NC_073477.1	Curtobacterium phage Reje		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Curtobacterium	17554	10-30kb	host_genus
+bx_NC_073478_1	NC_073478.1	Bifidobacterium phage BD811P2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Bifidobacterium	17827	10-30kb	fill
+bx_NC_073476_1	NC_073476.1	Curtobacterium phage Pize		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Curtobacterium	18290	10-30kb	fill
+bx_NC_073479_1	NC_073479.1	Glutamicibacter phage Voltaire		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Glutamicibacter	18418	10-30kb	host_genus
+bx_NC_048858_1	NC_048858.1	Bifidobacterium phage BadAztec1		Duplodnaviria	Caudoviricetes	unclassified	Badaztecvirus	Bacteria	Actinomycetota	Bifidobacterium	18635	10-30kb	host_genus
+bx_NC_048859_1	NC_048859.1	Bifidobacterium phage BadAargau2		Duplodnaviria	Caudoviricetes	unclassified	Badaztecvirus	Bacteria	Actinomycetota	Bifidobacterium	18899	10-30kb	fill
+bx_NC_055004_1	NC_055004.1	Lactococcus phage vB_Llc_bIBBp6/4		Duplodnaviria	Caudoviricetes	unclassified	Ceduovirus	Bacteria	Bacillota	Lactococcus	22220	10-30kb	fill
+bx_NC_015721_1	NC_015721.1	Bdellovibrio phage phi1402		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bdellovibrionota	Bdellovibrio	23931	10-30kb	fill
+bx_NC_016568_1	NC_016568.1	Helicobacter phage phiHP33		Duplodnaviria	Caudoviricetes	unclassified	Schmidvirus	Bacteria	Campylobacterota	Helicobacter	24645	10-30kb	host_genus
+bx_NC_018273_1	NC_018273.1	Leuconostoc phage Lmd1		Duplodnaviria	Caudoviricetes	unclassified	Limdunavirus	Bacteria	Bacillota	Leuconostoc	26201	10-30kb	fill
+bx_NC_019928_1	NC_019928.1	Helicobacter phage KHP30		Duplodnaviria	Caudoviricetes	unclassified	Schmidvirus	Bacteria	Campylobacterota	Helicobacter	26215	10-30kb	fill
+bx_NC_019931_1	NC_019931.1	Helicobacter phage KHP40		Duplodnaviria	Caudoviricetes	unclassified	Schmidvirus	Bacteria	Campylobacterota	Helicobacter	26449	10-30kb	fill
+bx_NC_054987_1	NC_054987.1	Leuconostoc phage P965		Duplodnaviria	Caudoviricetes	unclassified	Limdunavirus	Bacteria	Bacillota	Leuconostoc	26526	10-30kb	fill
+bx_NC_019512_1	NC_019512.1	Helicobacter phage 1961P		Duplodnaviria	Caudoviricetes	unclassified	Schmidvirus	Bacteria	Campylobacterota	Helicobacter	26836	10-30kb	fill
+bx_NC_024378_1	NC_024378.1	Leuconostoc phage phiLNTR3		Duplodnaviria	Caudoviricetes	unclassified	Unaquatrovirus	Bacteria	Bacillota	Leuconostoc	28015	10-30kb	fill
+bx_NC_054988_1	NC_054988.1	Leuconostoc phage Ln-7		Duplodnaviria	Caudoviricetes	unclassified	Unaquatrovirus	Bacteria	Bacillota	Leuconostoc	28093	10-30kb	host_genus
+bx_NC_024385_1	NC_024385.1	Leuconostoc phage phiLN12		Duplodnaviria	Caudoviricetes	unclassified	Limdunavirus	Bacteria	Bacillota	Leuconostoc	28193	10-30kb	fill
+bx_NC_013153_1	NC_013153.1	Lactococcus phage CB19		Duplodnaviria	Caudoviricetes	unclassified	Skunavirus	Bacteria	Bacillota	Lactococcus	28643	10-30kb	host_genus
+bx_NC_021854_1	NC_021854.1	Lactococcus phage jm3		Duplodnaviria	Caudoviricetes	unclassified	Skunavirus	Bacteria	Bacillota	Lactococcus	28674	10-30kb	fill
+bx_NC_015453_1	NC_015453.1	Propionibacterium phage PAS50		Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Propionibacterium	29017	10-30kb	fill
+bx_NC_018849_1	NC_018849.1	Propionibacterium phage P105		Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Cutibacterium	29202	10-30kb	fill
+bx_NC_049417_1	NC_049417.1	Lactococcus phage LP9207		Duplodnaviria	Caudoviricetes	unclassified	Skunavirus	Bacteria	Bacillota	Lactococcus	29203	10-30kb	fill
+bx_NC_031003_1	NC_031003.1	Propionibacterium phage Moyashi		Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Cutibacterium	29254	10-30kb	fill
+bx_NC_027403_1	NC_027403.1	Propionibacterium phage PHL117M00	PHL117M00	Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Cutibacterium	29255	10-30kb	fill
+bx_NC_027362_1	NC_027362.1	Propionibacterium phage PHL116M00	PHL116M00	Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Cutibacterium	29394	10-30kb	fill
+bx_NC_027373_1	NC_027373.1	Propionibacterium phage PHL030N00	PHL030N00	Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Cutibacterium	29423	10-30kb	fill
+bx_NC_027987_1	NC_027987.1	Leuconostoc phage 1-A4		Duplodnaviria	Caudoviricetes	unclassified	Unaquatrovirus	Bacteria	Bacillota	Leuconostoc	29508	10-30kb	fill
+bx_NC_022336_1	NC_022336.1	Propionibacterium phage PHL010M04		Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Cutibacterium	29511	10-30kb	fill
+bx_NC_018847_1	NC_018847.1	Propionibacterium phage ATCC29399B_T		Duplodnaviria	Caudoviricetes	unclassified	Pahexavirus	Bacteria	Actinomycetota	Cutibacterium	29516	10-30kb	host_genus
+bx_NC_048022_1	NC_048022.1	Eggerthella phage PMBT5		Duplodnaviria	Caudoviricetes	unclassified	Lentavirus	Bacteria	Actinomycetota	Eggerthella	30930	30-60kb	host_genus
+bx_NC_049419_1	NC_049419.1	Lactococcus phage LP9609		Duplodnaviria	Caudoviricetes	unclassified	Skunavirus	Bacteria	Bacillota	Lactococcus	30945	30-60kb	fill
+bx_NC_048848_1	NC_048848.1	Butyrivibrio phage Arawn		Duplodnaviria	Caudoviricetes	unclassified	Arawnvirus	Bacteria	Bacillota	Butyrivibrio	31118	30-60kb	host_genus
+bx_NC_019422_1	NC_019422.1	Clostridium phage phiMMP04		Duplodnaviria	Caudoviricetes	unclassified	Sherbrookevirus	Bacteria	Bacillota	Clostridioides	31674	30-60kb	fill
+bx_NC_029068_1	NC_029068.1	Lactobacillus phage LfeSau		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Limosilactobacillus	31703	30-60kb	fill
+bx_NC_018269_1	NC_018269.1	Marinomonas phage P12026		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Marinomonas	31766	30-60kb	fill
+bx_NC_019449_1	NC_019449.1	Lactobacillus phage c5		Duplodnaviria	Caudoviricetes	unclassified	Cequinquevirus	Bacteria	Bacillota	Lactobacillus	31841	30-60kb	fill
+bx_NC_049368_1	NC_049368.1	Lactococcus phage 936 group phage PhiM1127		Duplodnaviria	Caudoviricetes	unclassified	Skunavirus	Bacteria	Bacillota	Lactococcus	32682	30-60kb	fill
+bx_NC_027982_1	NC_027982.1	Lactobacillus phage phiPYB5		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Limosilactobacillus	32847	30-60kb	fill
+bx_NC_029047_1	NC_029047.1	Verrucomicrobia phage P8625		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Verrucomicrobiota	Puniceicoccales	32894	30-60kb	host_genus
+bx_NC_003524_1	NC_003524.1	Clostridium phage phi3626		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridium	33507	30-60kb	fill
+bx_NC_018270_1	NC_018270.1	Weissella phage phiYS61		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Weissella	33594	30-60kb	fill
+bx_NC_031101_1	NC_031101.1	Weissella phage WCP30		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Weissella	33697	30-60kb	host_genus
+bx_NC_028766_1	NC_028766.1	Mannheimia phage vB_MhM_3927AP2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Mannheimia	33755	30-60kb	fill
+bx_NC_022762_1	NC_022762.1	Lactobacillus phage phiLdb		Duplodnaviria	Caudoviricetes	unclassified	Cequinquevirus	Bacteria	Bacillota	Lactobacillus	33996	30-60kb	fill
+bx_NC_047912_1	NC_047912.1	Faecalibacterium phage FP_Lugh		Duplodnaviria	Caudoviricetes	unclassified	Lughvirus	Bacteria	Bacillota	Faecalibacterium	34075	30-60kb	fill
+bx_NC_028830_1	NC_028830.1	Lactobacillus phage iA2		Duplodnaviria	Caudoviricetes	unclassified	Iaduovirus	Bacteria	Bacillota	Lacticaseibacillus	34155	30-60kb	fill
+bx_NC_031013_1	NC_031013.1	Lactococcus phage 28201		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Lactococcus	34396	30-60kb	fill
+bx_NC_008376_2	NC_008376.2	Geobacillus phage GBSV1		Duplodnaviria	Caudoviricetes	unclassified	Svunavirus	Bacteria	Bacillota	Geobacillus	34683	30-60kb	host_genus
+bx_NC_073457_1	NC_073457.1	Streptomyces phage Chymera		Duplodnaviria	Caudoviricetes	unclassified	Chymeravirus	Bacteria	Actinomycetota	Streptomyces	34742	30-60kb	fill
+bx_NC_025439_1	NC_025439.1	Idiomarinaceae phage 1N2-2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Idiomarinaceae	34773	30-60kb	host_genus
+bx_NC_020481_1	NC_020481.1	Pelagibacter phage HTVC010P		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Pelagibacter	34892	30-60kb	fill
+bx_NC_029078_1	NC_029078.1	Erysipelothrix phage SE-1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Erysipelothrix	34997	30-60kb	host_genus
+bx_NC_042350_1	NC_042350.1	Salinibacter phage M8CR30-2		Duplodnaviria	Caudoviricetes	unclassified	Holosalinivirus	Bacteria	Rhodothermota	Salinibacter	35099	30-60kb	fill
+bx_NC_073471_1	NC_073471.1	Rothia phage Spartoi		Duplodnaviria	Caudoviricetes	unclassified	Spartoivirus	Bacteria	Actinomycetota	Rothia	35189	30-60kb	host_genus
+bx_NC_041890_1	NC_041890.1	Propionibacterium phage Anatole		Duplodnaviria	Caudoviricetes	unclassified	Anatolevirus	Bacteria	Actinomycetota	Propionibacterium	35284	30-60kb	fill
+bx_NC_018272_1	NC_018272.1	Nonlabens phage P12024L		Duplodnaviria	Caudoviricetes	unclassified	Inhavirus	Bacteria	Bacteroidota	Nonlabens	35652	30-60kb	fill
+bx_NC_018271_1	NC_018271.1	Nonlabens phage P12024S		Duplodnaviria	Caudoviricetes	unclassified	Inhavirus	Bacteria	Bacteroidota	Nonlabens	35700	30-60kb	host_genus
+bx_NC_023734_1	NC_023734.1	Psychrobacter phage Psymv2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Psychrobacter	35725	30-60kb	host_genus
+bx_NC_042348_1	NC_042348.1	Salinibacter phage M1EM-1		Duplodnaviria	Caudoviricetes	unclassified	Holosalinivirus	Bacteria	Rhodothermota	Salinibacter	35883	30-60kb	fill
+bx_NC_077210_1	NC_077210.1	Yangshan Harbor Nitrososphaeria virus	YSH_1032793	Duplodnaviria	Caudoviricetes	unclassified		Archaea	Nitrososphaerota	Nitrososphaeria	35889	30-60kb	fill
+bx_NC_041892_1	NC_041892.1	Propionibacterium phage B3		Duplodnaviria	Caudoviricetes	unclassified	Anatolevirus	Bacteria	Actinomycetota	Propionibacterium	35948	30-60kb	fill
+bx_NC_042049_1	NC_042049.1	Rhodobacter phage RcCronus		Duplodnaviria	Caudoviricetes	unclassified	Cronusvirus	Bacteria	Pseudomonadota	Rhodobacter	35985	30-60kb	fill
+bx_NC_054989_1	NC_054989.1	Brevibacterium phage AGM1		Duplodnaviria	Caudoviricetes	unclassified	Agmunavirus	Bacteria	Actinomycetota	Brevibacterium	36032	30-60kb	fill
+bx_NC_028954_1	NC_028954.1	Rhodobacter phage RcRhea		Duplodnaviria	Caudoviricetes	unclassified	Cronusvirus	Bacteria	Pseudomonadota	Rhodobacter	36065	30-60kb	fill
+bx_NC_013643_1	NC_013643.1	Enterococcus phage phiFL2A	phiFL2A	Duplodnaviria	Caudoviricetes	unclassified	Phifelvirus	Bacteria	Bacillota	Enterococcus	36270	30-60kb	fill
+bx_NC_029061_1	NC_029061.1	Rhodoferax phage P26218		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Rhodoferax	36315	30-60kb	host_genus
+bx_NC_104263_1	NC_104263.1	Ruminococcus phage phiRg507T2_3		Duplodnaviria	Caudoviricetes	unclassified	Ahaonvirus	Bacteria	Bacillota	Mediterraneibacter	36510	30-60kb	fill
+bx_NC_000935_1	NC_000935.1	Hamiltonella phage APSE-1		Duplodnaviria	Caudoviricetes	unclassified	Sendosyvirus	Bacteria	Pseudomonadota	Williamhamiltonella	36524	30-60kb	fill
+bx_NC_047913_1	NC_047913.1	Faecalibacterium phage FP_Mushu		Duplodnaviria	Caudoviricetes	unclassified	Mushuvirus	Bacteria	Bacillota	Faecalibacterium	36636	30-60kb	host_genus
+bx_NC_077211_1	NC_077211.1	Yangshan Harbor Nitrososphaeria virus	YSH_462411	Duplodnaviria	Caudoviricetes	unclassified		Archaea	Nitrososphaerota	Nitrososphaeria	36645	30-60kb	host_genus
+bx_NC_013599_1	NC_013599.1	Xylella phage Xfas53		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Xylella	36674	30-60kb	host_genus
+bx_NC_025471_1	NC_025471.1	Idiomarinaceae phage Phi1M2-2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Idiomarinaceae	36844	30-60kb	fill
+bx_NC_077212_1	NC_077212.1	Yangshan Harbor Nitrososphaeria virus	YSH_174770	Duplodnaviria	Caudoviricetes	unclassified		Archaea	Nitrososphaerota	Nitrososphaeria	36856	30-60kb	fill
+bx_NC_104264_1	NC_104264.1	Ruminococcus phage phiRg519T2		Duplodnaviria	Caudoviricetes	unclassified	Adovirus	Bacteria	Bacillota	Mediterraneibacter	36865	30-60kb	host_genus
+bx_NC_048844_1	NC_048844.1	Flavobacterium phage vB_FspS_tooticki6-1		Duplodnaviria	Caudoviricetes	unclassified	Muminvirus	Bacteria	Bacteroidota	Flavobacterium	36912	30-60kb	fill
+bx_NC_104261_1	NC_104261.1	Ruminococcus phage phiRM10		Duplodnaviria	Caudoviricetes	unclassified	Aceathervirus	Bacteria	Bacillota	Mediterraneibacter	36920	30-60kb	fill
+bx_NC_015252_1	NC_015252.1	Brochothrix phage NF5		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Brochothrix	36953	30-60kb	fill
+bx_NC_074642_1	NC_074642.1	Methanoculleus virus L4768		Duplodnaviria	Caudoviricetes	unclassified		Archaea	Methanobacteriota	Methanoculleus	37078	30-60kb	host_genus
+bx_NC_019455_1	NC_019455.1	Haemophilus phage SuMu		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Glaesserella	37151	30-60kb	host_genus
+bx_NC_070826_1	NC_070826.1	Pseudoalteromonas phage HS1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Pseudoalteromonas	37211	30-60kb	fill
+bx_NC_041891_1	NC_041891.1	Propionibacterium phage B22		Duplodnaviria	Caudoviricetes	unclassified	Doucettevirus	Bacteria	Actinomycetota	Propionibacterium	37219	30-60kb	fill
+bx_NC_104265_1	NC_104265.1	Ruminococcus phage phiRgIBDN1		Duplodnaviria	Caudoviricetes	unclassified	Adovirus	Bacteria	Bacillota	Mediterraneibacter	37233	30-60kb	fill
+bx_NC_104262_1	NC_104262.1	Ruminococcus phage phiRg507T2_2		Duplodnaviria	Caudoviricetes	unclassified	Ahaonvirus	Bacteria	Bacillota	Mediterraneibacter	37304	30-60kb	fill
+bx_NC_009990_1	NC_009990.1	Thalassomonas phage BA3		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Thalassotalea	37313	30-60kb	host_genus
+bx_NC_021557_1	NC_021557.1	Rhizobium phage RR1-B	RR1-B	Duplodnaviria	Caudoviricetes	unclassified	Ribunavirus	Bacteria	Pseudomonadota	Agrobacterium	37378	30-60kb	fill
+bx_NC_041893_1	NC_041893.1	Propionibacterium phage Doucette		Duplodnaviria	Caudoviricetes	unclassified	Doucettevirus	Bacteria	Actinomycetota	Propionibacterium	37429	30-60kb	fill
+bx_NC_073458_1	NC_073458.1	Corynebacterium phage EmiRose		Duplodnaviria	Caudoviricetes	unclassified	Emirosevirus	Bacteria	Actinomycetota	Corynebacterium	37429	30-60kb	fill
+bx_NC_015262_1	NC_015262.1	Clostridium phage phiCD6356		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridioides	37664	30-60kb	fill
+bx_NC_092586_1	NC_092586.1	Caudoviricetes sp. vir215		Duplodnaviria	Caudoviricetes	unclassified		Archaea	Thermoplasmatota	Methanomassiliicoccales	37696	30-60kb	fill
+bx_NC_061433_1	NC_061433.1	Pseudomonas phage Spike		Duplodnaviria	Caudoviricetes	unclassified	Casadabanvirus	Bacteria	Pseudomonadota	Pseudomonas	37729	30-60kb	fill
+bx_NC_104266_1	NC_104266.1	Atrivirus PS6		Duplodnaviria	Caudoviricetes	unclassified	Atrivirus	Bacteria	Bacillota	Mediterraneibacter	37780	30-60kb	fill
+bx_NC_070771_1	NC_070771.1	Arthrobacter phage Shoya		Duplodnaviria	Caudoviricetes	unclassified	Shoyavirus	Bacteria	Actinomycetota	Arthrobacter	37783	30-60kb	fill
+bx_NC_048691_1	NC_048691.1	Paenibacillus phage Tadhana		Duplodnaviria	Caudoviricetes	unclassified	Fernvirus	Bacteria	Bacillota	Paenibacillus	37880	30-60kb	fill
+bx_NC_016161_1	NC_016161.1	Pediococcus phage cIP1		Duplodnaviria	Caudoviricetes	unclassified	Coetzeevirus	Bacteria	Bacillota	Pediococcus	38013	30-60kb	host_genus
+bx_NC_048831_1	NC_048831.1	Flavobacterium phage vB_FspS_filifjonk9-1		Duplodnaviria	Caudoviricetes	unclassified	Muminvirus	Bacteria	Bacteroidota	Flavobacterium	38028	30-60kb	fill
+bx_NC_070953_1	NC_070953.1	Alteromonas phage ZP6		Duplodnaviria	Caudoviricetes	unclassified	Mareflavirus	Bacteria	Pseudomonadota	Alteromonas	38080	30-60kb	host_genus
+bx_NC_008265_1	NC_008265.1	Clostridium phage phiSM101		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridium	38092	30-60kb	fill
+bx_NC_021784_1	NC_021784.1	Thermus phage phi OH2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Deinococcota	Thermus	38099	30-60kb	fill
+bx_NC_007967_1	NC_007967.1	Streptomyces phage mu1/6		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Kitasatospora	38194	30-60kb	host_genus
+bx_NC_077213_1	NC_077213.1	Yangshan Harbor Nitrososphaeria virus	YSH_922147	Duplodnaviria	Caudoviricetes	unclassified		Archaea	Nitrososphaerota	Nitrososphaeria	38245	30-60kb	fill
+bx_NC_019447_1	NC_019447.1	Brucella phage Pr		Duplodnaviria	Caudoviricetes	unclassified	Perisivirus	Bacteria	Pseudomonadota	Brucella	38253	30-60kb	host_genus
+bx_NC_041868_1	NC_041868.1	Paracoccus phage Shpa		Duplodnaviria	Caudoviricetes	unclassified	Vhulanivirus	Bacteria	Pseudomonadota	Paracoccus	38261	30-60kb	host_genus
+bx_NC_019508_1	NC_019508.1	Clostridium phage phiCP34O		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridium	38309	30-60kb	fill
+bx_NC_020850_1	NC_020850.1	Vibrio phage VBM1	VBM1	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Vibrio	38374	30-60kb	fill
+bx_NC_028871_1	NC_028871.1	Listeria phage vB_LmoS_188		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Listeria	38392	30-60kb	fill
+bx_NC_028886_1	NC_028886.1	Bacillus phage phi4B1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Bacillus	38663	30-60kb	fill
+bx_NC_031059_1	NC_031059.1	Rhodovulum phage vB_RhkS_P1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Rhodovulum	38773	30-60kb	host_genus
+bx_NC_021795_1	NC_021795.1	Cellulophaga phage phi17:1	phi17:1	Duplodnaviria	Caudoviricetes	unclassified	Helsingorvirus	Bacteria	Bacteroidota	Cellulophaga	38776	30-60kb	fill
+bx_NC_022757_1	NC_022757.1	Lactobacillus phage PL-1		Duplodnaviria	Caudoviricetes	unclassified	Junavirus	Bacteria	Bacillota	Lacticaseibacillus	38880	30-60kb	host_genus
+bx_NC_030904_1	NC_030904.1	Bacillus phage vB_BhaS-171		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Sutcliffiella	38975	30-60kb	host_genus
+bx_NC_019550_1	NC_019550.1	Liberibacter phage SC2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Liberibacter	38997	30-60kb	host_genus
+bx_NC_019934_1	NC_019934.1	Cronobacter phage ENT39118	ENT39118	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Cronobacter	39012	30-60kb	fill
+bx_NC_023612_1	NC_023612.1	Geobacillus phage GBK2	GBK2	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Geobacillus	39078	30-60kb	fill
+bx_NC_021791_1	NC_021791.1	Cellulophaga phage phi12:1	phi12:1	Duplodnaviria	Caudoviricetes	unclassified	Helsingorvirus	Bacteria	Bacteroidota	Cellulophaga	39148	30-60kb	fill
+bx_NC_005893_1	NC_005893.1	Lactobacillus phage phiAT3		Duplodnaviria	Caudoviricetes	unclassified	Fattrevirus	Bacteria	Bacillota	Lacticaseibacillus	39166	30-60kb	fill
+bx_NC_021790_1	NC_021790.1	Cellulophaga phage phi18:1	phi18:1	Duplodnaviria	Caudoviricetes	unclassified	Helsingorvirus	Bacteria	Bacteroidota	Cellulophaga	39189	30-60kb	fill
+bx_NC_010342_1	NC_010342.1	Halomonas phage phiHAP-1		Duplodnaviria	Caudoviricetes	unclassified	Hapunavirus	Bacteria	Pseudomonadota	Vreelandella	39245	30-60kb	host_genus
+bx_NC_016165_1	NC_016165.1	Rhodobacter phage RcapMu		Duplodnaviria	Caudoviricetes	unclassified	Rcapmuvirus	Bacteria	Pseudomonadota	Rhodobacter	39283	30-60kb	fill
+bx_NC_028783_1	NC_028783.1	Lactobacillus phage iLp84		Duplodnaviria	Caudoviricetes	unclassified	Pleetrevirus	Bacteria	Bacillota	Lacticaseibacillus	39399	30-60kb	fill
+bx_NC_016654_1	NC_016654.1	Rhodococcus phage REQ3		Duplodnaviria	Caudoviricetes	unclassified	Wodongavirus	Bacteria	Actinomycetota	Prescottella	39474	30-60kb	fill
+bx_NC_020839_1	NC_020839.1	Rhodobacter phage RC1	RC1	Duplodnaviria	Caudoviricetes	unclassified	Ricunavirus	Bacteria	Pseudomonadota	Rhodobacter	39573	30-60kb	fill
+bx_NC_074748_1	NC_074748.1	Pseudomonas phage Ps60		Duplodnaviria	Caudoviricetes	unclassified	Mechnikovvirus	Bacteria	Pseudomonadota	Pseudomonas	39676	30-60kb	fill
+bx_NC_048693_1	NC_048693.1	Paenibacillus phage Likha		Duplodnaviria	Caudoviricetes	unclassified	Fernvirus	Bacteria	Bacillota	Paenibacillus	39778	30-60kb	fill
+bx_NC_055020_1	NC_055020.1	Staphylococcus phage SN8		Duplodnaviria	Caudoviricetes	unclassified	Coventryvirus	Bacteria	Bacillota	Staphylococcus	39803	30-60kb	fill
+bx_NC_011551_1	NC_011551.1	Bacteriophage APSE-2	T5A	Duplodnaviria	Caudoviricetes	unclassified	Sendosyvirus	Bacteria	Pseudomonadota	Williamhamiltonella	39867	30-60kb	host_genus
+bx_NC_030945_1	NC_030945.1	Bacillus phage BalMu-1		Duplodnaviria	Caudoviricetes	unclassified	Fenglinvirus	Bacteria	Bacillota	Alkalihalobacillus	39873	30-60kb	host_genus
+bx_NC_022764_1	NC_022764.1	Bacillus phage Page		Duplodnaviria	Caudoviricetes	unclassified	Pagevirus	Bacteria	Bacillota	Priestia	39874	30-60kb	fill
+bx_NC_020482_1	NC_020482.1	Pelagibacter phage HTVC011P		Duplodnaviria	Caudoviricetes	unclassified	Stopavirus	Bacteria	Pseudomonadota	Pelagibacter	39921	30-60kb	fill
+bx_NC_019549_1	NC_019549.1	Liberibacter phage SC1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Liberibacter	40048	30-60kb	fill
+bx_NC_025466_1	NC_025466.1	Shewanella sp. phage 3/49		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Shewanella	40161	30-60kb	fill
+bx_NC_020866_1	NC_020866.1	Rhodovulum phage RS1	RS1	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Rhodovulum	40231	30-60kb	fill
+bx_NC_101653_1	NC_101653.1	Enterococcus phage vB_EfaS-DELF1		Duplodnaviria	Caudoviricetes	unclassified	Delfunavirus	Bacteria	Bacillota	Enterococcus	40248	30-60kb	host_genus
+bx_NC_011589_1	NC_011589.1	Stenotrophomonas phage S1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Stenotrophomonas	40287	30-60kb	fill
+bx_NC_049900_1	NC_049900.1	Listeria phage LP-HM00113468		Duplodnaviria	Caudoviricetes	unclassified	Slepowronvirus	Bacteria	Bacillota	Listeria	40298	30-60kb	host_genus
+bx_NC_020489_1	NC_020489.1	Rhodobacter phage RcapNL		Duplodnaviria	Caudoviricetes	unclassified	Capnelvirus	Bacteria	Pseudomonadota	Rhodobacter	40489	30-60kb	fill
+bx_NC_020844_1	NC_020844.1	Salicola phage CGphi29	CGphi29	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Salicola	40695	30-60kb	host_genus
+bx_NC_020841_1	NC_020841.1	Psychrobacter phage pOW20-A	pOW20-A	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Psychrobacter	40803	30-60kb	fill
+bx_NC_054464_1	NC_054464.1	Edwardsiella phage Edno5		Duplodnaviria	Caudoviricetes	unclassified	Gofduovirus	Bacteria	Pseudomonadota	Edwardsiella	40844	30-60kb	fill
+bx_NC_048701_1	NC_048701.1	Anoxybacillus phage A403		Duplodnaviria	Caudoviricetes	unclassified	Tandoganvirus	Bacteria	Bacillota	Thermaerobacillus	40847	30-60kb	host_genus
+bx_NC_009552_3	NC_009552.3	Geobacillus virus E2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Geobacillus	40863	30-60kb	fill
+bx_NC_010179_2	NC_010179.2	Lactobacillus prophage Lj771		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Lactobacillus	40881	30-60kb	fill
+bx_NC_020858_2	NC_020858.2	Sulfitobacter phage pCB2047-A	pCB2047-A	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Sulfitobacter	40929	30-60kb	fill
+bx_NC_022756_1	NC_022756.1	Lactobacillus phage J-1		Duplodnaviria	Caudoviricetes	unclassified	Junavirus	Bacteria	Bacillota	Lacticaseibacillus	40931	30-60kb	fill
+bx_NC_020856_2	NC_020856.2	Sulfitobacter phage pCB2047-C	pCB2047-C	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Sulfitobacter	40931	30-60kb	fill
+bx_NC_031125_1	NC_031125.1	Lactobacillus phage PLE3		Duplodnaviria	Caudoviricetes	unclassified	Pleetrevirus	Bacteria	Bacillota	Lacticaseibacillus	41005	30-60kb	fill
+bx_NC_004585_1	NC_004585.1	Streptococcus phage 315.2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Streptococcus	41072	30-60kb	fill
+bx_NC_006557_1	NC_006557.1	Bacillus phage BCASJ1c		Duplodnaviria	Caudoviricetes	unclassified	Jarrellvirus	Bacteria	Bacillota	Evansella	41092	30-60kb	host_genus
+bx_NC_019446_1	NC_019446.1	Brucella phage Tb		Duplodnaviria	Caudoviricetes	unclassified	Perisivirus	Bacteria	Pseudomonadota	Brucella	41148	30-60kb	fill
+bx_NC_028837_1	NC_028837.1	Paenibacillus phage Xenia		Duplodnaviria	Caudoviricetes	unclassified	Fernvirus	Bacteria	Bacillota	Paenibacillus	41149	30-60kb	fill
+bx_NC_031260_1	NC_031260.1	Enterococcus phage Ec-ZZ2		Duplodnaviria	Caudoviricetes	unclassified	Efquatrovirus	Bacteria	Bacillota	Enterococcus	41170	30-60kb	fill
+bx_NC_070933_1	NC_070933.1	Ochrobactrum phage vB_OspP_OH		Duplodnaviria	Caudoviricetes	unclassified	Wolominvirus	Bacteria	Pseudomonadota	Ochrobactrum	41227	30-60kb	host_genus
+bx_NC_015254_1	NC_015254.1	Brochothrix phage BL3		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Brochothrix	41518	30-60kb	fill
+bx_NC_042111_1	NC_042111.1	Microbacterium phage Ilzat		Duplodnaviria	Caudoviricetes	unclassified	Ilzatvirus	Bacteria	Actinomycetota	Microbacterium	41525	30-60kb	fill
+bx_NC_070931_1	NC_070931.1	Ochrobactrum phage POA1180		Duplodnaviria	Caudoviricetes	unclassified	Abaiavirus	Bacteria	Pseudomonadota	Brucella	41655	30-60kb	fill
+bx_NC_048038_1	NC_048038.1	Microbacterium phage Neferthena		Duplodnaviria	Caudoviricetes	unclassified	Neferthenavirus	Bacteria	Actinomycetota	Microbacterium	41706	30-60kb	fill
+bx_NC_019489_1	NC_019489.1	Lactobacillus phage Sha1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Lactobacillus	41726	30-60kb	host_genus
+bx_NC_042110_1	NC_042110.1	Microbacterium phage Hamlet		Duplodnaviria	Caudoviricetes	unclassified	Ilzatvirus	Bacteria	Actinomycetota	Microbacterium	41934	30-60kb	fill
+bx_NC_018264_1	NC_018264.1	Thermoanaerobacterium phage THSA-485A		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Thermoanaerobacterium	41938	30-60kb	host_genus
+bx_NC_073439_1	NC_073439.1	Microbacterium phage IndyLu		Duplodnaviria	Caudoviricetes	unclassified	Dismasvirus	Bacteria	Actinomycetota	Microbacterium	41958	30-60kb	fill
+bx_NC_074752_1	NC_074752.1	Serratia phage vB_SmaS_Bonzee		Duplodnaviria	Caudoviricetes	unclassified	Bonzeevirus	Bacteria	Pseudomonadota	Serratia	42045	30-60kb	fill
+bx_NC_020483_1	NC_020483.1	Pelagibacter phage HTVC019P		Duplodnaviria	Caudoviricetes	unclassified	Pelagivirus	Bacteria	Pseudomonadota	Pelagibacter	42084	30-60kb	fill
+bx_NC_027299_1	NC_027299.1	Sulfitobacter phage NYA-2014a		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Sulfitobacter	42092	30-60kb	host_genus
+bx_NC_026608_1	NC_026608.1	Paracoccus phage vB_PmaS-R3		Duplodnaviria	Caudoviricetes	unclassified	Zhuquevirus	Bacteria	Pseudomonadota	Paracoccus	42093	30-60kb	fill
+bx_NC_028991_1	NC_028991.1	Clostridium phage phiCT453A		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridium	42158	30-60kb	fill
+bx_NC_004305_1	NC_004305.1	Lactobacillus phage phig1e		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Lactobacillus	42259	30-60kb	fill
+bx_NC_028826_1	NC_028826.1	Enterococcus phage IME-EFm5		Duplodnaviria	Caudoviricetes	unclassified	Efemquintavirus	Bacteria	Bacillota	Enterococcus	42265	30-60kb	fill
+bx_NC_005357_1	NC_005357.1	Bordetella phage BPP-1		Duplodnaviria	Caudoviricetes	unclassified	Rauchvirus	Bacteria	Pseudomonadota	Bordetella	42493	30-60kb	host_genus
+bx_NC_074757_1	NC_074757.1	Serratia phage vB_SmaS_Tlacuache		Duplodnaviria	Caudoviricetes	unclassified	Serbinvirus	Bacteria	Pseudomonadota	Serratia	42679	30-60kb	host_genus
+bx_NC_031908_1	NC_031908.1	Pseudoalteromonas phage PH1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Pseudoalteromonas	42685	30-60kb	fill
+bx_NC_070727_1	NC_070727.1	Staphylococcus virus IME1354_01		Duplodnaviria	Caudoviricetes	unclassified	Zhangqianvirus	Bacteria	Bacillota	Staphylococcus	42706	30-60kb	fill
+bx_NC_048789_1	NC_048789.1	Corynebacterium phage Stiles		Duplodnaviria	Caudoviricetes	unclassified	Samwavirus	Bacteria	Actinomycetota	Corynebacterium	42846	30-60kb	fill
+bx_NC_135496_1	NC_135496.1	Enterococcus phage dArtagnan		Duplodnaviria	Caudoviricetes	unclassified	Aramisvirus	Bacteria	Bacillota	Enterococcus	42884	30-60kb	fill
+bx_NC_069751_1	NC_069751.1	Stenotrophomonas phage vB_SmaS-DLP_1		Duplodnaviria	Caudoviricetes	unclassified	Septimatrevirus	Bacteria	Pseudomonadota	Stenotrophomonas	42887	30-60kb	fill
+bx_NC_070875_1	NC_070875.1	Serratia phage Scapp		Duplodnaviria	Caudoviricetes	unclassified	Scappvirus	Bacteria	Pseudomonadota	Serratia	42969	30-60kb	fill
+bx_NC_009799_3	NC_009799.3	Corynebacterium phage BFK20		Duplodnaviria	Caudoviricetes	unclassified	Sasvirus	Bacteria	Actinomycetota	Brevibacterium	42972	30-60kb	fill
+bx_NC_042029_1	NC_042029.1	Edwardsiella phage eiAU		Duplodnaviria	Caudoviricetes	unclassified	Eiauvirus	Bacteria	Pseudomonadota	Edwardsiella	43015	30-60kb	fill
+bx_NC_023555_1	NC_023555.1	Edwardsiella phage eiAU-183		Duplodnaviria	Caudoviricetes	unclassified	Eiauvirus	Bacteria	Pseudomonadota	Edwardsiella	43017	30-60kb	fill
+bx_NC_004827_1	NC_004827.1	Haemophilus phage Aaphi23		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Aggregatibacter	43033	30-60kb	host_genus
+bx_NC_054979_1	NC_054979.1	Staphylococcus phage B122		Duplodnaviria	Caudoviricetes	unclassified	Phietavirus	Bacteria	Bacillota	Staphylococcus	43108	30-60kb	fill
+bx_NC_023614_1	NC_023614.1	Croceibacter phage P2559Y		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacteroidota	Croceibacter	43153	30-60kb	host_genus
+bx_NC_069744_1	NC_069744.1	Xanthomonas phage Samson		Duplodnaviria	Caudoviricetes	unclassified	Septimatrevirus	Bacteria	Pseudomonadota	Xanthomonas	43314	30-60kb	fill
+bx_NC_073023_1	NC_073023.1	Sphingomonas phage Eidolon		Duplodnaviria	Caudoviricetes	unclassified	Eidolonvirus	Bacteria	Pseudomonadota	Sphingomonas	43318	30-60kb	fill
+bx_NC_073022_1	NC_073022.1	Hafnia phage yong1		Duplodnaviria	Caudoviricetes	unclassified	Hafyongvirus	Bacteria	Pseudomonadota	Hafnia	43329	30-60kb	host_genus
+bx_NC_021342_2	NC_021342.2	Edwardsiella phage PEi21		Duplodnaviria	Caudoviricetes	unclassified	Yokohamavirus	Bacteria	Pseudomonadota	Edwardsiella	43378	30-60kb	fill
+bx_NC_073024_1	NC_073024.1	Sphingomonas phage Kharn		Duplodnaviria	Caudoviricetes	unclassified	Kharnvirus	Bacteria	Pseudomonadota	Sphingomonas	43408	30-60kb	fill
+bx_NC_004112_1	NC_004112.1	Lactobacillus phage A2		Duplodnaviria	Caudoviricetes	unclassified	Ashduovirus	Bacteria	Bacillota	Lacticaseibacillus	43411	30-60kb	fill
+bx_NC_047983_1	NC_047983.1	Lactobacillus phage Lb		Duplodnaviria	Caudoviricetes	unclassified	Heilongjiangvirus	Bacteria	Bacillota	Levilactobacillus	43416	30-60kb	fill
+bx_NC_023560_1	NC_023560.1	Oenococcus phage phiS13		Duplodnaviria	Caudoviricetes	unclassified	Sozzivirus	Bacteria	Bacillota	Oenococcus	43454	30-60kb	fill
+bx_NC_054424_1	NC_054424.1	Arthrobacter phage Litotes		Duplodnaviria	Caudoviricetes	unclassified	Korravirus	Bacteria	Actinomycetota	Arthrobacter	43496	30-60kb	fill
+bx_NC_025458_1	NC_025458.1	Shewanella sp. phage 1/41		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Shewanella	43510	30-60kb	fill
+bx_NC_019933_2	NC_019933.2	Xanthomonas phage CP1		Duplodnaviria	Caudoviricetes	unclassified	Klementvirus	Bacteria	Pseudomonadota	Xanthomonas	43870	30-60kb	fill
+bx_NC_013597_1	NC_013597.1	Aggregatibacter phage S1249		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Aggregatibacter	43970	30-60kb	fill
+bx_NC_016566_1	NC_016566.1	Shigella phage EP23		Duplodnaviria	Caudoviricetes	unclassified	Dhillonvirus	Bacteria	Pseudomonadota	Shigella	44077	30-60kb	fill
+bx_NC_048791_1	NC_048791.1	Corynebacterium phage Adelaide		Duplodnaviria	Caudoviricetes	unclassified	Samwavirus	Bacteria	Actinomycetota	Corynebacterium	44104	30-60kb	fill
+bx_NC_041963_1	NC_041963.1	Rhodobacter phage RcSpartan		Duplodnaviria	Caudoviricetes	unclassified	Titanvirus	Bacteria	Pseudomonadota	Rhodobacter	44194	30-60kb	host_genus
+bx_NC_073025_1	NC_073025.1	Sphingomonas phage Lucius		Duplodnaviria	Caudoviricetes	unclassified	Kharnvirus	Bacteria	Pseudomonadota	Sphingomonas	44200	30-60kb	fill
+bx_NC_004902_1	NC_004902.1	Xanthomonas phage Xp10		Duplodnaviria	Caudoviricetes	unclassified	Xipdecavirus	Bacteria	Pseudomonadota	Xanthomonas	44373	30-60kb	fill
+bx_NC_028883_1	NC_028883.1	Clostridium phage phiMMP01		Duplodnaviria	Caudoviricetes	unclassified	Yongloolinvirus	Bacteria	Bacillota	Clostridioides	44461	30-60kb	fill
+bx_NC_029097_1	NC_029097.1	Rhodobacter phage RcTitan		Duplodnaviria	Caudoviricetes	unclassified	Titanvirus	Bacteria	Pseudomonadota	Rhodobacter	44496	30-60kb	fill
+bx_NC_042354_1	NC_042354.1	Corynebacterium phage phi673		Duplodnaviria	Caudoviricetes	unclassified	Ikedavirus	Bacteria	Actinomycetota	Corynebacterium	44530	30-60kb	host_genus
+bx_NC_073067_1	NC_073067.1	Escherichia phage PaulFeyerabend	Bas15	Duplodnaviria	Caudoviricetes	unclassified	Dhillonvirus	Bacteria	Pseudomonadota	Escherichia	44550	30-60kb	fill
+bx_NC_073052_1	NC_073052.1	Escherichia phage JLBYU60		Duplodnaviria	Caudoviricetes	unclassified	Dhillonvirus	Bacteria	Pseudomonadota	Escherichia	44804	30-60kb	fill
+bx_NC_011222_1	NC_011222.1	Bacteroides phage B40-8		Duplodnaviria	Caudoviricetes	unclassified	Gotuavirus	Bacteria	Bacteroidota	Bacteroides	44929	30-60kb	fill
+bx_NC_018276_1	NC_018276.1	Croceibacter phage P2559S		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacteroidota	Croceibacter	44988	30-60kb	fill
+bx_NC_013600_1	NC_013600.1	Sodalis phage SO-1		Duplodnaviria	Caudoviricetes	unclassified	Dhillonvirus	Bacteria	Pseudomonadota	Sodalis	45169	30-60kb	fill
+bx_NC_047768_1	NC_047768.1	Phage MedPE-SWcel-C56		Duplodnaviria	Caudoviricetes	unclassified	Kafavirus	Bacteria	Pseudomonadota	Alphaproteobacteria	45260	30-60kb	fill
+bx_NC_070821_1	NC_070821.1	Pseudoalteromonas phage Maelstrom		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Pseudoalteromonas	45263	30-60kb	fill
+bx_NC_019525_1	NC_019525.1	Bdellovibrio phage phi1422		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bdellovibrionota	Bdellovibrio	45354	30-60kb	fill
+bx_NC_019717_1	NC_019717.1	Enterobacteria phage HK225		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Escherichia	45366	30-60kb	fill
+bx_NC_047845_1	NC_047845.1	Agrobacterium phage Atu_ph02		Duplodnaviria	Caudoviricetes	unclassified	Atuphduovirus	Bacteria	Pseudomonadota	Agrobacterium	45423	30-60kb	fill
+bx_NC_029029_1	NC_029029.1	Brevibacillus phage Abouo		Duplodnaviria	Caudoviricetes	unclassified	Abouovirus	Bacteria	Bacillota	Brevibacillus	45552	30-60kb	fill
+bx_NC_054762_1	NC_054762.1	Rhodococcus phage PhailMary		Duplodnaviria	Caudoviricetes	unclassified	Rerduovirus	Bacteria	Actinomycetota	Rhodococcus	45614	30-60kb	fill
+bx_NC_028767_1	NC_028767.1	Paenibacillus phage Vegas		Duplodnaviria	Caudoviricetes	unclassified	Vegasvirus	Bacteria	Bacillota	Paenibacillus	45653	30-60kb	fill
+bx_NC_025431_1	NC_025431.1	Mesorhizobium phage vB_MloP_Lo5R7ANS		Duplodnaviria	Caudoviricetes	unclassified	Pairvirus	Bacteria	Pseudomonadota	Mesorhizobium	45718	30-60kb	host_genus
+bx_NC_022980_1	NC_022980.1	Brevibacillus phage Davies		Duplodnaviria	Caudoviricetes	unclassified	Abouovirus	Bacteria	Bacillota	Brevibacillus	45798	30-60kb	fill
+bx_NC_055048_1	NC_055048.1	Staphylococcus phage phiSa2wa_st78		Duplodnaviria	Caudoviricetes	unclassified	Triavirus	Bacteria	Bacillota	Staphylococcus	45878	30-60kb	fill
+bx_NC_071154_1	NC_071154.1	Klebsiella phage BUCT541		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Klebsiella	46100	30-60kb	fill
+bx_NC_048706_1	NC_048706.1	Streptomyces phage FlowerPower		Duplodnaviria	Caudoviricetes	unclassified	Flowerpowervirus	Bacteria	Actinomycetota	Streptomyces	46133	30-60kb	fill
+bx_NC_016569_1	NC_016569.1	Nocardia phage NBR1		Duplodnaviria	Caudoviricetes	unclassified	Nubrunavirus	Bacteria	Actinomycetota	Nocardia	46140	30-60kb	host_genus
+bx_NC_023559_1	NC_023559.1	Oenococcus phage phi9805		Duplodnaviria	Caudoviricetes	unclassified	Sozzivirus	Bacteria	Bacillota	Oenococcus	46145	30-60kb	host_genus
+bx_NC_020874_1	NC_020874.1	Prochlorococcus phage P-SSP3	P-SSP3	Duplodnaviria	Caudoviricetes	unclassified	Tritonvirus	Bacteria	Cyanobacteriota	Prochlorococcus	46198	30-60kb	fill
+bx_NC_009531_1	NC_009531.1	Synechococcus phage Syn5		Duplodnaviria	Caudoviricetes	unclassified	Voetvirus	Bacteria	Cyanobacteriota	Synechococcus	46214	30-60kb	fill
+bx_NC_023571_1	NC_023571.1	Oenococcus phage phiS11		Duplodnaviria	Caudoviricetes	unclassified	Sozzivirus	Bacteria	Bacillota	Oenococcus	46243	30-60kb	fill
+bx_NC_054636_1	NC_054636.1	Shigella phage Sf11 SMD-2017		Duplodnaviria	Caudoviricetes	unclassified	Cedarrivervirus	Bacteria	Pseudomonadota	Shigella	46454	30-60kb	host_genus
+bx_NC_016653_1	NC_016653.1	Rhodococcus phage RER2		Duplodnaviria	Caudoviricetes	unclassified	Rerduovirus	Bacteria	Actinomycetota	Rhodococcus	46586	30-60kb	fill
+bx_NC_031264_1	NC_031264.1	Brucella phage BiPBO1	BiPBO1	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Brucella	46877	30-60kb	fill
+bx_NC_029022_1	NC_029022.1	Clostridium phage phiCT9441A		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridium	46895	30-60kb	fill
+bx_NC_016657_1	NC_016657.1	Cyanophage 9515-10a	9515-10a	Duplodnaviria	Caudoviricetes	unclassified	Tangaroavirus	Bacteria	Cyanobacteriota	Prochlorococcus	47055	30-60kb	fill
+bx_NC_048198_1	NC_048198.1	Erwinia phage vB_EhrS_59		Duplodnaviria	Caudoviricetes	unclassified	Feofaniavirus	Bacteria	Pseudomonadota	Erwinia	47116	30-60kb	fill
+bx_NC_016770_1	NC_016770.1	Bacteroides phage B124-14		Duplodnaviria	Caudoviricetes	unclassified	Gotuavirus	Bacteria	Bacteroidota	Bacteroides	47159	30-60kb	fill
+bx_NC_048184_1	NC_048184.1	Synechococcus phage S-CBP3	S-CBP3	Duplodnaviria	Caudoviricetes	unclassified	Lirvirus	Bacteria	Cyanobacteriota	Synechococcus	47375	30-60kb	fill
+bx_NC_011142_1	NC_011142.1	Iodobacter phage PhiPLPE		Duplodnaviria	Caudoviricetes	unclassified	Iodovirus	Bacteria	Pseudomonadota	Iodobacter	47453	30-60kb	host_genus
+bx_NC_047834_1	NC_047834.1	Alteromonas phage vB_AspP-H4/4		Duplodnaviria	Caudoviricetes	unclassified	Foturvirus	Bacteria	Pseudomonadota	Alteromonas	47631	30-60kb	fill
+bx_NC_041918_2	NC_041918.2	Geobacillus phage TP-84		Duplodnaviria	Caudoviricetes	unclassified	Saundersvirus	Bacteria	Bacillota	Geobacillus	47718	30-60kb	fill
+bx_NC_016658_1	NC_016658.1	Cyanophage NATL1A-7	NATL1A-7	Duplodnaviria	Caudoviricetes	unclassified	Cheungvirus	Bacteria	Cyanobacteriota	Prochlorococcus	47741	30-60kb	fill
+bx_NC_027334_1	NC_027334.1	Aurantimonas phage AmM-1	AmM-1	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Aurantimonas	47800	30-60kb	host_genus
+bx_NC_048679_1	NC_048679.1	Leptospira phage LE4		Duplodnaviria	Caudoviricetes	unclassified	Nylescharonvirus	Bacteria	Spirochaetota	Leptospira	47866	30-60kb	fill
+bx_NC_016650_1	NC_016650.1	Rhodococcus phage RGL3		Duplodnaviria	Caudoviricetes	unclassified	Rerduovirus	Bacteria	Actinomycetota	Rhodococcus	48072	30-60kb	fill
+bx_NC_071134_1	NC_071134.1	Klebsiella phage vB_KpnM_JustaPhage		Duplodnaviria	Caudoviricetes	unclassified	Sircambvirus	Bacteria	Pseudomonadota	Klebsiella	48129	30-60kb	fill
+bx_NC_047911_1	NC_047911.1	Faecalibacterium phage FP_Lagaffe		Duplodnaviria	Caudoviricetes	unclassified	Lagaffevirus	Bacteria	Bacillota	Faecalibacterium	48211	30-60kb	fill
+bx_NC_048678_1	NC_048678.1	Leptospira phage LE3		Duplodnaviria	Caudoviricetes	unclassified	Nylescharonvirus	Bacteria	Spirochaetota	Leptospira	48288	30-60kb	host_genus
+bx_NC_028743_1	NC_028743.1	Mannheimia phage vB_MhS_587AP2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Mannheimia	48594	30-60kb	host_genus
+bx_NC_028924_1	NC_028924.1	Polaribacter phage P12002L		Duplodnaviria	Caudoviricetes	unclassified	Incheonvirus	Bacteria	Bacteroidota	Polaribacter	48689	30-60kb	fill
+bx_NC_019930_1	NC_019930.1	Tetrasphaera phage TJE1		Duplodnaviria	Caudoviricetes	unclassified	Tijeunavirus	Bacteria	Actinomycetota	Nostocoides	49219	30-60kb	host_genus
+bx_NC_128954_1	NC_128954.1	Xanthomonas phage XAJ2		Duplodnaviria	Caudoviricetes	unclassified	Xajduovirus	Bacteria	Pseudomonadota	Xanthomonas	49241	30-60kb	fill
+bx_NC_028764_1	NC_028764.1	Clostridium phage phiCD505		Duplodnaviria	Caudoviricetes	unclassified	Colneyvirus	Bacteria	Bacillota	Clostridioides	49316	30-60kb	fill
+bx_NC_019490_1	NC_019490.1	Riemerella phage RAP44		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacteroidota	Riemerella	49329	30-60kb	host_genus
+bx_NC_016652_1	NC_016652.1	Rhodococcus phage REQ2		Duplodnaviria	Caudoviricetes	unclassified	Melbournevirus	Bacteria	Actinomycetota	Prescottella	49330	30-60kb	fill
+bx_NC_003085_1	NC_003085.1	Myxococcus phage Mx8		Duplodnaviria	Caudoviricetes	unclassified	Myxoctovirus	Bacteria	Myxococcota	Myxococcus	49534	30-60kb	host_genus
+bx_NC_047910_1	NC_047910.1	Faecalibacterium phage FP_Epona		Duplodnaviria	Caudoviricetes	unclassified	Eponavirus	Bacteria	Bacillota	Faecalibacterium	49573	30-60kb	fill
+bx_NC_025463_1	NC_025463.1	Shewanella sp. phage 1/44		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Shewanella	49640	30-60kb	fill
+bx_NC_048784_1	NC_048784.1	Rhodococcus phage Whack		Duplodnaviria	Caudoviricetes	unclassified	Whackvirus	Bacteria	Actinomycetota	Rhodococcus	49660	30-60kb	fill
+bx_NC_028768_1	NC_028768.1	Achromobacter phage JWX		Duplodnaviria	Caudoviricetes	unclassified	Steinhofvirus	Bacteria	Pseudomonadota	Achromobacter	49714	30-60kb	fill
+bx_NC_048642_1	NC_048642.1	Clostridium phage CDKM9		Duplodnaviria	Caudoviricetes	unclassified	Colneyvirus	Bacteria	Bacillota	Clostridioides	49822	30-60kb	host_genus
+bx_NC_028763_1	NC_028763.1	Polaribacter phage P12002S		Duplodnaviria	Caudoviricetes	unclassified	Incheonvirus	Bacteria	Bacteroidota	Polaribacter	49847	30-60kb	fill
+bx_NC_048766_1	NC_048766.1	Pantoea phage vB_PagM_AAM37	AAM37	Duplodnaviria	Caudoviricetes	unclassified	Dibbivirus	Bacteria	Pseudomonadota	Pantoea	49990	30-60kb	fill
+bx_NC_028853_1	NC_028853.1	Mannheimia phage vB_MhS_535AP2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Mannheimia	50078	30-60kb	fill
+bx_NC_055031_1	NC_055031.1	Paenibacillus phage Unity		Duplodnaviria	Caudoviricetes	unclassified	Halcyonevirus	Bacteria	Bacillota	Paenibacillus	50316	30-60kb	host_genus
+bx_NC_054666_1	NC_054666.1	Streptomyces phage Caelum		Duplodnaviria	Caudoviricetes	unclassified	Caelumvirus	Bacteria	Actinomycetota	Streptomyces	50374	30-60kb	fill
+bx_NC_042353_1	NC_042353.1	Salinibacter phage SRUTV-1	SRUTV-1	Duplodnaviria	Caudoviricetes	unclassified	Kairosalinivirus	Bacteria	Rhodothermota	Salinibacter	50672	30-60kb	fill
+bx_NC_028757_1	NC_028757.1	Mycobacterium phage Tiffany		Duplodnaviria	Caudoviricetes	unclassified	Microwolfvirus	Bacteria	Actinomycetota	Mycobacterium	50768	30-60kb	fill
+bx_NC_047851_1	NC_047851.1	Brevibacterium phage LuckyBarnes		Duplodnaviria	Caudoviricetes	unclassified	Luckybarnesvirus	Bacteria	Actinomycetota	Brevibacterium	50774	30-60kb	host_genus
+bx_NC_029046_1	NC_029046.1	Sinorhizobium phage phiLM21		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Sinorhizobium	50827	30-60kb	fill
+bx_NC_011398_1	NC_011398.1	Clostridioides phage phiCD27		Duplodnaviria	Caudoviricetes	unclassified	Colneyvirus	Bacteria	Bacillota	Clostridioides	50930	30-60kb	fill
+bx_NC_042329_1	NC_042329.1	Mycobacterium phage MrGordo		Duplodnaviria	Caudoviricetes	unclassified	Fromanvirus	Bacteria	Actinomycetota	Mycolicibacterium	50988	30-60kb	fill
+bx_NC_021318_1	NC_021318.1	Mycobacterium phage Chy5		Duplodnaviria	Caudoviricetes	unclassified	Fromanvirus	Bacteria	Actinomycetota	Mycobacterium	51214	30-60kb	fill
+bx_NC_016655_1	NC_016655.1	Rhodococcus phage REQ1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Prescottella	51342	30-60kb	fill
+bx_NC_048651_1	NC_048651.1	Aeribacillus phage AP45		Duplodnaviria	Caudoviricetes	unclassified	Kamchatkavirus	Bacteria	Bacillota	Aeribacillus	51606	30-60kb	host_genus
+bx_NC_042352_1	NC_042352.1	Salinibacter phage M31CR41-2		Duplodnaviria	Caudoviricetes	unclassified	Kairosalinivirus	Bacteria	Rhodothermota	Salinibacter	51889	30-60kb	fill
+bx_NC_054657_1	NC_054657.1	Streptomyces phage Salutena		Duplodnaviria	Caudoviricetes	unclassified	Salutenavirus	Bacteria	Actinomycetota	Streptomyces	51956	30-60kb	fill
+bx_NC_022062_1	NC_022062.1	Mycobacterium phage Trouble		Duplodnaviria	Caudoviricetes	unclassified	Fromanvirus	Bacteria	Actinomycetota	Mycobacterium	52102	30-60kb	fill
+bx_NC_028956_1	NC_028956.1	Mannheimia phage vB_MhS_1152AP2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Mannheimia	52139	30-60kb	fill
+bx_NC_007902_1	NC_007902.1	Sodalis phage phiSG1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Sodalis	52162	30-60kb	host_genus
+bx_NC_031250_1	NC_031250.1	Salmonella phage BP63		Duplodnaviria	Caudoviricetes	unclassified	Rosemountvirus	Bacteria	Pseudomonadota	Salmonella	52437	30-60kb	fill
+bx_NC_054432_1	NC_054432.1	Mycobacterium phage phiT46-1		Duplodnaviria	Caudoviricetes	unclassified	Mycoabscvirus	Bacteria	Actinomycetota	Mycobacteroides	52849	30-60kb	host_genus
+bx_NC_028969_1	NC_028969.1	Brevibacillus phage Osiris		Duplodnaviria	Caudoviricetes	unclassified	Jimmervirus	Bacteria	Bacillota	Brevibacillus	52955	30-60kb	fill
+bx_NC_021560_1	NC_021560.1	Rhizobium phage RR1-A	RR1-A	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Agrobacterium	53102	30-60kb	fill
+bx_NC_042351_1	NC_042351.1	Salinibacter phage M8CRM-1		Duplodnaviria	Caudoviricetes	unclassified	Kryptosalinivirus	Bacteria	Rhodothermota	Salinibacter	53197	30-60kb	host_genus
+bx_NC_133305_1	NC_133305.1	Caudoviricetes sp. vir080		Duplodnaviria	Caudoviricetes	unclassified		Archaea	Methanobacteriota	Methanobacteriales	53200	30-60kb	fill
+bx_NC_022324_1	NC_022324.1	Mycobacterium phage SarFire		Duplodnaviria	Caudoviricetes	unclassified	Fromanvirus	Bacteria	Actinomycetota	Mycobacterium	53701	30-60kb	host_genus
+bx_NC_027296_1	NC_027296.1	Rhizobium phage RHEph06		Duplodnaviria	Caudoviricetes	unclassified	Kleczkowskavirus	Bacteria	Pseudomonadota	Rhizobium	53721	30-60kb	fill
+bx_NC_042349_1	NC_042349.1	Salinibacter phage M8CC-19		Duplodnaviria	Caudoviricetes	unclassified	Kryptosalinivirus	Bacteria	Rhodothermota	Salinibacter	53812	30-60kb	fill
+bx_NC_047974_1	NC_047974.1	Rhodococcus phage Jace		Duplodnaviria	Caudoviricetes	unclassified	Jacevirus	Bacteria	Actinomycetota	Rhodococcus	53912	30-60kb	host_genus
+bx_NC_047914_1	NC_047914.1	Faecalibacterium phage FP_Taranis		Duplodnaviria	Caudoviricetes	unclassified	Taranisvirus	Bacteria	Bacillota	Faecalibacterium	54286	30-60kb	fill
+bx_NC_041976_1	NC_041976.1	Brevibacillus phage Jimmer2		Duplodnaviria	Caudoviricetes	unclassified	Jimmervirus	Bacteria	Bacillota	Brevibacillus	54312	30-60kb	host_genus
+bx_NC_029104_1	NC_029104.1	Brevibacillus phage Jimmer1		Duplodnaviria	Caudoviricetes	unclassified	Jimmervirus	Bacteria	Bacillota	Brevibacillus	54312	30-60kb	fill
+bx_NC_028930_1	NC_028930.1	Paenibacillus phage Tripp		Duplodnaviria	Caudoviricetes	unclassified	Halcyonevirus	Bacteria	Bacillota	Paenibacillus	54439	30-60kb	fill
+bx_NC_048877_1	NC_048877.1	Microbacterium phage Phedro		Duplodnaviria	Caudoviricetes	unclassified	Akonivirus	Bacteria	Actinomycetota	Microbacterium	54442	30-60kb	fill
+bx_NC_047915_1	NC_047915.1	Faecalibacterium phage FP_Toutatis		Duplodnaviria	Caudoviricetes	unclassified	Toutatisvirus	Bacteria	Bacillota	Faecalibacterium	54725	30-60kb	fill
+bx_NC_021864_1	NC_021864.1	Puniceispirillum phage HMO-2011		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Puniceispirillum	55282	30-60kb	host_genus
+bx_NC_048878_1	NC_048878.1	Alteromonas phage vB_AcoS-R7M		Duplodnaviria	Caudoviricetes	unclassified	Amoyvirus	Bacteria	Pseudomonadota	Alteromonas	56163	30-60kb	fill
+bx_NC_030916_1	NC_030916.1	Tsukamurella phage TPA4		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Tsukamurella	56212	30-60kb	fill
+bx_NC_071013_1	NC_071013.1	Carnobacterium phage cd4	cd4	Duplodnaviria	Caudoviricetes	unclassified	Carnodivirus	Bacteria	Bacillota	Carnobacterium	56744	30-60kb	host_genus
+bx_NC_023549_1	NC_023549.1	Clavibacter phage CN1A		Duplodnaviria	Caudoviricetes	unclassified	Cinunavirus	Bacteria	Actinomycetota	Clavibacter	56789	30-60kb	host_genus
+bx_NC_071012_1	NC_071012.1	Carnobacterium phage cd2	cd2	Duplodnaviria	Caudoviricetes	unclassified	Carnodivirus	Bacteria	Bacillota	Carnobacterium	57099	30-60kb	fill
+bx_NC_071000_1	NC_071000.1	Providencia phage PSTCR4		Duplodnaviria	Caudoviricetes	unclassified	Craquatrovirus	Bacteria	Pseudomonadota	Providencia	57214	30-60kb	fill
+bx_NC_003324_1	NC_003324.1	Sinorhizobium phage PBC5		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Sinorhizobium	57416	30-60kb	fill
+bx_NC_021068_1	NC_021068.1	Vibrio phage douglas 12A4	douglas 12A4	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Aliivibrio	57611	30-60kb	host_genus
+bx_NC_071001_1	NC_071001.1	Providencia phage PSTCR7		Duplodnaviria	Caudoviricetes	unclassified	Craquatrovirus	Bacteria	Pseudomonadota	Providencia	57986	30-60kb	fill
+bx_NC_072499_1	NC_072499.1	Xanthomonas phage vB_Xar_IVIA-DoCa3		Duplodnaviria	Caudoviricetes	unclassified	Nipunavirus	Bacteria	Pseudomonadota	Xanthomonas	58107	30-60kb	fill
+bx_NC_073332_1	NC_073332.1	Arthrobacter phage Tatanka		Duplodnaviria	Caudoviricetes	unclassified	Gordonvirus	Bacteria	Actinomycetota	Arthrobacter	58120	30-60kb	fill
+bx_NC_073333_1	NC_073333.1	Arthrobacter phage Trustiboi		Duplodnaviria	Caudoviricetes	unclassified	Gordonvirus	Bacteria	Actinomycetota	Arthrobacter	58242	30-60kb	fill
+bx_NC_011288_1	NC_011288.1	Mycobacterium phage Fruitloop		Duplodnaviria	Caudoviricetes	unclassified	Cheoctovirus	Bacteria	Actinomycetota	Mycolicibacterium	58471	30-60kb	fill
+bx_NC_028923_1	NC_028923.1	Mycobacterium phage Llama		Duplodnaviria	Caudoviricetes	unclassified	Cheoctovirus	Bacteria	Actinomycetota	Mycobacterium	58472	30-60kb	fill
+bx_NC_048735_1	NC_048735.1	Bacillus phage vB_BboS-125		Duplodnaviria	Caudoviricetes	unclassified	Elmenteitavirus	Bacteria	Bacillota	Alkalihalobacterium	58528	30-60kb	host_genus
+bx_NC_054958_1	NC_054958.1	Ralstonia phage Gamede		Duplodnaviria	Caudoviricetes	unclassified	Cimandefvirus	Bacteria	Pseudomonadota	Ralstonia	58603	30-60kb	fill
+bx_NC_005885_1	NC_005885.1	Actinoplanes phage phiAsp2		Duplodnaviria	Caudoviricetes	unclassified	Aspduovirus	Bacteria	Actinomycetota	Actinoplanes	58638	30-60kb	host_genus
+bx_NC_013698_1	NC_013698.1	Clavibacter phage CMP1		Duplodnaviria	Caudoviricetes	unclassified	Cimpunavirus	Bacteria	Actinomycetota	Clavibacter	58652	30-60kb	fill
+bx_NC_073328_1	NC_073328.1	Arthrobacter phage Nightmare		Duplodnaviria	Caudoviricetes	unclassified	Gordonvirus	Bacteria	Actinomycetota	Arthrobacter	58839	30-60kb	fill
+bx_NC_070876_1	NC_070876.1	Agrobacterium phage Atu_ph08		Duplodnaviria	Caudoviricetes	unclassified	Roslyckyvirus	Bacteria	Pseudomonadota	Agrobacterium	58966	30-60kb	host_genus
+bx_NC_023722_1	NC_023722.1	Rhodococcus phage ReqiPine5		Duplodnaviria	Caudoviricetes	unclassified	Reqipinevirus	Bacteria	Actinomycetota	Prescottella	59231	30-60kb	host_genus
+bx_NC_070932_1	NC_070932.1	Ochrobactrum phage POI1126		Duplodnaviria	Caudoviricetes	unclassified	Namazuvirus	Bacteria	Pseudomonadota	Brucella	59782	30-60kb	fill
+bx_NC_051596_1	NC_051596.1	Mycobacterium phage Rando14		Duplodnaviria	Caudoviricetes	unclassified	Kratiovirus	Bacteria	Actinomycetota	Mycolicibacterium	59925	30-60kb	fill
+bx_NC_023744_1	NC_023744.1	Mycobacterium phage DS6A		Duplodnaviria	Caudoviricetes	unclassified	Hnatkovirus	Bacteria	Actinomycetota	Mycobacterium	60588	60-100kb	fill
+bx_NC_051602_1	NC_051602.1	Mycobacterium phage Shandong1		Duplodnaviria	Caudoviricetes	unclassified	Unicornvirus	Bacteria	Actinomycetota	Mycolicibacterium	60618	60-100kb	fill
+bx_NC_054959_1	NC_054959.1	Ralstonia phage Gerry		Duplodnaviria	Caudoviricetes	unclassified	Cimandefvirus	Bacteria	Pseudomonadota	Ralstonia	60898	60-100kb	fill
+bx_NC_042120_1	NC_042120.1	Pantoea phage vB_PagS_Vid5		Duplodnaviria	Caudoviricetes	unclassified	Vidquintavirus	Bacteria	Pseudomonadota	Pantoea	61437	60-100kb	fill
+bx_NC_015210_1	NC_015210.1	Tsukamurella phage TPA2		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Actinomycetota	Tsukamurella	61440	60-100kb	fill
+bx_NC_047909_1	NC_047909.1	Faecalibacterium phage FP_Brigit		Duplodnaviria	Caudoviricetes	unclassified	Brigitvirus	Bacteria	Bacillota	Faecalibacterium	61716	60-100kb	fill
+bx_NC_010355_1	NC_010355.1	Azospirillum phage Cd		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Azospirillum	62337	60-100kb	host_genus
+bx_NC_071019_1	NC_071019.1	Stenotrophomonas phage vB_SmaS_BUCT548		Duplodnaviria	Caudoviricetes	unclassified	Bixiavirus	Bacteria	Pseudomonadota	Stenotrophomonas	62354	60-100kb	fill
+bx_NC_015466_1	NC_015466.1	Roseobacter phage RDJL Phi 1		Duplodnaviria	Caudoviricetes	unclassified	Xiamenvirus	Bacteria	Pseudomonadota	Roseobacter	62668	60-100kb	fill
+bx_NC_028685_1	NC_028685.1	Shigella phage Ss-VASD		Duplodnaviria	Caudoviricetes	unclassified	Oslovirus	Bacteria	Pseudomonadota	Shigella	62851	60-100kb	fill
+bx_NC_041958_1	NC_041958.1	Roseobacter phage RDJL Phi 2		Duplodnaviria	Caudoviricetes	unclassified	Xiamenvirus	Bacteria	Pseudomonadota	Roseobacter	63513	60-100kb	fill
+bx_NC_072503_1	NC_072503.1	Sphingomonas phage vB_StuS_MMDA13		Duplodnaviria	Caudoviricetes	unclassified	Torvergatavirus	Bacteria	Pseudomonadota	Sphingomonas	63743	60-100kb	host_genus
+bx_NC_021785_1	NC_021785.1	Listeria phage LP-110		Duplodnaviria	Caudoviricetes	unclassified	Homburgvirus	Bacteria	Bacillota	Listeria	65132	60-100kb	fill
+bx_NC_008197_1	NC_008197.1	Mycobacterium phage Orion		Duplodnaviria	Caudoviricetes	unclassified	Pegunavirus	Bacteria	Actinomycetota	Mycobacterium	68427	60-100kb	fill
+bx_NC_019519_1	NC_019519.1	Agrobacterium phage 7-7-1		Duplodnaviria	Caudoviricetes	unclassified	Schmittlotzvirus	Bacteria	Pseudomonadota	Agrobacterium	69391	60-100kb	fill
+bx_NC_023712_1	NC_023712.1	Mycobacterium phage Firecracker		Duplodnaviria	Caudoviricetes	unclassified	Corndogvirus	Bacteria	Actinomycetota	Mycolicibacterium	71341	60-100kb	fill
+bx_NC_015463_1	NC_015463.1	Synechococcus phage S-CBS2	S-CBS2	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Cyanobacteriota	Synechococcus	72332	60-100kb	fill
+bx_NC_048892_1	NC_048892.1	Leptospira phage LE1		Duplodnaviria	Caudoviricetes	unclassified	Saintgironsvirus	Bacteria	Spirochaetota	Leptospira	73623	60-100kb	fill
+bx_NC_048751_1	NC_048751.1	Pantoea phage vB_PagM_LIET2		Duplodnaviria	Caudoviricetes	unclassified	Lietduovirus	Bacteria	Pseudomonadota	Pantoea	74710	60-100kb	fill
+bx_NC_023706_1	NC_023706.1	Rhodococcus phage ReqiDocB7		Duplodnaviria	Caudoviricetes	unclassified	Docdeeseptimavirus	Bacteria	Actinomycetota	Prescottella	75772	60-100kb	fill
+bx_NC_041962_1	NC_041962.1	Tsukamurella phage TIN4		Duplodnaviria	Caudoviricetes	unclassified	Tinduovirus	Bacteria	Actinomycetota	Tsukamurella	76268	60-100kb	fill
+bx_NC_028966_1	NC_028966.1	Tsukamurella phage TIN3		Duplodnaviria	Caudoviricetes	unclassified	Tinduovirus	Bacteria	Actinomycetota	Tsukamurella	76269	60-100kb	fill
+bx_NC_023735_1	NC_023735.1	Rhodococcus phage ReqiPepy6		Duplodnaviria	Caudoviricetes	unclassified	Pepyhexavirus	Bacteria	Actinomycetota	Prescottella	76797	60-100kb	fill
+bx_NC_028865_1	NC_028865.1	Tsukamurella phage TIN2		Duplodnaviria	Caudoviricetes	unclassified	Tinduovirus	Bacteria	Actinomycetota	Tsukamurella	76964	60-100kb	host_genus
+bx_NC_041921_1	NC_041921.1	Dinoroseobacter phage vB_DshS-R5C		Duplodnaviria	Caudoviricetes	unclassified	Nanhaivirus	Bacteria	Pseudomonadota	Dinoroseobacter	77874	60-100kb	fill
+bx_NC_047760_1	NC_047760.1	Lactobacillus phage SA-C12		Duplodnaviria	Caudoviricetes	unclassified	Lenusvirus	Bacteria	Bacillota	Levilactobacillus	79099	60-100kb	fill
+bx_NC_028856_1	NC_028856.1	Bacillus phage Stahl		Duplodnaviria	Caudoviricetes	unclassified	Slashvirus	Bacteria	Bacillota	Priestia	80148	60-100kb	fill
+bx_NC_047756_1	NC_047756.1	Caulobacter phage Sansa		Duplodnaviria	Caudoviricetes	unclassified	Sansavirus	Bacteria	Pseudomonadota	Caulobacter	80297	60-100kb	fill
+bx_NC_048189_1	NC_048189.1	Rheinheimera phage vB_RspM_Barba18A		Duplodnaviria	Caudoviricetes	unclassified	Barbavirus	Bacteria	Pseudomonadota	Rheinheimera	80342	60-100kb	fill
+bx_NC_048191_1	NC_048191.1	Rheinheimera phage Barba21A		Duplodnaviria	Caudoviricetes	unclassified	Barbavirus	Bacteria	Pseudomonadota	Rheinheimera	80361	60-100kb	host_genus
+bx_NC_022774_1	NC_022774.1	Bacillus phage Slash		Duplodnaviria	Caudoviricetes	unclassified	Slashvirus	Bacteria	Bacillota	Priestia	80382	60-100kb	host_genus
+bx_NC_047739_1	NC_047739.1	Lactobacillus phage ATCC 8014-B2		Duplodnaviria	Caudoviricetes	unclassified	Douglaswolinvirus	Bacteria	Bacillota	Lactiplantibacillus	80617	60-100kb	fill
+bx_NC_028777_1	NC_028777.1	Bacillus phage Stills		Duplodnaviria	Caudoviricetes	unclassified	Slashvirus	Bacteria	Bacillota	Priestia	80798	60-100kb	fill
+bx_NC_048188_1	NC_048188.1	Rheinheimera phage Barba8S		Duplodnaviria	Caudoviricetes	unclassified	Barbavirus	Bacteria	Pseudomonadota	Rheinheimera	81920	60-100kb	fill
+bx_NC_024217_1	NC_024217.1	Nitrincola phage 1M3-16		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Nitrincola	82438	60-100kb	host_genus
+bx_NC_048187_1	NC_048187.1	Rheinheimera phage Barba5S		Duplodnaviria	Caudoviricetes	unclassified	Barbavirus	Bacteria	Pseudomonadota	Rheinheimera	82744	60-100kb	fill
+bx_NC_134205_1	NC_134205.1	Caudoviricetes sp. vir335		Duplodnaviria	Caudoviricetes	unclassified		Archaea	Thermoplasmatota	Methanomassiliicoccales	83070	60-100kb	host_genus
+bx_NC_009804_1	NC_009804.1	Thermus phage P74-26		Duplodnaviria	Caudoviricetes	unclassified	Oshimavirus	Bacteria	Deinococcota	Thermus	83319	60-100kb	fill
+bx_NC_009803_1	NC_009803.1	Thermus phage P23-45		Duplodnaviria	Caudoviricetes	unclassified	Oshimavirus	Bacteria	Deinococcota	Thermus	84201	60-100kb	fill
+bx_NC_048190_1	NC_048190.1	Rheinheimera phage vB_RspM_Barba19A		Duplodnaviria	Caudoviricetes	unclassified	Barbavirus	Bacteria	Pseudomonadota	Rheinheimera	84608	60-100kb	fill
+bx_NC_047757_1	NC_047757.1	Caulobacter phage Seuss		Duplodnaviria	Caudoviricetes	unclassified	Seussvirus	Bacteria	Pseudomonadota	Caulobacter	85138	60-100kb	fill
+bx_NC_031904_1	NC_031904.1	Flavobacterium phage Fpv3		Duplodnaviria	Caudoviricetes	unclassified	Fipvunavirus	Bacteria	Bacteroidota	Flavobacterium	88421	60-100kb	fill
+bx_NC_031914_1	NC_031914.1	Flavobacterium phage Fpv1		Duplodnaviria	Caudoviricetes	unclassified	Fipvunavirus	Bacteria	Bacteroidota	Flavobacterium	88994	60-100kb	fill
+bx_NC_071014_1	NC_071014.1	Brevibacterium phage Cantare		Duplodnaviria	Caudoviricetes	unclassified	Cantarevirus	Bacteria	Actinomycetota	Brevibacterium	90743	60-100kb	fill
+bx_NC_048847_1	NC_048847.1	Alteromonas phage vB_AmeM_PT11-V22		Duplodnaviria	Caudoviricetes	unclassified	Myoalterovirus	Bacteria	Pseudomonadota	Alteromonas	92760	60-100kb	fill
+bx_NC_047861_1	NC_047861.1	Bordetella phage vB_BbrM_PHB04		Duplodnaviria	Caudoviricetes	unclassified	Phabquatrovirus	Bacteria	Pseudomonadota	Bordetella	94005	60-100kb	fill
+bx_NC_016564_1	NC_016564.1	Planktothrix phage PaV-LD		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Cyanobacteriota	Planktothrix	95299	60-100kb	host_genus
+bx_NC_042082_1	NC_042082.1	Stenotrophomonas phage vB_SmaS_DLP_5		Duplodnaviria	Caudoviricetes	unclassified	Delepquintavirus	Bacteria	Pseudomonadota	Stenotrophomonas	96542	60-100kb	fill
+bx_NC_027332_1	NC_027332.1	Acinetobacter phage YMC13/03/R2096		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Acinetobacter	98170	60-100kb	fill
+bx_NC_050152_1	NC_050152.1	Enterobacteria phage P7		Duplodnaviria	Caudoviricetes	unclassified	Punavirus	Bacteria	Pseudomonadota	Enterobacteriaceae	101660	100-200kb	fill
+bx_NC_021532_1	NC_021532.1	Alteromonas phage vB_AmaP_AD45-P1		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Alteromonas	103910	100-200kb	fill
+bx_NC_018088_1	NC_018088.1	Colwellia phage 9A	9A	Duplodnaviria	Caudoviricetes	unclassified	Franklinbayvirus	Bacteria	Pseudomonadota	Colwellia	104936	100-200kb	host_genus
+bx_NC_048650_1	NC_048650.1	Streptomyces phage BRock		Duplodnaviria	Caudoviricetes	unclassified	Borockvirus	Bacteria	Actinomycetota	Streptomyces	112523	100-200kb	fill
+bx_NC_034248_1	NC_034248.1	Rhizobium phage RHEph10		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Rhizobium	115042	100-200kb	fill
+bx_NC_047839_1	NC_047839.1	Pseudoalteromonas phage J2-1		Duplodnaviria	Caudoviricetes	unclassified	Qingdaovirus	Bacteria	Pseudomonadota	Pseudoalteromonas	120295	100-200kb	fill
+bx_NC_028805_1	NC_028805.1	Brevibacillus phage Jenst		Duplodnaviria	Caudoviricetes	unclassified	Jenstvirus	Bacteria	Bacillota	Brevibacillus	126341	100-200kb	fill
+bx_NC_004735_1	NC_004735.1	Rhodothermus phage RM378		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Rhodothermota	Rhodothermus	129908	100-200kb	host_genus
+bx_NC_041927_1	NC_041927.1	Sphingobium phage Lacusarx		Duplodnaviria	Caudoviricetes	unclassified	Lacusarxvirus	Bacteria	Pseudomonadota	Sphingobium	130138	100-200kb	host_genus
+bx_NC_055035_1	NC_055035.1	Fusobacterium phage Fnu1		Duplodnaviria	Caudoviricetes	unclassified	Latrobevirus	Bacteria	Fusobacteriota	Fusobacterium	130914	100-200kb	host_genus
+bx_NC_029048_2	NC_029048.2	Clostridium phage phiCD211		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridioides	131704	100-200kb	fill
+bx_NC_028749_1	NC_028749.1	Brevibacillus phage Sundance		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Brevibacillus	134270	100-200kb	fill
+bx_NC_041887_1	NC_041887.1	Rhodococcus phage Weasels2		Duplodnaviria	Caudoviricetes	unclassified	Weaselvirus	Bacteria	Actinomycetota	Rhodococcus	134973	100-200kb	fill
+bx_NC_021067_1	NC_021067.1	Vibrio phage helene 12B3	helene 12B3	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Vibrio	135982	100-200kb	fill
+bx_NC_025470_1	NC_025470.1	Shewanella sp. phage 1/40		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Shewanella	139004	100-200kb	host_genus
+bx_NC_048637_1	NC_048637.1	Nodularia phage vB_NpeS-2AV2		Duplodnaviria	Caudoviricetes	unclassified	Ravarandavirus	Bacteria	Cyanobacteriota	Nodularia	139100	100-200kb	host_genus
+bx_NC_021347_1	NC_021347.1	Rhodococcus phage E3		Duplodnaviria	Caudoviricetes	unclassified	Eetrevirus	Bacteria	Actinomycetota	Prescottella	142563	100-200kb	fill
+bx_NC_048757_1	NC_048757.1	Nodularia phage vB_NspS-kac68v161		Duplodnaviria	Caudoviricetes	unclassified	Ravarandavirus	Bacteria	Cyanobacteriota	Nodularia	145400	100-200kb	fill
+bx_NC_048756_1	NC_048756.1	Nodularia phage vB_NspS-kac65v151		Duplodnaviria	Caudoviricetes	unclassified	Ravarandavirus	Bacteria	Cyanobacteriota	Nodularia	146618	100-200kb	fill
+bx_NC_015937_1	NC_015937.1	Thermus phage TMA	TMA	Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Deinococcota	Thermus	151483	100-200kb	fill
+bx_NC_008584_1	NC_008584.1	Thermus phage phiYS40		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Deinococcota	Thermus	152372	100-200kb	fill
+bx_NC_025422_1	NC_025422.1	Caulobacter phage Cr30		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Caulobacter	155997	100-200kb	fill
+bx_NC_041997_1	NC_041997.1	Acidovorax phage ACP17		Duplodnaviria	Caudoviricetes	unclassified	Busanvirus	Bacteria	Pseudomonadota	Paracidovorax	156281	100-200kb	host_genus
+bx_NC_013697_1	NC_013697.1	Delftia phage PhiW-14		Duplodnaviria	Caudoviricetes	unclassified	Ionavirus	Bacteria	Pseudomonadota	Delftia	157486	100-200kb	host_genus
+bx_NC_071049_1	NC_071049.1	Bacillus phage vB_BcoS-136		Duplodnaviria	Caudoviricetes	unclassified	Kenyattavirus	Bacteria	Bacillota	Sutcliffiella	160590	100-200kb	fill
+bx_NC_024121_1	NC_024121.1	Serratia phage PS2		Duplodnaviria	Caudoviricetes	unclassified	Muldoonvirus	Bacteria	Pseudomonadota	Serratia	167266	100-200kb	fill
+bx_NC_071042_1	NC_071042.1	Bacillus phage vB_BanS_Sophrita		Duplodnaviria	Caudoviricetes	unclassified	Sophritavirus	Bacteria	Bacillota	Bacillus	167995	100-200kb	fill
+bx_NC_071045_1	NC_071045.1	Bacillus phage Izhevsk		Duplodnaviria	Caudoviricetes	unclassified	Tsamsavirus	Bacteria	Bacillota	Bacillus	168638	100-200kb	fill
+bx_NC_029002_1	NC_029002.1	Microcystis phage MaMV-DC		Duplodnaviria	Caudoviricetes	unclassified	Fukuivirus	Bacteria	Cyanobacteriota	Microcystis	169223	100-200kb	host_genus
+bx_NC_019516_2	NC_019516.2	Cyanophage S-TIM5		Duplodnaviria	Caudoviricetes	unclassified	Aurunvirus	Bacteria	Cyanobacteriota	Parasynechococcus	172474	100-200kb	fill
+bx_NC_020845_1	NC_020845.1	Prochlorococcus phage MED4-213	MED4-213	Duplodnaviria	Caudoviricetes	unclassified	Eurybiavirus	Bacteria	Cyanobacteriota	Prochlorococcus	180977	100-200kb	fill
+bx_NC_015280_1	NC_015280.1	Prochlorococcus phage P-HM1	M4-247	Duplodnaviria	Caudoviricetes	unclassified	Eurybiavirus	Bacteria	Cyanobacteriota	Prochlorococcus	181044	100-200kb	fill
+bx_NC_007581_1	NC_007581.1	Clostridium phage c-st		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Bacillota	Clostridium	185683	100-200kb	fill
+bx_NC_041929_1	NC_041929.1	Sinorhizobium phage phiM7		Duplodnaviria	Caudoviricetes	unclassified	Emdodecavirus	Bacteria	Pseudomonadota	Sinorhizobium	188427	100-200kb	fill
+bx_NC_027204_1	NC_027204.1	Sinorhizobium phage phiM12		Duplodnaviria	Caudoviricetes	unclassified	Emdodecavirus	Bacteria	Pseudomonadota	Sinorhizobium	194701	100-200kb	fill
+bx_NC_028945_1	NC_028945.1	Sinorhizobium phage phiN3		Duplodnaviria	Caudoviricetes	unclassified	Emdodecavirus	Bacteria	Pseudomonadota	Sinorhizobium	206713	>200kb	jumbo
+bx_NC_020851_1	NC_020851.1	Synechococcus phage S-SKS1		Duplodnaviria	Caudoviricetes	unclassified	Llyrvirus	Bacteria	Cyanobacteriota	Synechococcus	208007	>200kb	jumbo
+bx_NC_091964_1	NC_091964.1	Serratia phage PCH45		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Prodigiosinella	212807	>200kb	fill
+bx_NC_019521_1	NC_019521.1	Sphingomonas phage PAU		Duplodnaviria	Caudoviricetes	unclassified		Bacteria	Pseudomonadota	Sphingomonas	219372	>200kb	fill
+bx_NC_049849_1	NC_049849.1	Achromobacter phage Motura		Duplodnaviria	Caudoviricetes	unclassified	Moturavirus	Bacteria	Pseudomonadota	Achromobacter	221431	>200kb	jumbo
+bx_NC_049340_1	NC_049340.1	Tenacibaculum phage PTm1	PTm1	Duplodnaviria	Caudoviricetes	unclassified	Shirahamavirus	Bacteria	Bacteroidota	Tenacibaculum	224680	>200kb	host_genus
+bx_NC_010811_2	NC_010811.2	Ralstonia phage phiRSL1		Duplodnaviria	Caudoviricetes	unclassified	Mieseafarmvirus	Bacteria	Pseudomonadota	Ralstonia	231255	>200kb	jumbo
+bx_NC_049383_1	NC_049383.1	Tenacibaculum phage pT24		Duplodnaviria	Caudoviricetes	unclassified	Kungbxnavirus	Bacteria	Bacteroidota	Tenacibaculum	234670	>200kb	fill
+bx_NC_043027_1	NC_043027.1	Bacillus phage PBS1		Duplodnaviria	Caudoviricetes	unclassified	Takahashivirus	Bacteria	Bacillota	Bacillus	252197	>200kb	jumbo
+bx_NC_048053_1	NC_048053.1	Dickeya phage vB_DsoM_JA29		Duplodnaviria	Caudoviricetes	unclassified	Salmondvirus	Bacteria	Pseudomonadota	Dickeya	253323	>200kb	jumbo
+bx_NC_048077_1	NC_048077.1	Dickeya phage vB_DsoM_JA11		Duplodnaviria	Caudoviricetes	unclassified	Salmondvirus	Bacteria	Pseudomonadota	Dickeya	255356	>200kb	jumbo
+bx_NC_022096_1	NC_022096.1	Pseudomonas phage PaBG		Duplodnaviria	Caudoviricetes	unclassified	Baikalvirus	Bacteria	Pseudomonadota	Pseudomonas	258139	>200kb	jumbo
+bx_NC_061446_1	NC_061446.1	Erwinia phage pEa_SNUABM_30		Duplodnaviria	Caudoviricetes	unclassified	Alexandravirus	Bacteria	Pseudomonadota	Erwinia	259771	>200kb	jumbo
+bx_NC_047880_1	NC_047880.1	Erwinia phage vB_EamM_Y3		Duplodnaviria	Caudoviricetes	unclassified	Sasquatchvirus	Bacteria	Pseudomonadota	Erwinia	261365	>200kb	jumbo
+bx_NC_048054_1	NC_048054.1	Dickeya phage vB_DsoM_AD1		Duplodnaviria	Caudoviricetes	unclassified	Alexandravirus	Bacteria	Pseudomonadota	Dickeya	261658	>200kb	jumbo
+bx_NC_061447_1	NC_061447.1	Erwinia phage pEa_SNUABM_33		Duplodnaviria	Caudoviricetes	unclassified	Alexandravirus	Bacteria	Pseudomonadota	Erwinia	263237	>200kb	jumbo
+bx_NC_061449_1	NC_061449.1	Erwinia phage pEa_SNUABM_17		Duplodnaviria	Caudoviricetes	unclassified	Alexandravirus	Bacteria	Pseudomonadota	Erwinia	263916	>200kb	jumbo
+bx_NC_061440_1	NC_061440.1	Erwinia phage pEa_SNUABM_22	pEa_SNUABM_22	Duplodnaviria	Caudoviricetes	unclassified	Alexandravirus	Bacteria	Pseudomonadota	Erwinia	265146	>200kb	jumbo
+bx_NC_061448_1	NC_061448.1	Erwinia phage pEa_SNUABM_1		Duplodnaviria	Caudoviricetes	unclassified	Alexandravirus	Bacteria	Pseudomonadota	Erwinia	266939	>200kb	jumbo
+bx_NC_019526_1	NC_019526.1	Klebsiella phage vB_KleM_RaK2		Duplodnaviria	Caudoviricetes	unclassified	Alcyoneusvirus	Bacteria	Pseudomonadota	Klebsiella	345809	>200kb	jumbo
+bx_NC_025447_1	NC_025447.1	Escherichia phage 121Q		Duplodnaviria	Caudoviricetes	unclassified	Asteriusvirus	Bacteria	Pseudomonadota	Escherichia	348532	>200kb	jumbo
+bx_NC_015586_1	NC_015586.1	Stenotrophomonas phage phiSHP2		Floreoviria	Faserviricetes	Inoviridae	Siphunculivirus	Bacteria	Pseudomonadota	Stenotrophomonas	5819	<10kb	class:Faserviricetes
+bx_NC_103327_1	NC_103327.1	Alteromonas phage phiAFP1		Floreoviria	Faserviricetes	Inoviridae	Anademivirus	Bacteria	Pseudomonadota	Alteromonas	5859	<10kb	fill
+bx_NC_075026_1	NC_075026.1	Enterobacteria phage f1	NBRC 20015	Floreoviria	Faserviricetes	Inoviridae	Inovirus	Bacteria	Pseudomonadota	Enterobacteriaceae	6407	<10kb	class:Faserviricetes
+bx_NC_025823_1	NC_025823.1	Enterobacteria phage f1		Floreoviria	Faserviricetes	Inoviridae	Inovirus	Bacteria	Pseudomonadota	Enterobacteriaceae	6407	<10kb	fill
+bx_NC_075025_1	NC_075025.1	Enterobacteria phage f1	NBRC 20010	Floreoviria	Faserviricetes	Inoviridae	Inovirus	Bacteria	Pseudomonadota	Enterobacteriaceae	6407	<10kb	fill
+bx_NC_075028_1	NC_075028.1	Enterobacteria phage f1	F1_2	Floreoviria	Faserviricetes	Inoviridae	Inovirus	Bacteria	Pseudomonadota	Enterobacteriaceae	6407	<10kb	fill
+bx_NC_010429_1	NC_010429.1	Stenotrophomonas phage PSH1		Floreoviria	Faserviricetes	Inoviridae	Psecadovirus	Bacteria	Pseudomonadota	Stenotrophomonas	6867	<10kb	class:Faserviricetes
+bx_NC_062737_1	NC_062737.1	Xanthomonas phage XaF13		Floreoviria	Faserviricetes	Inoviridae	Xylivirus	Bacteria	Pseudomonadota	Xanthomonas	7045	<10kb	class:Faserviricetes
+bx_NC_021569_1	NC_021569.1	Stenotrophomonas phage SMA7		Floreoviria	Faserviricetes	Inoviridae	Subteminivirus	Bacteria	Pseudomonadota	Stenotrophomonas	7069	<10kb	fill
+bx_NC_021866_1	NC_021866.1	Ralstonia phage RSS20		Floreoviria	Faserviricetes	Inoviridae		Bacteria	Pseudomonadota	Ralstonia	7219	<10kb	fill
+bx_NC_043029_1	NC_043029.1	Stenotrophomonas phage SMA6		Floreoviria	Faserviricetes	Inoviridae	Scuticavirus	Bacteria	Pseudomonadota	Stenotrophomonas	7648	<10kb	class:Faserviricetes
+bx_NC_005948_1	NC_005948.1	Villovirus Vf33		Floreoviria	Faserviricetes	Inoviridae	Villovirus	Bacteria	Pseudomonadota	Vibrio	7965	<10kb	class:Faserviricetes
+bx_NC_023586_1	NC_023586.1	Ralstonia phage 1 NP-2014	RIP1	Floreoviria	Faserviricetes	Inoviridae		Bacteria	Pseudomonadota	Ralstonia	8460	<10kb	class:Faserviricetes
+bx_NC_015209_1	NC_015209.1	Vibrio phage CTXphi		Floreoviria	Faserviricetes	Inoviridae	Affertcholeramvirus	Bacteria	Pseudomonadota	Vibrio	10638	10-30kb	class:Faserviricetes
+bx_NC_104950_1	NC_104950.1	Vibrio phage vB_Vipa26		Floreoviria	Faserviricetes	Inoviridae	Versovirus	Bacteria	Pseudomonadota	Vibrio	10893	10-30kb	class:Faserviricetes
+bx_NC_045425_1	NC_045425.1	Thermus phage OH3		Floreoviria	Faserviricetes	Paulinoviridae	Thomixvirus	Bacteria	Deinococcota	Thermus	5688	<10kb	fill
+bx_NC_003460_1	NC_003460.1	Propionibacterium phage B5		Floreoviria	Faserviricetes	Paulinoviridae	Bifilivirus	Bacteria	Actinomycetota	Propionibacterium	5804	<10kb	class:Faserviricetes
+bx_NC_001341_1	NC_001341.1	Acholeplasma phage MV-L51	JA-1	Floreoviria	Faserviricetes	Plectroviridae	Plectrovirus	Bacteria	Mycoplasmatota	Acholeplasma	4491	<10kb	host_genus
+bx_NC_001270_2	NC_001270.2	Spiroplasma phage SVTS2		Floreoviria	Faserviricetes	Plectroviridae	Suturavirus	Bacteria	Mycoplasmatota	Spiroplasma	6825	<10kb	fill
+bx_NC_003793_1	NC_003793.1	Spiroplasma phage C74	SpV1-C74	Floreoviria	Faserviricetes	Plectroviridae	Vespertiliovirus	Bacteria	Mycoplasmatota	Spiroplasma	7768	<10kb	family
+bx_NC_009987_1	NC_009987.1	Vespertiliovirus SkV1CR23x		Floreoviria	Faserviricetes	Plectroviridae	Vespertiliovirus	Bacteria	Mycoplasmatota	Spiroplasma	7870	<10kb	fill
+bx_NC_001365_1	NC_001365.1	Spiroplasma phage R8A2B		Floreoviria	Faserviricetes	Plectroviridae	Vespertiliovirus	Bacteria	Mycoplasmatota	Spiroplasma	8273	<10kb	fill
+bx_NC_012558_1	NC_012558.1	Halorubrum pleomorphic virus 1		Floreoviria	Huolimaviricetes	Pleolipoviridae	Alphapleolipovirus	Archaea	Methanobacteriota	Halorubrum	7048	<10kb	class:Huolimaviricetes
+bx_NC_013758_1	NC_013758.1	Haloarcula hispanica pleomorphic virus 1		Floreoviria	Huolimaviricetes	Pleolipoviridae	Alphapleolipovirus	Archaea	Methanobacteriota	Haloarcula	8082	<10kb	class:Huolimaviricetes
+bx_NC_023592_1	NC_023592.1	Haloarcula hispanica pleomorphic virus 2		Floreoviria	Huolimaviricetes	Pleolipoviridae	Alphapleolipovirus	Archaea	Methanobacteriota	Haloarcula	8176	<10kb	class:Huolimaviricetes
+bx_NC_017089_1	NC_017089.1	Halorubrum pleomorphic virus 6		Floreoviria	Huolimaviricetes	Pleolipoviridae	Alphapleolipovirus	Archaea	Methanobacteriota	Halorubrum	8549	<10kb	class:Huolimaviricetes
+bx_NC_048158_1	NC_048158.1	Halorubrum pleomorphic virus 11		Floreoviria	Huolimaviricetes	Pleolipoviridae	Betapleolipovirus	Archaea	Methanobacteriota	Halorubrum	9368	<10kb	class:Huolimaviricetes
+bx_NC_017090_1	NC_017090.1	Halogeometricum pleomorphic virus 1		Floreoviria	Huolimaviricetes	Pleolipoviridae	Betapleolipovirus	Archaea	Methanobacteriota	Halogeometricum	9694	<10kb	host_genus
+bx_NC_048156_1	NC_048156.1	Halorubrum pleomorphic virus 12		Floreoviria	Huolimaviricetes	Pleolipoviridae	Betapleolipovirus	Archaea	Methanobacteriota	Halorubrum	9944	<10kb	class:Huolimaviricetes
+bx_NC_047928_1	NC_047928.1	Haloarcula hispanica pleomorphic virus 3	A	Floreoviria	Huolimaviricetes	Pleolipoviridae	Betapleolipovirus	Archaea	Methanobacteriota	Haloarcula	11648	10-30kb	class:Huolimaviricetes
+bx_NC_047943_1	NC_047943.1	Haloarcula hispanica pleomorphic virus 4	1A_s5a-1/hispanica	Floreoviria	Huolimaviricetes	Pleolipoviridae	Betapleolipovirus	Archaea	Methanobacteriota	Haloarcula	15010	10-30kb	class:Huolimaviricetes
+bx_NC_007918_1	NC_007918.1	His2 virus		Floreoviria	Huolimaviricetes	Pleolipoviridae	Gammapleolipovirus	Archaea	Methanobacteriota	Haloarcula	16067	10-30kb	class:Huolimaviricetes
+bx_NC_074647_1	NC_074647.1	Haloarcula virus Hardyhisp2	Hardyhisp2	Floreoviria	Huolimaviricetes	Pleolipoviridae	Gammapleolipovirus	Archaea	Methanobacteriota	Haloarcula	16133	10-30kb	class:Huolimaviricetes
+bx_NC_074646_1	NC_074646.1	Saline Natrinema sp. J7-1 virus 2		Floreoviria	Huolimaviricetes	Pleolipoviridae	Betapleolipovirus	Archaea	Methanobacteriota	Natrinema	16992	10-30kb	fill
+bx_NC_013197_1	NC_013197.1	Thermus phage P23-77		Singelaviria	Laserviricetes	Matsushitaviridae	Hukuchivirus	Bacteria	Deinococcota	Thermus	17036	10-30kb	class:Laserviricetes
+bx_NC_004462_2	NC_004462.2	Thermus virus IN93		Singelaviria	Laserviricetes	Matsushitaviridae	Hukuchivirus	Bacteria	Deinococcota	Thermus	19604	10-30kb	class:Laserviricetes
+bx_NC_003158_2	NC_003158.2	Saline Natrinema sp. J7-1 virus 1		Singelaviria	Laserviricetes	Simuloviridae	Yingchengvirus	Archaea	Methanobacteriota	Natrinema	16492	10-30kb	class:Laserviricetes
+bx_NC_074651_1	NC_074651.1	Haloterrigena jeotgali icosahedral virus 1	A29	Singelaviria	Laserviricetes	Simuloviridae	Yingchengvirus	Archaea	Methanobacteriota	Natrinema	17189	10-30kb	class:Laserviricetes
+bx_NC_074652_1	NC_074652.1	Natrinema versiforme icosahedral virus 1	BOL5-4	Singelaviria	Laserviricetes	Simuloviridae	Yingchengvirus	Archaea	Methanobacteriota	Natrinema	18925	10-30kb	class:Laserviricetes
+bx_NC_020998_1	NC_020998.1	Haloarcula hispanica virus PH1	1	Singelaviria	Laserviricetes	Sphaerolipoviridae	Alphasphaerolipovirus	Archaea	Methanobacteriota	Haloarcula	28072	10-30kb	class:Laserviricetes
+bx_NC_016989_1	NC_016989.1	Haloarcula hispanica icosahedral virus 2		Singelaviria	Laserviricetes	Sphaerolipoviridae	Alphasphaerolipovirus	Archaea	Methanobacteriota	Haloarcula	30578	30-60kb	class:Laserviricetes
+bx_NC_007217_1	NC_007217.1	Haloarcula hispanica virus SH1		Singelaviria	Laserviricetes	Sphaerolipoviridae	Alphasphaerolipovirus	Archaea	Methanobacteriota	Haloarcula	30889	30-60kb	class:Laserviricetes
+bx_NC_030848_1	NC_030848.1	Haloarcula californiae icosahedral virus 1	SS13-6	Singelaviria	Laserviricetes	Sphaerolipoviridae	Alphasphaerolipovirus	Archaea	Methanobacteriota	Haloarcula	31314	30-60kb	class:Laserviricetes
+bx_NC_002700_2	NC_002700.2	Acinetobacter phage AP205		Riboviria	Leviviricetes	Duinviridae	Apeevirus	Bacteria	Pseudomonadota	Acinetobacter	4268	<10kb	class:Leviviricetes
+bx_NC_019707_1	NC_019707.1	Enterobacteria phage M		Riboviria	Leviviricetes	Fiersviridae	Empivirus	Bacteria	Pseudomonadota	Escherichia	3405	<10kb	class:Leviviricetes
+bx_NC_001426_1	NC_001426.1	Enterobacteria phage GA		Riboviria	Leviviricetes	Fiersviridae	Emesvirus	Bacteria	Pseudomonadota	Enterobacteriaceae	3466	<10kb	class:Leviviricetes
+bx_NC_019922_1	NC_019922.1	Enterobacteria phage Hgal1		Riboviria	Leviviricetes	Fiersviridae	Hagavirus	Bacteria	Pseudomonadota	Enterobacteriaceae	3562	<10kb	class:Leviviricetes
+bx_NC_001417_2	NC_001417.2	Escherichia phage MS2		Riboviria	Leviviricetes	Fiersviridae	Emesvirus	Bacteria	Pseudomonadota	Escherichia	3569	<10kb	class:Leviviricetes
+bx_NC_008294_1	NC_008294.1	Pseudomonas phage PRR1		Riboviria	Leviviricetes	Fiersviridae	Perrunavirus	Bacteria	Pseudomonadota	Pseudomonas	3573	<10kb	class:Leviviricetes
+bx_NC_001628_1	NC_001628.1	Pseudomonas phage PP7		Riboviria	Leviviricetes	Fiersviridae	Pepevirus	Bacteria	Pseudomonadota	Pseudomonas	3588	<10kb	class:Leviviricetes
+bx_NC_028902_1	NC_028902.1	Qubevirus faecium	fi	Riboviria	Leviviricetes	Fiersviridae	Qubevirus	Bacteria	Pseudomonadota	Enterobacteriaceae	4184	<10kb	class:Leviviricetes
+bx_NC_001890_1	NC_001890.1	Escherichia phage Qbeta	Enterobacteria phage MX1	Riboviria	Leviviricetes	Fiersviridae	Qubevirus	Bacteria	Pseudomonadota	Escherichia	4215	<10kb	class:Leviviricetes
+bx_NC_004301_1	NC_004301.1	Enterobacteria phage SP		Riboviria	Leviviricetes	Fiersviridae	Qubevirus	Bacteria	Pseudomonadota	Enterobacteriaceae	4276	<10kb	class:Leviviricetes
+bx_NC_019453_1	NC_019453.1	Caulobacter phage phiCb5	phiCb5	Riboviria	Leviviricetes	Steitzviridae	Cebevirus	Bacteria	Pseudomonadota	Caulobacter	3762	<10kb	family
+bx_NC_003438_1	NC_003438.1	Spiroplasma phage 4		Floreoviria	Microviricetes	Alphagokushoviridae	Spiromicrovirus	Bacteria	Mycoplasmatota	Spiroplasma	4421	<10kb	family
+bx_NC_048874_1	NC_048874.1	Escherichia phage EC6098		Floreoviria	Microviricetes	Betagokushoviridae	Enterogokushovirus	Bacteria	Pseudomonadota	Escherichia	4526	<10kb	class:Microviricetes
+bx_NC_001998_1	NC_001998.1	Chlamydia phage CPG1	PhiCPG1	Floreoviria	Microviricetes	Betagokushoviridae	Chlamydiaduovirus	Bacteria	Chlamydiota	Chlamydia	4529	<10kb	fill
+bx_NC_007461_1	NC_007461.1	Chlamydia phage 4		Floreoviria	Microviricetes	Betagokushoviridae	Chlamydiaduovirus	Bacteria	Chlamydiota	Chlamydia	4530	<10kb	fill
+bx_NC_002180_1	NC_002180.1	Chlamydia phage phiCPAR39		Floreoviria	Microviricetes	Betagokushoviridae	Chlamydiaduovirus	Bacteria	Chlamydiota	Chlamydia	4532	<10kb	fill
+bx_NC_002194_1	NC_002194.1	Chlamydia phage 2		Floreoviria	Microviricetes	Betagokushoviridae	Chlamydiaduovirus	Bacteria	Chlamydiota	Chlamydia	4563	<10kb	class:Microviricetes
+bx_NC_002643_1	NC_002643.1	Bdellovibrio phage phiMH2K		Floreoviria	Microviricetes	Betagokushoviridae	Bdellomicrovirus	Bacteria	Bdellovibrionota	Bdellovibrio	4594	<10kb	class:Microviricetes
+bx_NC_001741_1	NC_001741.1	Chlamydiamicrovirus Chp1		Floreoviria	Microviricetes	Betagokushoviridae	Chlamydiaunovirus	Bacteria	Chlamydiota	Chlamydia	4877	<10kb	class:Microviricetes
+bx_NC_001422_1	NC_001422.1	Escherichia phage phiX174		Floreoviria	Microviricetes	Eubullaviridae	Sinsheimervirus	Bacteria	Pseudomonadota	Escherichia	5386	<10kb	class:Microviricetes
+bx_NC_007825_1	NC_007825.1	Escherichia phage ID52		Floreoviria	Microviricetes	Eubullaviridae	Gequatrovirus	Bacteria	Pseudomonadota	Escherichia	5538	<10kb	class:Microviricetes
+bx_NC_007824_1	NC_007824.1	Escherichia phage ID62		Floreoviria	Microviricetes	Eubullaviridae	Alphatrevirus	Bacteria	Pseudomonadota	Escherichia	6051	<10kb	class:Microviricetes
+bx_NC_001730_1	NC_001730.1	Escherichia phage phiK	wild type	Floreoviria	Microviricetes	Eubullaviridae	Alphatrevirus	Bacteria	Pseudomonadota	Escherichia	6089	<10kb	class:Microviricetes
+bx_NC_012868_1	NC_012868.1	Escherichia phage St-1		Floreoviria	Microviricetes	Eubullaviridae	Alphatrevirus	Bacteria	Pseudomonadota	Escherichia	6094	<10kb	class:Microviricetes
+bx_NC_029012_1	NC_029012.1	Parabacteroides phage YZ-2015a		Floreoviria	Microviricetes	Pichoviridae	Pacdirvirus	Bacteria	Bacteroidota	Parabacteroides	4623	<10kb	class:Microviricetes
+bx_NC_029014_1	NC_029014.1	Parabacteroides phage YZ-2015b		Floreoviria	Microviricetes	unclassified Microviridae		Bacteria	Bacteroidota	Parabacteroides	5001	<10kb	family
+bx_NC_022094_1	NC_022094.1	Bacillus phage Wip1		Varidnaviria	Tectiliviricetes	Tectiviridae	Betatectivirus	Bacteria	Bacillota	Bacillus	14319	10-30kb	class:Tectiliviricetes
+bx_NC_011523_1	NC_011523.1	Bacillus phage AP50		Varidnaviria	Tectiliviricetes	Tectiviridae	Betatectivirus	Bacteria	Bacillota	Bacillus	14398	10-30kb	class:Tectiliviricetes
+bx_NC_074561_1	NC_074561.1	Bacillus phage Sole	Sole	Varidnaviria	Tectiliviricetes	Tectiviridae	Betatectivirus	Bacteria	Bacillota	Bacillus	14444	10-30kb	class:Tectiliviricetes
+bx_NC_006945_1	NC_006945.1	Bacillus phage GIL16c		Varidnaviria	Tectiliviricetes	Tectiviridae	Betatectivirus	Bacteria	Bacillota	Bacillus	14844	10-30kb	class:Tectiliviricetes
+bx_NC_074560_1	NC_074560.1	Bacillus phage Sato	Sato	Varidnaviria	Tectiliviricetes	Tectiviridae	Betatectivirus	Bacteria	Bacillota	Bacillus	14852	10-30kb	class:Tectiliviricetes
+bx_NC_005258_1	NC_005258.1	Bacillus phage Bam35c		Varidnaviria	Tectiliviricetes	Tectiviridae	Betatectivirus	Bacteria	Bacillota	Bacillus	14935	10-30kb	class:Tectiliviricetes
+bx_NC_007451_1	NC_007451.1	Enterobacteria phage PR4		Varidnaviria	Tectiliviricetes	Tectiviridae	Alphatectivirus	Bacteria	Pseudomonadota	Enterobacteriaceae	14954	10-30kb	class:Tectiliviricetes
+bx_NC_042083_1	NC_042083.1	Gluconobacter phage GC1		Varidnaviria	Tectiliviricetes	Tectiviridae	Gammatectivirus	Bacteria	Pseudomonadota	Gluconobacter	16523	10-30kb	class:Tectiliviricetes
+bx_NC_055059_1	NC_055059.1	Streptomyces phage Forthebois		Varidnaviria	Tectiliviricetes	Tectiviridae	Deltatectivirus	Bacteria	Actinomycetota	Streptomyces	18251	10-30kb	class:Tectiliviricetes
+bx_NC_055060_1	NC_055060.1	Streptomyces phage WheeHeim		Varidnaviria	Tectiliviricetes	Tectiviridae	Deltatectivirus	Bacteria	Actinomycetota	Streptomyces	18266	10-30kb	class:Tectiliviricetes
+bx_NC_074636_1	NC_074636.1	unclassified virus PBV300	PBV300	Adnaviria	Tokiviricetes	Ahmunviridae	Yumkaaxvirus	Archaea	Methanobacteriota	Methanophagales	41525	30-60kb	class:Tokiviricetes
+bx_NC_048127_1	NC_048127.1	Sulfolobales Beppu filamentous virus 3		Adnaviria	Tokiviricetes	Lipothrixviridae	Deltalipothrixvirus	Archaea	Thermoproteota	Sulfolobales	31324	30-60kb	class:Tokiviricetes
+bx_NC_010153_1	NC_010153.1	Betalipothrixvirus pezzuloense		Adnaviria	Tokiviricetes	Lipothrixviridae	Betalipothrixvirus	Archaea	Thermoproteota	Acidianus	36895	30-60kb	fill
+bx_NC_048128_1	NC_048128.1	Sulfolobales Beppu filamentous virus 2		Adnaviria	Tokiviricetes	Lipothrixviridae	Alphalipothrixvirus	Archaea	Thermoproteota	Sulfolobales	38091	30-60kb	class:Tokiviricetes
+bx_NC_010154_1	NC_010154.1	Betalipothrixvirus puteoliense		Adnaviria	Tokiviricetes	Lipothrixviridae	Betalipothrixvirus	Archaea	Thermoproteota	Acidianus	38179	30-60kb	fill
+bx_NC_010152_1	NC_010152.1	Betalipothrixvirus pozzuoliense		Adnaviria	Tokiviricetes	Lipothrixviridae	Betalipothrixvirus	Archaea	Thermoproteota	Acidianus	39577	30-60kb	fill
+bx_NC_003214_2	NC_003214.2	Sulfolobus islandicus filamentous virus		Adnaviria	Tokiviricetes	Lipothrixviridae	Betalipothrixvirus	Archaea	Thermoproteota	Saccharolobus	40900	30-60kb	class:Tokiviricetes
+bx_NC_010537_1	NC_010537.1	Acidianus filamentous virus 9		Adnaviria	Tokiviricetes	Lipothrixviridae	Betalipothrixvirus	Archaea	Thermoproteota	Acidianus	41172	30-60kb	class:Tokiviricetes
+bx_NC_074633_1	NC_074633.1	Metallosphaera rod-shaped virus 1	201	Adnaviria	Tokiviricetes	Rudiviridae	Hoswirudivirus	Archaea	Thermoproteota	Metallosphaera	20269	10-30kb	fill
+bx_NC_074632_1	NC_074632.1	Acidianus rod-shaped virus 3	9	Adnaviria	Tokiviricetes	Rudiviridae	Hoswirudivirus	Archaea	Thermoproteota	Acidianus	23666	10-30kb	fill
+bx_NC_009965_1	NC_009965.1	Acidianus rod-shaped virus 1		Adnaviria	Tokiviricetes	Rudiviridae	Itarudivirus	Archaea	Thermoproteota	Acidianus	24655	10-30kb	fill
+bx_NC_029314_1	NC_029314.1	Acidianus rod-shaped virus 2	ARV2	Adnaviria	Tokiviricetes	Rudiviridae	Hoswirudivirus	Archaea	Thermoproteota	Sulfolobales	29763	10-30kb	class:Tokiviricetes
+bx_NC_004087_1	NC_004087.1	Sulfolobus islandicus rod-shaped virus 1		Adnaviria	Tokiviricetes	Rudiviridae	Icerudivirus	Archaea	Thermoproteota	Saccharolobus	32308	30-60kb	fill
+bx_NC_034625_1	NC_034625.1	Sulfolobus islandicus rod-shaped virus 10		Adnaviria	Tokiviricetes	Rudiviridae	Usarudivirus	Archaea	Thermoproteota	Saccharolobus	32735	30-60kb	fill
+bx_NC_074635_1	NC_074635.1	Sulfolobales Beppu rod-shaped virus 1		Adnaviria	Tokiviricetes	Rudiviridae	Japarudivirus	Archaea	Thermoproteota	Sulfolobales	34025	30-60kb	fill
+bx_NC_034619_1	NC_034619.1	Sulfolobus islandicus rod-shaped virus 7		Adnaviria	Tokiviricetes	Rudiviridae	Usarudivirus	Archaea	Thermoproteota	Saccharolobus	34190	30-60kb	fill
+bx_NC_034627_1	NC_034627.1	Sulfolobus islandicus rod-shaped phage 6		Adnaviria	Tokiviricetes	Rudiviridae	Usarudivirus	Archaea	Thermoproteota	Saccharolobus	35439	30-60kb	fill
+bx_NC_004086_1	NC_004086.1	Sulfolobus islandicus rod-shaped virus 2	HVE10/4	Adnaviria	Tokiviricetes	Rudiviridae	Icerudivirus	Archaea	Thermoproteota	Saccharolobus	35450	30-60kb	class:Tokiviricetes
+bx_NC_034621_1	NC_034621.1	Sulfolobus islandicus rod-shaped virus 5		Adnaviria	Tokiviricetes	Rudiviridae	Usarudivirus	Archaea	Thermoproteota	Saccharolobus	36306	30-60kb	class:Tokiviricetes
+bx_NC_034623_1	NC_034623.1	Sulfolobus islandicus rod-shaped virus 8		Adnaviria	Tokiviricetes	Rudiviridae	Usarudivirus	Archaea	Thermoproteota	Saccharolobus	36493	30-60kb	class:Tokiviricetes
+bx_NC_074637_1	NC_074637.1	Pyrobaculum filamentous virus 2	4	Adnaviria	Tokiviricetes	Tristromaviridae	Alphatristromavirus	Archaea	Thermoproteota	Pyrobaculum	17602	10-30kb	fill
+bx_NC_029548_1	NC_029548.1	Pyrobaculum filamentous virus 1	1	Adnaviria	Tokiviricetes	Tristromaviridae	Alphatristromavirus	Archaea	Thermoproteota	Pyrobaculum	17714	10-30kb	class:Tokiviricetes
+bx_NC_005830_1	NC_005830.1	Captovirus AFV1		Adnaviria	Tokiviricetes	Ungulaviridae	Captovirus	Archaea	Thermoproteota	Acidianus	20869	10-30kb	family
+bx_NC_004174_1	NC_004174.1	Pseudomonas phage phi12		Riboviria	Vidaverviricetes	Cystoviridae	Betacystovirus	Bacteria	Pseudomonadota	Pseudomonas	2322	<10kb	class:Vidaverviricetes
+bx_NC_012093_1	NC_012093.1	Pseudomonas phage phi2954		Riboviria	Vidaverviricetes	Cystoviridae	Deltacystovirus	Bacteria	Pseudomonadota	Pseudomonas	2578	<10kb	class:Vidaverviricetes
+bx_NC_003714_1	NC_003714.1	Pseudomonas phage phi6		Riboviria	Vidaverviricetes	Cystoviridae	Orthocystovirus	Bacteria	Pseudomonadota	Pseudomonas	2948	<10kb	class:Vidaverviricetes
+bx_NC_042073_1	NC_042073.1	Pseudomonas phage phiYY		Riboviria	Vidaverviricetes	Cystoviridae	Gammacystovirus	Bacteria	Pseudomonadota	Pseudomonas	3004	<10kb	class:Vidaverviricetes
+bx_NC_042069_1	NC_042069.1	Pseudomonas phage phiNN		Riboviria	Vidaverviricetes	Cystoviridae	Orthocystovirus	Bacteria	Pseudomonadota	Pseudomonas	3814	<10kb	class:Vidaverviricetes
+bx_NC_003716_1	NC_003716.1	Pseudomonas phage phi6		Riboviria	Vidaverviricetes	Cystoviridae	Orthocystovirus	Bacteria	Pseudomonadota	Pseudomonas	4063	<10kb	class:Vidaverviricetes
+bx_NC_004175_1	NC_004175.1	Pseudomonas phage phi12		Riboviria	Vidaverviricetes	Cystoviridae	Betacystovirus	Bacteria	Pseudomonadota	Pseudomonas	4100	<10kb	class:Vidaverviricetes
+bx_NC_004171_1	NC_004171.1	Pseudomonas phage phi13		Riboviria	Vidaverviricetes	Cystoviridae	Gammacystovirus	Bacteria	Pseudomonadota	Pseudomonas	4213	<10kb	class:Vidaverviricetes
+bx_NC_004172_1	NC_004172.1	Pseudomonas phage phi13		Riboviria	Vidaverviricetes	Cystoviridae	Gammacystovirus	Bacteria	Pseudomonadota	Pseudomonas	6458	<10kb	class:Vidaverviricetes
+bx_NC_042071_1	NC_042071.1	Pseudomonas phage phiYY		Riboviria	Vidaverviricetes	Cystoviridae	Gammacystovirus	Bacteria	Pseudomonadota	Pseudomonas	6648	<10kb	class:Vidaverviricetes
+bx_NC_028938_1	NC_028938.1	Acidianus bottle-shaped virus 2 strain ABV2	ABV2	Ampullaviridae	unclassified	Ampullaviridae	Bottigliavirus	Archaea	Thermoproteota	Sulfolobales	22613	10-30kb	class:unclassified
+bx_NC_009452_1	NC_009452.1	Acidianus bottle-shaped virus		Ampullaviridae	unclassified	Ampullaviridae	Bottigliavirus	Archaea	Thermoproteota	Acidianus	23814	10-30kb	fill
+bx_NC_028787_1	NC_028787.1	Acidianus bottle-shaped virus 3 strain ABV3	ABV3	Ampullaviridae	unclassified	Ampullaviridae	Bottigliavirus	Archaea	Thermoproteota	Sulfolobales	28489	10-30kb	fill
+bx_NC_023585_1	NC_023585.1	Sulfolobus monocaudavirus SMV1		Bicaudaviridae	unclassified	Bicaudaviridae		Archaea	Thermoproteota	Saccharolobus	48775	30-60kb	fill
+bx_NC_029020_1	NC_029020.1	Sulfolobus monocaudavirus SMV2	SMV2	Bicaudaviridae	unclassified	Bicaudaviridae		Archaea	Thermoproteota	Sulfolobus	50918	30-60kb	fill
+bx_NC_029011_1	NC_029011.1	Sulfolobus monocaudavirus SMV4	SMV4	Bicaudaviridae	unclassified	Bicaudaviridae		Archaea	Thermoproteota	Sulfolobus	51711	30-60kb	fill
+bx_NC_029103_1	NC_029103.1	Sulfolobus monocaudavirus SMV3	SMV3	Bicaudaviridae	unclassified	Bicaudaviridae		Archaea	Thermoproteota	Sulfolobus	64323	60-100kb	class:unclassified
+bx_NC_029316_1	NC_029316.1	Acidianus tailed spindle virus	1	Bicaudaviridae	unclassified	Bicaudaviridae		Archaea	Thermoproteota	Acidianus	70812	60-100kb	class:unclassified
+bx_NC_006268_1	NC_006268.1	Sulfolobus virus STSV1		Bicaudaviridae	unclassified	Bicaudaviridae		Archaea	Thermoproteota	Sulfolobus	75294	60-100kb	fill
+bx_NC_020077_1	NC_020077.1	Sulfolobus virus STSV2	STSV2	Bicaudaviridae	unclassified	Bicaudaviridae		Archaea	Thermoproteota	Sulfolobus	76107	60-100kb	fill
+bx_NC_043030_1	NC_043030.1	Clavavirus yamagawaense		Clavaviridae	unclassified	Clavaviridae	Clavavirus	Archaea	Thermoproteota	Aeropyrum	5278	<10kb	family
+bx_NC_005360_1	NC_005360.1	Sulfolobus virus Ragged Hills		Fuselloviridae	unclassified	Fuselloviridae	Alphafusellovirus	Archaea	Thermoproteota	Sulfolobus	16473	10-30kb	fill
+bx_NC_005361_1	NC_005361.1	Sulfolobus virus Kamchatka 1		Fuselloviridae	unclassified	Fuselloviridae	Alphafusellovirus	Archaea	Thermoproteota	Sulfolobus	17385	10-30kb	class:unclassified
+bx_NC_013588_1	NC_013588.1	Sulfolobus spindle-shaped virus 7		Fuselloviridae	unclassified	Fuselloviridae	Alphafusellovirus	Archaea	Thermoproteota	Sulfolobus	17602	10-30kb	class:unclassified
+bx_NC_074653_1	NC_074653.1	Pyrobaculum spherical virus 2	10	Globuloviridae	unclassified	Globuloviridae	Alphaglobulovirus	Archaea	Thermoproteota	Pyrobaculum	18212	10-30kb	class:unclassified
+bx_NC_074654_1	NC_074654.1	Thermoproteus spherical piliferous virus 1	CP001	Globuloviridae	unclassified	Globuloviridae	Alphaglobulovirus	Archaea	Thermoproteota	Thermoproteus	18655	10-30kb	fill
+bx_NC_006556_1	NC_006556.1	Thermoproteus tenax spherical virus 1		Globuloviridae	unclassified	Globuloviridae	Alphaglobulovirus	Archaea	Thermoproteota	Thermoproteus	20933	10-30kb	class:unclassified
+bx_NC_005872_1	NC_005872.1	Pyrobaculum spherical virus		Globuloviridae	unclassified	Globuloviridae	Alphaglobulovirus	Archaea	Thermoproteota	Pyrobaculum	28337	10-30kb	fill
+bx_NC_028256_1	NC_028256.1	Betaguttavirus kodakarajimaense		Guttaviridae	unclassified	Guttaviridae	Betaguttavirus	Archaea	Thermoproteota	Aeropyrum	13769	10-30kb	family
+bx_NC_007914_1	NC_007914.1	His 1 virus		Halspiviridae	unclassified	Halspiviridae	Salterprovirus	Archaea	Methanobacteriota	Haloarcula	14462	10-30kb	family
+bx_NC_077215_1	NC_077215.1	Methanophagales virus GBV303		Itzamnaviridae	unclassified	Itzamnaviridae	Demiitzamnavirus	Archaea	Methanobacteriota	Methanophagales	25580	10-30kb	class:unclassified
+bx_NC_074655_1	NC_074655.1	Methanophagales virus PBV082	PBV082	Itzamnaviridae	unclassified	Itzamnaviridae	Pletoitzamnavirus	Archaea	Methanobacteriota	Methanophagales	48863	30-60kb	fill
+bx_NC_021797_1	NC_021797.1	Cellulophaga phage phi12:2	phi12:2	Obscuriviridae	unclassified	Obscuriviridae	Cebaduodecimvirus	Bacteria	Bacteroidota	Cellulophaga	6453	<10kb	family
+bx_NC_042347_1	NC_042347.1	Sulfolobus ellipsoid virus 1	CR_L	Ovaliviridae	unclassified	Ovaliviridae	Alphaovalivirus	Archaea	Thermoproteota	Saccharolobus	23219	10-30kb	family
+bx_NC_055116_1	NC_055116.1	Sulfolobus polyhedral virus 2		Portogloboviridae	unclassified	Portogloboviridae	Alphaportoglobovirus	Archaea	Thermoproteota	Sulfolobus	20424	10-30kb	family
+bx_NC_043427_1	NC_043427.1	Alphaspiravirus yamagawaense		Spiraviridae	unclassified	Spiraviridae	Alphaspiravirus	Archaea	Thermoproteota	Aeropyrum	24893	10-30kb	family
+bx_NC_048199_1	NC_048199.1	Nitrosopumilus spindle-shaped virus	NSV1	Thaspiviridae	unclassified	Thaspiviridae	Nitmarvirus	Archaea	Nitrososphaerota	Nitrosopumilus	27548	10-30kb	fill
+bx_NC_074656_1	NC_074656.1	Nitrosopumilus spindle-shaped virus	NSV3	Thaspiviridae	unclassified	Thaspiviridae	Nitmarvirus	Archaea	Nitrososphaerota	Nitrosopumilus	27570	10-30kb	fill
+bx_NC_074657_1	NC_074657.1	Nitrosopumilus spindle-shaped virus	NSV2	Thaspiviridae	unclassified	Thaspiviridae	Nitmarvirus	Archaea	Nitrososphaerota	Nitrosopumilus	28967	10-30kb	family
+bx_NC_028268_1	NC_028268.1	Aeropyrum pernix spindle-shaped virus 1		Yamazakiviridae	unclassified	Yamazakiviridae	Kodayamazakivirus	Archaea	Thermoproteota	Aeropyrum	38049	30-60kb	family
+bx_NC_035464_1	NC_035464.1	Metallosphaera turreted icosahedral virus	MTIV1	unclassified viruses	unclassified	unclassified		Archaea	Thermoproteota	Metallosphaera	9780	<10kb	host_genus
+bx_NC_025213_1	NC_025213.1	Halovirus VNH-1	VNH-1	unclassified viruses	unclassified	unclassified		Archaea	Methanobacteriota	Nanohaloarchaea	10021	10-30kb	class:unclassified
+bx_NC_077159_1	NC_077159.1	Varidnaviria sp.	SkuldV1	Varidnaviria	unclassified	unclassified		Archaea	Promethearchaeota	Promethearchaeia	11290	10-30kb	fill
+bx_NC_021793_1	NC_021793.1	Cellulophaga phage phi48:2	phi48:2	unclassified viruses	unclassified	unclassified		Bacteria	Bacteroidota	Cellulophaga	11703	10-30kb	fill
+bx_NC_001942_1	NC_001942.1	Mycoplasma phage MAV1		unclassified viruses	unclassified	unclassified		Bacteria	Mycoplasmatota	Metamycoplasma	15644	10-30kb	host_genus
+bx_NC_009597_1	NC_009597.1	Pyrococcus abyssi virus 1		unclassified viruses	unclassified	unclassified		Archaea	Methanobacteriota	Pyrococcus	18098	10-30kb	host_genus
+bx_NC_036595_1	NC_036595.1	Aeropyrum globular virus 1		unclassified viruses	unclassified	unclassified		Archaea	Thermoproteota	Aeropyrum	18222	10-30kb	fill
+bx_NC_005964_2	NC_005964.2	Mycoplasma phage phiMFV1		unclassified bacterial viruses	unclassified	unclassified		Bacteria	Mycoplasmatota	Mycoplasma	18855	10-30kb	host_genus
+bx_NC_028651_1	NC_028651.1	Hydrogenobaculum phage 1	HP1	unclassified viruses	unclassified	unclassified		Bacteria	Aquificota	Hydrogenobaculum	19351	10-30kb	host_genus
+bx_NC_016899_1	NC_016899.1	Thermococcus prieurii virus 1		unclassified viruses	unclassified	unclassified		Archaea	Methanobacteriota	Thermococcus	21592	10-30kb	host_genus
+bx_NC_028992_1	NC_028992.1	Sulfolobales Virus YNP2	SYV2	unclassified viruses	unclassified	unclassified		Archaea	Thermoproteota	Sulfolobales	34783	30-60kb	fill
+bx_NC_029027_1	NC_029027.1	Sulfolobales virus YNP1	SYV1	unclassified viruses	unclassified	unclassified		Archaea	Thermoproteota	Sulfolobales	40860	30-60kb	fill
+bx_NC_028998_1	NC_028998.1	Phormidium phage MIS-PhV1B		unclassified viruses	unclassified	unclassified		Bacteria	Cyanobacteriota	Phormidium	41291	30-60kb	class:unclassified
+bx_NC_017983_1	NC_017983.1	Salisaeta icosahedral phage 1		unclassified viruses	unclassified	unclassified		Bacteria	Rhodothermota	Salisaeta	43788	30-60kb	host_genus
+bx_NC_029032_1	NC_029032.1	Phormidium phage MIS-PhV1A		unclassified viruses	unclassified	unclassified		Bacteria	Cyanobacteriota	Phormidium	45532	30-60kb	fill

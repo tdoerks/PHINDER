@@ -10,6 +10,10 @@ accession here rather than trusting an unverified genome.
 
 Usage:
     python3 bin/stress_fetch_refs.py --outdir stress_data/refs
+    python3 bin/stress_fetch_refs.py --panel assets/stress_breadth_panel.tsv --outdir stress_data/breadth_refs
+
+--panel mode downloads every accession in a breadth panel (batched, 100 per request) and verifies
+each record's accession and length against the panel before writing <sample>.fasta.
 
 Outputs:
     <outdir>/<ref_id>.fasta
@@ -79,14 +83,78 @@ def parse_fasta(txt):
     return recs
 
 
+# Classes whose genomes are circular (affects only where simulated fragments may span the origin)
+CIRCULAR_CLASSES = {"Microviricetes", "Faserviricetes", "Laserviricetes"}
+
+
+def fetch_panel(panel_tsv, out, batch=100):
+    import csv
+    with open(panel_tsv) as f:
+        panel = list(csv.DictReader(f, delimiter="\t"))
+    todo = [r for r in panel if not (out / f"{r['sample']}.fasta").exists()]
+    print(f"{len(panel)} panel genomes, {len(panel) - len(todo)} already downloaded, fetching {len(todo)}")
+    by_acc = {r["accession"].split(".")[0]: r for r in panel}
+    failed = []
+    for i in range(0, len(todo), batch):
+        chunk = todo[i:i + batch]
+        data = ("db=nuccore&rettype=fasta&retmode=text&id=" + ",".join(r["accession"] for r in chunk)).encode()
+        txt = None
+        for attempt in range(4):
+            try:
+                with urllib.request.urlopen(EUTILS.split("?")[0], data=data, timeout=300) as resp:
+                    txt = resp.read().decode()
+                if txt.startswith(">"):
+                    break
+            except (urllib.error.URLError, TimeoutError) as e:
+                print(f"    batch {i // batch + 1}: {e} (attempt {attempt + 1})", file=sys.stderr)
+            txt = None
+            time.sleep(5 * (attempt + 1))
+        got = set()
+        for hdr, seq in parse_fasta(txt or ""):
+            acc = hdr.split()[0].split(".")[0]
+            r = by_acc.get(acc)
+            if r is None:
+                continue
+            if abs(len(seq) - int(r["length"])) > 0.01 * int(r["length"]):
+                print(f"    {r['accession']}: length {len(seq):,} != panel {int(r['length']):,} — skipped")
+                continue
+            with open(out / f"{r['sample']}.fasta", "w") as f:
+                f.write(f">{hdr.split()[0]}\n")
+                for j in range(0, len(seq), 80):
+                    f.write(seq[j:j + 80] + "\n")
+            got.add(r["sample"])
+        failed += [r["sample"] for r in chunk if r["sample"] not in got]
+        print(f"  batch {i // batch + 1}/{(len(todo) + batch - 1) // batch}: {len(got)}/{len(chunk)} ok")
+        time.sleep(0.5)
+
+    # Manifest in the same format as the curated refs, so stress_simulate.py can load either
+    n = 0
+    with open(out / "refs_manifest.tsv", "w") as f:
+        f.write("ref_id\taccessions\ttitle\tlength\ttopology\tlifestyle\tgenome_type\n")
+        for r in panel:
+            if (out / f"{r['sample']}.fasta").exists():
+                topo = "circular" if r["class"] in CIRCULAR_CLASSES else "linear"
+                f.write(f"{r['sample']}\t{r['accession']}\t{r['virus_name']}\t{r['length']}\t{topo}\tNA\t"
+                        f"{r['class']}/{r['family']}\n")
+                n += 1
+    print(f"\n{n}/{len(panel)} panel genomes ready -> {out}/refs_manifest.tsv")
+    if failed:
+        print(f"FAILED ({len(failed)}) — rerun the same command to retry: {', '.join(failed[:20])}"
+              f"{' ...' if len(failed) > 20 else ''}")
+        sys.exit(1)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--outdir", default="stress_data/refs")
     ap.add_argument("--only", nargs="*", help="Fetch only these ref_ids")
+    ap.add_argument("--panel", help="Breadth panel TSV (bin/stress_breadth_panel.py) — fetch those instead")
     args = ap.parse_args()
 
     out = Path(args.outdir)
     out.mkdir(parents=True, exist_ok=True)
+    if args.panel:
+        return fetch_panel(args.panel, out)
     manifest, failed = [], []
 
     for ref_id, spec in REFS.items():

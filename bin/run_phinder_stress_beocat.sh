@@ -23,6 +23,14 @@
 #
 # Then:  sbatch bin/run_phinder_stress_beocat.sh
 #
+# Breadth tier (1000 diverse RefSeq phages, clean 100x) — one-time setup, then submit separately:
+#   python3 bin/stress_fetch_refs.py --panel assets/stress_breadth_panel.tsv --outdir stress_data/breadth_refs
+#   python3 bin/stress_simulate.py --breadth-panel assets/stress_breadth_panel.tsv \
+#       --refs stress_data/breadth_refs --outdir stress_data
+#   MODES=breadth sbatch bin/run_phinder_stress_beocat.sh
+# ~12k SLURM tasks; the slurm profile submits 10/min, so expect 2-3 days. If the head job hits its
+# time limit, resubmit the same command — -resume picks up where it stopped.
+#
 # Each mode runs from its own launch dir so -resume tracks each run separately.
 # Failed tasks are retried twice, then ignored and recorded (conf/stress.config).
 #==============================================================================
@@ -36,18 +44,20 @@ MODES="${MODES:-reads assembly sra}"   # override: MODES="assembly" sbatch ...
 
 module load Nextflow/24.04.2 2>/dev/null || module load Nextflow || { echo "ERROR: no Nextflow module"; exit 1; }
 
-for f in "${DATA}/stress_truth.tsv" "${DATA}/samplesheet_stress_reads.csv"; do
-    [ -f "$f" ] || { echo "ERROR: $f missing — run the one-time setup (see header)"; exit 1; }
-done
-
-echo "PHINDER stress test — job ${SLURM_JOB_ID:-local} on ${SLURM_NODELIST:-$(hostname)} — $(date)"
-echo "Commit: $(git -C "$REPO" rev-parse --short HEAD) ($(git -C "$REPO" branch --show-current))"
-
 declare -A INPUT=(
     [reads]="${DATA}/samplesheet_stress_reads.csv"
     [assembly]="${DATA}/samplesheet_stress_assembly.csv"
     [sra]="${DATA}/stress_sra.txt"
+    [breadth]="${DATA}/samplesheet_stress_breadth.csv"
 )
+declare -A NF_MODE=([reads]=reads [assembly]=assembly [sra]=sra [breadth]=reads)
+
+for mode in $MODES; do
+    [ -f "${INPUT[$mode]:-/nonexistent}" ] || { echo "ERROR: input for '${mode}' missing — run the one-time setup (see header)"; exit 1; }
+done
+
+echo "PHINDER stress test — job ${SLURM_JOB_ID:-local} on ${SLURM_NODELIST:-$(hostname)} — $(date)"
+echo "Commit: $(git -C "$REPO" rev-parse --short HEAD) ($(git -C "$REPO" branch --show-current))"
 
 for mode in $MODES; do
     outdir="${RUNS}/${mode}/results"
@@ -58,7 +68,7 @@ for mode in $MODES; do
         -profile slurm,beocat \
         -c "${REPO}/conf/stress.config" \
         --input "${INPUT[$mode]}" \
-        --input_mode "${mode}" \
+        --input_mode "${NF_MODE[$mode]}" \
         --outdir "${outdir}" \
         -resume \
         -with-trace "${outdir}/pipeline_trace.txt" \
@@ -68,12 +78,14 @@ done
 
 echo ""
 echo "======== Scoring — $(date) ========"
+# Scores every run that exists so far (stress and/or breadth); missing runs are skipped.
 python3 "${REPO}/bin/score_stress_test.py" \
-    --truth "${DATA}/stress_truth.tsv" \
-    --refs "${DATA}/refs" \
+    --truth "${DATA}/stress_truth.tsv" --truth "${DATA}/stress_truth_breadth.tsv" \
+    --refs "${DATA}/refs" --refs "${DATA}/breadth_refs" \
     --run reads="${RUNS}/reads/results" \
     --run assembly="${RUNS}/assembly/results" \
     --run sra="${RUNS}/sra/results" \
+    --run breadth="${RUNS}/breadth/results" \
     --out "${RUNS}/stress_scorecard"
 
 echo "Scorecard: ${RUNS}/stress_scorecard.html  |  ${RUNS}/stress_scorecard.tsv"

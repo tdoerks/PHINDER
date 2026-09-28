@@ -87,7 +87,26 @@ python3 bin/stress_simulate.py --refs stress_data/refs --outdir stress_data \
 sbatch bin/run_phinder_stress_beocat.sh                             # all 3 modes, then scoring
 ```
 
-Output: `stress_runs/stress_scorecard.html` + `.tsv`. Failed tasks are retried twice then recorded
+### Breadth tier — 1000 diverse phages (which *kinds* of phage break PHINDER)
+
+`assets/stress_breadth_panel.tsv` (committed) lists 1000 complete RefSeq genomes with bacterial or archaeal
+hosts, chosen for diversity rather than abundance: all 12 virus classes (incl. ssDNA, ssRNA, dsRNA, tailless
+dsDNA), all 129 families, 230 host genera across 22 phyla, 131 archaeal viruses, 65 jumbo phages (>200 kb).
+No host genus contributes more than ~30. Each genome is simulated clean at 100x, and the scorer adds
+geNomad-vs-NCBI taxonomy agreement and a "where it breaks" breakdown by class, family, host and size.
+
+```bash
+python3 bin/stress_fetch_refs.py --panel assets/stress_breadth_panel.tsv --outdir stress_data/breadth_refs   # ~1 min, 70 MB
+python3 bin/stress_simulate.py --breadth-panel assets/stress_breadth_panel.tsv --refs stress_data/breadth_refs --outdir stress_data   # ~9 min, ~3.5 GB
+MODES=breadth sbatch bin/run_phinder_stress_beocat.sh     # ~12k SLURM tasks, 2-3 days; resubmit to resume
+```
+
+Rebuild the panel (new RefSeq release) from NCBI Datasets summaries, one query per virus class:
+`datasets summary virus genome taxon <Class> --refseq --complete-only --as-json-lines > cat_<Class>.jsonl`, then
+`python3 bin/stress_breadth_panel.py cat_*.jsonl --n 1000 --out assets/stress_breadth_panel.tsv`.
+Segmented genomes (e.g. Cystoviridae) are one RefSeq record per segment, so a breadth sample is one segment.
+
+Output: `stress_runs/stress_scorecard.html` + `.tsv` + `_breakdown.tsv`. Failed tasks are retried twice then recorded
 (`conf/stress.config`), so one crash does not stop the run. PhageTerm calls on *simulated* reads are
 not meaningful (read ends are uniform) — judge packaging only on the real-read samples.
 
