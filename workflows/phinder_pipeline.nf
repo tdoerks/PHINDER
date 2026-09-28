@@ -49,7 +49,7 @@ workflow PHINDER_PIPELINE {
     // STEP 1: Quality Control (if starting from reads or SRA)
     if ((params.input_mode == 'reads' || params.input_mode == 'sra') && !params.skip_fastqc) {
         FASTQC(ch_input)
-        ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip)
+        ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map { sid, zip -> zip })
         ch_versions = ch_versions.mix(FASTQC.out.versions.first())
     }
 

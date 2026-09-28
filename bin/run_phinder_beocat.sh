@@ -8,6 +8,8 @@
 #SBATCH --time=4:00:00
 #SBATCH --output=phinder_%j.log
 #SBATCH --error=phinder_%j.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=tyler.tyler.d@gmail.com
 
 #==============================================================================
 # PHINDER Beocat Submission Script

@@ -36,8 +36,14 @@ process PHAROKKA {
         --force \\
         \$meta_flag
 
-    # Pharokka writes phanotate.faa regardless of prefix; rename for downstream tools
-    cp ${sample_id}_pharokka/phanotate.faa ${sample_id}_pharokka/${sample_id}.faa
+    # Rename protein FAA to {sample_id}.faa for downstream tools
+    # Non-meta (PHANOTATE): writes phanotate.faa
+    # Meta (prodigal-gv): writes prodigal-gv.faa
+    if [ -f "${sample_id}_pharokka/phanotate.faa" ]; then
+        cp ${sample_id}_pharokka/phanotate.faa ${sample_id}_pharokka/${sample_id}.faa
+    elif [ -f "${sample_id}_pharokka/prodigal-gv.faa" ]; then
+        cp ${sample_id}_pharokka/prodigal-gv.faa ${sample_id}_pharokka/${sample_id}.faa
+    fi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
