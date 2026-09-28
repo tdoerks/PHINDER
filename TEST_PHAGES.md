@@ -26,6 +26,9 @@ This document lists the test phages used for validating the PHINDER pipeline.
 
 ## Extended Test (20 phages)
 
+> ⚠️ The 17 "diverse collection" accessions below are sequential run IDs with placeholder notes and have
+> **not been verified** to be phage isolates. Prefer the stress test (below) for capability testing.
+
 **File:** `test_phages_20_sra.txt`
 **Runtime:** ~12-24 hours
 **Script:** `bin/run_phinder_20phages_beocat.sh`
@@ -58,7 +61,36 @@ This document lists the test phages used for validating the PHINDER pipeline.
 | SRR13145905 | Latest isolate | Complete genomes |
 | SRR13145906 | Latest isolate | Validation set |
 
-## Usage
+## Stress Test (capability matrix, known answers)
+
+**Branch:** `stress-test` · **Script:** `bin/run_phinder_stress_beocat.sh`
+
+Simulated 2x150 reads from 19 verified RefSeq phage genomes plus E. coli K-12, and real reads already on
+Beocat, run through all three input modes, then scored against the known answer (assembly recovery,
+CheckV/geNomad detection, BacPhlip/VIBRANT lifestyle, per-module status, dashboard presence).
+
+| Axis | Samples |
+|------|---------|
+| Genome size / architecture | phiX174, M13, MS2, Phi6 (3 segments), PM2, PRD1, T7, T5, T4, phiKZ (280 kb), phage G (498 kb) |
+| Lifestyle | lambda, P22, Mu, P1 (temperate) vs the lytic phages above |
+| Host / GC | phage K (Staph, low GC), L5 + D29 (Mycobacterium, high GC), crAss001 (Bacteroides) |
+| Coverage | T7 at 5x, 20x, 100x, 1,000x, 10,000x |
+| Host contamination | T7 + 10/50/90% E. coli reads; lambda + 50% |
+| Mixed isolates | T7 + lambda, T4 + T7 |
+| Negative controls | E. coli K-12 only, random sequence |
+| Input modes | reads (all above + real reads), assembly (reference FASTAs), sra (SRR5131136) |
+
+```bash
+python3 bin/stress_fetch_refs.py --outdir stress_data/refs          # downloads + verifies each accession
+python3 bin/stress_simulate.py --refs stress_data/refs --outdir stress_data \
+    --real-reads /path/to/samplesheet_spades_compare.csv          # optional real reads
+sbatch bin/run_phinder_stress_beocat.sh                             # all 3 modes, then scoring
+```
+
+Output: `stress_runs/stress_scorecard.html` + `.tsv`. Failed tasks are retried twice then recorded
+(`conf/stress.config`), so one crash does not stop the run. PhageTerm calls on *simulated* reads are
+not meaningful (read ends are uniform) — judge packaging only on the real-read samples.
+
 
 ### Quick Test (recommended first)
 ```bash

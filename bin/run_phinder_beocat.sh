@@ -9,7 +9,7 @@
 #SBATCH --output=phinder_%j.log
 #SBATCH --error=phinder_%j.err
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=tyler.tyler.d@gmail.com
+# Mail goes to the submitting user; add "#SBATCH --mail-user=<address>" to override
 
 #==============================================================================
 # PHINDER Beocat Submission Script

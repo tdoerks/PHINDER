@@ -41,3 +41,7 @@ Thumbs.db
 *.tmp
 *.bak
 *.backup
+
+# Stress test data + runs (regenerate with bin/stress_fetch_refs.py + bin/stress_simulate.py)
+stress_data/
+stress_runs/
