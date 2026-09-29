@@ -17,7 +17,7 @@
 # Usage:
 #   sbatch bin/run_phinder_sra_beocat.sh
 #
-# This will download Lambda phage (SRR5131134) and run full pipeline
+# This will download Lambda phage (SRR17327631) and run full pipeline
 #==============================================================================
 
 set -euo pipefail
@@ -70,7 +70,7 @@ echo "  Starting PHINDER (SRA Mode)"
 echo "========================================"
 echo ""
 echo "Pipeline will:"
-echo "  1. Download SRR5131134 (Lambda phage)"
+echo "  1. Download SRR17327631 (Lambda phage)"
 echo "  2. Run FastQC and fastp"
 echo "  3. Assemble with Unicycler"
 echo "  4. Annotate with Pharokka"
@@ -104,9 +104,9 @@ if [ ${EXIT_CODE} -eq 0 ]; then
     echo "Results in: ${OUTDIR}/"
     echo ""
     echo "Key outputs:"
-    echo "  - Assembly: ${OUTDIR}/assemblies/SRR5131134_assembly.fasta"
-    echo "  - CheckV: ${OUTDIR}/checkv/SRR5131134_checkv/"
-    echo "  - Pharokka: ${OUTDIR}/pharokka/SRR5131134_pharokka/"
+    echo "  - Assembly: ${OUTDIR}/assemblies/SRR17327631_assembly.fasta"
+    echo "  - CheckV: ${OUTDIR}/checkv/SRR17327631_checkv/"
+    echo "  - Pharokka: ${OUTDIR}/pharokka/SRR17327631_pharokka/"
     echo "  - MultiQC: ${OUTDIR}/multiqc/multiqc_report.html"
     echo ""
     echo "Download MultiQC report to view:"

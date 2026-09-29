@@ -10,9 +10,16 @@ This document lists the test phages used for validating the PHINDER pipeline.
 
 | SRA Accession | Phage | Host | Genome Size | Lifestyle | Notes |
 |--------------|-------|------|-------------|-----------|-------|
-| SRR5131134 | Lambda | *E. coli* | 48.5 kb | Temperate | Classic model phage |
-| SRR5131135 | T4 | *E. coli* | 169 kb | Lytic | Large, complex genome |
-| SRR5131136 | T7 | *E. coli* | 40 kb | Lytic | Well-studied, fast |
+| SRR17327631 | Lambda | *E. coli* | 48.5 kb | Temperate | WGS, HiSeq 4000, ~15 Mb (~300x) |
+| SRR19649190 | T4 | *E. coli* | 169 kb | Lytic | WGS, MiSeq, ~33 Mb (~200x) |
+| ERR10819273 | T7 | *E. coli* | 40 kb | Lytic | WGS, NextSeq 500, ~10 Mb (~250x) |
+
+> ⚠️ **Corrected 2026-09-29.** Until then this test used SRR5131134/5/6, which are **not phages** —
+> they are RNA-Seq of scallop (*Azumapecten farreri*) foot tissue (~3 Gb each, study SRP018107).
+> Every "lambda/T4/T7" result from those runs (incl. the `results_3phages_*` runs and the dsDNA
+> rows of the SPAdes-mode comparison) came from a scallop transcriptome. The replacements above
+> were verified by organism (NCBI taxid 10710 / 10665 / 10760) in ENA; they come from
+> experimental-evolution/mutant studies, so expect a few SNPs vs RefSeq.
 
 ## Single Phage Test
 
@@ -22,7 +29,7 @@ This document lists the test phages used for validating the PHINDER pipeline.
 
 | SRA Accession | Phage | Host | Genome Size | Lifestyle | Notes |
 |--------------|-------|------|-------------|-----------|-------|
-| SRR5131134 | Lambda | *E. coli* | 48.5 kb | Temperate | Quick validation |
+| SRR17327631 | Lambda | *E. coli* | 48.5 kb | Temperate | Quick validation (verified WGS) |
 
 ## Extended Test (20 phages)
 
@@ -36,9 +43,9 @@ This document lists the test phages used for validating the PHINDER pipeline.
 ### Classic Model Phages (3)
 | SRA Accession | Phage | Host | Genome Size | Lifestyle | Notes |
 |--------------|-------|------|-------------|-----------|-------|
-| SRR5131134 | Lambda | *E. coli* | 48.5 kb | Temperate | Integration/excision |
-| SRR5131135 | T4 | *E. coli* | 169 kb | Lytic | Modified DNA bases |
-| SRR5131136 | T7 | *E. coli* | 40 kb | Lytic | RNA polymerase |
+| SRR17327631 | Lambda | *E. coli* | 48.5 kb | Temperate | Integration/excision |
+| SRR19649190 | T4 | *E. coli* | 169 kb | Lytic | Modified DNA bases |
+| ERR10819273 | T7 | *E. coli* | 40 kb | Lytic | RNA polymerase |
 
 ### Diverse Collection (17)
 | SRA Accession | Expected Type | Notes |
@@ -78,7 +85,7 @@ CheckV/geNomad detection, BacPhlip/VIBRANT lifestyle, per-module status, dashboa
 | Host contamination | T7 + 10/50/90% E. coli reads; lambda + 50% |
 | Mixed isolates | T7 + lambda, T4 + T7 |
 | Negative controls | E. coli K-12 only, random sequence |
-| Input modes | reads (all above + real reads), assembly (reference FASTAs), sra (SRR5131136) |
+| Input modes | reads (all above + real reads), assembly (reference FASTAs), sra (ERR10819273) |
 
 ```bash
 python3 bin/stress_fetch_refs.py --outdir stress_data/refs          # downloads + verifies each accession

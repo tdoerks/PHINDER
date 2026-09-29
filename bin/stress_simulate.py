@@ -87,16 +87,17 @@ ASSEMBLY_DESIGN = [
     ("asm_MS2", "MS2"), ("asm_M13", "M13"), ("asm_lambda", "lambda"), ("asm_Ecoli_K12", HOST),
 ]
 
-# SRA-mode run: real data via DOWNLOAD_SRA (identity checked by the scorer against claimed_ref)
-SRA_DESIGN = [("SRR5131136", "T7")]
+# SRA-mode run: real data via DOWNLOAD_SRA (identity checked by the scorer against claimed_ref).
+# ERR10819273 = verified T7 WGS (ENA taxid 10760), ~10 Mb.
+SRA_DESIGN = [("ERR10819273", "T7")]
 
 # Real reads already on Beocat (SPAdes-compare samplesheet); sample -> claimed reference.
-# Identity of SRR5131134/5/6 is UNVERIFIED (docs say lambda/T4/T7) — the scorer's k-mer
-# recovery against the claimed reference will confirm or refute it.
+# SRR5131134/5/6 were long documented as lambda/T4/T7 but are scallop (Azumapecten farreri)
+# RNA-Seq (ENA, checked 2026-09-29) — kept as REAL non-phage negative controls.
 REAL_CLAIMS = {
-    "SRR5131134": ("lambda", "real reads; docs claim lambda (unverified)"),
-    "SRR5131135": ("T4", "real reads; docs claim T4 (unverified)"),
-    "SRR5131136": ("T7", "real reads; docs claim T7 (unverified)"),
+    "SRR5131134": (None, "NOT a phage: scallop RNA-Seq (was mislabeled lambda) — real negative control"),
+    "SRR5131135": (None, "NOT a phage: scallop RNA-Seq (was mislabeled T4) — real negative control"),
+    "SRR5131136": (None, "NOT a phage: scallop RNA-Seq (was mislabeled T7) — real negative control"),
     "phiX174": ("phiX174", "real reads SRR001665"),
     "Ecoli_K12": (None, "real reads SRR001666 — negative control"),
     "MS2": ("MS2", "real reads SRR31435157"),
@@ -252,6 +253,9 @@ def main():
     ap.add_argument("--real-reads", help="CSV with sample,fastq_1,fastq_2 (e.g. the SPAdes-compare samplesheet)")
     ap.add_argument("--only", nargs="*", help="Simulate only these sample_ids")
     ap.add_argument("--seed", type=int, default=20260928)
+    ap.add_argument("--truth-only", action="store_true",
+                    help="Rewrite samplesheets + truth table but not the reads (existing reads are "
+                         "reused, so an in-progress -resume run is not invalidated)")
     ap.add_argument("--breadth-panel", help="Panel TSV from stress_breadth_panel.py — simulate the breadth tier instead")
     ap.add_argument("--breadth-cov", type=int, default=100)
     args = ap.parse_args()
@@ -300,8 +304,12 @@ def main():
             sources.append(sim.pairs_from(host["records"], True, n_pairs_for(int(host["length"]), ECOLI_ONLY_COV)))
         if sample == "sim_random":
             sources.append(sim.random_pairs(RANDOM_PAIRS))
-        r1, r2, n = write_sample(sample, sources, sim, reads_dir)
-        print(f"  {sample:<20} {n:>9,} pairs  ({category})")
+        if args.truth_only and (reads_dir / f"{sample}_R1.fastq.gz").exists():
+            r1, r2 = reads_dir / f"{sample}_R1.fastq.gz", reads_dir / f"{sample}_R2.fastq.gz"
+            print(f"  {sample:<20} (reads kept)")
+        else:
+            r1, r2, n = write_sample(sample, sources, sim, reads_dir)
+            print(f"  {sample:<20} {n:>9,} pairs  ({category})")
         reads_rows.append((sample, r1, r2))
         truth_row(sample, "reads", category, comps, host_frac, notes)
 
@@ -318,7 +326,7 @@ def main():
                 comps = [(claimed, "real")] if claimed else []
                 reads_rows.append((f"real_{s}", r1, r2))
                 truth_row(f"real_{s}", "reads", "real_reads", comps, 0, note,
-                          expect_phage="no" if s == "Ecoli_K12" else "yes")
+                          expect_phage="yes" if claimed else "no")
 
     with open(out / "samplesheet_stress_reads.csv", "w") as f:
         f.write("sample,read1,read2\n")
@@ -340,7 +348,7 @@ def main():
     with open(out / "stress_sra.txt", "w") as f:
         for srr, claimed in SRA_DESIGN:
             f.write(srr + "\n")
-            truth_row(srr, "sra", "sra_mode", [(claimed, "real")], 0, f"DOWNLOAD_SRA path; docs claim {claimed} (unverified)")
+            truth_row(srr, "sra", "sra_mode", [(claimed, "real")], 0, f"DOWNLOAD_SRA path; verified {claimed} WGS (ENA organism check)")
 
     with open(out / "stress_truth.tsv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=TRUTH_COLS, delimiter="\t", restval="")

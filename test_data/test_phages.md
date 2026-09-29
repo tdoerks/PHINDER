@@ -5,7 +5,7 @@
 These are classic, well-studied phages with known genomes - perfect for pipeline validation:
 
 ### 1. Lambda Phage (Escherichia coli)
-- **SRR Accession:** SRR5131134
+- **SRR Accession:** SRR17327631
 - **Genome Size:** ~48.5 kb
 - **Type:** Temperate (lysogenic)
 - **Reference:** NC_001416
@@ -13,7 +13,7 @@ These are classic, well-studied phages with known genomes - perfect for pipeline
 - **Layout:** Paired-end
 
 ### 2. T4 Phage (Escherichia coli)
-- **SRR Accession:** SRR5131135
+- **SRR Accession:** SRR19649190
 - **Genome Size:** ~169 kb
 - **Type:** Lytic
 - **Reference:** NC_000866
@@ -21,7 +21,7 @@ These are classic, well-studied phages with known genomes - perfect for pipeline
 - **Layout:** Paired-end
 
 ### 3. T7 Phage (Escherichia coli)
-- **SRR Accession:** SRR5131136
+- **SRR Accession:** ERR10819273
 - **Genome Size:** ~40 kb
 - **Type:** Lytic
 - **Reference:** NC_001604
@@ -51,13 +51,13 @@ Modern phage sequencing from SEA-PHAGES program:
 ### Using SRA Toolkit (fasterq-dump)
 ```bash
 # Download Lambda phage
-fasterq-dump SRR5131134 -O test_data/ -e 8
+fasterq-dump SRR17327631 -O test_data/ -e 8
 
 # Download T4 phage
-fasterq-dump SRR5131135 -O test_data/ -e 8
+fasterq-dump SRR19649190 -O test_data/ -e 8
 
 # Download T7 phage
-fasterq-dump SRR5131136 -O test_data/ -e 8
+fasterq-dump ERR10819273 -O test_data/ -e 8
 ```
 
 ### Using Nextflow (future feature)
@@ -65,7 +65,7 @@ fasterq-dump SRR5131136 -O test_data/ -e 8
 # Will add SRA download module similar to COMPASS
 nextflow run main.nf \
     --input_mode sra \
-    --sra_accessions "SRR5131134,SRR5131135,SRR5131136" \
+    --sra_accessions "SRR17327631,SRR19649190,ERR10819273" \
     --outdir results_test
 ```
 
@@ -74,15 +74,15 @@ nextflow run main.nf \
 ### Quick Test (1 sample, ~10-15 min)
 ```bash
 # Download Lambda (smallest)
-fasterq-dump SRR5131134 -O test_data/
+fasterq-dump SRR17327631 -O test_data/
 
 # Compress
-gzip test_data/SRR5131134_*.fastq
+gzip test_data/SRR17327631_*.fastq
 
 # Create samplesheet
 cat > test_samplesheet.csv << EOF
 sample,read1,read2
-lambda,test_data/SRR5131134_1.fastq.gz,test_data/SRR5131134_2.fastq.gz
+lambda,test_data/SRR17327631_1.fastq.gz,test_data/SRR17327631_2.fastq.gz
 EOF
 
 # Run PHINDER
@@ -96,7 +96,7 @@ nextflow run main.nf \
 ### Full Test (3 samples, ~30-45 min)
 ```bash
 # Download all three classic phages
-for srr in SRR5131134 SRR5131135 SRR5131136; do
+for srr in SRR17327631 SRR19649190 ERR10819273; do
     fasterq-dump $srr -O test_data/ -e 8
     gzip test_data/${srr}_*.fastq
 done
@@ -104,9 +104,9 @@ done
 # Create samplesheet
 cat > test_samplesheet_full.csv << EOF
 sample,read1,read2
-lambda,test_data/SRR5131134_1.fastq.gz,test_data/SRR5131134_2.fastq.gz
-T4,test_data/SRR5131135_1.fastq.gz,test_data/SRR5131135_2.fastq.gz
-T7,test_data/SRR5131136_1.fastq.gz,test_data/SRR5131136_2.fastq.gz
+lambda,test_data/SRR17327631_1.fastq.gz,test_data/SRR17327631_2.fastq.gz
+T4,test_data/SRR19649190_1.fastq.gz,test_data/SRR19649190_2.fastq.gz
+T7,test_data/ERR10819273_1.fastq.gz,test_data/ERR10819273_2.fastq.gz
 EOF
 
 # Run PHINDER

@@ -10,7 +10,7 @@ TARGET="/usr/local/lib/python3.10/site-packages/checkv/utility.py"
 IMG="docker://quay.io/biocontainers/checkv:1.0.2--pyhdfd78af_0"
 
 # Find an assembly produced by an earlier run
-ASM=$(find "$REPO/work_3phages" -name 'SRR5131134_assembly.fasta' 2>/dev/null | head -1)
+ASM=$(find "$REPO/work_3phages" -name 'SRR17327631_assembly.fasta' 2>/dev/null | head -1)
 [ -z "$ASM" ] && ASM=$(find "$REPO/work_3phages" -name '*_assembly.fasta' 2>/dev/null | head -1)
 [ -z "$ASM" ] && { echo "ERROR: no *_assembly.fasta found under $REPO/work_3phages"; exit 1; }
 

@@ -18,9 +18,9 @@
 #   sbatch bin/run_phinder_full_test_beocat.sh
 #
 # Downloads and analyzes:
-#   - Lambda phage (SRR5131134) - 48.5 kb, temperate
-#   - T4 phage (SRR5131135) - 169 kb, lytic
-#   - T7 phage (SRR5131136) - 40 kb, lytic
+#   - Lambda phage (SRR17327631) - 48.5 kb, temperate
+#   - T4 phage (SRR19649190) - 169 kb, lytic
+#   - T7 phage (ERR10819273) - 40 kb, lytic
 #==============================================================================
 
 set -euo pipefail
@@ -52,9 +52,9 @@ echo "  SRR List: ${SRR_LIST}"
 echo "  Output dir: ${OUTDIR}"
 echo ""
 echo "Phages to analyze:"
-echo "  1. Lambda (SRR5131134) - ~48.5 kb, temperate"
-echo "  2. T4 (SRR5131135) - ~169 kb, lytic"
-echo "  3. T7 (SRR5131136) - ~40 kb, lytic"
+echo "  1. Lambda (SRR17327631) - ~48.5 kb, temperate"
+echo "  2. T4 (SRR19649190) - ~169 kb, lytic"
+echo "  3. T7 (ERR10819273) - ~40 kb, lytic"
 echo ""
 
 # Load Nextflow
@@ -104,9 +104,9 @@ if [ ${EXIT_CODE} -eq 0 ]; then
     echo "Results in: ${OUTDIR}/"
     echo ""
     echo "Assemblies:"
-    echo "  - Lambda: ${OUTDIR}/assemblies/SRR5131134_assembly.fasta"
-    echo "  - T4: ${OUTDIR}/assemblies/SRR5131135_assembly.fasta"
-    echo "  - T7: ${OUTDIR}/assemblies/SRR5131136_assembly.fasta"
+    echo "  - Lambda: ${OUTDIR}/assemblies/SRR17327631_assembly.fasta"
+    echo "  - T4: ${OUTDIR}/assemblies/SRR19649190_assembly.fasta"
+    echo "  - T7: ${OUTDIR}/assemblies/ERR10819273_assembly.fasta"
     echo ""
     echo "View MultiQC report:"
     echo "  scp tylerdoe@beocat.cis.ksu.edu:$(pwd)/${OUTDIR}/multiqc/multiqc_report.html ."

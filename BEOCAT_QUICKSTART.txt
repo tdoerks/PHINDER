@@ -24,7 +24,7 @@ STEP 2: Run Quick Test (Lambda Phage Only)
 sbatch bin/run_phinder_sra_beocat.sh
 
 This will:
-  ✓ Download SRR5131134 (Lambda phage, ~100 MB)
+  ✓ Download SRR17327631 (Lambda phage, ~15 Mb of reads)
   ✓ Assemble with Unicycler
   ✓ Annotate with Pharokka
   ✓ Quality check with CheckV
@@ -52,9 +52,9 @@ When done, you'll see a directory like:
   results_lambda_20260603_120000/
 
 Key files:
-  - assemblies/SRR5131134_assembly.fasta (your phage genome!)
-  - checkv/SRR5131134_checkv/ (quality metrics)
-  - pharokka/SRR5131134_pharokka/ (annotations)
+  - assemblies/SRR17327631_assembly.fasta (your phage genome!)
+  - checkv/SRR17327631_checkv/ (quality metrics)
+  - pharokka/SRR17327631_pharokka/ (annotations)
   - multiqc/multiqc_report.html (QC summary)
 
 Download MultiQC report to view:
@@ -74,21 +74,21 @@ This takes ~30-45 minutes but validates the full pipeline!
 EXPECTED RESULTS
 --------------------------------------------------------------------------------
 
-Lambda Phage (SRR5131134):
+Lambda Phage (SRR17327631):
   - Size: ~48.5 kb
   - Contigs: 1 (circular)
   - Quality: Complete
   - Lifestyle: Temperate/lysogenic
   - Genes: ~70 CDSs
 
-T4 Phage (SRR5131135):
+T4 Phage (SRR19649190):
   - Size: ~169 kb
   - Contigs: 1 (circular)
   - Quality: Complete
   - Lifestyle: Lytic
   - Genes: ~280 CDSs
 
-T7 Phage (SRR5131136):
+T7 Phage (ERR10819273):
   - Size: ~40 kb
   - Contigs: 1 (circular)
   - Quality: Complete

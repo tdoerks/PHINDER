@@ -78,14 +78,14 @@ download_phage() {
 if [ "${MODE}" == "quick" ]; then
     echo "Mode: Quick test (Lambda phage only)"
     echo ""
-    download_phage "SRR5131134" "Lambda phage" "~48.5 kb"
+    download_phage "SRR17327631" "Lambda phage" "~48.5 kb"
 
 elif [ "${MODE}" == "full" ]; then
     echo "Mode: Full test (Lambda, T4, T7)"
     echo ""
-    download_phage "SRR5131134" "Lambda phage" "~48.5 kb"
-    download_phage "SRR5131135" "T4 phage" "~169 kb"
-    download_phage "SRR5131136" "T7 phage" "~40 kb"
+    download_phage "SRR17327631" "Lambda phage" "~48.5 kb"
+    download_phage "SRR19649190" "T4 phage" "~169 kb"
+    download_phage "ERR10819273" "T7 phage" "~40 kb"
 
 else
     echo -e "${RED}ERROR: Invalid mode '${MODE}'${NC}"
@@ -99,16 +99,16 @@ echo -e "${YELLOW}Creating samplesheet...${NC}"
 if [ "${MODE}" == "quick" ]; then
     cat > test_samplesheet.csv << EOF
 sample,read1,read2
-lambda,${OUTDIR}/SRR5131134_1.fastq.gz,${OUTDIR}/SRR5131134_2.fastq.gz
+lambda,${OUTDIR}/SRR17327631_1.fastq.gz,${OUTDIR}/SRR17327631_2.fastq.gz
 EOF
     SHEET="test_samplesheet.csv"
 
 elif [ "${MODE}" == "full" ]; then
     cat > test_samplesheet_full.csv << EOF
 sample,read1,read2
-lambda,${OUTDIR}/SRR5131134_1.fastq.gz,${OUTDIR}/SRR5131134_2.fastq.gz
-T4,${OUTDIR}/SRR5131135_1.fastq.gz,${OUTDIR}/SRR5131135_2.fastq.gz
-T7,${OUTDIR}/SRR5131136_1.fastq.gz,${OUTDIR}/SRR5131136_2.fastq.gz
+lambda,${OUTDIR}/SRR17327631_1.fastq.gz,${OUTDIR}/SRR17327631_2.fastq.gz
+T4,${OUTDIR}/SRR19649190_1.fastq.gz,${OUTDIR}/SRR19649190_2.fastq.gz
+T7,${OUTDIR}/ERR10819273_1.fastq.gz,${OUTDIR}/ERR10819273_2.fastq.gz
 EOF
     SHEET="test_samplesheet_full.csv"
 fi

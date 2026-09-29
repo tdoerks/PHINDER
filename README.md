@@ -75,9 +75,9 @@ nextflow run main.nf \
 
 **SRA list format (one SRR per line):**
 ```
-SRR5131134
-SRR5131135
-SRR5131136
+SRR17327631
+SRR19649190
+ERR10819273
 ```
 
 #### Option 2: From Raw Reads
