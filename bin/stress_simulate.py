@@ -87,9 +87,13 @@ ASSEMBLY_DESIGN = [
     ("asm_MS2", "MS2"), ("asm_M13", "M13"), ("asm_lambda", "lambda"), ("asm_Ecoli_K12", HOST),
 ]
 
-# SRA-mode run: real data via DOWNLOAD_SRA (identity checked by the scorer against claimed_ref).
-# ERR10819273 = verified T7 WGS (ENA taxid 10760), ~10 Mb.
-SRA_DESIGN = [("ERR10819273", "T7")]
+# SRA-mode run: real phage data via DOWNLOAD_SRA (identity checked by the scorer's k-mer recovery).
+# Verified by ENA organism (2026-09-29), Illumina paired WGS:
+SRA_DESIGN = [
+    ("SRR17327631", "lambda"),   # taxid 10710, HiSeq 4000, ~15 Mb (~300x)
+    ("SRR19649190", "T4"),       # taxid 10665, MiSeq, ~33 Mb (~200x)
+    ("ERR10819273", "T7"),       # taxid 10760, NextSeq 500, ~10 Mb (~250x)
+]
 
 # Real reads already on Beocat (SPAdes-compare samplesheet); sample -> claimed reference.
 # SRR5131134/5/6 were long documented as lambda/T4/T7 but are scallop (Azumapecten farreri)

@@ -85,7 +85,7 @@ CheckV/geNomad detection, BacPhlip/VIBRANT lifestyle, per-module status, dashboa
 | Host contamination | T7 + 10/50/90% E. coli reads; lambda + 50% |
 | Mixed isolates | T7 + lambda, T4 + T7 |
 | Negative controls | E. coli K-12 only, random sequence |
-| Input modes | reads (all above + real reads), assembly (reference FASTAs), sra (ERR10819273) |
+| Input modes | reads (all above + real reads), assembly (reference FASTAs), sra (verified lambda SRR17327631, T4 SRR19649190, T7 ERR10819273) |
 
 ```bash
 python3 bin/stress_fetch_refs.py --outdir stress_data/refs          # downloads + verifies each accession
