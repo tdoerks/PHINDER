@@ -93,11 +93,9 @@ SRA_DESIGN = [("ERR10819273", "T7")]
 
 # Real reads already on Beocat (SPAdes-compare samplesheet); sample -> claimed reference.
 # SRR5131134/5/6 were long documented as lambda/T4/T7 but are scallop (Azumapecten farreri)
-# RNA-Seq (ENA, checked 2026-09-29) — kept as REAL non-phage negative controls.
+# RNA-Seq (ENA, checked 2026-09-29) — not phages, so they are excluded from the stress test.
+EXCLUDE_REAL = {"SRR5131134", "SRR5131135", "SRR5131136"}
 REAL_CLAIMS = {
-    "SRR5131134": (None, "NOT a phage: scallop RNA-Seq (was mislabeled lambda) — real negative control"),
-    "SRR5131135": (None, "NOT a phage: scallop RNA-Seq (was mislabeled T4) — real negative control"),
-    "SRR5131136": (None, "NOT a phage: scallop RNA-Seq (was mislabeled T7) — real negative control"),
     "phiX174": ("phiX174", "real reads SRR001665"),
     "Ecoli_K12": (None, "real reads SRR001666 — negative control"),
     "MS2": ("MS2", "real reads SRR31435157"),
@@ -318,6 +316,9 @@ def main():
         with open(args.real_reads) as f:
             for row in csv.DictReader(f):
                 s = row["sample"]
+                if s in EXCLUDE_REAL:
+                    skipped.append(f"real_{s} (excluded: scallop RNA-Seq, not a phage)")
+                    continue
                 r1, r2 = Path(row["fastq_1"]), Path(row["fastq_2"])
                 if not (r1.exists() and r2.exists()):
                     skipped.append(f"real_{s} (reads not found: {r1})")
