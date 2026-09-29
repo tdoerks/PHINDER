@@ -6,7 +6,7 @@
 # from peer" on large layers) then kill runs that are otherwise fine.
 #
 # Run inside a SLURM job (the run scripts call it) so it survives SSH drops.
-#   bash bin/prefetch_containers.sh [cache_dir]
+#   bash bin/prefetch_containers.sh [cache_dir]      (else $NXF_APPTAINER_CACHEDIR, else conf/beocat.config)
 # Env: PREFETCH_TRIES (default 5), PREFETCH_SKIP (regex, default "iphop" — ~huge, off by default)
 #
 # Images are named exactly as Nextflow names them (scheme stripped, '/' and ':' -> '-',
@@ -16,10 +16,12 @@
 set -uo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
-CACHE="${1:-$(grep -oP "apptainer\.cacheDir\s*=\s*['\"]\K[^'\"]+" "$REPO/conf/beocat.config" 2>/dev/null)}"
+# Cache dir: argument > NXF_APPTAINER_CACHEDIR (Nextflow's standard env var, any site) >
+# apptainer.cacheDir in conf/beocat.config (KSU Beocat)
+CACHE="${1:-${NXF_APPTAINER_CACHEDIR:-$(grep -oP "apptainer\.cacheDir\s*=\s*['\"]\K[^'\"]+" "$REPO/conf/beocat.config" 2>/dev/null)}}"
 TRIES="${PREFETCH_TRIES:-5}"
 SKIP="${PREFETCH_SKIP:-iphop}"
-[ -n "$CACHE" ] || { echo "prefetch: no cache dir given or found in conf/beocat.config"; exit 1; }
+[ -n "$CACHE" ] || { echo "prefetch: no cache dir — pass one, or set NXF_APPTAINER_CACHEDIR"; exit 1; }
 mkdir -p "$CACHE"
 
 module load apptainer 2>/dev/null || module load Apptainer 2>/dev/null || true
