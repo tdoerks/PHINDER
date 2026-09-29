@@ -31,6 +31,13 @@ RUN sed -i 's/(zip(\*profiles\.values))/(profiles.values.T)/' \
 RUN find /opt/conda/lib/python*/site-packages/vcontact2 -name "*.py" \
         -exec sed -i 's/\([( ]\)zip(\*\([A-Za-z_][A-Za-z0-9_.]*\))/\1list(zip(*\2))/g' {} \;
 
+# modules.py: groupby("module") yields float keys (NaN in the column) and float pos arrays;
+# newer scipy rejects inexact sparse indices ("Inexact indices into sparse matrices are not
+# allowed"). Hit only when enough related genomes reach module detection (PHINDER stress test).
+RUN sed -i 's/^\(\s*\)N\[:, m\] = matrix\[:, pos\]\.sum(1)$/\1N[:, int(m)] = matrix[:, pos.astype(int)].sum(1)/' \
+        /opt/conda/lib/python*/site-packages/vcontact2/modules.py \
+    && grep -q "N\[:, int(m)\]" /opt/conda/lib/python*/site-packages/vcontact2/modules.py
+
 # Verify tools are on PATH (vcontact2 --version exits 1 by design, hence || true)
 RUN vcontact2 --help > /dev/null 2>&1 || true && diamond --version && mcl --version
 
