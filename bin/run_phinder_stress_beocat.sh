@@ -52,6 +52,9 @@ declare -A INPUT=(
 )
 declare -A NF_MODE=([reads]=reads [assembly]=assembly [sra]=sra [breadth]=reads)
 
+# Pull any missing containers first, with retries (Nextflow aborts on a failed pull)
+bash "${REPO}/bin/prefetch_containers.sh" || echo "WARNING: some container pulls failed — Nextflow will retry them"
+
 for mode in $MODES; do
     [ -f "${INPUT[$mode]:-/nonexistent}" ] || { echo "ERROR: input for '${mode}' missing — run the one-time setup (see header)"; exit 1; }
 done

@@ -79,6 +79,9 @@ if [ ! -f "${SAMPLESHEET}" ]; then
     exit 1
 fi
 
+# Pull any missing containers first, with retries (Nextflow aborts on a failed pull)
+bash bin/prefetch_containers.sh || echo "WARNING: some container pulls failed — Nextflow will retry them"
+
 # Run PHINDER
 echo ""
 echo "========================================"
