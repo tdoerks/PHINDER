@@ -38,6 +38,14 @@ RUN sed -i 's/^\(\s*\)N\[:, m\] = matrix\[:, pos\]\.sum(1)$/\1N[:, int(m)] = mat
         /opt/conda/lib/python*/site-packages/vcontact2/modules.py \
     && grep -q "N\[:, int(m)\]" /opt/conda/lib/python*/site-packages/vcontact2/modules.py
 
+# modules.py link_modules_and_clusters_df: the first merge keeps modules' "pos" column, so the
+# second merge's suffixes would rename it to "pos_module", which already exists. pandas >= 2
+# raises MergeError ("Passing 'suffixes' which cause duplicate columns {'pos_module'}");
+# old pandas silently created a duplicate column. Drop the redundant "pos" (== pos_module).
+RUN sed -i 's/^\(\s*\)data = pandas\.merge(data, modules, left_on="pos_module", right_on="pos",  how="left")$/&\n\1data = data.drop(columns="pos")/' \
+        /opt/conda/lib/python*/site-packages/vcontact2/modules.py \
+    && grep -q 'data = data.drop(columns="pos")' /opt/conda/lib/python*/site-packages/vcontact2/modules.py
+
 # Verify tools are on PATH (vcontact2 --version exits 1 by design, hence || true)
 RUN vcontact2 --help > /dev/null 2>&1 || true && diamond --version && mcl --version
 
