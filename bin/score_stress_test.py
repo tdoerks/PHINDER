@@ -55,11 +55,17 @@ def read_fasta(path):
 
 
 class RefKmers:
-    """Forward + reverse-complement k-mer sets of one reference (cached)."""
+    """Forward + reverse-complement k-mer sets of one reference.
+    Cache holds only the current sample's references: the breadth tier has 1000 distinct
+    genomes, and keeping all of them (~150 MB of Python strings each for big phages)
+    exhausted the 8 GB launcher job."""
     _cache = {}
+    MAX_CACHED = 4
 
     def __new__(cls, fasta):
         if fasta not in cls._cache:
+            if len(cls._cache) >= cls.MAX_CACHED:
+                cls._cache.pop(next(iter(cls._cache)))   # drop the oldest
             obj = super().__new__(cls)
             obj.fwd, obj.rc = set(), set()
             for _, s in read_fasta(fasta):

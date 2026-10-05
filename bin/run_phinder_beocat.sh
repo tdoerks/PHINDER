@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=8G
+#SBATCH --mem=16G
 #SBATCH --time=4:00:00
 #SBATCH --output=phinder_%j.log
 #SBATCH --error=phinder_%j.err
@@ -81,6 +81,9 @@ fi
 
 # Pull any missing containers first, with retries (Nextflow aborts on a failed pull)
 bash bin/prefetch_containers.sh || echo "WARNING: some container pulls failed — Nextflow will retry them"
+
+# Cap the Nextflow JVM heap (default sizes to the node, not this job -> OUT_OF_MEMORY)
+export NXF_OPTS="${NXF_OPTS:--Xms1g -Xmx6g}"
 
 # Run PHINDER
 echo ""

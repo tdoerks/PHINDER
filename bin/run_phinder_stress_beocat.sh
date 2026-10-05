@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=8G
+#SBATCH --mem=16G
 #SBATCH --time=72:00:00
 #SBATCH --output=phinder_stress_%j.log
 #SBATCH --error=phinder_stress_%j.err
@@ -43,6 +43,9 @@ RUNS="${REPO}/stress_runs"
 MODES="${MODES:-reads assembly sra}"   # override: MODES="assembly" sbatch ...
 
 module load Nextflow/24.04.2 2>/dev/null || module load Nextflow || { echo "ERROR: no Nextflow module"; exit 1; }
+# Cap the Nextflow JVM: by default its heap is sized to the whole node, not this job's memory,
+# and SLURM kills the head job (OUT_OF_MEMORY) — job 11552233 died this way after 13 h.
+export NXF_OPTS="${NXF_OPTS:--Xms1g -Xmx6g}"
 
 declare -A INPUT=(
     [reads]="${DATA}/samplesheet_stress_reads.csv"
