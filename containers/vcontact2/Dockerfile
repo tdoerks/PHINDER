@@ -42,9 +42,13 @@ RUN sed -i 's/^\(\s*\)N\[:, m\] = matrix\[:, pos\]\.sum(1)$/\1N[:, int(m)] = mat
 # second merge's suffixes would rename it to "pos_module", which already exists. pandas >= 2
 # raises MergeError ("Passing 'suffixes' which cause duplicate columns {'pos_module'}");
 # old pandas silently created a duplicate column. Drop the redundant "pos" (== pos_module).
-RUN sed -i 's/^\(\s*\)data = pandas\.merge(data, modules, left_on="pos_module", right_on="pos",  how="left")$/&\n\1data = data.drop(columns="pos")/' \
-        /opt/conda/lib/python*/site-packages/vcontact2/modules.py \
-    && grep -q 'data = data.drop(columns="pos")' /opt/conda/lib/python*/site-packages/vcontact2/modules.py
+# Patch the ONE file Python imports: /opt/conda/lib/python* can match several names that point at the
+# same directory, which inserted this line three times in an earlier build (KeyError on the 2nd drop).
+# The grep guard makes the insert idempotent; the final check requires exactly one copy.
+RUN F="$(python -c 'import os, vcontact2; print(os.path.join(os.path.dirname(vcontact2.__file__), "modules.py"))')" \
+    && (grep -q 'data = data.drop(columns="pos")' "$F" \
+        || sed -i 's/^\(\s*\)data = pandas\.merge(data, modules, left_on="pos_module", right_on="pos",  how="left")$/&\n\1data = data.drop(columns="pos")/' "$F") \
+    && [ "$(grep -c 'data = data.drop(columns="pos")' "$F")" -eq 1 ]
 
 # Verify tools are on PATH (vcontact2 --version exits 1 by design, hence || true)
 RUN vcontact2 --help > /dev/null 2>&1 || true && diamond --version && mcl --version
